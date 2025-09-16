@@ -1,11 +1,3 @@
 [gd_scene format=3 uid="uid://ehcj0v1qs0ab"]
 
 [node name="LevelTest" type="Node2D"]
-
-[node name="Yippie" type="Node2D" parent="."]
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Node2D2" type="Node2D" parent="."]
-
-[node name="Node2D3" type="Node2D" parent="."]
