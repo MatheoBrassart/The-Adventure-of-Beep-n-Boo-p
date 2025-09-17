@@ -5,15 +5,15 @@ class_name BlocChangeBoop
 @onready var sprite2D: Sprite2D = $Sprite2D
 @onready var collisionShape2D: CollisionShape2D = $CollisionShape2D
 
-var CURRENT_ACTIVE_CHARACTER = 0
 
 var ISACTIVE = 1
 static var SWITCH_STATE = 0
 
 func _ready() -> void:
 	
-	CURRENT_ACTIVE_CHARACTER = get_tree().get_root().get_node("player")
-	if CURRENT_ACTIVE_CHARACTER == 0:
+	var CURRENT_ACTIVE_CHARACTER = get_parent().get_node("Player")
+	
+	if CURRENT_ACTIVE_CHARACTER.CURRENT_CHARACTER == 0:
 		deactivate()
 
 
