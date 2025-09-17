@@ -11,12 +11,16 @@ z_index = 5
 collision_layer = 2
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5.96046e-08, -6)
+[node name="SpriteBeep" type="Sprite2D" parent="."]
+modulate = Color(0.9967161, 0.6390532, 0.5637454, 1)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_g2els")
+
+[node name="SpriteBoop" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
 scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_fjrip")

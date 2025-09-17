@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ehcj0v1qs0ab"]
+[gd_scene load_steps=5 format=3 uid="uid://ehcj0v1qs0ab"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_e73ws"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/bloc_change_beep.tscn" id="2_vbogn"]
+[ext_resource type="PackedScene" uid="uid://ie2nu4jg04k" path="res://scenes/bloc_change_boop.tscn" id="3_d5kir"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
 distance = -285.0
@@ -15,3 +17,9 @@ position = Vector2(0, 366)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_e73ws")
+
+[node name="BlocChangeBeep" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(290, 562)
+
+[node name="BlocChangeBoop" parent="." instance=ExtResource("3_d5kir")]
+position = Vector2(480, 452)

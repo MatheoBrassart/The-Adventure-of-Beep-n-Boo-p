@@ -13,8 +13,11 @@ const GRAVITY_MULTIPLIER = 1.5
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 var CURRENT_CHARACTER = 0
+static var SWITCH_CHARACTER = 0
 
 #@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var spriteBeep: Sprite2D = $SpriteBeep
+@onready var spriteBoop: Sprite2D = $SpriteBoop
 
 func _physics_process(delta: float) -> void:
 	
@@ -71,6 +74,28 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	if SWITCH_CHARACTER == 1:
+		SWITCH_CHARACTER = 0
+		if CURRENT_CHARACTER == 0:
+			switch_to_boop()
+		else:
+			switch_to_beep()
+
+
 static func switch_character():
-		
-	print ("yay")
+	
+	SWITCH_CHARACTER = 1
+
+
+func switch_to_beep():
+	
+	CURRENT_CHARACTER = 0
+	spriteBeep.show()
+	spriteBoop.hide()
+
+
+func switch_to_boop():
+	
+	CURRENT_CHARACTER = 1
+	spriteBoop.show()
+	spriteBeep.hide()
