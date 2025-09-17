@@ -8,9 +8,10 @@ distance = -285.0
 [node name="LevelTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_e73ws")]
-position = Vector2(282, 169)
+position = Vector2(97, 564)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 366)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_e73ws")
