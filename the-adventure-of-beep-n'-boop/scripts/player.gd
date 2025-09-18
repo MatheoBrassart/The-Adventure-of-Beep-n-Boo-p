@@ -16,7 +16,7 @@ var CURRENT_CHARACTER = 0
 static var SWITCH_CHARACTER = 0
 
 #@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var spriteBeep: Sprite2D = $SpriteBeep
+@onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
 @onready var spriteBoop: Sprite2D = $SpriteBoop
 
 func _physics_process(delta: float) -> void:
@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animatedSpriteBeep.play("jump")
 
 	# Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
@@ -80,6 +81,11 @@ func _physics_process(delta: float) -> void:
 			switch_to_boop()
 		else:
 			switch_to_beep()
+	
+	#Play animations
+	if is_on_floor():
+		if direction == 0:
+			animatedSpriteBeep.play("idle")
 
 
 static func switch_character():
@@ -90,7 +96,7 @@ static func switch_character():
 func switch_to_beep():
 	
 	CURRENT_CHARACTER = 0
-	spriteBeep.show()
+	animatedSpriteBeep.show()
 	spriteBoop.hide()
 
 
@@ -98,4 +104,4 @@ func switch_to_boop():
 	
 	CURRENT_CHARACTER = 1
 	spriteBoop.show()
-	spriteBeep.hide()
+	animatedSpriteBeep.hide()

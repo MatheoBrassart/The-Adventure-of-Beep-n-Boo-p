@@ -1,20 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpyurbx843djn"]
+[gd_scene load_steps=8 format=3 uid="uid://bpyurbx843djn"]
 
 [ext_resource type="Script" uid="uid://dod5w3objikpo" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://bymn7h2gre4h0" path="res://assets/Beep.png" id="2_qhqgy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
-radius = 4.404543
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(2.2999997, 7.2)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_g2els")
 
-[node name="SpriteBeep" type="Sprite2D" parent="."]
-modulate = Color(0.9967161, 0.6390532, 0.5637454, 1)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_g2els")
+[node name="SpriteBeep" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="SpriteBoop" type="Sprite2D" parent="."]
 visible = false
@@ -22,5 +50,6 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.50000036, 4)
 scale = Vector2(10, 10)
-shape = SubResource("CircleShape2D_fjrip")
+shape = SubResource("RectangleShape2D_qhqgy")

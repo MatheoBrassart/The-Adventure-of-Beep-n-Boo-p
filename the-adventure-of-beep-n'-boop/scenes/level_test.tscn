@@ -10,16 +10,17 @@ distance = -285.0
 [node name="LevelTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_e73ws")]
-position = Vector2(97, 564)
+position = Vector2(65, 312)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 366)
+position = Vector2(4, 406)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, -232)
 shape = SubResource("WorldBoundaryShape2D_e73ws")
 
 [node name="BlocChangeBeep" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(290, 562)
+position = Vector2(220, 385)
 
 [node name="BlocChangeBoop" parent="." instance=ExtResource("3_d5kir")]
-position = Vector2(480, 452)
+position = Vector2(472, 271)
