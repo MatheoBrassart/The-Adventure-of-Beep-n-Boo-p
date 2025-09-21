@@ -31,16 +31,15 @@ func _physics_process(delta: float) -> void:
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		animatedSpriteBeep.play("jump")
 
 	# Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
 	
 	#Flip the sprite
-	#if direction > 0:
-	#	animated_sprite.flip_h = false
-	#elif direction < 0:
-	#	animated_sprite.flip_h = true
+	if direction > 0:
+		animatedSpriteBeep.flip_h = false
+	elif direction < 0:
+		animatedSpriteBeep.flip_h = true
 		
 	#Play animations
 	#if is_on_floor():
@@ -86,6 +85,11 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			animatedSpriteBeep.play("idle")
+	else:
+		if velocity.y < 0:
+			animatedSpriteBeep.play("jump")
+		else:
+			animatedSpriteBeep.play("fall")
 
 
 static func switch_character():
