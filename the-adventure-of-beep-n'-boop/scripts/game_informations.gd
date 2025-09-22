@@ -7,3 +7,4 @@ func _process(_delta: float) -> void:
 		Player.switch_character()
 		BlocChangeBeep.switch_state()
 		BlocChangeBoop.switch_state()
+		PicsChangeBeep.switch_state()

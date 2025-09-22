@@ -109,3 +109,8 @@ func switch_to_boop():
 	CURRENT_CHARACTER = 1
 	spriteBoop.show()
 	animatedSpriteBeep.hide()
+
+
+func player_death():
+	
+	queue_free()

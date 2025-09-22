@@ -109,9 +109,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(2.2999997, 7.2)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
-collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="SpriteBeep" type="AnimatedSprite2D" parent="."]
