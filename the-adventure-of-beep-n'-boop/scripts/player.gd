@@ -12,12 +12,23 @@ const JUMP_VELOCITY = -750.0
 const GRAVITY_MULTIPLIER = 1.5
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
-var CURRENT_CHARACTER = 0
-static var SWITCH_CHARACTER = 0
+@export var CURRENT_ACTIVE_CHARACTER = 0
 
 #@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
 @onready var spriteBoop: Sprite2D = $SpriteBoop
+
+
+func _ready() -> void:
+	
+	# When appearing, hides the incorrect sprite and set the correct one as rightSprite
+	if CURRENT_ACTIVE_CHARACTER == 0:
+		animatedSpriteBeep.show()
+		spriteBoop.hide()
+	else:
+		spriteBoop.show()
+		animatedSpriteBeep.hide()
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -74,13 +85,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if SWITCH_CHARACTER == 1:
-		SWITCH_CHARACTER = 0
-		if CURRENT_CHARACTER == 0:
-			switch_to_boop()
-		else:
-			switch_to_beep()
-	
 	#Play animations
 	if is_on_floor():
 		if direction == 0:
@@ -92,21 +96,24 @@ func _physics_process(delta: float) -> void:
 			animatedSpriteBeep.play("fall")
 
 
-static func switch_character():
+func switch_character():
 	
-	SWITCH_CHARACTER = 1
+	if CURRENT_ACTIVE_CHARACTER == 0:
+		switch_to_boop()
+	else:
+		switch_to_beep()
 
 
 func switch_to_beep():
 	
-	CURRENT_CHARACTER = 0
+	CURRENT_ACTIVE_CHARACTER = 0
 	animatedSpriteBeep.show()
 	spriteBoop.hide()
 
 
 func switch_to_boop():
 	
-	CURRENT_CHARACTER = 1
+	CURRENT_ACTIVE_CHARACTER = 1
 	spriteBoop.show()
 	animatedSpriteBeep.hide()
 

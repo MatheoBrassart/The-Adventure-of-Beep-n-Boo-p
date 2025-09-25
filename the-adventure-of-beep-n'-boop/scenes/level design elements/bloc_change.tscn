@@ -1,15 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkfqv7f3qk1lj"]
 
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_6vvw0"]
-[ext_resource type="Script" uid="uid://0ajtdhtoy3oe" path="res://scripts/bloc_change_beep.gd" id="1_i3sln"]
+[ext_resource type="Script" uid="uid://0ajtdhtoy3oe" path="res://scripts/bloc_change.gd" id="1_i3sln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
 
-[node name="BlocChangeBeep" type="StaticBody2D"]
+[node name="BlocChange" type="StaticBody2D" groups=["BlocChange"]]
 script = ExtResource("1_i3sln")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.7348946, 0.62655437, 1)
+[node name="Sprite2DBlocChangeBeep" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_6vvw0")
+
+[node name="Sprite2DBlocChangeBoop" type="Sprite2D" parent="."]
+rotation = 3.1415927
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_6vvw0")
 

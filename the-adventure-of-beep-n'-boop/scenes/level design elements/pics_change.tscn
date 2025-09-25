@@ -1,15 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0c3ta4epvr3w"]
 
-[ext_resource type="Script" uid="uid://020er7btcdo" path="res://scripts/pics_change_beep.gd" id="1_pgu3o"]
+[ext_resource type="Script" uid="uid://020er7btcdo" path="res://scripts/pics_change.gd" id="1_pgu3o"]
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="2_ijidf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
 
-[node name="PicsChangeBeep" type="Area2D"]
+[node name="PicsChange" type="Area2D" groups=["PicsChange"]]
 script = ExtResource("1_pgu3o")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.7348946, 0.62655437, 1)
+[node name="Sprite2DPicsChangeBeep" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.25)
+texture = ExtResource("2_ijidf")
+
+[node name="Sprite2DPicsChangeBoop" type="Sprite2D" parent="."]
+rotation = 3.1415927
 scale = Vector2(0.7, 0.25)
 texture = ExtResource("2_ijidf")
 
