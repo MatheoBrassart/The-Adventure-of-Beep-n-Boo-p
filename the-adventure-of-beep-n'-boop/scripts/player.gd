@@ -8,7 +8,7 @@ var ACCELERATION = 40
 var DECCELERATION = 50
 var DECCELERATION_DIRECTION = 0
 
-const JUMP_VELOCITY = -750.0
+const JUMP_VELOCITY = -600.0
 const GRAVITY_MULTIPLIER = 1.5
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
