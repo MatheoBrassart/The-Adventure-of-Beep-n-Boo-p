@@ -173,7 +173,7 @@ animation = &"defaultInactive"
 
 [node name="AnimatedSprite2DBlocChangeBoop" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aav20")
-animation = &"defaultActive"
+animation = &"activating"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.7683716e-07, 4.7683716e-07)

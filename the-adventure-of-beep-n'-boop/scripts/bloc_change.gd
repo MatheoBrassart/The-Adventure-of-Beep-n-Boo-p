@@ -27,6 +27,8 @@ func _ready() -> void:
 	if not CURRENT_ACTIVE_CHARACTER.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		deactivate()
 		rightSprite.play("defaultInactive")
+	else:
+		rightSprite.play("defaultActive")
 
 
 func _process(_delta: float) -> void:
