@@ -4,14 +4,14 @@ class_name Player
 
 const MAX_SPEED = 300.0
 var CURRENT_SPEED = 0
-var ACCELERATION = 40
-var DECCELERATION = 50
+var ACCELERATION = 50
+var DECCELERATION = 60
 var DECCELERATION_DIRECTION = 0
+
+var direction = Input.get_axis("move_left", "move_right")
 
 const JUMP_VELOCITY = -600.0
 const GRAVITY_MULTIPLIER = 1.5
-
-var direction := Input.get_axis("move_left", "move_right")
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 @export var CURRENT_ACTIVE_CHARACTER = 0
@@ -34,12 +34,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	# Add the gravity and reduced decceleration
+	# Add the gravity and reduced decceleration when in the air
 	if not is_on_floor():
 		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
-		DECCELERATION = 20
+		DECCELERATION = 30
 	else:
-		DECCELERATION = 50
+		DECCELERATION = 70
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -52,32 +52,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_left"):
 		DECCELERATION_DIRECTION = -1
 	
-	# Get the input direction: -1, 0, 1
-	direction = Input.get_axis("move_left", "move_right")
+	# Handle left/right inputs and movement
+	handle_input()
+	move_and_slide()
 	
 	#Flip the sprite
 	if direction > 0:
 		animatedSpriteBeep.flip_h = false
 	elif direction < 0:
 		animatedSpriteBeep.flip_h = true
-	
-	# Apply movement via acceleration
-	if direction:
-		if CURRENT_SPEED <= MAX_SPEED:
-			CURRENT_SPEED = CURRENT_SPEED + ACCELERATION
-		velocity.x = direction * CURRENT_SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, MAX_SPEED)
-		
-	# Slow down via decceleration
-	if direction == 0:
-		if not CURRENT_SPEED <= 0:
-			CURRENT_SPEED = CURRENT_SPEED - DECCELERATION
-			if CURRENT_SPEED <= 0:
-				CURRENT_SPEED = 0
-		velocity.x = DECCELERATION_DIRECTION * CURRENT_SPEED
-	
-	move_and_slide()
 	
 	#Play animations
 	if is_on_floor():
@@ -88,6 +71,16 @@ func _physics_process(delta: float) -> void:
 			animatedSpriteBeep.play("jump")
 		else:
 			animatedSpriteBeep.play("fall")
+
+
+func handle_input() -> void:
+	
+	direction = Input.get_axis("move_left", "move_right")
+	
+	if direction == 0:
+		velocity.x = move_toward(velocity.x, 0, ACCELERATION)
+	else:
+		velocity.x = move_toward(velocity.x, MAX_SPEED * direction, ACCELERATION)
 
 
 func switch_character():
