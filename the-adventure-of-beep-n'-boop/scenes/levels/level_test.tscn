@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ehcj0v1qs0ab"]
+[gd_scene load_steps=6 format=3 uid="uid://ehcj0v1qs0ab"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_jp5fc"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="2_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_ycf23"]
+[ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="4_4ptlp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
 distance = -285.0
@@ -39,3 +40,14 @@ position = Vector2(457, 459)
 [node name="BlocChange2" parent="." instance=ExtResource("3_ycf23")]
 position = Vector2(623, 387)
 WHICH_CHARACTER_IS_IT = 1
+
+[node name="RessortChange" parent="." instance=ExtResource("4_4ptlp")]
+position = Vector2(872, 704)
+
+[node name="RessortChange2" parent="." instance=ExtResource("4_4ptlp")]
+position = Vector2(1105, 706)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="RessortChange3" parent="." instance=ExtResource("4_4ptlp")]
+position = Vector2(631, 387)
+rotation = -1.5707964
