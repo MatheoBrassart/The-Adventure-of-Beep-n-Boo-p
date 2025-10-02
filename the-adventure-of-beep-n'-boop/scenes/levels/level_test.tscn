@@ -11,7 +11,7 @@ distance = -285.0
 [node name="LevelTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_jp5fc")]
-position = Vector2(49, 341)
+position = Vector2(409, 565)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(4, 406)
@@ -42,12 +42,16 @@ position = Vector2(623, 387)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange" parent="." instance=ExtResource("4_4ptlp")]
-position = Vector2(872, 704)
+position = Vector2(876, 647)
 
 [node name="RessortChange2" parent="." instance=ExtResource("4_4ptlp")]
-position = Vector2(1105, 706)
+position = Vector2(1089, 645)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange3" parent="." instance=ExtResource("4_4ptlp")]
-position = Vector2(631, 387)
+position = Vector2(687, 387)
+rotation = 1.5707964
+
+[node name="RessortChange4" parent="." instance=ExtResource("4_4ptlp")]
+position = Vector2(931, 399)
 rotation = -1.5707964

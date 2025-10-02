@@ -66,7 +66,10 @@ func deactivate():
 func _on_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Player") == true:
-		if ressortChange2D.rotation_degrees == 180:
+		rightSprite.play("used")
+		if ressortChange2D.rotation_degrees == 0:
 			body.velocity.y = RESSORT_VELOCITY * -1
+		elif ressortChange2D.rotation_degrees == 90:
+			body.velocity.x = move_toward(body.velocity.x, RESSORT_VELOCITY, RESSORT_VELOCITY )
 		elif ressortChange2D.rotation_degrees == -90:
-			body.velocity.x = move_toward(body.velocity.x, RESSORT_VELOCITY * 2, RESSORT_VELOCITY * 2)
+			body.velocity.x = move_toward(body.velocity.x, RESSORT_VELOCITY * -1, RESSORT_VELOCITY)
