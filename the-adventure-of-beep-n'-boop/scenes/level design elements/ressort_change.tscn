@@ -232,7 +232,7 @@ script = ExtResource("1_60jv4")
 
 [node name="AnimatedSprite2DRessortChangeBeep" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_canlg")
-animation = &"used"
+animation = &"defaultActive"
 
 [node name="AnimatedSprite2DRessortChangeBoop" type="AnimatedSprite2D" parent="."]
 visible = false

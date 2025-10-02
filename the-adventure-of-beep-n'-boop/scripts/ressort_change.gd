@@ -67,6 +67,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Player") == true:
 		rightSprite.play("used")
+		body.hit_ressort()
 		if ressortChange2D.rotation_degrees == 0:
 			body.velocity.y = RESSORT_VELOCITY * -1
 		elif ressortChange2D.rotation_degrees == 90:

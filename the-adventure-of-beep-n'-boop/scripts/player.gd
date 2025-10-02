@@ -2,10 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
-const MAX_SPEED = 300.0
-var CURRENT_SPEED = 0
+var MAX_SPEED = 300.0
 var ACCELERATION = 50
-var DECCELERATION = 60
 var DECCELERATION_DIRECTION = 0
 
 var direction = Input.get_axis("move_left", "move_right")
@@ -19,6 +17,9 @@ const GRAVITY_MULTIPLIER = 1.5
 #@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
 @onready var spriteBoop: Sprite2D = $SpriteBoop
+
+# Variable that actiavtes when the player hits by a ressort.
+var HIT_RESSORT = false
 
 
 func _ready() -> void:
@@ -37,9 +38,11 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity and reduced decceleration when in the air
 	if not is_on_floor():
 		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
-		ACCELERATION = 20
+		if not HIT_RESSORT == true:
+			ACCELERATION = 20
 	else:
 		ACCELERATION = 50
+		HIT_RESSORT = false
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -108,3 +111,9 @@ func switch_to_boop():
 func player_death():
 	
 	queue_free()
+
+
+func hit_ressort():
+	
+	HIT_RESSORT = true
+	ACCELERATION = 10
