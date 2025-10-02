@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bymn7h2gre4h0"
-path="res://.godot/imported/Beep.png-08042b4a62fa55c8341562099a92b0f4.ctex"
+path="res://.godot/imported/BeepSpritesheet.png-fb328197ba3426b5e32fbac97697326e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Beep.png"
-dest_files=["res://.godot/imported/Beep.png-08042b4a62fa55c8341562099a92b0f4.ctex"]
+source_file="res://assets/BeepSpritesheet.png"
+dest_files=["res://.godot/imported/BeepSpritesheet.png-fb328197ba3426b5e32fbac97697326e.ctex"]
 
 [params]
 
