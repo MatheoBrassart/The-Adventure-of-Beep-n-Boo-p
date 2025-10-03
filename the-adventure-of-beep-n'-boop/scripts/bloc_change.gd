@@ -23,7 +23,7 @@ func _ready() -> void:
 		rightSprite = animatedSpriteBlocChangeBoop
 	
 	# When appearing, check if the right character is active or not
-	var CURRENT_ACTIVE_CHARACTER = get_parent().get_node("Player")
+	var CURRENT_ACTIVE_CHARACTER = get_tree().get_first_node_in_group("Player")
 	if not CURRENT_ACTIVE_CHARACTER.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		deactivate()
 		rightSprite.play("defaultInactive")
