@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk0vp307e0hmr"]
+
+[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_ayx0p"]
+[ext_resource type="Script" uid="uid://fmt4r70ixc6q" path="res://scripts/level_switcher.gd" id="1_qvkg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvkg8"]
+size = Vector2(20, 98)
+
+[node name="level_switcher" type="Area2D"]
+script = ExtResource("1_qvkg8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qvkg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.9073486e-06, 0)
+scale = Vector2(0.15625001, 0.765625)
+texture = ExtResource("1_ayx0p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

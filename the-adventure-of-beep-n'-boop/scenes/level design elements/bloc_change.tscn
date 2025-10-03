@@ -169,7 +169,7 @@ script = ExtResource("1_i3sln")
 
 [node name="AnimatedSprite2DBlocChangeBeep" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4881c")
-animation = &"defaultInactive"
+animation = &"defaultActive"
 
 [node name="AnimatedSprite2DBlocChangeBoop" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aav20")

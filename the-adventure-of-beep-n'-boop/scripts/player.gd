@@ -17,8 +17,10 @@ var direction = Input.get_axis("move_left", "move_right")
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
 @onready var spriteBoop: Sprite2D = $SpriteBoop
 
-# Variable that actiavtes when the player hits by a ressort.
+# Variable that activates when the player hits a ressort
 var HIT_RESSORT = false
+
+@onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
 
 
 func _ready() -> void:
@@ -30,6 +32,8 @@ func _ready() -> void:
 	else:
 		spriteBoop.show()
 		animatedSpriteBeep.hide()
+	
+	check_respawn_location()
 
 
 func _physics_process(delta: float) -> void:
@@ -117,3 +121,9 @@ func hit_ressort():
 	
 	HIT_RESSORT = true
 	ACCELERATION = 10
+
+
+func check_respawn_location():
+	
+	if gameInformations.WHERE_TO_RESPAWN_PLAYER == 1:
+		position = get_tree().get_first_node_in_group("PlayerSpawn1").position
