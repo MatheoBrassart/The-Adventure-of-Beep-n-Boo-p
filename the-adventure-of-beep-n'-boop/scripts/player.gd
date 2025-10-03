@@ -5,11 +5,10 @@ class_name Player
 var MAX_SPEED = 300.0
 var ACCELERATION = 50
 var DECCELERATION_DIRECTION = 0
-
-var direction = Input.get_axis("move_left", "move_right")
-
 const JUMP_VELOCITY = -600.0
 const GRAVITY_MULTIPLIER = 1.5
+
+var direction = Input.get_axis("move_left", "move_right")
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 @export var CURRENT_ACTIVE_CHARACTER = 0
@@ -35,7 +34,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	# Add the gravity and reduced decceleration when in the air
+	# Add the gravity and reduces acceleration when in the air
 	if not is_on_floor():
 		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
 		if not HIT_RESSORT == true:
@@ -78,6 +77,7 @@ func _physics_process(delta: float) -> void:
 
 func handle_input() -> void:
 	
+	# Get direction and moves the player accordingly
 	direction = Input.get_axis("move_left", "move_right")
 	
 	if direction == 0:
@@ -110,7 +110,7 @@ func switch_to_boop():
 
 func player_death():
 	
-	queue_free()
+	get_tree().reload_current_scene()
 
 
 func hit_ressort():
