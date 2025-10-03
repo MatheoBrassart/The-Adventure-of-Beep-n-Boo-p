@@ -5,6 +5,7 @@ class_name PicsChange
 # Defines which character these pics are for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
 
+# Animations
 @onready var animatedSpritePicsChangeBeep: AnimatedSprite2D = $AnimatedSprite2DPicsChangeBeep
 @onready var animatedSpritePicsChangeBoop: AnimatedSprite2D = $AnimatedSprite2DPicsChangeBoop
 @onready var rightSprite: AnimatedSprite2D = $AnimatedSprite2DPicsChangeBeep
@@ -47,6 +48,7 @@ func switch_state():
 
 func activate():
 	
+	# Activates the pics
 	ISACTIVE = 1
 	rightSprite.play("activating")
 	collisionShape2D.disabled = false
@@ -54,6 +56,7 @@ func activate():
 
 func deactivate():
 	
+	# Dectivates the pics
 	ISACTIVE = 0
 	rightSprite.play("deactivating")
 	collisionShape2D.disabled = true
@@ -61,5 +64,6 @@ func deactivate():
 
 func _on_body_entered(body: Node2D) -> void:
 	
+	# Kills the player when they touch them
 	if body.is_in_group("Player") == true:
 		body.player_death.call_deferred()

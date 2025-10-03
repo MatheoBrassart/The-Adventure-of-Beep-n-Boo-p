@@ -5,8 +5,10 @@ class_name RessortChange
 # Defines which character the ressort is for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
 
+# Power of the ressort
 const RESSORT_VELOCITY = 900.0
 
+# Animations
 @onready var animatedSpriteRessortChangeBeep: AnimatedSprite2D = $AnimatedSprite2DRessortChangeBeep
 @onready var animatedSpriteRessortChangeBoop: AnimatedSprite2D = $AnimatedSprite2DRessortChangeBoop
 @onready var rightSprite: AnimatedSprite2D = $AnimatedSprite2DRessortChangeBeep
@@ -51,6 +53,7 @@ func switch_state():
 
 func activate():
 	
+	# Activates the ressort
 	ISACTIVE = 1
 	rightSprite.play("activating")
 	collisionShape2D.disabled = false
@@ -58,6 +61,7 @@ func activate():
 
 func deactivate():
 	
+	# Deactivates the bloc
 	ISACTIVE = 0
 	rightSprite.play("deactivating")
 	collisionShape2D.disabled = true
@@ -65,6 +69,7 @@ func deactivate():
 
 func _on_body_entered(body: Node2D) -> void:
 	
+	# Bounce the player when it touches it. Direction depends on its rotation.
 	if body.is_in_group("Player") == true:
 		rightSprite.play("used")
 		body.hit_ressort()

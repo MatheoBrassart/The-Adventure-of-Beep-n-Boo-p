@@ -2,24 +2,27 @@ extends CharacterBody2D
 
 class_name Player
 
+# Base movement stats
 var MAX_SPEED = 300.0
 var ACCELERATION = 50
 var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -600.0
 const GRAVITY_MULTIPLIER = 1.5
 
+# Left or right movement, depending on which key is pressed
 var direction = Input.get_axis("move_left", "move_right")
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 @export var CURRENT_ACTIVE_CHARACTER = 0
 
-#@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+# Animations
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
 @onready var spriteBoop: Sprite2D = $SpriteBoop
 
 # Variable that activates when the player hits a ressort
 var HIT_RESSORT = false
 
+# Get the global game informations scene
 @onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
 
 
@@ -33,6 +36,7 @@ func _ready() -> void:
 		spriteBoop.show()
 		animatedSpriteBeep.hide()
 	
+	# Check at which location the player should spawn/respawn
 	check_respawn_location()
 
 
@@ -92,6 +96,7 @@ func handle_input() -> void:
 
 func switch_character():
 	
+	# Checks which character is currently active, and switch to the other one
 	if CURRENT_ACTIVE_CHARACTER == 0:
 		switch_to_boop()
 	else:
@@ -119,11 +124,13 @@ func player_death():
 
 func hit_ressort():
 	
+	# Reduces the acceleration of the player when a ressort is hit
 	HIT_RESSORT = true
 	ACCELERATION = 10
 
 
 func check_respawn_location():
 	
+	# Gets to which position the player should respawn in GameInformations, then teleports them
 	if gameInformations.WHERE_TO_RESPAWN_PLAYER == 1:
 		position = get_tree().get_first_node_in_group("PlayerSpawn1").position

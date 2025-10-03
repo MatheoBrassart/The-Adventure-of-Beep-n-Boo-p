@@ -5,6 +5,7 @@ class_name BlocChange
 # Defines which character this bloc is for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
 
+# Animations
 @onready var animatedSpriteBlocChangeBeep: AnimatedSprite2D = $AnimatedSprite2DBlocChangeBeep
 @onready var animatedSpriteBlocChangeBoop: AnimatedSprite2D = $AnimatedSprite2DBlocChangeBoop
 @onready var rightSprite: AnimatedSprite2D = $AnimatedSprite2DBlocChangeBeep
