@@ -162,7 +162,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
-size = Vector2(60, 60)
+size = Vector2(62.117188, 62.117188)
 
 [node name="BlocChange" type="StaticBody2D" groups=["BlocChange"]]
 script = ExtResource("1_i3sln")
@@ -176,5 +176,4 @@ sprite_frames = SubResource("SpriteFrames_aav20")
 animation = &"activating"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.7683716e-07, 4.7683716e-07)
 shape = SubResource("RectangleShape2D_i3sln")

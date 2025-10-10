@@ -7,20 +7,33 @@
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="5_ycf23"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
-distance = -285.0
 
 [node name="LevelTest" type="Node2D"]
+
+[node name="Player Spawners" type="Node2D" parent="."]
+position = Vector2(548.7, 308.6)
+rotation = -1.5707964
+
+[node name="Player" parent="Player Spawners" instance=ExtResource("1_jp5fc")]
+position = Vector2(221.60004, -484.7)
+rotation = 1.5707964
+
+[node name="PlayerSpawn1" type="Node2D" parent="Player Spawners" groups=["PlayerSpawn1"]]
+position = Vector2(-218.40002, 381.3)
+rotation = 1.5707964
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("5_ycf23")]
+position = Vector2(1116, 589)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(548.7, 308.6)
 rotation = -1.5707964
 zoom = Vector2(1.75, 1.75)
 
-[node name="Player" parent="." instance=ExtResource("1_jp5fc")]
-position = Vector2(64, 87)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 310)
+position = Vector2(-31, 620)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_e73ws")
@@ -35,10 +48,10 @@ position = Vector2(248, 496)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChangeBeep" parent="Level elements" instance=ExtResource("3_ycf23")]
-position = Vector2(62, 558)
+position = Vector2(93, 589)
 
 [node name="PicsChangeBeep2" parent="Level elements" instance=ExtResource("2_4ptlp")]
-position = Vector2(589, 558)
+position = Vector2(589, 589)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("3_ycf23")]
@@ -49,10 +62,10 @@ position = Vector2(589, 372)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(837, 558)
+position = Vector2(837, 589)
 
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(1023, 558)
+position = Vector2(1023, 589)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange3" parent="Level elements" instance=ExtResource("4_4ptlp")]
@@ -63,9 +76,5 @@ rotation = 1.5707964
 position = Vector2(868, 372)
 rotation = -1.5707964
 
-[node name="level_switcher" parent="Level elements" instance=ExtResource("5_ycf23")]
-position = Vector2(1085, 558)
-TO_WHICH_LEVEL_DOES_IT_LEAD = "level_test_2"
-
-[node name="PlayerSpawn1" type="Node2D" parent="Level elements" groups=["PlayerSpawn1"]]
-position = Vector2(930, 527)
+[node name="BlocChange3" parent="Level elements" instance=ExtResource("3_ycf23")]
+position = Vector2(93, 527)
