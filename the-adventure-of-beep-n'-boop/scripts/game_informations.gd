@@ -9,6 +9,7 @@ var LEVELTEST_2 = "res://scenes/levels/level_test_2.tscn"
 var listOfLevels = [LEVELTEST_1, LEVELTEST_2]
 
 var WHERE_TO_RESPAWN_PLAYER = 0
+var WHICH_CHARACTER_TO_RESPAWN = 0
 
 func _process(_delta: float) -> void:
 	

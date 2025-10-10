@@ -28,6 +28,9 @@ var HIT_RESSORT = false
 
 func _ready() -> void:
 	
+	# Check at which location the player should spawn/respawn and which character should the player be respawn as
+	check_respawn_informations()
+	
 	# When appearing, hides the incorrect sprite and set the correct one as rightSprite
 	if CURRENT_ACTIVE_CHARACTER == 0:
 		animatedSpriteBeep.show()
@@ -35,9 +38,6 @@ func _ready() -> void:
 	else:
 		spriteBoop.show()
 		animatedSpriteBeep.hide()
-	
-	# Check at which location the player should spawn/respawn
-	check_respawn_location()
 
 
 func _physics_process(delta: float) -> void:
@@ -129,8 +129,12 @@ func hit_ressort():
 	ACCELERATION = 10
 
 
-func check_respawn_location():
+func check_respawn_informations():
 	
 	# Gets to which position the player should respawn in GameInformations, then teleports them
 	if gameInformations.WHERE_TO_RESPAWN_PLAYER == 1:
 		position = get_tree().get_first_node_in_group("PlayerSpawn1").position
+	
+	# Gets the last active character, and respawn the player as them
+	if gameInformations.WHICH_CHARACTER_TO_RESPAWN == 1:
+		CURRENT_ACTIVE_CHARACTER = 1
