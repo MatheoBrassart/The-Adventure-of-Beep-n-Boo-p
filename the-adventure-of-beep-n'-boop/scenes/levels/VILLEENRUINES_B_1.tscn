@@ -14,12 +14,21 @@ scenes/1/scene = ExtResource("3_cwqxc")
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetScenesCollectionSource_cwqxc")
 
-[node name="VILLEENRUINES_B_1" type="Node2D"]
+[node name="villeenruines_b_1" type="Node2D"]
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 
 [node name="Player" parent="Original Player Spawns" instance=ExtResource("1_uh3vt")]
 position = Vector2(32, 464)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+position = Vector2(543, -144)
+rotation = -1.5707964
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
 
 [node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
 position = Vector2(1120, 464)
@@ -31,11 +40,6 @@ position = Vector2(1168, 464)
 TO_WHICH_WORLD_DOES_IT_LEADS = "VILLEENRUINES"
 TO_WHICH_SECTION_DOES_IT_LEADS = "B"
 TO_WHICH_LEVEL_DOES_IT_LEADS = "2"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(575, 320)
-rotation = -1.5707964
-zoom = Vector2(1.67, 1.67)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-31, 620)

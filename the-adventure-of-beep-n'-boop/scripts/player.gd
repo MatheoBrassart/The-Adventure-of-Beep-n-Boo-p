@@ -6,7 +6,7 @@ class_name Player
 var MAX_SPEED = 300.0
 var ACCELERATION = 50
 var DECCELERATION_DIRECTION = 0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
 
 # Left or right movement, depending on which key is pressed
