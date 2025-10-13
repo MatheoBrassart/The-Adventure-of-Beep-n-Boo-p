@@ -76,6 +76,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			animatedSpriteBeep.play("idle")
+		else:animatedSpriteBeep.play("run")
+			
 	else:
 		if velocity.y < 0:
 			animatedSpriteBeep.play("jump")
