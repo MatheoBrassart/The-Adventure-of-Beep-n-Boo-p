@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=4 uid="uid://cse168hvnqbry"]
+
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_4xmkw"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_s0tnw"]
+[ext_resource type="PackedScene" uid="uid://c5nxliw2rxo51" path="res://scenes/level design elements/bloc_normal.tscn" id="4_bq4ka"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cwqxc"]
+scenes/1/scene = ExtResource("4_bq4ka")
+
+[sub_resource type="TileSet" id="TileSet_quhia"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_cwqxc")
+
+[node name="atelier_a_1" type="Node2D"]
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("1_4xmkw")]
+position = Vector2(560, 432)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+position = Vector2(543, -144)
+rotation = -1.5707964
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1104, 432)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("2_s0tnw")]
+position = Vector2(1168, 432)
+TO_WHICH_WORLD_DOES_IT_LEADS = "atelier"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 2
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAARAA8AAAAAAAAAAQAQAA8AAAAAAAAAAQASAA8AAAAAAAAAAQATAA8AAAAAAAAAAQAUAA8AAAAAAAAAAQAVAA8AAAAAAAAAAQAWAA8AAAAAAAAAAQAXAA8AAAAAAAAAAQAYAA8AAAAAAAAAAQAZAA8AAAAAAAAAAQAaAA8AAAAAAAAAAQAbAA8AAAAAAAAAAQAcAA8AAAAAAAAAAQAdAA8AAAAAAAAAAQAeAA8AAAAAAAAAAQAfAA8AAAAAAAAAAQAgAA8AAAAAAAAAAQAhAA8AAAAAAAAAAQAiAA8AAAAAAAAAAQAjAA8AAAAAAAAAAQAkAA8AAAAAAAAAAQAlAA8AAAAAAAAAAQAPAA8AAAAAAAAAAQAOAA8AAAAAAAAAAQANAA8AAAAAAAAAAQAMAA8AAAAAAAAAAQALAA8AAAAAAAAAAQAKAA8AAAAAAAAAAQAJAA8AAAAAAAAAAQAIAA8AAAAAAAAAAQAHAA8AAAAAAAAAAQAGAA8AAAAAAAAAAQAFAA8AAAAAAAAAAQAFAA4AAAAAAAAAAQAFAA0AAAAAAAAAAQAFAAwAAAAAAAAAAQAFAAsAAAAAAAAAAQAFAAoAAAAAAAAAAQAFAAkAAAAAAAAAAQAFAAgAAAAAAAAAAQAFAAcAAAAAAAAAAQAFAAYAAAAAAAAAAQAFAAUAAAAAAAAAAQAFAAQAAAAAAAAAAQAFAAMAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAFAAAAAAAAAAAAAQAFAP//AAAAAAAAAQA=")
+tile_set = SubResource("TileSet_quhia")

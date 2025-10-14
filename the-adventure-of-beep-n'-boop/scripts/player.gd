@@ -25,6 +25,9 @@ var HIT_RESSORT = false
 # Get the global game informations scene
 @onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
 
+# Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
+var multiHitboxDeathFixer = 0
+
 
 func _ready() -> void:
 	
@@ -121,7 +124,9 @@ func switch_to_boop():
 
 func player_death():
 	
-	get_tree().reload_current_scene()
+	multiHitboxDeathFixer += 1
+	if multiHitboxDeathFixer == 1:
+		get_tree().reload_current_scene()
 
 
 func hit_ressort():
