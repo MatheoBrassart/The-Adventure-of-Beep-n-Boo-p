@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ehcj0v1qs0ab"]
+[gd_scene load_steps=9 format=3 uid="uid://ehcj0v1qs0ab"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_jp5fc"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="2_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_ycf23"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="4_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="5_ycf23"]
+[ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="6_uh3ll"]
+[ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="7_4lw2e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
 
@@ -36,45 +38,52 @@ zoom = Vector2(1.75, 1.75)
 position = Vector2(-31, 620)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -4)
 shape = SubResource("WorldBoundaryShape2D_e73ws")
 
 [node name="Level elements" type="Node2D" parent="."]
 
 [node name="PicsChangeBeep" parent="Level elements" instance=ExtResource("2_4ptlp")]
-position = Vector2(248, 434)
+position = Vector2(248, 432)
 
 [node name="BlocChangeBeep2" parent="Level elements" instance=ExtResource("3_ycf23")]
 position = Vector2(248, 496)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChangeBeep" parent="Level elements" instance=ExtResource("3_ycf23")]
-position = Vector2(93, 589)
+position = Vector2(96, 584)
 
 [node name="PicsChangeBeep2" parent="Level elements" instance=ExtResource("2_4ptlp")]
-position = Vector2(589, 589)
+position = Vector2(592, 584)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("3_ycf23")]
-position = Vector2(434, 434)
+position = Vector2(432, 432)
 
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("3_ycf23")]
-position = Vector2(589, 372)
+position = Vector2(592, 376)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(837, 589)
+position = Vector2(840, 584)
 
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(1023, 589)
+position = Vector2(1024, 584)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange3" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(651, 372)
+position = Vector2(656, 376)
 rotation = 1.5707964
 
 [node name="RessortChange4" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(868, 372)
+position = Vector2(872, 376)
 rotation = -1.5707964
 
 [node name="BlocChange3" parent="Level elements" instance=ExtResource("3_ycf23")]
-position = Vector2(93, 527)
+position = Vector2(96, 520)
+
+[node name="PicsNormal" parent="Level elements" instance=ExtResource("6_uh3ll")]
+position = Vector2(464, 584)
+
+[node name="RessortNormal" parent="Level elements" instance=ExtResource("7_4lw2e")]
+position = Vector2(728, 584)

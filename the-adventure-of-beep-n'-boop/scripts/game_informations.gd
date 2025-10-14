@@ -22,6 +22,10 @@ func _process(_delta: float) -> void:
 		listOfPicsChanges = get_tree().get_nodes_in_group("PicsChange")
 		for i in listOfPicsChanges: 
 			i.switch_state()
+		
+		listOfPicsChanges = get_tree().get_nodes_in_group("RessortChange")
+		for i in listOfPicsChanges: 
+			i.switch_state()
 			
 		listOfPlayer = get_tree().get_nodes_in_group("Player")
 		for i in listOfPlayer: 
