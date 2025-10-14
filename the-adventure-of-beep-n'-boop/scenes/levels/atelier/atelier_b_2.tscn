@@ -14,7 +14,7 @@ scenes/1/scene = ExtResource("3_ft7ly")
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetScenesCollectionSource_cwqxc")
 
-[node name="villeenruines_b_2" type="Node2D"]
+[node name="atelier_b_2" type="Node2D"]
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 
@@ -39,13 +39,11 @@ position = Vector2(1120, 272)
 position = Vector2(1168, 272)
 TO_WHICH_WORLD_DOES_IT_LEADS = "VILLEENRUINES"
 TO_WHICH_SECTION_DOES_IT_LEADS = "B"
-TO_WHICH_LEVEL_DOES_IT_LEADS = "3"
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_ft7ly")]
 position = Vector2(-16, 464)
 TO_WHICH_WORLD_DOES_IT_LEADS = "VILLEENRUINES"
 TO_WHICH_SECTION_DOES_IT_LEADS = "B"
-TO_WHICH_LEVEL_DOES_IT_LEADS = "1"
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
