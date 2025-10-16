@@ -21,7 +21,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_cwqxc")
 position = Vector2(48, 368)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
-rotation = -1.5707964
+rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
@@ -51,11 +51,13 @@ TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("4_m65s8")]
 position = Vector2(160, 288)
-rotation = 1.5707964
+rotation = 1.5708
+RESSORT_DIRECTION = 3
 
 [node name="RessortNormal2" parent="Level elements" instance=ExtResource("4_m65s8")]
 position = Vector2(960, 384)
-rotation = 1.5707964
+rotation = 1.5708
+RESSORT_DIRECTION = 3
 
 [node name="PicsNormal" parent="Level elements" instance=ExtResource("3_i0hj7")]
 position = Vector2(256, 576)
@@ -74,15 +76,15 @@ position = Vector2(512, 576)
 
 [node name="PicsNormal6" parent="Level elements" instance=ExtResource("3_i0hj7")]
 position = Vector2(736, 256)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="PicsNormal7" parent="Level elements" instance=ExtResource("3_i0hj7")]
 position = Vector2(1024, 352)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="PicsNormal8" parent="Level elements" instance=ExtResource("3_i0hj7")]
 position = Vector2(1024, 512)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="PicsNormal9" parent="Level elements" instance=ExtResource("3_i0hj7")]
 position = Vector2(960, 576)

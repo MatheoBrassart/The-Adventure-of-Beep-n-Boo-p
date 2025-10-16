@@ -17,7 +17,8 @@ var direction = Input.get_axis("move_left", "move_right")
 
 # Animations
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
-@onready var spriteBoop: Sprite2D = $SpriteBoop
+@onready var animatedSpriteBoop: AnimatedSprite2D = $SpriteBoop
+@onready var rightSprite: AnimatedSprite2D = $SpriteBeep
 
 # Variable that activates when the player hits a ressort
 var HIT_RESSORT = false
@@ -37,9 +38,11 @@ func _ready() -> void:
 	# When appearing, hides the incorrect sprite and set the correct one as rightSprite
 	if CURRENT_ACTIVE_CHARACTER == 0:
 		animatedSpriteBeep.show()
-		spriteBoop.hide()
+		rightSprite = animatedSpriteBeep
+		animatedSpriteBoop.hide()
 	else:
-		spriteBoop.show()
+		animatedSpriteBoop.show()
+		rightSprite = animatedSpriteBoop
 		animatedSpriteBeep.hide()
 
 
@@ -72,20 +75,22 @@ func _physics_process(delta: float) -> void:
 	#Flip the sprite
 	if direction > 0:
 		animatedSpriteBeep.flip_h = false
+		animatedSpriteBoop.flip_h = false
 	elif direction < 0:
 		animatedSpriteBeep.flip_h = true
+		animatedSpriteBoop.flip_h = true
 	
 	#Play animations
 	if is_on_floor():
 		if direction == 0:
-			animatedSpriteBeep.play("idle")
-		else:animatedSpriteBeep.play("run")
+			rightSprite.play("idle")
+		else:rightSprite.play("run")
 			
 	else:
 		if velocity.y < 0:
-			animatedSpriteBeep.play("jump")
+			rightSprite.play("jump")
 		else:
-			animatedSpriteBeep.play("fall")
+			rightSprite.play("fall")
 
 
 func handle_input() -> void:
@@ -112,13 +117,15 @@ func switch_to_beep():
 	
 	CURRENT_ACTIVE_CHARACTER = 0
 	animatedSpriteBeep.show()
-	spriteBoop.hide()
+	rightSprite = animatedSpriteBeep
+	animatedSpriteBoop.hide()
 
 
 func switch_to_boop():
 	
 	CURRENT_ACTIVE_CHARACTER = 1
-	spriteBoop.show()
+	animatedSpriteBoop.show()
+	rightSprite = animatedSpriteBoop
 	animatedSpriteBeep.hide()
 
 

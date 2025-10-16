@@ -6,6 +6,9 @@ extends Area2D
 # Power of the ressort
 const RESSORT_VELOCITY = 900.0
 
+# Define the direction of the ressort. 1 = up, 2 = down, 3 = left, 4 = right
+@export var RESSORT_DIRECTION = 1
+
 
 func _ready() -> void:
 	
@@ -18,9 +21,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") == true:
 		animatedSprite2D.play("used")
 		body.hit_ressort()
-		if ressortNormal2D.rotation_degrees == 0:
+		if RESSORT_DIRECTION == 1:
 			body.velocity.y = RESSORT_VELOCITY * -1
-		elif ressortNormal2D.rotation_degrees == 90:
+		elif RESSORT_DIRECTION == 3:
 			body.velocity.x = move_toward(body.velocity.x, RESSORT_VELOCITY, RESSORT_VELOCITY )
-		elif ressortNormal2D.rotation_degrees == -90:
+		elif RESSORT_DIRECTION == 4:
 			body.velocity.x = move_toward(body.velocity.x, RESSORT_VELOCITY * -1, RESSORT_VELOCITY)

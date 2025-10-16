@@ -14,15 +14,15 @@
 
 [node name="Player Spawners" type="Node2D" parent="."]
 position = Vector2(548.7, 308.6)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="Player" parent="Player Spawners" instance=ExtResource("1_jp5fc")]
-position = Vector2(221.60004, -484.7)
-rotation = 1.5707964
+position = Vector2(221.6, -484.7)
+rotation = 1.5708
 
 [node name="PlayerSpawn1" type="Node2D" parent="Player Spawners" groups=["PlayerSpawn1"]]
-position = Vector2(-218.40002, 381.3)
-rotation = 1.5707964
+position = Vector2(-218.4, 381.3)
+rotation = 1.5708
 
 [node name="Level switchers" type="Node2D" parent="."]
 
@@ -31,7 +31,7 @@ position = Vector2(1116, 589)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(548.7, 308.6)
-rotation = -1.5707964
+rotation = -1.5708
 zoom = Vector2(1.75, 1.75)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -73,11 +73,13 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange3" parent="Level elements" instance=ExtResource("4_4ptlp")]
 position = Vector2(656, 376)
-rotation = 1.5707964
+rotation = 1.5708
+RESSORT_DIRECTION = 3
 
 [node name="RessortChange4" parent="Level elements" instance=ExtResource("4_4ptlp")]
 position = Vector2(872, 376)
-rotation = -1.5707964
+rotation = -1.5708
+RESSORT_DIRECTION = 4
 
 [node name="BlocChange3" parent="Level elements" instance=ExtResource("3_ycf23")]
 position = Vector2(96, 520)
@@ -86,4 +88,4 @@ position = Vector2(96, 520)
 position = Vector2(464, 584)
 
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("7_4lw2e")]
-position = Vector2(728, 584)
+position = Vector2(96, 456)

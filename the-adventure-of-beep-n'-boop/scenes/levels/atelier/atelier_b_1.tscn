@@ -21,7 +21,7 @@ position = Vector2(32, 464)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
 position = Vector2(543, -144)
-rotation = -1.5707964
+rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0

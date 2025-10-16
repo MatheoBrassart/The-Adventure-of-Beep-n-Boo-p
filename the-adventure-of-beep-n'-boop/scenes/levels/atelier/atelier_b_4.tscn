@@ -22,7 +22,7 @@ position = Vector2(32, 464)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
 position = Vector2(543, -144)
-rotation = -1.5707964
+rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
@@ -53,7 +53,7 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange2" parent="Level switchers" instance=ExtResource("3_5hhho")]
 position = Vector2(224, 320)
-rotation = 3.1415927
+rotation = 3.14159
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange3" parent="Level switchers" instance=ExtResource("3_5hhho")]
@@ -61,7 +61,7 @@ position = Vector2(416, 480)
 
 [node name="PicsChange4" parent="Level switchers" instance=ExtResource("3_5hhho")]
 position = Vector2(416, 448)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="Level elements" type="Node2D" parent="."]
 

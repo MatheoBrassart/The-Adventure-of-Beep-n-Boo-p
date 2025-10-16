@@ -24,7 +24,7 @@ position = Vector2(32, 272)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
 position = Vector2(415, -80)
-rotation = -1.5707964
+rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
@@ -53,8 +53,9 @@ TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
 [node name="RessortChange" parent="Level elements" instance=ExtResource("4_klfxo")]
 position = Vector2(96, 192)
-rotation = 1.5707964
+rotation = 1.5708
 WHICH_CHARACTER_IS_IT = 1
+RESSORT_DIRECTION = 3
 
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("4_klfxo")]
 position = Vector2(640, 320)
@@ -132,33 +133,33 @@ position = Vector2(992, 320)
 
 [node name="PicsChange9" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(800, 448)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="PicsChange10" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(864, 448)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="PicsChange11" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(928, 448)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="PicsChange12" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(992, 448)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="PicsChange2" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(416, 192)
-rotation = 1.5707964
+rotation = 1.5708
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange3" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(288, 192)
-rotation = -1.5707964
+rotation = -1.5708
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange4" parent="Level elements" instance=ExtResource("4_ayc77")]
 position = Vector2(352, 256)
-rotation = 3.1415927
+rotation = 3.14159
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsNormal7" parent="Level elements" instance=ExtResource("7_nlaki")]

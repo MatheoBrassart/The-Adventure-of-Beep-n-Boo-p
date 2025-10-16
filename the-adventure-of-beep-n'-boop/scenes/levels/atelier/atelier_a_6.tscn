@@ -22,7 +22,7 @@ position = Vector2(48, 432)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
 position = Vector2(559, -144)
-rotation = -1.5707964
+rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
@@ -57,35 +57,35 @@ position = Vector2(640, 256)
 
 [node name="PicsNormal6" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(320, 448)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="PicsNormal11" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(704, 448)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="PicsNormal12" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(704, 384)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="PicsNormal13" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(704, 320)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="PicsNormal8" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(576, 448)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="PicsNormal9" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(576, 384)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="PicsNormal10" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(576, 320)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="PicsNormal7" parent="Level elements" instance=ExtResource("4_2xo5x")]
 position = Vector2(192, 448)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("3_ndt72")]
 position = Vector2(544, 448)
