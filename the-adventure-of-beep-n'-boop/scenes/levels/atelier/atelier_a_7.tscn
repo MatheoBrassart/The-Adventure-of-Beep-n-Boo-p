@@ -37,8 +37,8 @@ position = Vector2(1328, 432)
 [node name="level_switcher" parent="Level switchers" instance=ExtResource("2_mr635")]
 position = Vector2(1392, 432)
 TO_WHICH_WORLD_DOES_IT_LEADS = "atelier"
-TO_WHICH_SECTION_DOES_IT_LEADS = "a"
-TO_WHICH_LEVEL_DOES_IT_LEADS = 8
+TO_WHICH_SECTION_DOES_IT_LEADS = "b"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 1
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_mr635")]
 position = Vector2(-16, 368)
