@@ -29,6 +29,9 @@ var HIT_RESSORT = false
 # Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
 var multiHitboxDeathFixer = 0
 
+# Defines when the player can or can't move
+var CAN_MOVE: bool = true
+
 
 func _ready() -> void:
 	
@@ -56,6 +59,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		ACCELERATION = 50
 		HIT_RESSORT = false
+	
+	# If the player can't move, stop all input possibilities
+	if CAN_MOVE == false:
+		rightSprite.play("idle")
+		return
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():

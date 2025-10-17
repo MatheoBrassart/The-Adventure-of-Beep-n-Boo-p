@@ -16,7 +16,7 @@ const RESSORT_VELOCITY = 900.0
 
 @onready var ressortChange2D: Area2D = $"."
 
-# Define the direction of the ressort. 1 = up, 2 = down, 3 = left, 4 = right
+# Defines the direction of the ressort. 1 = up, 2 = down, 3 = left, 4 = right
 @export var RESSORT_DIRECTION = 1
 
 var ISACTIVE = 1
