@@ -398,28 +398,32 @@ position = Vector2(320, 32)
 [node name="PicsChange8" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(384, 32)
 
-[node name="PicsChange11" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(576, -96)
-rotation = 3.1415927
-
 [node name="PicsChange12" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(576, -224)
+position = Vector2(512, -224)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange13" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(640, -224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange14" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(320, -224)
+position = Vector2(384, -224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange16" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(256, -224)
+position = Vector2(320, -224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange17" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(832, -224)
+position = Vector2(768, -224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange21" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(768, -736)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange31" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(704, -736)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange24" parent="Level elements" instance=ExtResource("5_2camj")]
@@ -450,40 +454,81 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(384, -736)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="PicsChange42" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(448, -736)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="PicsChange18" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(896, -224)
+position = Vector2(832, -224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange19" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(960, -480)
+position = Vector2(1088, -480)
 
 [node name="PicsChange20" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(896, -480)
+position = Vector2(1024, -480)
+
+[node name="PicsChange37" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(960, -480)
 
 [node name="PicsChange22" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(960, -608)
+position = Vector2(768, -608)
 rotation = 3.1415927
 
 [node name="PicsChange23" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(896, -608)
+position = Vector2(704, -608)
 rotation = 3.1415927
 
 [node name="PicsChange26" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(256, -480)
-
-[node name="PicsChange27" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(192, -480)
 
-[node name="PicsChange29" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(256, -608)
-rotation = 3.1415927
+[node name="PicsChange38" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(384, -480)
 
-[node name="PicsChange31" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(576, -608)
+[node name="PicsChange39" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(448, -480)
+
+[node name="BlocChange69" parent="Level elements" instance=ExtResource("4_2l8v4")]
+position = Vector2(576, -832)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange43" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(576, -896)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange44" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(576, -768)
+rotation = 3.1415927
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange45" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(640, -832)
+rotation = 1.5707964
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange46" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(512, -832)
+rotation = -1.5707964
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange40" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(704, -480)
+
+[node name="PicsChange41" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(768, -480)
+
+[node name="PicsChange27" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(128, -480)
+
+[node name="PicsChange36" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(64, -480)
+
+[node name="PicsChange29" parent="Level elements" instance=ExtResource("5_2camj")]
+position = Vector2(448, -608)
 rotation = 3.1415927
 
 [node name="PicsChange30" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(192, -608)
+position = Vector2(384, -608)
 rotation = 3.1415927
 
 [node name="PicsChange9" parent="Level elements" instance=ExtResource("5_2camj")]
