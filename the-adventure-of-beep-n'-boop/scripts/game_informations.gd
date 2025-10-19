@@ -11,6 +11,9 @@ var listOfLevels = [LEVELTEST_1, LEVELTEST_2]
 var WHERE_TO_RESPAWN_PLAYER = 0
 var WHICH_CHARACTER_TO_RESPAWN = 0
 
+# ----- Progress variables for dialogues and cutscenes -----
+var CUTSCENE_BeepReveil: bool = false
+
 func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("switch_character"):

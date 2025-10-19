@@ -8,13 +8,14 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	print("a")
 	if WHICH_TUTORIAL == "move":
 		animation.play("move")
 	elif WHICH_TUTORIAL == "jump":
 		animation.play("jump")
 	elif WHICH_TUTORIAL == "changemoi":
 		animation.play("changemoi")
+	elif WHICH_TUTORIAL == "longressortjump":
+		animation.play("longressortjump")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

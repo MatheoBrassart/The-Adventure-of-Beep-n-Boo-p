@@ -68,6 +68,16 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(576, 352)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="BlocChange10" parent="Level elements" instance=ExtResource("2_bfxit")]
+position = Vector2(256, 288)
+
+[node name="BlocChange11" parent="Level elements" instance=ExtResource("2_bfxit")]
+position = Vector2(896, 288)
+
+[node name="BlocChange12" parent="Level elements" instance=ExtResource("2_bfxit")]
+position = Vector2(576, 288)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="BlocChange5" parent="Level elements" instance=ExtResource("2_bfxit")]
 position = Vector2(576, 416)
 WHICH_CHARACTER_IS_IT = 1

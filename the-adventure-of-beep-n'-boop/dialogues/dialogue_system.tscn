@@ -3,21 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_1eml3"]
 [ext_resource type="Script" uid="uid://b261dh5plxltd" path="res://scripts/dialogue_system.gd" id="1_xnnjv"]
 
-[sub_resource type="Animation" id="Animation_xnnjv"]
-resource_name = "scroll"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Message:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_v4n8t"]
 length = 0.001
 tracks/0/type = "value"
@@ -33,13 +18,28 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_xnnjv"]
+resource_name = "scroll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v4n8t"]
 _data = {
 &"RESET": SubResource("Animation_v4n8t"),
 &"scroll": SubResource("Animation_xnnjv")
 }
 
-[node name="dialogueSystem" type="Control"]
+[node name="dialogueSystem" type="Control" groups=["DialogueSystem"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_xnnjv")

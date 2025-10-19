@@ -25,6 +25,9 @@ var HIT_RESSORT = false
 
 # Get the global game informations scene
 @onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
+# Get the global dialogue system scene
+@onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
+var CURRENT_ACTIVE_DIALOGUE = "0"
 
 # Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
 var multiHitboxDeathFixer = 0
@@ -37,6 +40,9 @@ func _ready() -> void:
 	
 	# Check at which location the player should spawn/respawn and which character should the player be respawn as
 	check_respawn_informations()
+	
+	# Check if a cutscene should be played
+	check_cutscene_informations()
 	
 	# When appearing, hides the incorrect sprite and set the correct one as rightSprite
 	if CURRENT_ACTIVE_CHARACTER == 0:
@@ -160,3 +166,18 @@ func check_respawn_informations():
 	# Gets the last active character, and respawn the player as them
 	if gameInformations.WHICH_CHARACTER_TO_RESPAWN == 1:
 		CURRENT_ACTIVE_CHARACTER = 1
+
+
+func check_cutscene_informations():
+	
+	if get_tree().get_current_scene().get_name() == "atelier_a_1":
+		if gameInformations.CUTSCENE_BeepReveil == false:
+			gameInformations.CUTSCENE_BeepReveil = true
+			CURRENT_ACTIVE_DIALOGUE = "BeepReveil"
+			CAN_MOVE = false
+			dialogueSystem.play_dialogue("BeepReveil", 0)
+
+func finished_dialogue():
+	
+	if CURRENT_ACTIVE_DIALOGUE == "BeepReveil":
+		CAN_MOVE = true
