@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bymn7h2gre4h0"
-path="res://.godot/imported/BeepSpritesheet.png-fb328197ba3426b5e32fbac97697326e.ctex"
+uid="uid://ckvvf1u5nvppb"
+path="res://.godot/imported/BlocPicsRessortChange.png-f6c542a166263413f24c442ee04abcd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BeepSpritesheet.png"
-dest_files=["res://.godot/imported/BeepSpritesheet.png-fb328197ba3426b5e32fbac97697326e.ctex"]
+source_file="res://assets/textures/BlocPicsRessortChange.png"
+dest_files=["res://.godot/imported/BlocPicsRessortChange.png-f6c542a166263413f24c442ee04abcd3.ctex"]
 
 [params]
 

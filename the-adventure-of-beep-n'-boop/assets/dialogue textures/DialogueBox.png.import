@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckvvf1u5nvppb"
-path="res://.godot/imported/BlocPicsRessortChange.png-959e125b98d7e9d40426026d0b12cc27.ctex"
+uid="uid://c7q4dtpekmlw4"
+path="res://.godot/imported/DialogueBox.png-1537d753784c8b43d8a15c09906fd0ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BlocPicsRessortChange.png"
-dest_files=["res://.godot/imported/BlocPicsRessortChange.png-959e125b98d7e9d40426026d0b12cc27.ctex"]
+source_file="res://assets/dialogue textures/DialogueBox.png"
+dest_files=["res://.godot/imported/DialogueBox.png-1537d753784c8b43d8a15c09906fd0ee.ctex"]
 
 [params]
 

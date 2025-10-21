@@ -1,9 +1,11 @@
 extends Control
 
-@onready var characterRichTextLabel: RichTextLabel = $CanvasLayer/NinePatchRect/Character
-@onready var messageRichTextLabel: RichTextLabel = $CanvasLayer/NinePatchRect/Message
-@onready var nine_patch_rect: NinePatchRect = $CanvasLayer/NinePatchRect
-@onready var animation_player: AnimationPlayer = $CanvasLayer/NinePatchRect/AnimationPlayer
+@onready var characterRichTextLabel: RichTextLabel = $CanvasLayer/DialogueBox/NinePatchRect/TopBit/Character
+@onready var messageRichTextLabel: RichTextLabel = $CanvasLayer/DialogueBox/NinePatchRect/Message
+@onready var nine_patch_rect: NinePatchRect = $CanvasLayer/DialogueBox/NinePatchRect
+@onready var animation_player_messageCreation: AnimationPlayer = $CanvasLayer/DialogueBox/AnimationPlayerMessageCreation
+@onready var animation_player_boxApparition: AnimationPlayer = $CanvasLayer/DialogueBox/AnimationPlayerBoxApparition
+@onready var dialogue_box: Control = $CanvasLayer/DialogueBox
 
 var CURRENT_DIALOGUE_KEY: String = "0"
 var CURRENT_DIALOGUE_LINE: int = 0
@@ -23,6 +25,8 @@ func play_dialogue(dialogueKey: String, line: int):
 	
 	if IS_DIALOGUE_ONGOING == false:
 		IS_DIALOGUE_ONGOING = true
+		dialogue_box.visible = true
+		animation_player_boxApparition.play("dialogueBoxApparition")
 	
 	# Sets the dialogue box to visible and the texts to the mentioned keys and lines.
 	nine_patch_rect.visible = true
@@ -35,8 +39,8 @@ func play_dialogue(dialogueKey: String, line: int):
 	
 	# Checks the number of characters in the message, sets the apparition speed and plays the message apparition animation
 	NUMBER_OF_CHARACTERS = DIALOGUE_LIST[CURRENT_DIALOGUE_KEY][str(CURRENT_DIALOGUE_LINE)]["Message"].length()
-	animation_player.speed_scale = 1 + (NUMBER_OF_CHARACTERS / 100)
-	animation_player.play("scroll")
+	animation_player_messageCreation.speed_scale = 1 + (NUMBER_OF_CHARACTERS / 100)
+	animation_player_messageCreation.play("scroll")
 
 
 func _process(_delta: float) -> void:
@@ -49,7 +53,12 @@ func _process(_delta: float) -> void:
 			# If no, ends the dialogue.
 			else:
 				IS_DIALOGUE_ONGOING = false
-				nine_patch_rect.visible = false
+				animation_player_boxApparition.play("dialogueBoxDisparition")
 				var player = get_tree().get_first_node_in_group("Player")
 				player.finished_dialogue()
 		
+
+func _on_animation_player_box_apparition_animation_finished(anim_name: StringName) -> void:
+	
+	if anim_name == "dialogueBoxDisparition":
+		dialogue_box.visible = false

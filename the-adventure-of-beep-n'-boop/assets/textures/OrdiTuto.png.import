@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csv04krg2a2fx"
-path="res://.godot/imported/OrdiTuto.png-ff7af532b5d9bc067a15f5794c13769f.ctex"
+path="res://.godot/imported/OrdiTuto.png-8b40a2b01867e2beaa7c9013d60cf76d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/OrdiTuto.png"
-dest_files=["res://.godot/imported/OrdiTuto.png-ff7af532b5d9bc067a15f5794c13769f.ctex"]
+source_file="res://assets/textures/OrdiTuto.png"
+dest_files=["res://.godot/imported/OrdiTuto.png-8b40a2b01867e2beaa7c9013d60cf76d.ctex"]
 
 [params]
 
