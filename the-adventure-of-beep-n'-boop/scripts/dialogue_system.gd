@@ -3,7 +3,6 @@ extends Control
 @onready var characterRichTextLabel: RichTextLabel = $CanvasLayer/DialogueBox/NinePatchRect/TopBit/Character
 @onready var messageRichTextLabel: RichTextLabel = $CanvasLayer/DialogueBox/NinePatchRect/Message
 @onready var nine_patch_rect: NinePatchRect = $CanvasLayer/DialogueBox/NinePatchRect
-@onready var animation_player_messageCreation: AnimationPlayer = $CanvasLayer/DialogueBox/AnimationPlayerMessageCreation
 @onready var animation_player_boxApparition: AnimationPlayer = $CanvasLayer/DialogueBox/AnimationPlayerBoxApparition
 @onready var dialogue_box: Control = $CanvasLayer/DialogueBox
 @onready var animated_sprite_faces: AnimatedSprite2D = $CanvasLayer/DialogueBox/NinePatchRect/Faces
@@ -27,8 +26,8 @@ var DIALOGUE_LIST: Dictionary = {
 		"1" = {"Character": "Beep", "Message": "Qu... Qu’est-ce qu’il se passe ? Y’a quelqu'un ?", "face": "beepAnxious", "NumberOfRemainingLines": 0}
 	},
 	"PlaceholderBoopReveil" = {
-		"0" = {"Character": "Le créateur", "Message": "Bon, normalement ici il y aura une cutscene pour le réveil de Boop, et le tutoriel de Change-moi.", "face": "leCreateur", "NumberOfRemainingLines": 4},
-		"1" = {"Character": "Boop", "Message": "C'est moi.", "face": "nothing", "NumberOfRemainingLines": 3},
+		"0" = {"Character": "Le créateur", "Message": "Bon, normalement ici il est sensé il y avoir une cutscene pour le réveil de Boop, et le tutoriel de Change-moi.", "face": "leCreateur", "NumberOfRemainingLines": 4},
+		"1" = {"Character": "Boop", "Message": "C'est moi.", "face": "boopBored", "NumberOfRemainingLines": 3},
 		"2" = {"Character": "Le créateur", "Message": "Elle sera faite dans le futur, puisque je n'avais pas eu le temps de la faire ces derniers jours...", "face": "leCreateur", "NumberOfRemainingLines": 2},
 		"3" = {"Character": "Beep", "Message": "En vrais il a joué à team fortress toute la journée, donc bon.", "face": "beep3Mouth", "NumberOfRemainingLines": 1},
 		"4" = {"Character": "Le créateur", "Message": "... Bref, le chemin est ouvert, et la suite de cette démo vous attend!", "face": "leCreateur", "NumberOfRemainingLines": 0}

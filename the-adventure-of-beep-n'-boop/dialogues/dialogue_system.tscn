@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://i20mbmoid2qo"]
+[gd_scene load_steps=23 format=3 uid="uid://i20mbmoid2qo"]
 
 [ext_resource type="Script" uid="uid://b261dh5plxltd" path="res://scripts/dialogue_system.gd" id="1_xnnjv"]
 [ext_resource type="Texture2D" uid="uid://c7q4dtpekmlw4" path="res://assets/dialogue textures/DialogueBox.png" id="2_v4n8t"]
@@ -18,6 +18,14 @@ region = Rect2(328, 0, 164, 164)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h75r6"]
 atlas = ExtResource("4_wwosp")
 region = Rect2(164, 0, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aayg1"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(328, 164, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ihm2"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(164, 164, 164, 164)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35u7t"]
 atlas = ExtResource("4_wwosp")
@@ -51,6 +59,22 @@ animations = [{
 }],
 "loop": false,
 "name": &"beepNeutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aayg1")
+}],
+"loop": false,
+"name": &"boopBored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ihm2")
+}],
+"loop": false,
+"name": &"boopNeutral",
 "speed": 5.0
 }, {
 "frames": [{
@@ -103,54 +127,6 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
-
-[sub_resource type="Animation" id="Animation_v4n8t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Message:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_xnnjv"]
-resource_name = "scroll"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Message:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v4n8t"]
-_data = {
-&"RESET": SubResource("Animation_v4n8t"),
-&"scroll": SubResource("Animation_xnnjv")
-}
 
 [sub_resource type="Animation" id="Animation_h75r6"]
 length = 0.001
@@ -318,18 +294,12 @@ visible_ratio = 0.0
 [node name="Faces" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(120, 96)
 sprite_frames = SubResource("SpriteFrames_x2b6m")
-animation = &"leCreateur"
+animation = &"boopBored"
 
 [node name="BarreEspace" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(1296, 168)
 sprite_frames = SubResource("SpriteFrames_wwosp")
 animation = &"active"
-
-[node name="AnimationPlayerMessageCreation" type="AnimationPlayer" parent="CanvasLayer/DialogueBox"]
-root_node = NodePath("../NinePatchRect")
-libraries = {
-&"": SubResource("AnimationLibrary_v4n8t")
-}
 
 [node name="AnimationPlayerBoxApparition" type="AnimationPlayer" parent="CanvasLayer/DialogueBox"]
 libraries = {
@@ -341,5 +311,4 @@ stream = ExtResource("6_qn5j1")
 volume_db = -5.0
 pitch_scale = 0.75
 
-[connection signal="animation_finished" from="CanvasLayer/DialogueBox/AnimationPlayerMessageCreation" to="." method="_on_animation_player_message_creation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/DialogueBox/AnimationPlayerBoxApparition" to="." method="_on_animation_player_box_apparition_animation_finished"]
