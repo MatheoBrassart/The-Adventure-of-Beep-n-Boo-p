@@ -19,6 +19,7 @@ var direction = Input.get_axis("move_left", "move_right")
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
 @onready var animatedSpriteBoop: AnimatedSprite2D = $SpriteBoop
 @onready var rightSprite: AnimatedSprite2D = $SpriteBeep
+@onready var animatedSpriteChangeMoi: AnimatedSprite2D = $SpriteChangeMoi
 
 # Variable that activates when the player hits a ressort
 var HIT_RESSORT = false
@@ -120,6 +121,8 @@ func handle_input() -> void:
 
 func switch_character():
 	
+	animatedSpriteChangeMoi.visible = true
+	animatedSpriteChangeMoi.play("active")
 	# Checks which character is currently active, and switch to the other one
 	if CURRENT_ACTIVE_CHARACTER == 0:
 		switch_to_boop()
