@@ -1,9 +1,108 @@
-[gd_scene load_steps=12 format=3 uid="uid://i20mbmoid2qo"]
+[gd_scene load_steps=24 format=3 uid="uid://i20mbmoid2qo"]
 
 [ext_resource type="Script" uid="uid://b261dh5plxltd" path="res://scripts/dialogue_system.gd" id="1_xnnjv"]
 [ext_resource type="Texture2D" uid="uid://c7q4dtpekmlw4" path="res://assets/dialogue textures/DialogueBox.png" id="2_v4n8t"]
 [ext_resource type="FontFile" uid="uid://cbj8usx8wede3" path="res://assets/fonts/BoldPixels.ttf" id="3_v4n8t"]
 [ext_resource type="Texture2D" uid="uid://celsjhsmbg37n" path="res://assets/dialogue textures/DialogueFacesBox.png" id="4_wwosp"]
+[ext_resource type="Texture2D" uid="uid://jprrxqg036j6" path="res://assets/dialogue textures/EspaceDialogueSuivant.png" id="5_h75r6"]
+[ext_resource type="AudioStream" uid="uid://cfohpp6dcnp7u" path="res://assets/sounds/CharacterVoices.wav" id="6_qn5j1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss2tw"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(492, 0, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwosp"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(328, 0, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h75r6"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(164, 0, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35u7t"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(164, 328, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn5j1"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(0, 0, 164, 164)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2b6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss2tw")
+}],
+"loop": false,
+"name": &"beep3Mouth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwosp")
+}],
+"loop": false,
+"name": &"beepAnxious",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h75r6")
+}],
+"loop": false,
+"name": &"beepNeutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35u7t")
+}],
+"loop": false,
+"name": &"leCreateur",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn5j1")
+}],
+"loop": false,
+"name": &"nothing",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2b6m"]
+atlas = ExtResource("5_h75r6")
+region = Rect2(0, 0, 200, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nyol"]
+atlas = ExtResource("5_h75r6")
+region = Rect2(200, 0, 200, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l8er"]
+atlas = ExtResource("5_h75r6")
+region = Rect2(0, 100, 200, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwosp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2b6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nyol")
+}],
+"loop": true,
+"name": &"active",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l8er")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="Animation" id="Animation_v4n8t"]
 length = 0.001
@@ -119,7 +218,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1.15, 1),
+"transitions": PackedFloat32Array(1.5, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1e-05, 1)]
 }
@@ -131,7 +230,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(2, 1),
+"transitions": PackedFloat32Array(6, 1),
 "update": 0,
 "values": [Vector2(960, 200), Vector2(960, 300)]
 }
@@ -151,7 +250,6 @@ script = ExtResource("1_xnnjv")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -217,9 +315,15 @@ visible_characters = 0
 visible_characters_behavior = 1
 visible_ratio = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
+[node name="Faces" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(120, 96)
-texture = ExtResource("4_wwosp")
+sprite_frames = SubResource("SpriteFrames_x2b6m")
+animation = &"leCreateur"
+
+[node name="BarreEspace" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
+position = Vector2(1296, 168)
+sprite_frames = SubResource("SpriteFrames_wwosp")
+animation = &"active"
 
 [node name="AnimationPlayerMessageCreation" type="AnimationPlayer" parent="CanvasLayer/DialogueBox"]
 root_node = NodePath("../NinePatchRect")
@@ -232,4 +336,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_qn5j1")
 }
 
+[node name="CharacterVoices" type="AudioStreamPlayer" parent="CanvasLayer/DialogueBox"]
+stream = ExtResource("6_qn5j1")
+volume_db = -5.0
+pitch_scale = 0.75
+
+[connection signal="animation_finished" from="CanvasLayer/DialogueBox/AnimationPlayerMessageCreation" to="." method="_on_animation_player_message_creation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/DialogueBox/AnimationPlayerBoxApparition" to="." method="_on_animation_player_box_apparition_animation_finished"]

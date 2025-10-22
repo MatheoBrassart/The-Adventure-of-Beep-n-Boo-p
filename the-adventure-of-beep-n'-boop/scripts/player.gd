@@ -26,9 +26,10 @@ var HIT_RESSORT = false
 
 # Get the global game informations scene
 @onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
-# Get the global dialogue system scene
+# Get the global dialogue system scene and dialogue-related variables
 @onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
 var CURRENT_ACTIVE_DIALOGUE = "0"
+var HAS_TO_PLAY_DIALOGUE: bool = false
 
 # Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
 var multiHitboxDeathFixer = 0
@@ -91,9 +92,11 @@ func _physics_process(delta: float) -> void:
 	if direction > 0:
 		animatedSpriteBeep.flip_h = false
 		animatedSpriteBoop.flip_h = false
+		animatedSpriteChangeMoi.flip_h = false
 	elif direction < 0:
 		animatedSpriteBeep.flip_h = true
 		animatedSpriteBoop.flip_h = true
+		animatedSpriteChangeMoi.flip_h = true
 	
 	#Play animations
 	if is_on_floor():
@@ -120,6 +123,9 @@ func handle_input() -> void:
 
 
 func switch_character():
+	
+	if CAN_MOVE == false:
+		return
 	
 	animatedSpriteChangeMoi.visible = true
 	animatedSpriteChangeMoi.play("active")
@@ -179,8 +185,20 @@ func check_cutscene_informations():
 			CURRENT_ACTIVE_DIALOGUE = "BeepReveil"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("BeepReveil", 0)
+	
+	if get_tree().get_current_scene().get_name() == "atelier_a_8" and HAS_TO_PLAY_DIALOGUE == true:
+		if gameInformations.CUTSCENE_BoopReveil == false:
+			gameInformations.CUTSCENE_BoopReveil = true
+			CURRENT_ACTIVE_DIALOGUE = "BoopReveil"
+			CAN_MOVE = false
+			dialogueSystem.play_dialogue("PlaceholderBoopReveil", 0)
 
 func finished_dialogue():
 	
 	if CURRENT_ACTIVE_DIALOGUE == "BeepReveil":
 		CAN_MOVE = true
+		HAS_TO_PLAY_DIALOGUE = false
+	
+	if CURRENT_ACTIVE_DIALOGUE == "BoopReveil":
+		CAN_MOVE = true
+		HAS_TO_PLAY_DIALOGUE = false

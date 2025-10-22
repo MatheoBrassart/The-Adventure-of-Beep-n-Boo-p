@@ -13,6 +13,7 @@ var WHICH_CHARACTER_TO_RESPAWN = 0
 
 # ----- Progress variables for dialogues and cutscenes -----
 var CUTSCENE_BeepReveil: bool = false
+var CUTSCENE_BoopReveil: bool = false
 
 func _process(_delta: float) -> void:
 	
