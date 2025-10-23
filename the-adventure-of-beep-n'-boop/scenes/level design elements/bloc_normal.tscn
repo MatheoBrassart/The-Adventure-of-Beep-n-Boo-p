@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5nxliw2rxo51"]
 
-[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_4y005"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="1_4y005"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
 size = Vector2(30, 30)
@@ -8,8 +8,9 @@ size = Vector2(30, 30)
 [node name="BlocNormal" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_4y005")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_i3sln")

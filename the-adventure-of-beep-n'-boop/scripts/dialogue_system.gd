@@ -29,7 +29,7 @@ var DIALOGUE_LIST: Dictionary = {
 		"0" = {"Character": "Le créateur", "Message": "Bon, normalement ici il est sensé il y avoir une cutscene pour le réveil de Boop, et le tutoriel de Change-moi.", "face": "leCreateur", "NumberOfRemainingLines": 4},
 		"1" = {"Character": "Boop", "Message": "C'est moi.", "face": "boopBored", "NumberOfRemainingLines": 3},
 		"2" = {"Character": "Le créateur", "Message": "Elle sera faite dans le futur, puisque je n'avais pas eu le temps de la faire ces derniers jours...", "face": "leCreateur", "NumberOfRemainingLines": 2},
-		"3" = {"Character": "Beep", "Message": "En vrais il a joué à team fortress toute la journée, donc bon.", "face": "beep3Mouth", "NumberOfRemainingLines": 1},
+		"3" = {"Character": "Beep", "Message": "En vrais il jouait à team fortress toute la journée, donc bon.", "face": "beep3Mouth", "NumberOfRemainingLines": 1},
 		"4" = {"Character": "Le créateur", "Message": "... Bref, le chemin est ouvert, et la suite de cette démo vous attend!", "face": "leCreateur", "NumberOfRemainingLines": 0}
 	},
 	"PlaceholderPremierEnregistrement" = {
@@ -39,7 +39,7 @@ var DIALOGUE_LIST: Dictionary = {
 		"3" = {"Character": "Le créateur", "Message": "Et donc, cette démo est fini. J'espère que vous l'avez apprécié!", "face": "leCreateur", "NumberOfRemainingLines": 3},
 		"4" = {"Character": "Le créateur", "Message": "Je continurai donc ce jeu durant l'année, en ajoutant toujours plus de nouveaux mondes et de nouvelles mécaniques.", "face": "leCreateur", "NumberOfRemainingLines": 2},
 		"5" = {"Character": "Le créateur", "Message": "N'hésitez pas à poser des questions si vous en avez.", "face": "leCreateur", "NumberOfRemainingLines": 1},
-		"6" = {"Character": "Beep", "Message": "A plus!", "face": "nothing", "NumberOfRemainingLines": 0}
+		"6" = {"Character": "Beep", "Message": "A plus!", "face": "beepHappy", "NumberOfRemainingLines": 0}
 	}
 }
 

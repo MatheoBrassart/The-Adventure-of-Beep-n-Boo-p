@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://y2smvpxhjemn"]
 
-[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_e628v"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_e628v"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_b4lhw"]
 [ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="3_x53y4"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="4_mloh3"]

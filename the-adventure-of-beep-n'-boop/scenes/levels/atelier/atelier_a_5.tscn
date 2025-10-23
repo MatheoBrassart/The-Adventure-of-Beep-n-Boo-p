@@ -1,10 +1,11 @@
 [gd_scene load_steps=8 format=4 uid="uid://dkikmci42jejf"]
 
-[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_14tgj"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_14tgj"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_w13ea"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="3_8g4q6"]
 [ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="4_14tgj"]
 [ext_resource type="PackedScene" uid="uid://c5nxliw2rxo51" path="res://scenes/level design elements/bloc_normal.tscn" id="4_feqoq"]
+
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cwqxc"]
 scenes/1/scene = ExtResource("4_feqoq")

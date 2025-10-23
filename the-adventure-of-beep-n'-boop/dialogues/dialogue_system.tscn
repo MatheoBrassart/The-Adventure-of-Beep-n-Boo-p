@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://i20mbmoid2qo"]
+[gd_scene load_steps=24 format=3 uid="uid://i20mbmoid2qo"]
 
 [ext_resource type="Script" uid="uid://b261dh5plxltd" path="res://scripts/dialogue_system.gd" id="1_xnnjv"]
 [ext_resource type="Texture2D" uid="uid://c7q4dtpekmlw4" path="res://assets/dialogue textures/DialogueBox.png" id="2_v4n8t"]
@@ -14,6 +14,10 @@ region = Rect2(492, 0, 164, 164)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwosp"]
 atlas = ExtResource("4_wwosp")
 region = Rect2(328, 0, 164, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7layy"]
+atlas = ExtResource("4_wwosp")
+region = Rect2(656, 0, 164, 164)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h75r6"]
 atlas = ExtResource("4_wwosp")
@@ -51,6 +55,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"beepAnxious",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7layy")
+}],
+"loop": false,
+"name": &"beepHappy",
 "speed": 5.0
 }, {
 "frames": [{
@@ -295,7 +307,7 @@ visible_ratio = 0.0
 [node name="Faces" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(120, 96)
 sprite_frames = SubResource("SpriteFrames_x2b6m")
-animation = &"boopBored"
+animation = &"beepHappy"
 
 [node name="BarreEspace" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(1296, 168)

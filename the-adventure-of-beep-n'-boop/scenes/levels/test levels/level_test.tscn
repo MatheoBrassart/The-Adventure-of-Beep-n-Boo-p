@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ehcj0v1qs0ab"]
 
-[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/player.tscn" id="1_jp5fc"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_jp5fc"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="2_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_ycf23"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="4_4ptlp"]
@@ -17,7 +17,7 @@ position = Vector2(548.7, 308.6)
 rotation = -1.5708
 
 [node name="Player" parent="Player Spawners" instance=ExtResource("1_jp5fc")]
-position = Vector2(221.6, -484.7)
+position = Vector2(-35.399567, -116.700134)
 rotation = 1.5708
 
 [node name="PlayerSpawn1" type="Node2D" parent="Player Spawners" groups=["PlayerSpawn1"]]

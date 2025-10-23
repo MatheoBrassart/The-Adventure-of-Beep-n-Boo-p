@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="The Adventure of Beep n' Boop"
-run/main_scene="uid://ehcj0v1qs0ab"
+run/main_scene="uid://cse168hvnqbry"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameInformations="*res://scenes/game_informations.tscn"
+GameInformations="*res://scenes/others/game_informations.tscn"
 DialogueSystem="*res://dialogues/dialogue_system.tscn"
-UiGeneral="*res://scenes/ui_general.tscn"
+UiGeneral="*res://scenes/others/ui_general.tscn"
 
 [dialogue_manager]
 

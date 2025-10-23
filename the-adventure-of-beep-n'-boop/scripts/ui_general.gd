@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 func activate_black_transition(body: Node2D):
 	
 	player = get_tree().get_first_node_in_group("Player")
+	player.CAN_MOVE = false
 	black_transition.position = player.position
 	surrounders.visible = true
 	black_transition_animated_sprite_2d.play("activating")
@@ -39,7 +40,9 @@ func deactivate_black_transition(_body: Node2D):
 func _on_transition_waiter_timeout() -> void:
 	
 	player = get_tree().get_first_node_in_group("Player")
+	player.CAN_MOVE = false
 	black_transition.position = player.position
 	black_transition_animated_sprite_2d.play("deactivating")
 	await black_transition_animated_sprite_2d.animation_finished
 	surrounders.visible = false
+	player.CAN_MOVE = true
