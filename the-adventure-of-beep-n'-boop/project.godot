@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameInformations="*res://scenes/game_informations.tscn"
 DialogueSystem="*res://dialogues/dialogue_system.tscn"
+UiGeneral="*res://scenes/ui_general.tscn"
 
 [dialogue_manager]
 
@@ -45,6 +46,7 @@ PlayerSpawn1=""
 RessortChange=""
 DialogueSystem=""
 OrdiTuto=""
+UIGeneral=""
 
 [input]
 
