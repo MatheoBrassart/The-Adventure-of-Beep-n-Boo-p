@@ -181,21 +181,18 @@ func check_cutscene_informations():
 	
 	if get_tree().get_current_scene().get_name() == "atelier_a_1":
 		if gameInformations.CUTSCENE_BeepReveil == false:
-			gameInformations.CUTSCENE_BeepReveil = true
 			CURRENT_ACTIVE_DIALOGUE = "BeepReveil"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("BeepReveil", 0)
 	
 	if get_tree().get_current_scene().get_name() == "atelier_a_8" and HAS_TO_PLAY_DIALOGUE == true:
 		if gameInformations.CUTSCENE_BoopReveil == false:
-			gameInformations.CUTSCENE_BoopReveil = true
 			CURRENT_ACTIVE_DIALOGUE = "BoopReveil"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("PlaceholderBoopReveil", 0)
 	
 	if get_tree().get_current_scene().get_name() == "atelier_b_9" and HAS_TO_PLAY_DIALOGUE == true:
 		if gameInformations.CUTSCENE_PremierEnregistrement == false:
-			gameInformations.CUTSCENE_PremierEnregistrement = true
 			CURRENT_ACTIVE_DIALOGUE = "PremierEnregistrement"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("PlaceholderPremierEnregistrement", 0)
@@ -203,13 +200,19 @@ func check_cutscene_informations():
 func finished_dialogue():
 	
 	if CURRENT_ACTIVE_DIALOGUE == "BeepReveil":
+		gameInformations.CUTSCENE_BeepReveil = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
+		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
+		ordiTuto.animation_player.play("tutoApparition")
+		ordiTuto.animation.play("move")
 	
 	if CURRENT_ACTIVE_DIALOGUE == "BoopReveil":
+		gameInformations.CUTSCENE_BoopReveil = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
 	
 	if CURRENT_ACTIVE_DIALOGUE == "PremierEnregistrement":
+		gameInformations.CUTSCENE_PremierEnregistrement = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false

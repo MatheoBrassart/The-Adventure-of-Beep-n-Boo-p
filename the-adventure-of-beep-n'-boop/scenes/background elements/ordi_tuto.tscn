@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgv3ax0yswi5t"]
+[gd_scene load_steps=16 format=3 uid="uid://bgv3ax0yswi5t"]
 
 [ext_resource type="Script" uid="uid://mjatmpd27ug6" path="res://scripts/ordi_tuto.gd" id="1_4frjg"]
 [ext_resource type="Texture2D" uid="uid://csv04krg2a2fx" path="res://assets/textures/OrdiTuto.png" id="1_p862o"]
@@ -34,6 +34,10 @@ region = Rect2(200, 200, 200, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbl8o"]
 atlas = ExtResource("1_p862o")
 region = Rect2(400, 200, 200, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pq31"]
+atlas = ExtResource("1_p862o")
+region = Rect2(0, 500, 200, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2558v"]
 animations = [{
@@ -80,9 +84,54 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pq31")
+}],
+"loop": false,
+"name": &"nothing",
+"speed": 1.0
 }]
 
-[node name="ordiTuto" type="Node2D"]
+[sub_resource type="Animation" id="Animation_4frjg"]
+resource_name = "tutoApparition"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kk2kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkknm"]
+_data = {
+&"RESET": SubResource("Animation_kk2kj"),
+&"tutoApparition": SubResource("Animation_4frjg")
+}
+
+[node name="ordiTuto" type="Node2D" groups=["OrdiTuto"]]
 script = ExtResource("1_4frjg")
 
 [node name="Screen" type="Sprite2D" parent="."]
@@ -94,3 +143,9 @@ region_rect = Rect2(38, 12, 124, 76)
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_2558v")
 animation = &"longressortjump"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Animation")
+libraries = {
+&"": SubResource("AnimationLibrary_nkknm")
+}
