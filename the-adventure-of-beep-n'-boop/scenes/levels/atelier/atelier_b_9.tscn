@@ -38,7 +38,7 @@ position = Vector2(1120, -752)
 [node name="Level switchers" type="Node2D" parent="."]
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_ol736")]
-position = Vector2(-16, 528)
+position = Vector2(-48, 528)
 TO_WHICH_WORLD_DOES_IT_LEADS = "atelier"
 TO_WHICH_SECTION_DOES_IT_LEADS = "b"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 8
@@ -541,5 +541,5 @@ tile_map_data = PackedByteArray("AAD+/xIAAAAAAAAAAQD//xIAAAAAAAAAAQAAABIAAAAAAAA
 tile_set = SubResource("TileSet_quhia")
 
 [node name="cutscenePlayer" parent="." instance=ExtResource("7_ol736")]
-position = Vector2(1200, -816)
+position = Vector2(1232, -816)
 scale = Vector2(1, 3)
