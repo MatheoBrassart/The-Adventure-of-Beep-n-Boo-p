@@ -192,6 +192,13 @@ func check_cutscene_informations():
 			CURRENT_ACTIVE_DIALOGUE = "BoopReveil"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("PlaceholderBoopReveil", 0)
+	
+	if get_tree().get_current_scene().get_name() == "atelier_b_9" and HAS_TO_PLAY_DIALOGUE == true:
+		if gameInformations.CUTSCENE_PremierEnregistrement == false:
+			gameInformations.CUTSCENE_PremierEnregistrement = true
+			CURRENT_ACTIVE_DIALOGUE = "PremierEnregistrement"
+			CAN_MOVE = false
+			dialogueSystem.play_dialogue("PlaceholderPremierEnregistrement", 0)
 
 func finished_dialogue():
 	
@@ -200,5 +207,9 @@ func finished_dialogue():
 		HAS_TO_PLAY_DIALOGUE = false
 	
 	if CURRENT_ACTIVE_DIALOGUE == "BoopReveil":
+		CAN_MOVE = true
+		HAS_TO_PLAY_DIALOGUE = false
+	
+	if CURRENT_ACTIVE_DIALOGUE == "PremierEnregistrement":
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
