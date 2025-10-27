@@ -466,14 +466,6 @@ position = Vector2(1024, -480)
 [node name="PicsChange37" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(960, -480)
 
-[node name="PicsChange22" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(768, -608)
-rotation = 3.1415927
-
-[node name="PicsChange23" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(704, -608)
-rotation = 3.1415927
-
 [node name="PicsChange26" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(192, -480)
 
@@ -517,14 +509,6 @@ position = Vector2(128, -480)
 
 [node name="PicsChange36" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(64, -480)
-
-[node name="PicsChange29" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(448, -608)
-rotation = 3.1415927
-
-[node name="PicsChange30" parent="Level elements" instance=ExtResource("5_2camj")]
-position = Vector2(384, -608)
-rotation = 3.1415927
 
 [node name="PicsChange9" parent="Level elements" instance=ExtResource("5_2camj")]
 position = Vector2(768, 32)

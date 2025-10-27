@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
+@onready var coyote_timer: Timer = $CoyoteTimer
+@onready var jump_buffer_timer: Timer = $JumpBufferTimer
+
 # Base movement stats
 var MAX_SPEED = 300.0
 var ACCELERATION = 50
@@ -74,8 +77,12 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump"):
+		jump_buffer_timer.start()
+	
+	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
+		coyote_timer.stop()
 	
 	# Handle direction changes related to the player's current velocity
 	if Input.is_action_just_pressed("move_right"):
@@ -84,9 +91,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_left"):
 		DECCELERATION_DIRECTION = -1
 	
+	var was_on_floor = is_on_floor()
+	
 	# Handle left/right inputs and movement
 	handle_input()
 	move_and_slide()
+	
+	if was_on_floor and !is_on_floor() and !Input.is_action_just_pressed("jump"):
+		coyote_timer.start()
 	
 	#Flip the sprite
 	if direction > 0:
