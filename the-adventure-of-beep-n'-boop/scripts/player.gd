@@ -12,8 +12,13 @@ var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
 
-# Left or right movement, depending on which key is pressed
-var direction = Input.get_axis("move_left", "move_right")
+var NEAR_VIGNES: bool = false
+var HANGING: bool = false
+var MAX_HANGING_SPEED: float = 150.0
+
+# Left or right or up or down movement, depending on which key is pressed
+var direction_x = Input.get_axis("move_left", "move_right")
+var direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 @export var CURRENT_ACTIVE_CHARACTER = 0
@@ -63,13 +68,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	# Add the gravity and reduces acceleration when in the air
-	if not is_on_floor():
-		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
-		if not HIT_RESSORT == true:
-			ACCELERATION = 20
-	else:
-		ACCELERATION = 50
-		HIT_RESSORT = false
+	if HANGING == false:
+		if not is_on_floor():
+			velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
+			if not HIT_RESSORT == true:
+				ACCELERATION = 20
+		else:
+			ACCELERATION = 50
+			HIT_RESSORT = false
 	
 	# If the player can't move, stop all input possibilities
 	if CAN_MOVE == false:
@@ -78,7 +84,11 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump"):
-		jump_buffer_timer.start()
+		if HANGING == true:
+			HANGING = false
+			velocity.y = JUMP_VELOCITY
+		else:
+			jump_buffer_timer.start()
 	
 	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
@@ -93,6 +103,11 @@ func _physics_process(delta: float) -> void:
 	
 	var was_on_floor = is_on_floor()
 	
+	# If the player is near vignes, hang onto them
+	if Input.is_action_pressed("move_up"):
+		if NEAR_VIGNES == true:
+			HANGING = true
+	
 	# Handle left/right inputs and movement
 	handle_input()
 	move_and_slide()
@@ -101,18 +116,18 @@ func _physics_process(delta: float) -> void:
 		coyote_timer.start()
 	
 	#Flip the sprite
-	if direction > 0:
+	if direction_x > 0:
 		animatedSpriteBeep.flip_h = false
 		animatedSpriteBoop.flip_h = false
 		animatedSpriteChangeMoi.flip_h = false
-	elif direction < 0:
+	elif direction_x < 0:
 		animatedSpriteBeep.flip_h = true
 		animatedSpriteBoop.flip_h = true
 		animatedSpriteChangeMoi.flip_h = true
 	
 	#Play animations
 	if is_on_floor():
-		if direction == 0:
+		if direction_x == 0:
 			rightSprite.play("idle")
 		else:rightSprite.play("run")
 			
@@ -125,13 +140,17 @@ func _physics_process(delta: float) -> void:
 
 func handle_input() -> void:
 	
-	# Get direction and moves the player accordingly
-	direction = Input.get_axis("move_left", "move_right")
+	# Get directions and moves the player accordingly
+	direction_x = Input.get_axis("move_left", "move_right")
+	direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if direction == 0:
-		velocity.x = move_toward(velocity.x, 0, ACCELERATION)
+	if HANGING == false:
+		if direction_x == 0:
+			velocity.x = move_toward(velocity.x, 0, ACCELERATION)
+		else:
+			velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, ACCELERATION)
 	else:
-		velocity.x = move_toward(velocity.x, MAX_SPEED * direction, ACCELERATION)
+		velocity = direction_xANDy * MAX_HANGING_SPEED
 
 
 func switch_character():

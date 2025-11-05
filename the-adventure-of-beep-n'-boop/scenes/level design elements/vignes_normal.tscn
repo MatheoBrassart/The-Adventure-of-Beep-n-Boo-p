@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://drx8qwx2h15ko"]
+
+[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_4n6q8"]
+[ext_resource type="Script" uid="uid://1b5vkuuicvmb" path="res://scripts/vignes_normal.gd" id="1_apw2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n6q8"]
+size = Vector2(128, 128)
+
+[node name="Vignes_normal" type="Area2D" groups=["Vignes"]]
+script = ExtResource("1_apw2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4n6q8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4n6q8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ehcj0v1qs0ab"]
+[gd_scene load_steps=10 format=3 uid="uid://ehcj0v1qs0ab"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_jp5fc"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="2_4ptlp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="5_ycf23"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="6_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="7_4lw2e"]
+[ext_resource type="PackedScene" uid="uid://drx8qwx2h15ko" path="res://scenes/level design elements/vignes_normal.tscn" id="8_ugemu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
 
@@ -89,3 +90,6 @@ position = Vector2(464, 584)
 
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("7_4lw2e")]
 position = Vector2(96, 456)
+
+[node name="Vignes_normal" parent="." instance=ExtResource("8_ugemu")]
+position = Vector2(512, 240)
