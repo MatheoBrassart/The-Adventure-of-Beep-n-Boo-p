@@ -5,6 +5,8 @@ class_name Player
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 
+@onready var ui_general = get_tree().get_first_node_in_group("UIGeneral")
+
 # Base movement stats
 var MAX_SPEED = 300.0
 var ACCELERATION = 50
@@ -38,6 +40,8 @@ var HIT_RESSORT = false
 @onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
 var CURRENT_ACTIVE_DIALOGUE = "0"
 var HAS_TO_PLAY_DIALOGUE: bool = false
+
+var LEVEL_TO_LEAD_TO: String = "0"
 
 # Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
 var multiHitboxDeathFixer = 0
@@ -227,6 +231,21 @@ func check_cutscene_informations():
 			CURRENT_ACTIVE_DIALOGUE = "PremierEnregistrement"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("PlaceholderPremierEnregistrement", 0)
+	
+	if get_tree().get_current_scene().get_name() == "atelier_b_10" and HAS_TO_PLAY_DIALOGUE == true:
+		if gameInformations.CUTSCENE_SortieAtelier == false:
+			CURRENT_ACTIVE_DIALOGUE = "SortieAtelier"
+			CAN_MOVE = false
+			if CURRENT_ACTIVE_CHARACTER == 0:
+				dialogueSystem.play_dialogue("SortieAtelierVBeep", 0)
+			else:
+				dialogueSystem.play_dialogue("SortieAtelierVBoop", 0)
+	
+	if get_tree().get_current_scene().get_name() == "villeenruine_a_1" and HAS_TO_PLAY_DIALOGUE == true:
+		if gameInformations.CUTSCENE_ArriveeVilleEnRuine == false:
+			CURRENT_ACTIVE_DIALOGUE = "ArriveeVilleEnRuine"
+			CAN_MOVE = false
+			dialogueSystem.play_dialogue("ArriveeVilleEnRuine", 0)
 
 func finished_dialogue():
 	
@@ -243,7 +262,20 @@ func finished_dialogue():
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
 	
-	if CURRENT_ACTIVE_DIALOGUE == "PremierEnregistrement":
+	if CURRENT_ACTIVE_DIALOGUE == "SortieAtelier":
 		gameInformations.CUTSCENE_PremierEnregistrement = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
+		LEVEL_TO_LEAD_TO = "res://scenes/levels/villeenruine/villeenruine_a_1.tscn"
+		ui_general.activate_black_transition(self)
+	
+	if CURRENT_ACTIVE_DIALOGUE == "ArriveeVilleEnRuine":
+		gameInformations.CUTSCENE_ArriveeVilleEnRuine = true
+		CAN_MOVE = true
+		HAS_TO_PLAY_DIALOGUE = false
+
+
+func switch_level():
+	
+	get_tree().change_scene_to_file.call_deferred(LEVEL_TO_LEAD_TO)
+	ui_general.deactivate_black_transition(self)

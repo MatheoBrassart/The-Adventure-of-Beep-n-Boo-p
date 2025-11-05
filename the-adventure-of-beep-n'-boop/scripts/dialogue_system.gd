@@ -40,6 +40,24 @@ var DIALOGUE_LIST: Dictionary = {
 		"4" = {"Character": "Le créateur", "Message": "Je continurai donc ce jeu durant l'année, en ajoutant toujours plus de nouveaux mondes et de nouvelles mécaniques.", "face": "leCreateur", "NumberOfRemainingLines": 2},
 		"5" = {"Character": "Le créateur", "Message": "N'hésitez pas à poser des questions si vous en avez.", "face": "leCreateur", "NumberOfRemainingLines": 1},
 		"6" = {"Character": "Beep", "Message": "A plus!", "face": "beepHappy", "NumberOfRemainingLines": 0}
+	},
+	"SortieAtelierVBeep" = {
+		"0" = {"Character": "Beep", "Message": "L'extérieur, enfin ! C’est... différent que ce que je pensais. On devrait aller où ?", "face": "beepNeutral", "NumberOfRemainingLines": 2},
+		"1" = {"Character": "Boop", "Message": "Vers l’avant. La balise indiquait cette direction, vers l’endroit où... elle devrait être.", "face": "boopBored", "NumberOfRemainingLines": 1},
+		"2" = {"Character": "Beep", "Message": "Super, alors c’est parti !", "face": "beepNeutral", "NumberOfRemainingLines": 0},
+	},
+	"SortieAtelierVBoop" = {
+		"0" = {"Character": "Boop", "Message": "L’extérieur... Complétement déserts, lui aussi.", "face": "boopBored", "NumberOfRemainingLines": 2},
+		"1" = {"Character": "Beep", "Message": "Je mentirais si je disais que je ne trouvais pas l’atmosphère sympa.", "face": "beepNeutral", "NumberOfRemainingLines": 1},
+		"2" = {"Character": "Boop", "Message": "La balise de l’ordinateur indiquait l’avant, vers l’endroit où... elle devrait être. Allons-y.", "face": "boopBored", "NumberOfRemainingLines": 0},
+	},
+	"ArriveeVilleEnRuine" = {
+		"0" = {"Character": "Beep", "Message": "Le signal a l'air d'être loins vers l'avant, c'est ça ?", "face": "beepNeutral", "NumberOfRemainingLines": 5},
+		"1" = {"Character": "Boop", "Message": "Effectivement, il va nous falloir traverser cet endroit bizarre.", "face": "boopBored", "NumberOfRemainingLines": 4},
+		"2" = {"Character": "Beep", "Message": "Cool, ça va être marrant alors !", "face": "beepNeutral", "NumberOfRemainingLines": 3},
+		"3" = {"Character": "Boop", "Message": "Fait attention à où tu mets les pieds... Je n'ai pas envie de savoir ce qu'il nous arrivera si on tombe...", "face": "boopBored", "NumberOfRemainingLines": 2},
+		"4" = {"Character": "Boop", "Message": "... Et je n'ai pas vraiment envie de mourrir à cause de toi.", "face": "boopBored", "NumberOfRemainingLines": 1},
+		"5" = {"Character": "Beep", "Message": "On verra bien, hein.", "face": "beepNeutral", "NumberOfRemainingLines": 0},
 	}
 }
 

@@ -15,6 +15,8 @@ var WHICH_CHARACTER_TO_RESPAWN = 0
 var CUTSCENE_BeepReveil: bool = false
 var CUTSCENE_BoopReveil: bool = false
 var CUTSCENE_PremierEnregistrement: bool = false
+var CUTSCENE_SortieAtelier: bool = false
+var CUTSCENE_ArriveeVilleEnRuine: bool = false
 
 func _process(_delta: float) -> void:
 	
