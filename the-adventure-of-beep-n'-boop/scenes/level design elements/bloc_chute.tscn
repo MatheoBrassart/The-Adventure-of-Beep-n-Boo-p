@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtt4ag4d2qtqs"]
+
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="1_hrt4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
+size = Vector2(30, 30)
+
+[node name="BlocChute" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hrt4a")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i3sln")
