@@ -109,6 +109,7 @@ func _physics_process(delta: float) -> void:
 	
 	var was_on_floor = is_on_floor()
 	
+	# Checks if the player is near Vignes
 	if shape_cast_2d.is_colliding() == true:
 		VIGNES_SHAPECAST_CHECKER = shape_cast_2d.get_collider(1)
 		if !VIGNES_SHAPECAST_CHECKER == null:

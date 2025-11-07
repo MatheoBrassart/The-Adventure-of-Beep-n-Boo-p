@@ -4,21 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_e34td"]
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="3_cjlqx"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="4_ecetk"]
-[ext_resource type="PackedScene" uid="uid://c5nxliw2rxo51" path="res://scenes/level design elements/bloc_normal.tscn" id="5_0qatc"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="6_e34td"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ecetk"]
-scenes/1/scene = ExtResource("5_0qatc")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjlqx"]
+texture = ExtResource("6_e34td")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSet" id="TileSet_quhia"]
+[sub_resource type="TileSet" id="TileSet_m26sq"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetScenesCollectionSource_ecetk")
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_cjlqx")
 
 [node name="villeenruine_a_3" type="Node2D"]
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 
 [node name="Player" parent="Original Player Spawns" instance=ExtResource("1_ecetk")]
-position = Vector2(48, 472)
+position = Vector2(48, 464)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
 position = Vector2(543, -144)
@@ -30,7 +34,7 @@ limit_right = 1150
 limit_bottom = 647
 
 [node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
-position = Vector2(1104, 432)
+position = Vector2(1104, 208)
 
 [node name="Level switchers" type="Node2D" parent="."]
 
@@ -71,5 +75,5 @@ position = Vector2(864, 352)
 [node name="Background elements" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAADABAAAAAAAAAAAQADABEAAAAAAAAAAQADABIAAAAAAAAAAQADABMAAAAAAAAAAQADABQAAAAAAAAAAQADABUAAAAAAAAAAQD+/xAAAAAAAAAAAQD//xAAAAAAAAAAAQAAABAAAAAAAAAAAQABABAAAAAAAAAAAQACABAAAAAAAAAAAQAgABUAAAAAAAAAAQAgABQAAAAAAAAAAQAgABMAAAAAAAAAAQAgABIAAAAAAAAAAQAgABEAAAAAAAAAAQAgABAAAAAAAAAAAQAgAA8AAAAAAAAAAQAgAA4AAAAAAAAAAQAgAA0AAAAAAAAAAQAgAAwAAAAAAAAAAQAgAAsAAAAAAAAAAQAgAAoAAAAAAAAAAQAQAAwAAAAAAAAAAQAQAA0AAAAAAAAAAQARAAwAAAAAAAAAAQARAA0AAAAAAAAAAQASAAwAAAAAAAAAAQASAA0AAAAAAAAAAQATAAwAAAAAAAAAAQATAA0AAAAAAAAAAQAgAAgAAAAAAAAAAQAgAAkAAAAAAAAAAQAhAAgAAAAAAAAAAQAiAAgAAAAAAAAAAQAjAAgAAAAAAAAAAQAkAAgAAAAAAAAAAQAlAAgAAAAAAAAAAQA=")
-tile_set = SubResource("TileSet_quhia")
+tile_map_data = PackedByteArray("AAAQAAwAAAABAAEAAAARAAwAAAABAAEAAAASAAwAAAABAAEAAAATAAwAAAABAAEAAAATAA0AAAABAAEAAAASAA0AAAABAAEAAAARAA0AAAABAAEAAAAQAA0AAAABAAEAAAD+/xAAAAABAAEAAAD//xAAAAABAAEAAAAAABAAAAABAAEAAAABABAAAAABAAEAAAACABAAAAABAAEAAAADABAAAAABAAEAAAADABEAAAABAAEAAAADABIAAAABAAEAAAADABMAAAABAAEAAAADABQAAAABAAEAAAADABUAAAABAAEAAAAgABUAAAABAAEAAAAgABQAAAABAAEAAAAgABMAAAABAAEAAAAgABIAAAABAAEAAAAgABEAAAABAAEAAAAgABAAAAABAAEAAAAgAA8AAAABAAEAAAAgAA4AAAABAAEAAAAgAA0AAAABAAEAAAAgAAwAAAABAAEAAAAgAAsAAAABAAEAAAAgAAoAAAABAAEAAAAgAAkAAAABAAEAAAAgAAgAAAABAAEAAAAhAAgAAAABAAEAAAAiAAgAAAABAAEAAAAjAAgAAAABAAEAAAAkAAgAAAABAAEAAAAlAAgAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_m26sq")
