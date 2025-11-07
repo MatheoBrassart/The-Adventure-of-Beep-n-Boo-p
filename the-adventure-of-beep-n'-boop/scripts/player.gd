@@ -2,10 +2,19 @@ extends CharacterBody2D
 
 class_name Player
 
+@onready var ui_general = get_tree().get_first_node_in_group("UIGeneral")
+@onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
+@onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
+
+# Animations
+@onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
+@onready var animatedSpriteBoop: AnimatedSprite2D = $SpriteBoop
+@onready var rightSprite: AnimatedSprite2D = $SpriteBeep
+@onready var animatedSpriteChangeMoi: AnimatedSprite2D = $SpriteChangeMoi
+
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
-
-@onready var ui_general = get_tree().get_first_node_in_group("UIGeneral")
+@onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 
 # Base movement stats
 var MAX_SPEED = 300.0
@@ -14,6 +23,8 @@ var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
 
+# Hanging-related variables
+var VIGNES_SHAPECAST_CHECKER = null
 var NEAR_VIGNES: bool = false
 var HANGING: bool = false
 var MAX_HANGING_SPEED: float = 150.0
@@ -25,29 +36,20 @@ var direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "mo
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 @export var CURRENT_ACTIVE_CHARACTER = 0
 
-# Animations
-@onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
-@onready var animatedSpriteBoop: AnimatedSprite2D = $SpriteBoop
-@onready var rightSprite: AnimatedSprite2D = $SpriteBeep
-@onready var animatedSpriteChangeMoi: AnimatedSprite2D = $SpriteChangeMoi
-
 # Variable that activates when the player hits a ressort
 var HIT_RESSORT = false
 
-# Get the global game informations scene
-@onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
-# Get the global dialogue system scene and dialogue-related variables
-@onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
+# Dialogue-related variables
 var CURRENT_ACTIVE_DIALOGUE = "0"
 var HAS_TO_PLAY_DIALOGUE: bool = false
 
 var LEVEL_TO_LEAD_TO: String = "0"
 
-# Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
-var multiHitboxDeathFixer = 0
-
 # Defines when the player can or can't move
 var CAN_MOVE: bool = true
+
+# Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
+var multiHitboxDeathFixer = 0
 
 
 func _ready() -> void:
@@ -106,6 +108,21 @@ func _physics_process(delta: float) -> void:
 		DECCELERATION_DIRECTION = -1
 	
 	var was_on_floor = is_on_floor()
+	
+	if shape_cast_2d.is_colliding() == true:
+		VIGNES_SHAPECAST_CHECKER = shape_cast_2d.get_collider(1)
+		if !VIGNES_SHAPECAST_CHECKER == null:
+			if VIGNES_SHAPECAST_CHECKER.is_in_group("Vignes"):
+				NEAR_VIGNES = true
+			else:
+				NEAR_VIGNES = false
+				HANGING = false
+		else:
+			NEAR_VIGNES = false
+			HANGING = false
+	else:
+		NEAR_VIGNES = false
+		HANGING = false
 	
 	# If the player is near vignes, hang onto them
 	if Input.is_action_pressed("move_up"):

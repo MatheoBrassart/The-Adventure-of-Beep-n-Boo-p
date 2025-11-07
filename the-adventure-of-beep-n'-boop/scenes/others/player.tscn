@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bpyurbx843djn"]
+[gd_scene load_steps=63 format=3 uid="uid://bpyurbx843djn"]
 
 [ext_resource type="Script" uid="uid://dod5w3objikpo" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://jqi3evs3kwx1" path="res://assets/textures/BoopSpritesheet.png" id="2_g2els"]
@@ -438,6 +438,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(2.2, 7.1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37q5r"]
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 script = ExtResource("1_g2els")
@@ -468,5 +470,11 @@ one_shot = true
 [node name="JumpBufferTimer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_37q5r")
+target_position = Vector2(0, 51)
+collide_with_areas = true
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_time_timeout"]
