@@ -111,7 +111,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Checks if the player is near Vignes
 	if shape_cast_2d.is_colliding() == true:
-		VIGNES_SHAPECAST_CHECKER = shape_cast_2d.get_collider(1)
+		VIGNES_SHAPECAST_CHECKER = shape_cast_2d.get_collider(0)
 		if !VIGNES_SHAPECAST_CHECKER == null:
 			if VIGNES_SHAPECAST_CHECKER.is_in_group("Vignes"):
 				NEAR_VIGNES = true

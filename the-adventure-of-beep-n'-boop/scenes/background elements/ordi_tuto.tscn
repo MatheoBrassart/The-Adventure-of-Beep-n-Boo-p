@@ -94,6 +94,21 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="Animation" id="Animation_kk2kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_4frjg"]
 resource_name = "tutoApparition"
 length = 0.6
@@ -110,21 +125,6 @@ tracks/0/keys = {
 "values": [Vector2(1e-05, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_kk2kj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nkknm"]
 _data = {
 &"RESET": SubResource("Animation_kk2kj"),
@@ -132,6 +132,7 @@ _data = {
 }
 
 [node name="ordiTuto" type="Node2D" groups=["OrdiTuto"]]
+z_index = -10
 script = ExtResource("1_4frjg")
 
 [node name="Screen" type="Sprite2D" parent="."]
