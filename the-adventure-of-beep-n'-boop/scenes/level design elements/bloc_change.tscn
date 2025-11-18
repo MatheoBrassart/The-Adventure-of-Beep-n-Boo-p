@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://0ajtdhtoy3oe" path="res://scripts/bloc_change.gd" id="1_i3sln"]
 [ext_resource type="Texture2D" uid="uid://bsl7tx06gieow" path="res://assets/textures/BlocChange.png" id="2_2hhdk"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_51exr"]
 atlas = ExtResource("2_2hhdk")
 region = Rect2(132, 0, 66, 66)
@@ -163,7 +162,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
-size = Vector2(62.117188, 62.117188)
+size = Vector2(64, 64)
 
 [node name="BlocChange" type="StaticBody2D" groups=["BlocChange"]]
 script = ExtResource("1_i3sln")
