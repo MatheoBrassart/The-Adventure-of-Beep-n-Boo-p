@@ -98,14 +98,13 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(800, 288)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange14" parent="Level elements" instance=ExtResource("3_0ls8s")]
-position = Vector2(928, 416)
-
 [node name="BlocChange15" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(992, 416)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange16" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(1056, 416)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange33" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(96, 544)
@@ -131,23 +130,14 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(416, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange44" parent="Level elements" instance=ExtResource("3_0ls8s")]
-position = Vector2(800, 544)
-
-[node name="BlocChange45" parent="Level elements" instance=ExtResource("3_0ls8s")]
-position = Vector2(864, 544)
-
 [node name="BlocChange46" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(928, 544)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange47" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(992, 544)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange48" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(1056, 544)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange49" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(96, 96)
@@ -208,6 +198,10 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(992, 96)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="BlocChange68" parent="Level elements" instance=ExtResource("3_0ls8s")]
+position = Vector2(992, 160)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="BlocChange64" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(1056, 96)
 WHICH_CHARACTER_IS_IT = 1
@@ -262,6 +256,14 @@ position = Vector2(928, 224)
 
 [node name="BlocChange31" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(992, 224)
+
+[node name="BlocChange39" parent="Level elements" instance=ExtResource("3_0ls8s")]
+position = Vector2(992, 288)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange41" parent="Level elements" instance=ExtResource("3_0ls8s")]
+position = Vector2(992, 352)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange32" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(1056, 224)
