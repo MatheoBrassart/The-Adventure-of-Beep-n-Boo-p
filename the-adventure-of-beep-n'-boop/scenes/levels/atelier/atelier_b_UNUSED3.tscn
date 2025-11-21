@@ -198,10 +198,6 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(992, 96)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange68" parent="Level elements" instance=ExtResource("3_0ls8s")]
-position = Vector2(992, 160)
-WHICH_CHARACTER_IS_IT = 1
-
 [node name="BlocChange64" parent="Level elements" instance=ExtResource("3_0ls8s")]
 position = Vector2(1056, 96)
 WHICH_CHARACTER_IS_IT = 1
