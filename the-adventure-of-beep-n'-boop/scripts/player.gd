@@ -18,7 +18,9 @@ class_name Player
 
 # Base movement stats
 var MAX_SPEED = 300.0
-var ACCELERATION = 50
+var CURRENT_ACCELERATION = 0
+var GROUND_ACCELERATION_SETTER = 50
+var AIR_ACCELERATION_SETTER = 30
 var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
@@ -78,9 +80,9 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
 			if not HIT_RESSORT == true:
-				ACCELERATION = 20
+				CURRENT_ACCELERATION = AIR_ACCELERATION_SETTER
 		else:
-			ACCELERATION = 50
+			CURRENT_ACCELERATION = GROUND_ACCELERATION_SETTER
 			HIT_RESSORT = false
 	
 	# If the player can't move, stop all input possibilities
@@ -168,9 +170,9 @@ func handle_input() -> void:
 	
 	if HANGING == false:
 		if direction_x == 0:
-			velocity.x = move_toward(velocity.x, 0, ACCELERATION)
+			velocity.x = move_toward(velocity.x, 0, CURRENT_ACCELERATION)
 		else:
-			velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, ACCELERATION)
+			velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, CURRENT_ACCELERATION)
 	else:
 		velocity = direction_xANDy * MAX_HANGING_SPEED
 
@@ -216,7 +218,7 @@ func hit_ressort():
 	
 	# Reduces the acceleration of the player when a ressort is hit
 	HIT_RESSORT = true
-	ACCELERATION = 10
+	CURRENT_ACCELERATION = 10
 
 
 func check_respawn_informations():

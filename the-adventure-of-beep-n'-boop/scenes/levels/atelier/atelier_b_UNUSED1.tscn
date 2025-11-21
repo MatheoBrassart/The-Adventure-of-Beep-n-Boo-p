@@ -22,6 +22,7 @@ sources/0 = SubResource("TileSetAtlasSource_sni0f")
 
 [node name="Player" parent="Original Player Spawns" instance=ExtResource("1_fufpy")]
 position = Vector2(24, 336)
+CURRENT_ACTIVE_CHARACTER = 0
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
 position = Vector2(543, -144)

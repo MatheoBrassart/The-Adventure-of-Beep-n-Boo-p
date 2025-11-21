@@ -443,6 +443,7 @@ size = Vector2(2.2, 7.1)
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 script = ExtResource("1_g2els")
+CURRENT_ACTIVE_CHARACTER = null
 
 [node name="SpriteBeep" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dqkch")
