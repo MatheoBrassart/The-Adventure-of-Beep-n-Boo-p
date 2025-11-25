@@ -24,6 +24,7 @@ var AIR_ACCELERATION_SETTER = 30
 var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
+const MAX_FREEFALLING_SPEED = 800
 
 # Hanging-related variables
 var VIGNES_SHAPECAST_CHECKER = null
@@ -84,6 +85,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			CURRENT_ACCELERATION = GROUND_ACCELERATION_SETTER
 			HIT_RESSORT = false
+	
+	if velocity.y > MAX_FREEFALLING_SPEED:
+		velocity.y = MAX_FREEFALLING_SPEED
 	
 	# If the player can't move, stop all input possibilities
 	if CAN_MOVE == false:
