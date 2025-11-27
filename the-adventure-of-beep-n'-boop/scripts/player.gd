@@ -256,7 +256,7 @@ func check_cutscene_informations():
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("PlaceholderPremierEnregistrement", 0)
 	
-	if get_tree().get_current_scene().get_name() == "atelier_b_10" and HAS_TO_PLAY_DIALOGUE == true:
+	if get_tree().get_current_scene().get_name() == "atelier_b_13" and HAS_TO_PLAY_DIALOGUE == true:
 		if gameInformations.CUTSCENE_SortieAtelier == false:
 			CURRENT_ACTIVE_DIALOGUE = "SortieAtelier"
 			CAN_MOVE = false

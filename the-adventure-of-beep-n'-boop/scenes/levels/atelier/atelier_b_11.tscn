@@ -1,0 +1,155 @@
+[gd_scene load_steps=11 format=4 uid="uid://vh5axsbb2xx4"]
+
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_5uw1h"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_y4psj"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_r26v5"]
+[ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="4_3xcbm"]
+[ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="5_kxcp5"]
+[ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="6_bddcj"]
+[ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="7_vxxr4"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="8_3uvfj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irdnh"]
+texture = ExtResource("8_3uvfj")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_8cfvt"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_irdnh")
+
+[node name="atelier_b_11" type="Node2D"]
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("1_5uw1h")]
+position = Vector2(32, 528)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+position = Vector2(415, -80)
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1120, 112)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("2_y4psj")]
+position = Vector2(1200, 112)
+TO_WHICH_WORLD_DOES_IT_LEADS = "atelier"
+TO_WHICH_SECTION_DOES_IT_LEADS = "b"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 12
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_y4psj")]
+position = Vector2(-48, 528)
+TO_WHICH_WORLD_DOES_IT_LEADS = "atelier"
+TO_WHICH_SECTION_DOES_IT_LEADS = "b"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 10
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="BlocChange" parent="Level elements" instance=ExtResource("3_r26v5")]
+position = Vector2(1072, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange3" parent="Level elements" instance=ExtResource("3_r26v5")]
+position = Vector2(1072, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange2" parent="Level elements" instance=ExtResource("3_r26v5")]
+position = Vector2(992, 304)
+
+[node name="PicsChange" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(992, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange8" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(832, 288)
+rotation = 3.14159
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange9" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(320, 288)
+rotation = 3.14159
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange10" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(576, 288)
+rotation = 3.14159
+
+[node name="PicsChange2" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(864, 544)
+
+[node name="PicsChange3" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(736, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange4" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(608, 544)
+
+[node name="PicsChange5" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(480, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange6" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(352, 544)
+
+[node name="PicsChange11" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(992, 128)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange12" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(864, 128)
+
+[node name="PicsChange13" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(736, 128)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange14" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(608, 128)
+
+[node name="PicsChange15" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(480, 128)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange16" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(352, 128)
+
+[node name="PicsChange7" parent="Level elements" instance=ExtResource("4_3xcbm")]
+position = Vector2(224, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="RessortChange" parent="Level elements" instance=ExtResource("5_kxcp5")]
+position = Vector2(1072, 544)
+
+[node name="RessortChange2" parent="Level elements" instance=ExtResource("5_kxcp5")]
+position = Vector2(64, 96)
+rotation = 1.5708
+RESSORT_DIRECTION = 3
+
+[node name="RessortNormal" parent="Level elements" instance=ExtResource("6_bddcj")]
+position = Vector2(320, 320)
+
+[node name="RessortNormal4" parent="Level elements" instance=ExtResource("6_bddcj")]
+position = Vector2(80, 320)
+
+[node name="RessortNormal2" parent="Level elements" instance=ExtResource("6_bddcj")]
+position = Vector2(576, 320)
+
+[node name="RessortNormal3" parent="Level elements" instance=ExtResource("6_bddcj")]
+position = Vector2(832, 320)
+
+[node name="PicsNormal" parent="Level elements" instance=ExtResource("7_vxxr4")]
+position = Vector2(160, 128)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/xIAAAABAAEAAAD//xIAAAABAAEAAAAAABIAAAABAAEAAAABABIAAAABAAEAAAACABIAAAABAAEAAAADABIAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPABIAAAABAAEAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAASABIAAAABAAEAAAATABIAAAABAAEAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAgABIAAAABAAEAAAAhABIAAAABAAEAAAAiABIAAAABAAEAAAAjABIAAAABAAEAAAAjABEAAAABAAEAAAAjABAAAAABAAEAAAAjAA8AAAABAAEAAAAjAA4AAAABAAEAAAAjAA0AAAABAAEAAAAjAAwAAAABAAEAAAAjAAsAAAABAAEAAAAjAAoAAAABAAEAAAAjAAkAAAABAAEAAAAjAAgAAAABAAEAAAAjAAcAAAABAAEAAAAiAAcAAAABAAEAAAAhAAcAAAABAAEAAAAgAAcAAAABAAEAAAAfAAcAAAABAAEAAAAeAAcAAAABAAEAAAAdAAcAAAABAAEAAAAcAAcAAAABAAEAAAAbAAcAAAABAAEAAAAaAAcAAAABAAEAAAAZAAcAAAABAAEAAAAYAAcAAAABAAEAAAAXAAcAAAABAAEAAAAWAAcAAAABAAEAAAAVAAcAAAABAAEAAAAUAAcAAAABAAEAAAATAAcAAAABAAEAAAASAAcAAAABAAEAAAARAAcAAAABAAEAAAAQAAcAAAABAAEAAAAPAAcAAAABAAEAAAAOAAcAAAABAAEAAAANAAcAAAABAAEAAAAMAAcAAAABAAEAAAALAAcAAAABAAEAAAAKAAcAAAABAAEAAAAJAAcAAAABAAEAAAAIAAcAAAABAAEAAAAHAAcAAAABAAEAAAAGAAcAAAABAAEAAAAFAAcAAAABAAEAAAAEAAcAAAABAAEAAAAEAAYAAAABAAEAAAAEAAUAAAABAAEAAAAFAAUAAAABAAEAAAAGAAUAAAABAAEAAAAHAAUAAAABAAEAAAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAAKAAUAAAABAAEAAAALAAUAAAABAAEAAAAMAAUAAAABAAEAAAANAAUAAAABAAEAAAAOAAUAAAABAAEAAAAPAAUAAAABAAEAAAAQAAUAAAABAAEAAAARAAUAAAABAAEAAAASAAUAAAABAAEAAAATAAUAAAABAAEAAAAUAAUAAAABAAEAAAAVAAUAAAABAAEAAAAWAAUAAAABAAEAAAAXAAUAAAABAAEAAAAYAAUAAAABAAEAAAAZAAUAAAABAAEAAAAaAAUAAAABAAEAAAAbAAUAAAABAAEAAAAcAAUAAAABAAEAAAAdAAUAAAABAAEAAAAeAAUAAAABAAEAAAAfAAUAAAABAAEAAAAgAAUAAAABAAEAAAAhAAUAAAABAAEAAAAiAAUAAAABAAEAAAAjAAUAAAABAAEAAAAkAAUAAAABAAEAAAAlAAUAAAABAAEAAAAlAAEAAAABAAEAAAAkAAEAAAABAAEAAAAjAAEAAAABAAEAAAAiAAEAAAABAAEAAAAhAAEAAAABAAEAAAAgAAEAAAABAAEAAAAfAAEAAAABAAEAAAAeAAEAAAABAAEAAAAdAAEAAAABAAEAAAAcAAEAAAABAAEAAAAbAAEAAAABAAEAAAAaAAEAAAABAAEAAAAZAAEAAAABAAEAAAAYAAEAAAABAAEAAAAXAAEAAAABAAEAAAAWAAEAAAABAAEAAAAVAAEAAAABAAEAAAAUAAEAAAABAAEAAAATAAEAAAABAAEAAAASAAEAAAABAAEAAAARAAEAAAABAAEAAAAQAAEAAAABAAEAAAAPAAEAAAABAAEAAAAOAAEAAAABAAEAAAANAAEAAAABAAEAAAAMAAEAAAABAAEAAAALAAEAAAABAAEAAAAKAAEAAAABAAEAAAAJAAEAAAABAAEAAAAIAAEAAAABAAEAAAAHAAEAAAABAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAEAAEAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAAAAAcAAAABAAEAAAAAAAgAAAABAAEAAAAAAAkAAAABAAEAAAAAAAoAAAABAAEAAAAAAAsAAAABAAEAAAABAAsAAAABAAEAAAACAAsAAAABAAEAAAADAAsAAAABAAEAAAAEAAsAAAABAAEAAAAFAAsAAAABAAEAAAAGAAsAAAABAAEAAAAHAAsAAAABAAEAAAAIAAsAAAABAAEAAAAJAAsAAAABAAEAAAAKAAsAAAABAAEAAAALAAsAAAABAAEAAAAMAAsAAAABAAEAAAANAAsAAAABAAEAAAAOAAsAAAABAAEAAAAPAAsAAAABAAEAAAAQAAsAAAABAAEAAAARAAsAAAABAAEAAAASAAsAAAABAAEAAAATAAsAAAABAAEAAAAUAAsAAAABAAEAAAAVAAsAAAABAAEAAAAWAAsAAAABAAEAAAAXAAsAAAABAAEAAAAYAAsAAAABAAEAAAAZAAsAAAABAAEAAAAaAAsAAAABAAEAAAAbAAsAAAABAAEAAAAcAAsAAAABAAEAAAAdAAsAAAABAAEAAAAeAAsAAAABAAEAAAAfAAsAAAABAAEAAAAfAAwAAAABAAEAAAAfAA0AAAABAAEAAAAfAA4AAAABAAEAAAD+/w4AAAABAAEAAAD//w4AAAABAAEAAAAAAA4AAAABAAEAAAABAA4AAAABAAEAAAACAA4AAAABAAEAAAADAA4AAAABAAEAAAAEAA4AAAABAAEAAAAFAA4AAAABAAEAAAAGAA4AAAABAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAJAA4AAAABAAEAAAAKAA4AAAABAAEAAAALAA4AAAABAAEAAAAMAA4AAAABAAEAAAANAA4AAAABAAEAAAAOAA4AAAABAAEAAAAPAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAABAAEAAAAYAA4AAAABAAEAAAAZAA4AAAABAAEAAAAaAA4AAAABAAEAAAAbAA4AAAABAAEAAAAcAA4AAAABAAEAAAAdAA4AAAABAAEAAAAeAA4AAAABAAEAAAA=")
+tile_set = SubResource("TileSet_8cfvt")
