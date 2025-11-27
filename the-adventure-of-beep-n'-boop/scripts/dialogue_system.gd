@@ -22,42 +22,42 @@ var VISIBLE_CHARACTERS = 0
 # Liste de tous les dialogues
 var DIALOGUE_LIST: Dictionary = {
 	"BeepReveil" = {
-		"0" = {"Character": "Beep", "Message": "...", "face": "beepNeutral", "NumberOfRemainingLines": 1},
-		"1" = {"Character": "Beep", "Message": "Qu... Qu’est-ce qu’il se passe ? Y’a quelqu'un ?", "face": "beepAnxious", "NumberOfRemainingLines": 0}
+		"0" = {"Character": "Beep", "Message": "...", "face": "beepNeutral"},
+		"1" = {"Character": "Beep", "Message": "Qu... Qu’est-ce qu’il se passe ? Y’a quelqu'un ?", "face": "beepAnxious"}
 	},
 	"PlaceholderBoopReveil" = {
-		"0" = {"Character": "Le créateur", "Message": "Bon, normalement ici il est sensé il y avoir une cutscene pour le réveil de Boop, et le tutoriel de Change-moi.", "face": "leCreateur", "NumberOfRemainingLines": 4},
-		"1" = {"Character": "Boop", "Message": "C'est moi.", "face": "boopBored", "NumberOfRemainingLines": 3},
-		"2" = {"Character": "Le créateur", "Message": "Elle sera faite dans le futur, puisque je n'avais pas eu le temps de la faire ces derniers jours...", "face": "leCreateur", "NumberOfRemainingLines": 2},
-		"3" = {"Character": "Beep", "Message": "En vrais il jouait à team fortress toute la journée, donc bon.", "face": "beep3Mouth", "NumberOfRemainingLines": 1},
-		"4" = {"Character": "Le créateur", "Message": "... Bref, le chemin est ouvert, et la suite de cette démo vous attend!", "face": "leCreateur", "NumberOfRemainingLines": 0}
+		"0" = {"Character": "Le créateur", "Message": "Bon, normalement ici il est sensé il y avoir une cutscene pour le réveil de Boop, et le tutoriel de Change-moi.", "face": "leCreateur"},
+		"1" = {"Character": "Boop", "Message": "C'est moi.", "face": "boopBored"},
+		"2" = {"Character": "Le créateur", "Message": "Elle sera faite dans le futur, puisque je n'avais pas eu le temps de la faire ces derniers jours...", "face": "leCreateur"},
+		"3" = {"Character": "Beep", "Message": "En vrais il jouait à team fortress toute la journée, donc bon.", "face": "beep3Mouth"},
+		"4" = {"Character": "Le créateur", "Message": "... Bref, le chemin est ouvert, et la suite de cette démo vous attend!", "face": "leCreateur"}
 	},
 	"PlaceholderPremierEnregistrement" = {
-		"0" = {"Character": "Le créateur", "Message": "Et enfin, ce monde est fini! GG.", "face": "leCreateur", "NumberOfRemainingLines": 6},
-		"1" = {"Character": "Le créateur", "Message": "Cette dernière salle aura aussi une cutscene via le premier enregistrement de la créatrice pour annoncer à nos protagonistes leur quête...", "face": "leCreateur", "NumberOfRemainingLines": 5},
-		"2" = {"Character": "Le créateur", "Message": "... Et après ça, la fin de ce monde pour passer au prochain.", "face": "leCreateur", "NumberOfRemainingLines": 4},
-		"3" = {"Character": "Le créateur", "Message": "Et donc, cette démo est fini. J'espère que vous l'avez apprécié!", "face": "leCreateur", "NumberOfRemainingLines": 3},
-		"4" = {"Character": "Le créateur", "Message": "Je continurai donc ce jeu durant l'année, en ajoutant toujours plus de nouveaux mondes et de nouvelles mécaniques.", "face": "leCreateur", "NumberOfRemainingLines": 2},
-		"5" = {"Character": "Le créateur", "Message": "N'hésitez pas à poser des questions si vous en avez.", "face": "leCreateur", "NumberOfRemainingLines": 1},
-		"6" = {"Character": "Beep", "Message": "A plus!", "face": "beepHappy", "NumberOfRemainingLines": 0}
+		"0" = {"Character": "Le créateur", "Message": "Et enfin, ce monde est fini! GG.", "face": "leCreateur"},
+		"1" = {"Character": "Le créateur", "Message": "Cette dernière salle aura aussi une cutscene via le premier enregistrement de la créatrice pour annoncer à nos protagonistes leur quête...", "face": "leCreateur"},
+		"2" = {"Character": "Le créateur", "Message": "... Et après ça, la fin de ce monde pour passer au prochain.", "face": "leCreateur"},
+		"3" = {"Character": "Le créateur", "Message": "Et donc, cette démo est fini. J'espère que vous l'avez apprécié!", "face": "leCreateur"},
+		"4" = {"Character": "Le créateur", "Message": "Je continurai donc ce jeu durant l'année, en ajoutant toujours plus de nouveaux mondes et de nouvelles mécaniques.", "face": "leCreateur"},
+		"5" = {"Character": "Le créateur", "Message": "N'hésitez pas à poser des questions si vous en avez.", "face": "leCreateur"},
+		"6" = {"Character": "Beep", "Message": "A plus!", "face": "beepHappy"}
 	},
 	"SortieAtelierVBeep" = {
-		"0" = {"Character": "Beep", "Message": "L'extérieur, enfin ! C’est... différent que ce que je pensais. On devrait aller où ?", "face": "beepNeutral", "NumberOfRemainingLines": 2},
-		"1" = {"Character": "Boop", "Message": "Vers l’avant. La balise indiquait cette direction, vers l’endroit où... elle devrait être.", "face": "boopBored", "NumberOfRemainingLines": 1},
-		"2" = {"Character": "Beep", "Message": "Super, alors c’est parti !", "face": "beepNeutral", "NumberOfRemainingLines": 0},
+		"0" = {"Character": "Beep", "Message": "L'extérieur, enfin ! C’est... différent que ce que je pensais. On devrait aller où ?", "face": "beepNeutral"},
+		"1" = {"Character": "Boop", "Message": "Vers l’avant. La balise indiquait cette direction, vers l’endroit où... elle devrait être.", "face": "boopBored"},
+		"2" = {"Character": "Beep", "Message": "Super, alors c’est parti !", "face": "beepNeutral"},
 	},
 	"SortieAtelierVBoop" = {
-		"0" = {"Character": "Boop", "Message": "L’extérieur... Complétement déserts, lui aussi.", "face": "boopBored", "NumberOfRemainingLines": 2},
-		"1" = {"Character": "Beep", "Message": "Je mentirais si je disais que je ne trouvais pas l’atmosphère sympa.", "face": "beepNeutral", "NumberOfRemainingLines": 1},
-		"2" = {"Character": "Boop", "Message": "La balise de l’ordinateur indiquait l’avant, vers l’endroit où... elle devrait être. Allons-y.", "face": "boopBored", "NumberOfRemainingLines": 0},
+		"0" = {"Character": "Boop", "Message": "L’extérieur... Complétement déserts, lui aussi.", "face": "boopBored"},
+		"1" = {"Character": "Beep", "Message": "Je mentirais si je disais que je ne trouvais pas l’atmosphère sympa.", "face": "beepNeutral"},
+		"2" = {"Character": "Boop", "Message": "La balise de l’ordinateur indiquait l’avant, vers l’endroit où... elle devrait être. Allons-y.", "face": "boopBored"},
 	},
 	"ArriveeVilleEnRuine" = {
-		"0" = {"Character": "Beep", "Message": "Le signal a l'air d'être loins vers l'avant, c'est ça ?", "face": "beepNeutral", "NumberOfRemainingLines": 5},
-		"1" = {"Character": "Boop", "Message": "Effectivement, il va nous falloir traverser cet endroit bizarre.", "face": "boopBored", "NumberOfRemainingLines": 4},
-		"2" = {"Character": "Beep", "Message": "Cool, ça va être marrant alors !", "face": "beepNeutral", "NumberOfRemainingLines": 3},
-		"3" = {"Character": "Boop", "Message": "Fait attention à où tu mets les pieds... Je n'ai pas envie de savoir ce qu'il nous arrivera si on tombe...", "face": "boopBored", "NumberOfRemainingLines": 2},
-		"4" = {"Character": "Boop", "Message": "... Et je n'ai pas vraiment envie de mourrir à cause de toi.", "face": "boopBored", "NumberOfRemainingLines": 1},
-		"5" = {"Character": "Beep", "Message": "On verra bien, hein.", "face": "beepNeutral", "NumberOfRemainingLines": 0},
+		"0" = {"Character": "Beep", "Message": "Le signal a l'air d'être loins vers l'avant, c'est ça ?", "face": "beepNeutral"},
+		"1" = {"Character": "Boop", "Message": "Effectivement, il va nous falloir traverser cet endroit bizarre.", "face": "boopBored"},
+		"2" = {"Character": "Beep", "Message": "Cool, ça va être marrant alors !", "face": "beepNeutral"},
+		"3" = {"Character": "Boop", "Message": "Fait attention à où tu mets les pieds... Je n'ai pas envie de savoir ce qu'il nous arrivera si on tombe...", "face": "boopBored"},
+		"4" = {"Character": "Boop", "Message": "... Et je n'ai pas vraiment envie de mourrir à cause de toi.", "face": "boopBored"},
+		"5" = {"Character": "Beep", "Message": "On verra bien, hein.", "face": "beepNeutral"},
 	}
 }
 
@@ -111,7 +111,7 @@ func _process(_delta: float) -> void:
 				tween.stop()
 				messageRichTextLabel.visible_ratio = 1
 			# Checks if the current dialogue has remaining lines. If yes, plays the next one.
-			elif DIALOGUE_LIST[CURRENT_DIALOGUE_KEY][str(CURRENT_DIALOGUE_LINE)]["NumberOfRemainingLines"] > 0:
+			elif DIALOGUE_LIST[CURRENT_DIALOGUE_KEY].has(str(CURRENT_DIALOGUE_LINE + 1)) == true:
 				play_dialogue(CURRENT_DIALOGUE_KEY, CURRENT_DIALOGUE_LINE + 1)
 			# If no, ends the dialogue.
 			else:

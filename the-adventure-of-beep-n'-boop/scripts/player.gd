@@ -17,7 +17,7 @@ class_name Player
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 @onready var ray_cast_2d_hanging_top_checker: RayCast2D = $RayCast2DHangingTopChecker
 
-# Base movement stats
+# Base movement variables
 var MAX_SPEED = 300.0
 var CURRENT_ACCELERATION = 0
 var GROUND_ACCELERATION_SETTER = 50
@@ -92,10 +92,12 @@ func _physics_process(delta: float) -> void:
 	if velocity.y > MAX_FREEFALLING_SPEED:
 		velocity.y = MAX_FREEFALLING_SPEED
 	
+	
 	# If the player can't move, stop all input possibilities
 	if CAN_MOVE == false:
 		rightSprite.play("idle")
 		return
+	
 	
 	# Handle jump
 	if Input.is_action_just_pressed("jump"):
@@ -108,13 +110,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			jump_buffer_timer.start()
 	
+	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
+		velocity.y = JUMP_VELOCITY
+		coyote_timer.stop()
+	
+	# If player is moving up while jumping, can't hang again until release moving up
 	if Input.is_action_just_released("move_up"):
 		if NEAR_VIGNES == true:
 			CAN_HANG_AFTER_JUMP = true
 	
-	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
-		velocity.y = JUMP_VELOCITY
-		coyote_timer.stop()
 	
 	# Handle direction changes related to the player's current velocity
 	if Input.is_action_just_pressed("move_right"):
@@ -123,7 +127,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_left"):
 		DECCELERATION_DIRECTION = -1
 	
+	
 	var was_on_floor = is_on_floor()
+	
 	
 	# Checks if the player is near Vignes
 	if shape_cast_2d.is_colliding() == true:
@@ -144,10 +150,11 @@ func _physics_process(delta: float) -> void:
 		HANGING = false
 		CAN_HANG_AFTER_JUMP = true
 	
-	# If the player is near vignes, hang onto them
+	# If the player is near vignes and moves up, hang onto them
 	if Input.is_action_pressed("move_up"):
 		if NEAR_VIGNES == true and CAN_HANG_AFTER_JUMP == true:
 			HANGING = true
+	
 	
 	# Handle left/right inputs and movement
 	handle_input()
@@ -155,6 +162,7 @@ func _physics_process(delta: float) -> void:
 	
 	if was_on_floor and !is_on_floor() and !Input.is_action_just_pressed("jump"):
 		coyote_timer.start()
+	
 	
 	#Flip the sprite
 	if direction_x > 0:
