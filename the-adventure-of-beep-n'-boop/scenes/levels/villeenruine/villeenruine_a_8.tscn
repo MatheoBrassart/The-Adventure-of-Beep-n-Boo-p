@@ -126,6 +126,14 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(352, 224)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="Vignes_change20" parent="Level elements" instance=ExtResource("6_kw2x5")]
+position = Vector2(288, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change21" parent="Level elements" instance=ExtResource("6_kw2x5")]
+position = Vector2(352, 160)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="Vignes_change13" parent="Level elements" instance=ExtResource("6_kw2x5")]
 position = Vector2(480, 416)
 

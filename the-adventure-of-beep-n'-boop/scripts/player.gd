@@ -15,6 +15,7 @@ class_name Player
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
+@onready var ray_cast_2d_hanging_top_checker: RayCast2D = $RayCast2DHangingTopChecker
 
 # Base movement stats
 var MAX_SPEED = 300.0
@@ -179,6 +180,13 @@ func handle_input() -> void:
 			velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, CURRENT_ACCELERATION)
 	else:
 		velocity = direction_xANDy * MAX_HANGING_SPEED
+		if velocity.y < 0:
+			if ray_cast_2d_hanging_top_checker.is_colliding() == true:
+				VIGNES_SHAPECAST_CHECKER = ray_cast_2d_hanging_top_checker.get_collider()
+				if VIGNES_SHAPECAST_CHECKER.is_in_group("Vignes"):
+					print("a")
+			else:
+				velocity.y = 0
 
 
 func switch_character():
