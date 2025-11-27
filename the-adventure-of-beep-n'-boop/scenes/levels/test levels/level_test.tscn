@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ehcj0v1qs0ab"]
+[gd_scene load_steps=11 format=3 uid="uid://ehcj0v1qs0ab"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_jp5fc"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="2_4ptlp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="6_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="7_4lw2e"]
 [ext_resource type="PackedScene" uid="uid://drx8qwx2h15ko" path="res://scenes/level design elements/vignes_normal.tscn" id="8_ugemu"]
+[ext_resource type="PackedScene" uid="uid://drqelc53l2yhn" path="res://scenes/level design elements/vignes_change.tscn" id="9_4wobs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
 
@@ -91,5 +92,33 @@ position = Vector2(464, 584)
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("7_4lw2e")]
 position = Vector2(96, 456)
 
-[node name="Vignes_normal" parent="." instance=ExtResource("8_ugemu")]
+[node name="Vignes_normal" parent="Level elements" instance=ExtResource("8_ugemu")]
 position = Vector2(512, 240)
+
+[node name="Vignes_change" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(656, 240)
+
+[node name="Vignes_change2" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(656, 176)
+
+[node name="Vignes_change3" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(720, 176)
+
+[node name="Vignes_change4" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(720, 240)
+
+[node name="Vignes_change5" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(848, 240)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change6" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(848, 176)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change7" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(912, 176)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change8" parent="Level elements" instance=ExtResource("9_4wobs")]
+position = Vector2(912, 240)
+WHICH_CHARACTER_IS_IT = 1

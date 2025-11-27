@@ -1,7 +1,6 @@
 extends Node2D
 
-var listOfBlocChanges = []
-var listOfPicsChanges = []
+var listOfChanges = []
 var listOfPlayer = []
 
 var LEVELTEST_1 = "res://scenes/levels/level_test.tscn"
@@ -22,16 +21,20 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("switch_character"):
 		
-		listOfBlocChanges = get_tree().get_nodes_in_group("BlocChange")
-		for i in listOfBlocChanges: 
+		listOfChanges = get_tree().get_nodes_in_group("BlocChange")
+		for i in listOfChanges: 
 			i.switch_state()
 		
-		listOfPicsChanges = get_tree().get_nodes_in_group("PicsChange")
-		for i in listOfPicsChanges: 
+		listOfChanges = get_tree().get_nodes_in_group("PicsChange")
+		for i in listOfChanges: 
 			i.switch_state()
 		
-		listOfPicsChanges = get_tree().get_nodes_in_group("RessortChange")
-		for i in listOfPicsChanges: 
+		listOfChanges = get_tree().get_nodes_in_group("RessortChange")
+		for i in listOfChanges: 
+			i.switch_state()
+			
+		listOfChanges = get_tree().get_nodes_in_group("VignesChange")
+		for i in listOfChanges: 
 			i.switch_state()
 			
 		listOfPlayer = get_tree().get_nodes_in_group("Player")
