@@ -30,6 +30,7 @@ const MAX_FREEFALLING_SPEED = 800
 # Hanging-related variables
 var VIGNES_SHAPECAST_CHECKER = null
 var NEAR_VIGNES: bool = false
+var CAN_HANG_AFTER_JUMP = true
 var HANGING: bool = false
 var MAX_HANGING_SPEED: float = 150.0
 
@@ -86,6 +87,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			CURRENT_ACCELERATION = GROUND_ACCELERATION_SETTER
 			HIT_RESSORT = false
+			CAN_HANG_AFTER_JUMP = true
 	
 	if velocity.y > MAX_FREEFALLING_SPEED:
 		velocity.y = MAX_FREEFALLING_SPEED
@@ -100,8 +102,15 @@ func _physics_process(delta: float) -> void:
 		if HANGING == true:
 			HANGING = false
 			velocity.y = JUMP_VELOCITY
+			# If player is moving up while jumping, can't hang again until release moving up
+			if Input.is_action_pressed("move_up"):
+				CAN_HANG_AFTER_JUMP = false
 		else:
 			jump_buffer_timer.start()
+	
+	if Input.is_action_just_released("move_up"):
+		if NEAR_VIGNES == true:
+			CAN_HANG_AFTER_JUMP = true
 	
 	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
@@ -125,16 +134,19 @@ func _physics_process(delta: float) -> void:
 			else:
 				NEAR_VIGNES = false
 				HANGING = false
+				CAN_HANG_AFTER_JUMP = true
 		else:
 			NEAR_VIGNES = false
 			HANGING = false
+			CAN_HANG_AFTER_JUMP = true
 	else:
 		NEAR_VIGNES = false
 		HANGING = false
+		CAN_HANG_AFTER_JUMP = true
 	
 	# If the player is near vignes, hang onto them
 	if Input.is_action_pressed("move_up"):
-		if NEAR_VIGNES == true:
+		if NEAR_VIGNES == true and CAN_HANG_AFTER_JUMP == true:
 			HANGING = true
 	
 	# Handle left/right inputs and movement
@@ -174,18 +186,17 @@ func handle_input() -> void:
 	direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if HANGING == false:
+		# Moves the player when they're not hanging
 		if direction_x == 0:
 			velocity.x = move_toward(velocity.x, 0, CURRENT_ACCELERATION)
 		else:
 			velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, CURRENT_ACCELERATION)
 	else:
+		# Moves the player when they're hanging
 		velocity = direction_xANDy * MAX_HANGING_SPEED
 		if velocity.y < 0:
-			if ray_cast_2d_hanging_top_checker.is_colliding() == true:
-				VIGNES_SHAPECAST_CHECKER = ray_cast_2d_hanging_top_checker.get_collider()
-				if VIGNES_SHAPECAST_CHECKER.is_in_group("Vignes"):
-					print("a")
-			else:
+			# Stops the player from moving over the top of the vignes
+			if ray_cast_2d_hanging_top_checker.is_colliding() == false:
 				velocity.y = 0
 
 
