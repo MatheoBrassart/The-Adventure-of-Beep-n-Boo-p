@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cqrjgo1y6b3mk"]
+[gd_scene load_steps=8 format=4 uid="uid://cqrjgo1y6b3mk"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_g48by"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_1spiw"]
 [ext_resource type="PackedScene" uid="uid://bsbra8n6jqa3w" path="res://scenes/others/cutscene_player.tscn" id="3_gqwg8"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="4_h7oru"]
+[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="5_1spiw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymsgm"]
 texture = ExtResource("4_h7oru")
@@ -17,6 +18,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ymsgm")
 
 [node name="atelier_b_13" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(2045.25, 24.999979)
+scale = Vector2(6.156543, 4.953704)
+texture = ExtResource("5_1spiw")
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 

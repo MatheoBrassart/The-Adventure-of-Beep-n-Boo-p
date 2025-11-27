@@ -297,6 +297,11 @@ func check_cutscene_informations():
 			CURRENT_ACTIVE_DIALOGUE = "ArriveeVilleEnRuine"
 			CAN_MOVE = false
 			dialogueSystem.play_dialogue("ArriveeVilleEnRuine", 0)
+	
+	if get_tree().get_current_scene().get_name() == "villeenruine_a_8" and HAS_TO_PLAY_DIALOGUE == true:
+			CURRENT_ACTIVE_DIALOGUE = "FinDemo2"
+			CAN_MOVE = false
+			dialogueSystem.play_dialogue("FinDemo2", 0)
 
 func finished_dialogue():
 	
@@ -324,6 +329,9 @@ func finished_dialogue():
 		gameInformations.CUTSCENE_ArriveeVilleEnRuine = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
+	
+	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
+		get_tree().quit()
 
 
 func switch_level():

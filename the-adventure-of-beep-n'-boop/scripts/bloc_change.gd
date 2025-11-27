@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-class_name BlocChange
-
 # Defines which character this bloc is for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
 
@@ -32,11 +30,6 @@ func _ready() -> void:
 		rightSprite.play("defaultActive")
 
 
-func _process(_delta: float) -> void:
-	
-	pass
-
-
 func switch_state():
 	
 	# Called by game_informations
@@ -59,4 +52,3 @@ func deactivate():
 	ISACTIVE = 0
 	rightSprite.play("deactivating")
 	collisionShape2D.disabled = true
-	

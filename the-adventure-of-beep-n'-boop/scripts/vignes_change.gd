@@ -4,9 +4,9 @@ extends Area2D
 @export var WHICH_CHARACTER_IS_IT = 0
 
 # Animations
-@onready var animatedSpriteVignesChangeBeep: Sprite2D = $AnimatedSprite2DVignesChangeBeep
-@onready var animatedSpriteVignesChangeBoop: Sprite2D = $AnimatedSprite2DVignesChangeBoop
-@onready var rightSprite: Sprite2D = $AnimatedSprite2DVignesChangeBeep
+@onready var animatedSpriteVignesChangeBeep: AnimatedSprite2D = $AnimatedSprite2DVignesChangeBeep
+@onready var animatedSpriteVignesChangeBoop: AnimatedSprite2D = $AnimatedSprite2DVignesChangeBoop
+@onready var rightSprite: AnimatedSprite2D = $AnimatedSprite2DVignesChangeBeep
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 var ISACTIVE = 1
@@ -25,10 +25,9 @@ func _ready() -> void:
 	var CURRENT_ACTIVE_CHARACTER = get_tree().get_first_node_in_group("Player")
 	if not CURRENT_ACTIVE_CHARACTER.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		deactivate()
-		# rightSprite.play("defaultInactive")
+		rightSprite.play("defaultInactive")
 	else:
-		pass
-		# rightSprite.play("defaultActive")
+		rightSprite.play("defaultActive")
 
 
 func switch_state():
@@ -44,19 +43,12 @@ func activate():
 	
 	# Activates the bloc
 	ISACTIVE = 1
-	if WHICH_CHARACTER_IS_IT == 0:
-		rightSprite.modulate = Color(1.0, 0.392, 0.373, 1.0)
-	else:
-		rightSprite.modulate = Color(1.0, 1, 1, 1.0)
+	rightSprite.play("activating")
 	collision_shape_2d.disabled = false
 
 func deactivate():
 	
 	# Deactivates the bloc
 	ISACTIVE = 0
-	if WHICH_CHARACTER_IS_IT == 0:
-		rightSprite.modulate = Color(1.0, 0.392, 0.373, 0.5)
-	else:
-		rightSprite.modulate = Color(1.0, 1, 1, 0.5)
+	rightSprite.play("deactivating")
 	collision_shape_2d.disabled = true
-	

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bu3vt3bml6b3g"]
+[gd_scene load_steps=9 format=4 uid="uid://bu3vt3bml6b3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_ecetk"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_e34td"]
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="3_cjlqx"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="4_ecetk"]
+[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="6_cjlqx"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="6_e34td"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjlqx"]
@@ -18,6 +19,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cjlqx")
 
 [node name="villeenruine_a_3" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(598.62494, 303.99997)
+scale = Vector2(6.816589, 4.953704)
+texture = ExtResource("6_cjlqx")
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 

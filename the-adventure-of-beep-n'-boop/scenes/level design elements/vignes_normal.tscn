@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://drx8qwx2h15ko"]
 
-[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_4n6q8"]
 [ext_resource type="Script" uid="uid://1b5vkuuicvmb" path="res://scripts/vignes_normal.gd" id="1_apw2j"]
+[ext_resource type="Texture2D" uid="uid://bos4lnmnt4hba" path="res://assets/textures/Vignes.png" id="2_apw2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n6q8"]
 size = Vector2(128, 128)
@@ -13,9 +13,9 @@ collision_mask = 3
 script = ExtResource("1_apw2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.39188215, 0.78822047, 5.390644e-06, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_4n6q8")
+texture = ExtResource("2_apw2j")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.5)
