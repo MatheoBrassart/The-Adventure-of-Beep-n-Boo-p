@@ -241,16 +241,22 @@ position = Vector2(480, 224)
 position = Vector2(544, 224)
 
 [node name="BlocChange25" parent="Level elements" instance=ExtResource("3_quk6i")]
-position = Vector2(608, 224)
+position = Vector2(544, 160)
 
 [node name="BlocChange69" parent="Level elements" instance=ExtResource("3_quk6i")]
 position = Vector2(608, 160)
 
 [node name="BlocChange26" parent="Level elements" instance=ExtResource("3_quk6i")]
-position = Vector2(672, 224)
+position = Vector2(672, 160)
+
+[node name="BlocChange44" parent="Level elements" instance=ExtResource("3_quk6i")]
+position = Vector2(736, 160)
 
 [node name="BlocChange27" parent="Level elements" instance=ExtResource("3_quk6i")]
 position = Vector2(736, 224)
+
+[node name="BlocChange43" parent="Level elements" instance=ExtResource("3_quk6i")]
+position = Vector2(736, 288)
 
 [node name="BlocChange28" parent="Level elements" instance=ExtResource("3_quk6i")]
 position = Vector2(800, 224)
