@@ -20,7 +20,10 @@ func _on_body_entered(body: Node2D) -> void:
 	# Bounce the player when it touches it. Direction depends on its rotation.
 	if body.is_in_group("Player") == true:
 		animatedSprite2D.play("used")
-		body.hit_ressort()
+		if RESSORT_DIRECTION == 3 or 4:
+			body.hit_ressort(true)
+		else:
+			body.hit_ressort(false)
 		if RESSORT_DIRECTION == 1:
 			body.velocity.y = RESSORT_VELOCITY * -1
 		elif RESSORT_DIRECTION == 3:

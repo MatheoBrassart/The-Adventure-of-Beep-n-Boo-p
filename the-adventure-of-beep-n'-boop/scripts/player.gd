@@ -19,6 +19,7 @@ class_name Player
 
 # Base movement variables
 var MAX_SPEED = 300.0
+var OVER_MAX_SPEED = 0
 var CURRENT_ACCELERATION = 0
 var GROUND_ACCELERATION_SETTER = 50
 var AIR_ACCELERATION_SETTER = 30
@@ -155,6 +156,14 @@ func _physics_process(delta: float) -> void:
 		if NEAR_VIGNES == true and CAN_HANG_AFTER_JUMP == true:
 			HANGING = true
 	
+	if velocity.x > MAX_SPEED:
+		if velocity.x > MAX_SPEED * 2:
+			OVER_MAX_SPEED = MAX_SPEED * 2
+		else:
+			OVER_MAX_SPEED = velocity.x
+		velocity.x -= CURRENT_ACCELERATION
+	else:
+		OVER_MAX_SPEED = 0
 	
 	# Handle left/right inputs and movement
 	handle_input()
@@ -198,7 +207,10 @@ func handle_input() -> void:
 		if direction_x == 0:
 			velocity.x = move_toward(velocity.x, 0, CURRENT_ACCELERATION)
 		else:
-			velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, CURRENT_ACCELERATION)
+			if OVER_MAX_SPEED > 0:
+				velocity.x = move_toward(velocity.x, OVER_MAX_SPEED * direction_x, CURRENT_ACCELERATION)
+			else:
+				velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, CURRENT_ACCELERATION)
 	else:
 		# Moves the player when they're hanging
 		velocity = direction_xANDy * MAX_HANGING_SPEED
@@ -245,11 +257,12 @@ func player_death():
 		get_tree().reload_current_scene()
 
 
-func hit_ressort():
+func hit_ressort(is_side: bool):
 	
-	# Reduces the acceleration of the player when a ressort is hit
+	# Reduces the acceleration of the player when a side ressort is hit
 	HIT_RESSORT = true
-	CURRENT_ACCELERATION = 10
+	if is_side == true:
+		CURRENT_ACCELERATION = 10
 
 
 func check_respawn_informations():
