@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dhwfwv5f4srf1"]
+[gd_scene load_steps=11 format=4 uid="uid://dhwfwv5f4srf1"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_p11j1"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_hk3pf"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://drx8qwx2h15ko" path="res://scenes/level design elements/vignes_normal.tscn" id="4_h2je3"]
 [ext_resource type="PackedScene" uid="uid://drqelc53l2yhn" path="res://scenes/level design elements/vignes_change.tscn" id="6_kw2x5"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="6_m8t6j"]
-[ext_resource type="PackedScene" uid="uid://bsbra8n6jqa3w" path="res://scenes/others/cutscene_player.tscn" id="8_hk3pf"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="8_o5628"]
 [ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="8_p11j1"]
 
@@ -170,10 +169,6 @@ WHICH_CHARACTER_IS_IT = 1
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("6_m8t6j")]
 position = Vector2(416, 288)
 WHICH_CHARACTER_IS_IT = 1
-
-[node name="cutscenePlayer" parent="Level elements" instance=ExtResource("8_hk3pf")]
-position = Vector2(1120, 416)
-scale = Vector2(1, 4.719995)
 
 [node name="Background elements" type="Node2D" parent="."]
 

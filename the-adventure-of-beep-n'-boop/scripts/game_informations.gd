@@ -10,12 +10,21 @@ var listOfLevels = [LEVELTEST_1, LEVELTEST_2]
 var WHERE_TO_RESPAWN_PLAYER = 0
 var WHICH_CHARACTER_TO_RESPAWN = 0
 
+
 # ----- Progress variables for dialogues and cutscenes -----
 var CUTSCENE_BeepReveil: bool = false
 var CUTSCENE_BoopReveil: bool = false
 var CUTSCENE_PremierEnregistrement: bool = false
 var CUTSCENE_SortieAtelier: bool = false
 var CUTSCENE_ArriveeVilleEnRuine: bool = false
+
+
+# ----- List of obtained Puces de Données -----
+var PUCES_LIST: Dictionary = {
+	"villeenruine" = {
+		1: false,
+	},
+}
 
 func _process(_delta: float) -> void:
 	
