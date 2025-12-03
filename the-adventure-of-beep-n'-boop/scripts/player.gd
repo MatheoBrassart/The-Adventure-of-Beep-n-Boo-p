@@ -263,6 +263,8 @@ func hit_ressort(is_side: bool):
 	HIT_RESSORT = true
 	if is_side == true:
 		CURRENT_ACCELERATION = 10
+	else:
+		CURRENT_ACCELERATION = 20
 
 
 func check_respawn_informations():
