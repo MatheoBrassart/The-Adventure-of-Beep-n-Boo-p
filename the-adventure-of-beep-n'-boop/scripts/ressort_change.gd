@@ -76,7 +76,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") == true:
 		rightSprite.play("used")
 		if (RESSORT_DIRECTION == 3) || (RESSORT_DIRECTION == 4):
-			print("a")
 			body.hit_ressort(true)
 		else:
 			body.hit_ressort(false)

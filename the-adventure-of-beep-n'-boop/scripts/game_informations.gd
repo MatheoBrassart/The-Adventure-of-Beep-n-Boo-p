@@ -21,8 +21,12 @@ var CUTSCENE_ArriveeVilleEnRuine: bool = false
 
 # ----- List of obtained Puces de Données -----
 var PUCES_LIST: Dictionary = {
+	"atelier" = {
+		1: false,
+	},
 	"villeenruine" = {
 		1: false,
+		2: false,
 	},
 }
 

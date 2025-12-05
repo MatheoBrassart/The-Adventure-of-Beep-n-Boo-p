@@ -1,0 +1,352 @@
+[gd_scene load_steps=10 format=4 uid="uid://bvxqbh3jpyaqc"]
+
+[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_xmalt"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_vonrx"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_u8fo4"]
+[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_6ulwy"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="7_4yr56"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="9_r5pg3"]
+[ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="11_gn5wr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pe6k3"]
+texture = ExtResource("9_r5pg3")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_ew56i"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pe6k3")
+
+[node name="villeenruine_a_NEW6" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(1546.6251, 303.99997)
+scale = Vector2(15.676403, 4.953704)
+texture = ExtResource("1_xmalt")
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_vonrx")]
+position = Vector2(48, 400)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 3008
+limit_bottom = 647
+position_smoothing_enabled = true
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(2960, 400)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_u8fo4")]
+position = Vector2(3056, 304)
+scale = Vector2(1, 3)
+TO_WHICH_WORLD_DOES_IT_LEADS = "villeenruine"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 9
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_u8fo4")]
+position = Vector2(-48, 304)
+scale = Vector2(1, 3)
+TO_WHICH_WORLD_DOES_IT_LEADS = "villeenruine"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 7
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="Killzone" parent="Level elements" instance=ExtResource("4_6ulwy")]
+position = Vector2(608, 832)
+
+[node name="BlocChange" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(288, 416)
+
+[node name="BlocChange2" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(352, 416)
+
+[node name="BlocChange3" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(416, 416)
+
+[node name="BlocChange4" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(288, 352)
+
+[node name="BlocChange5" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(352, 352)
+
+[node name="BlocChange6" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(416, 352)
+
+[node name="BlocChange65" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2208, 224)
+
+[node name="BlocChange66" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2272, 224)
+
+[node name="BlocChange67" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2336, 224)
+
+[node name="BlocChange68" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2208, 160)
+
+[node name="BlocChange69" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2272, 160)
+
+[node name="BlocChange70" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2336, 160)
+
+[node name="BlocChange30" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1248, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange32" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 32)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange35" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 96)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange36" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange42" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, -160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange63" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, -96)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange64" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, -32)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange37" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 224)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange38" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 288)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange39" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 480)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange40" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange41" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1504, 608)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange31" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1312, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange33" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1248, 96)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange34" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1312, 96)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange17" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(864, 224)
+
+[node name="BlocChange18" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1120, 160)
+
+[node name="BlocChange23" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1120, 224)
+
+[node name="BlocChange19" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1056, 160)
+
+[node name="BlocChange20" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(864, 160)
+
+[node name="BlocChange21" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(928, 160)
+
+[node name="BlocChange22" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(992, 160)
+
+[node name="BlocChange56" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2144, 608)
+
+[node name="BlocChange57" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2400, 544)
+
+[node name="BlocChange58" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2400, 608)
+
+[node name="BlocChange59" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2336, 608)
+
+[node name="BlocChange60" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2144, 544)
+
+[node name="BlocChange61" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2208, 608)
+
+[node name="BlocChange62" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2272, 608)
+
+[node name="BlocChange13" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(800, 608)
+
+[node name="BlocChange14" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(864, 608)
+
+[node name="BlocChange15" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(800, 544)
+
+[node name="BlocChange16" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(864, 544)
+
+[node name="BlocChange26" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1184, 544)
+
+[node name="BlocChange27" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1248, 544)
+
+[node name="BlocChange28" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1184, 480)
+
+[node name="BlocChange29" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1248, 480)
+
+[node name="BlocChange73" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2592, 480)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange74" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2656, 480)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange75" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2592, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange76" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2656, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange7" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(608, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange8" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(672, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange9" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(608, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange10" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(608, 288)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange11" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(672, 288)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange12" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(672, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange24" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(928, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange25" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1056, 480)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange43" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1696, 480)
+
+[node name="BlocChange47" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1760, 480)
+
+[node name="BlocChange48" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1760, 416)
+
+[node name="BlocChange44" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1760, 352)
+
+[node name="BlocChange49" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1888, 352)
+
+[node name="BlocChange50" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2016, 224)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange51" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2016, 288)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange52" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2016, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange53" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2080, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange54" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2080, 288)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange55" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2080, 224)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange71" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2528, 160)
+
+[node name="BlocChange72" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(2656, 224)
+
+[node name="BlocChange46" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1568, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange77" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1568, 96)
+
+[node name="BlocChange78" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1568, 32)
+
+[node name="BlocChange79" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1568, -32)
+
+[node name="BlocChange80" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1568, -96)
+
+[node name="BlocChange81" parent="Level elements" instance=ExtResource("7_4yr56")]
+position = Vector2(1568, -160)
+
+[node name="puceDonnee" parent="Level elements" instance=ExtResource("11_gn5wr")]
+position = Vector2(1568, 64)
+WHICH_WORLD = "villeenruine"
+WHICH_NUMBER = 3
+
+[node name="Background elements" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/w4AAAABAAEAAAD//w4AAAABAAEAAAAAAA4AAAABAAEAAAABAA4AAAABAAEAAAACAA4AAAABAAEAAAADAA4AAAABAAEAAAAEAA4AAAABAAEAAAAFAA4AAAABAAEAAAAFAA8AAAABAAEAAAAFABAAAAABAAEAAAAFABEAAAABAAEAAABYAA4AAAABAAEAAABZAA4AAAABAAEAAABaAA4AAAABAAEAAABbAA4AAAABAAEAAABcAA4AAAABAAEAAABdAA4AAAABAAEAAABeAA4AAAABAAEAAABfAA4AAAABAAEAAAAFABIAAAABAAEAAAAFABMAAAABAAEAAAAFABQAAAABAAEAAAAFABUAAAABAAEAAABYABUAAAABAAEAAABYABQAAAABAAEAAABYABMAAAABAAEAAABYABIAAAABAAEAAABYABEAAAABAAEAAABYABAAAAABAAEAAABYAA8AAAABAAEAAAA=")
+tile_set = SubResource("TileSet_ew56i")

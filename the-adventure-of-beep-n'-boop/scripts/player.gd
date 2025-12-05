@@ -58,6 +58,9 @@ var CAN_MOVE: bool = true
 var multiHitboxDeathFixer = 0
 
 
+var RESPAWNERS_POSITIONS_NUMBER = 0
+
+
 func _ready() -> void:
 	
 	# Check at which location the player should spawn/respawn and which character should the player be respawn as
@@ -270,8 +273,16 @@ func hit_ressort(is_side: bool):
 func check_respawn_informations():
 	
 	# Gets to which position the player should respawn in GameInformations, then teleports them
-	if gameInformations.WHERE_TO_RESPAWN_PLAYER == 1:
-		position = get_tree().get_first_node_in_group("PlayerSpawn1").position
+	if gameInformations.WHERE_TO_RESPAWN_PLAYER > 0:
+		var respawners_positions = get_tree().get_nodes_in_group("PlayerSpawn1")
+		RESPAWNERS_POSITIONS_NUMBER = 0
+		for i in respawners_positions:
+			RESPAWNERS_POSITIONS_NUMBER += 1
+			print(RESPAWNERS_POSITIONS_NUMBER)
+			if RESPAWNERS_POSITIONS_NUMBER == gameInformations.WHERE_TO_RESPAWN_PLAYER:
+				position = i.position
+				pass
+		
 	
 	# Gets the last active character, and respawn the player as them
 	if gameInformations.WHICH_CHARACTER_TO_RESPAWN == 1:
