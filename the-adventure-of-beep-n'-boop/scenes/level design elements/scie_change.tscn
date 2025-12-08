@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg7cx0l0pahpq"]
+
+[ext_resource type="Script" uid="uid://bmfvi7n7c3e1a" path="res://scripts/scie_change.gd" id="1_mu1vk"]
+[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="2_0hm0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
+size = Vector2(14, 46.800003)
+
+[node name="ScieChange" type="Area2D" groups=["ScieChange"]]
+z_index = 1
+script = ExtResource("1_mu1vk")
+
+[node name="AnimatedSprite2DScieChangeBeep" type="Sprite2D" parent="."]
+modulate = Color(1, 0.57857543, 0.5151607, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0hm0h")
+region_rect = Rect2(0, 396, 66, 66)
+
+[node name="AnimatedSprite2DScieChangeBoop" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0hm0h")
+region_rect = Rect2(0, 396, 66, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.24999976)
+scale = Vector2(4, 1.25)
+shape = SubResource("RectangleShape2D_i3sln")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

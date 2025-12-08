@@ -49,6 +49,10 @@ func _process(_delta: float) -> void:
 		listOfChanges = get_tree().get_nodes_in_group("VignesChange")
 		for i in listOfChanges: 
 			i.switch_state()
+		
+		listOfChanges = get_tree().get_nodes_in_group("ScieChange")
+		for i in listOfChanges: 
+			i.switch_state()
 			
 		listOfPlayer = get_tree().get_nodes_in_group("Player")
 		for i in listOfPlayer: 
