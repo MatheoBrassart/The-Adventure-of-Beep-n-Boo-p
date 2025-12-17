@@ -114,10 +114,6 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(1504, 96)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange36" parent="Level elements" instance=ExtResource("7_4yr56")]
-position = Vector2(1504, 160)
-WHICH_CHARACTER_IS_IT = 1
-
 [node name="BlocChange42" parent="Level elements" instance=ExtResource("7_4yr56")]
 position = Vector2(1504, -160)
 WHICH_CHARACTER_IS_IT = 1

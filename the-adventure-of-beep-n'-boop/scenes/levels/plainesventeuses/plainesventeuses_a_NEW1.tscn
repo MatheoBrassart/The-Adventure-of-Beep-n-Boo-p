@@ -479,6 +479,28 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(224, 576)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="ScieChange18" parent="Level elements" instance=ExtResource("7_3dq48")]
+position = Vector2(160, 640)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange28" parent="Level elements" instance=ExtResource("7_3dq48")]
+position = Vector2(288, 640)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange32" parent="Level elements" instance=ExtResource("7_3dq48")]
+position = Vector2(416, 640)
+
+[node name="ScieChange64" parent="Level elements" instance=ExtResource("7_3dq48")]
+position = Vector2(544, 640)
+
+[node name="ScieChange65" parent="Level elements" instance=ExtResource("7_3dq48")]
+position = Vector2(672, 640)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange66" parent="Level elements" instance=ExtResource("7_3dq48")]
+position = Vector2(800, 640)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="ScieChange10" parent="Level elements" instance=ExtResource("7_3dq48")]
 position = Vector2(288, 256)
 
@@ -624,11 +646,9 @@ position = Vector2(800, 512)
 
 [node name="ScieChange63" parent="Level elements" instance=ExtResource("7_3dq48")]
 position = Vector2(736, 576)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange52" parent="Level elements" instance=ExtResource("7_3dq48")]
 position = Vector2(864, 576)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange53" parent="Level elements" instance=ExtResource("7_3dq48")]
 position = Vector2(928, 256)
@@ -659,6 +679,7 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange60" parent="Level elements" instance=ExtResource("7_3dq48")]
 position = Vector2(928, 512)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange61" parent="Level elements" instance=ExtResource("7_3dq48")]
 position = Vector2(992, 576)
