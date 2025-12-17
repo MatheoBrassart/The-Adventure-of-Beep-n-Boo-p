@@ -365,8 +365,9 @@ script = ExtResource("1_omquk")
 shape = SubResource("RectangleShape2D_omquk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_an4vv")
-frame_progress = 0.7883881
+frame_progress = 0.53173935
 
 [node name="AnimationPlayerPuce" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
@@ -375,9 +376,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-z_index = -1
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_7j1ip")
-frame_progress = 0.057422914
+frame_progress = 0.80077523
 
 [node name="AnimationHoverEffect" type="AnimationPlayer" parent="AnimatedSprite2D2"]
 libraries = {
