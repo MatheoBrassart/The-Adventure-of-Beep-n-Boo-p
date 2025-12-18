@@ -22,7 +22,6 @@ sources/0 = SubResource("TileSetAtlasSource_lv3go")
 [node name="villeenruine_a_NEW12" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
