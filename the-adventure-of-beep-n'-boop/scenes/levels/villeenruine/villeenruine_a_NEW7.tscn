@@ -25,7 +25,6 @@ sources/0 = SubResource("TileSetAtlasSource_pe6k3")
 [node name="villeenruine_a_NEW7" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(1546.6251, 303.99997)
 scale = Vector2(15.676403, 4.953704)
@@ -37,7 +36,6 @@ texture = ExtResource("1_v2g6t")
 position = Vector2(48, 272)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
-visible = false
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
