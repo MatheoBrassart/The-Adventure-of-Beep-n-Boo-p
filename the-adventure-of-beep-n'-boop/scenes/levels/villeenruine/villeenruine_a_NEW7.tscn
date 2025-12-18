@@ -1,0 +1,714 @@
+[gd_scene load_steps=13 format=4 uid="uid://c5oumb6b2ciy"]
+
+[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_v2g6t"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_54ox0"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_w1m1x"]
+[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_hwcbv"]
+[ext_resource type="PackedScene" uid="uid://drqelc53l2yhn" path="res://scenes/level design elements/vignes_change.tscn" id="5_y145j"]
+[ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="6_ohcy0"]
+[ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="6_v2g6t"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_qp4fo"]
+[ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="8_54ox0"]
+[ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="8_w1m1x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pe6k3"]
+texture = ExtResource("7_qp4fo")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_ew56i"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pe6k3")
+
+[node name="villeenruine_a_NEW7" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -100
+position = Vector2(1546.6251, 303.99997)
+scale = Vector2(15.676403, 4.953704)
+texture = ExtResource("1_v2g6t")
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_54ox0")]
+position = Vector2(48, 272)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+visible = false
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 2496
+position_smoothing_enabled = true
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1104, 2384)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_w1m1x")]
+position = Vector2(1200, 2336)
+scale = Vector2(1, 2)
+TO_WHICH_WORLD_DOES_IT_LEADS = "villeenruine"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 9
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_w1m1x")]
+position = Vector2(-48, 176)
+scale = Vector2(1, 3)
+TO_WHICH_WORLD_DOES_IT_LEADS = "villeenruine"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 7
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="Killzone" parent="Level elements" instance=ExtResource("4_hwcbv")]
+position = Vector2(576, 2624)
+
+[node name="Vignes_change" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(416, 320)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change2" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(480, 320)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change3" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(544, 320)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change4" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 320)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change5" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change6" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 448)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change7" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 512)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change8" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 576)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change9" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 640)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change16" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(608, 704)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change10" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 768)
+
+[node name="Vignes_change11" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 832)
+
+[node name="Vignes_change12" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 896)
+
+[node name="Vignes_change13" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 960)
+
+[node name="Vignes_change14" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 1024)
+
+[node name="Vignes_change15" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 1088)
+
+[node name="Vignes_change17" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(288, 1152)
+
+[node name="Vignes_change18" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1216)
+
+[node name="Vignes_change19" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1280)
+
+[node name="Vignes_change20" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1344)
+
+[node name="Vignes_change21" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1408)
+
+[node name="Vignes_change22" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1472)
+
+[node name="Vignes_change23" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1536)
+
+[node name="Vignes_change24" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(992, 1600)
+
+[node name="Vignes_change25" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 1664)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change26" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 1728)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change27" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 1792)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change28" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 1856)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change29" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 1920)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change30" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 1984)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change31" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(96, 2048)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsNormal" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 352)
+
+[node name="PicsNormal2" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 352)
+
+[node name="PicsNormal3" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 352)
+
+[node name="PicsNormal4" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 352)
+
+[node name="PicsNormal5" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 352)
+
+[node name="PicsNormal6" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 352)
+
+[node name="PicsNormal7" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 352)
+
+[node name="PicsNormal8" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 352)
+
+[node name="PicsNormal9" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 352)
+
+[node name="PicsNormal10" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 352)
+
+[node name="PicsNormal11" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 352)
+
+[node name="PicsNormal12" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 352)
+
+[node name="PicsNormal37" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 800)
+
+[node name="PicsNormal38" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 800)
+
+[node name="PicsNormal39" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 800)
+
+[node name="PicsNormal40" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 800)
+
+[node name="PicsNormal41" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 800)
+
+[node name="PicsNormal42" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 800)
+
+[node name="PicsNormal43" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 800)
+
+[node name="PicsNormal44" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(608, 800)
+
+[node name="PicsNormal45" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 800)
+
+[node name="PicsNormal46" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 800)
+
+[node name="PicsNormal47" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 800)
+
+[node name="PicsNormal48" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 800)
+
+[node name="PicsNormal49" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 800)
+
+[node name="PicsNormal50" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 800)
+
+[node name="PicsNormal51" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 800)
+
+[node name="PicsNormal56" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal57" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal58" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal59" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal60" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal61" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal62" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal63" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(608, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal64" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal65" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal66" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal67" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal68" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal69" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal70" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 928)
+rotation = 3.1415927
+
+[node name="PicsNormal149" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 2144)
+
+[node name="PicsNormal153" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 2400)
+
+[node name="PicsNormal150" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 2144)
+
+[node name="PicsNormal151" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 2144)
+
+[node name="PicsNormal152" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 2144)
+
+[node name="PicsNormal154" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(448, 2144)
+
+[node name="PicsNormal155" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 2144)
+
+[node name="PicsNormal157" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(640, 2144)
+
+[node name="PicsNormal160" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 2144)
+
+[node name="PicsNormal161" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 2144)
+
+[node name="PicsNormal162" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 2144)
+
+[node name="PicsNormal163" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 2144)
+
+[node name="PicsNormal168" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal169" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal170" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal171" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal173" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(448, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal174" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(512, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal175" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(576, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal176" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(640, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal179" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal164" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 2144)
+
+[node name="PicsNormal183" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal180" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal181" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal182" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 2272)
+rotation = 3.1415927
+
+[node name="PicsNormal74" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 1248)
+
+[node name="PicsNormal75" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 1248)
+
+[node name="PicsNormal76" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 1248)
+
+[node name="PicsNormal77" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 1248)
+
+[node name="PicsNormal78" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 1248)
+
+[node name="PicsNormal79" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 1248)
+
+[node name="PicsNormal80" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 1248)
+
+[node name="PicsNormal82" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 1248)
+
+[node name="PicsNormal83" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 1248)
+
+[node name="PicsNormal84" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 1248)
+
+[node name="PicsNormal85" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 1248)
+
+[node name="PicsNormal86" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 1248)
+
+[node name="PicsNormal88" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 1248)
+
+[node name="PicsNormal93" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal94" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal95" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal96" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal97" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal81" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 1248)
+
+[node name="PicsNormal106" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal98" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal99" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal100" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(608, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal101" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal102" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal103" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal104" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal105" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal107" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 1376)
+rotation = 3.1415927
+
+[node name="PicsNormal112" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 1696)
+
+[node name="PicsNormal113" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 1696)
+
+[node name="PicsNormal114" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 1696)
+
+[node name="PicsNormal116" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 1696)
+
+[node name="PicsNormal117" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 1696)
+
+[node name="PicsNormal118" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 1696)
+
+[node name="PicsNormal119" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(608, 1696)
+
+[node name="PicsNormal120" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 1696)
+
+[node name="PicsNormal121" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 1696)
+
+[node name="PicsNormal122" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 1696)
+
+[node name="PicsNormal123" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 1696)
+
+[node name="PicsNormal130" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal131" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal132" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal133" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal134" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 1696)
+
+[node name="PicsNormal135" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal136" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal137" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal138" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(608, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal139" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal140" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal141" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal142" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal143" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal147" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 1696)
+
+[node name="PicsNormal148" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal144" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 1824)
+rotation = 3.1415927
+
+[node name="PicsNormal13" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 352)
+
+[node name="PicsNormal14" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 352)
+
+[node name="PicsNormal17" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(160, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal18" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(224, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal34" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(96, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal19" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(288, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal20" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(352, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal21" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(416, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal22" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(480, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal23" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(544, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal24" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(672, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal25" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(736, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal26" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(800, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal27" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(864, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal28" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(928, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal29" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(992, 480)
+rotation = 3.1415927
+
+[node name="PicsNormal30" parent="Level elements" instance=ExtResource("6_v2g6t")]
+position = Vector2(1056, 480)
+rotation = 3.1415927
+
+[node name="RessortChange" parent="Level elements" instance=ExtResource("8_54ox0")]
+z_index = 2
+position = Vector2(608, 1248)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange" parent="Level elements" instance=ExtResource("8_w1m1x")]
+position = Vector2(608, 1248)
+
+[node name="PicsChange2" parent="Level elements" instance=ExtResource("8_w1m1x")]
+position = Vector2(736, 1696)
+
+[node name="PicsChange3" parent="Level elements" instance=ExtResource("8_w1m1x")]
+position = Vector2(416, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Background elements" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/woAAAABAAEAAAD//woAAAABAAEAAAAAAAoAAAABAAEAAAABAAoAAAABAAEAAAACAAoAAAABAAEAAAADAAoAAAABAAEAAAADAAsAAAABAAEAAAADAAwAAAABAAEAAAADAA0AAAABAAEAAAACAA0AAAABAAEAAAABAA0AAAABAAEAAAAAAA0AAAABAAEAAAD//w0AAAABAAEAAAD+/w0AAAABAAEAAAAEAAwAAAABAAEAAAAFAAwAAAABAAEAAAAGAAwAAAABAAEAAAAHAAwAAAABAAEAAAAIAAwAAAABAAEAAAAJAAwAAAABAAEAAAAKAAwAAAABAAEAAAALAAwAAAABAAEAAAAMAAwAAAABAAEAAAANAAwAAAABAAEAAAAOAAwAAAABAAEAAAAPAAwAAAABAAEAAAAQAAwAAAABAAEAAAARAAwAAAABAAEAAAARAA0AAAABAAEAAAAQAA0AAAABAAEAAAAPAA0AAAABAAEAAAAOAA0AAAABAAEAAAANAA0AAAABAAEAAAAMAA0AAAABAAEAAAALAA0AAAABAAEAAAAKAA0AAAABAAEAAAAJAA0AAAABAAEAAAAIAA0AAAABAAEAAAAHAA0AAAABAAEAAAAGAA0AAAABAAEAAAAFAA0AAAABAAEAAAAEAA0AAAABAAEAAAAUAAwAAAABAAEAAAAVAAwAAAABAAEAAAAWAAwAAAABAAEAAAAXAAwAAAABAAEAAAAYAAwAAAABAAEAAAAZAAwAAAABAAEAAAAaAAwAAAABAAEAAAAbAAwAAAABAAEAAAAcAAwAAAABAAEAAAAdAAwAAAABAAEAAAAeAAwAAAABAAEAAAAfAAwAAAABAAEAAAAgAAwAAAABAAEAAAAhAAwAAAABAAEAAAAiAAwAAAABAAEAAAAiAA0AAAABAAEAAAAhAA0AAAABAAEAAAAgAA0AAAABAAEAAAAfAA0AAAABAAEAAAAeAA0AAAABAAEAAAAdAA0AAAABAAEAAAAcAA0AAAABAAEAAAAbAA0AAAABAAEAAAAaAA0AAAABAAEAAAAZAA0AAAABAAEAAAAYAA0AAAABAAEAAAAXAA0AAAABAAEAAAAWAA0AAAABAAEAAAAVAA0AAAABAAEAAAAUAA0AAAABAAEAAAAHABoAAAABAAEAAAAGABoAAAABAAEAAAAFABoAAAABAAEAAAAEABoAAAABAAEAAAADABoAAAABAAEAAAACABoAAAABAAEAAAABABoAAAABAAEAAAABABsAAAABAAEAAAACABsAAAABAAEAAAADABsAAAABAAEAAAAEABsAAAABAAEAAAAFABsAAAABAAEAAAAGABsAAAABAAEAAAAHABsAAAABAAEAAAAKABoAAAABAAEAAAALABoAAAABAAEAAAAMABoAAAABAAEAAAANABoAAAABAAEAAAAOABoAAAABAAEAAAAPABoAAAABAAEAAAAQABoAAAABAAEAAAARABoAAAABAAEAAAASABoAAAABAAEAAAATABoAAAABAAEAAAAUABoAAAABAAEAAAAVABoAAAABAAEAAAAWABoAAAABAAEAAAAXABoAAAABAAEAAAAYABoAAAABAAEAAAAZABoAAAABAAEAAAAaABoAAAABAAEAAAAbABoAAAABAAEAAAAcABoAAAABAAEAAAAdABoAAAABAAEAAAAeABoAAAABAAEAAAAfABoAAAABAAEAAAAgABoAAAABAAEAAAAhABoAAAABAAEAAAAiABoAAAABAAEAAAAiABsAAAABAAEAAAAhABsAAAABAAEAAAAgABsAAAABAAEAAAAfABsAAAABAAEAAAAeABsAAAABAAEAAAAdABsAAAABAAEAAAAcABsAAAABAAEAAAAbABsAAAABAAEAAAAaABsAAAABAAEAAAAZABsAAAABAAEAAAAYABsAAAABAAEAAAAXABsAAAABAAEAAAAWABsAAAABAAEAAAAVABsAAAABAAEAAAAUABsAAAABAAEAAAATABsAAAABAAEAAAASABsAAAABAAEAAAARABsAAAABAAEAAAAQABsAAAABAAEAAAAPABsAAAABAAEAAAAOABsAAAABAAEAAAANABsAAAABAAEAAAAMABsAAAABAAEAAAALABsAAAABAAEAAAAKABsAAAABAAEAAAABACgAAAABAAEAAAABACkAAAABAAEAAAACACkAAAABAAEAAAADACkAAAABAAEAAAAEACkAAAABAAEAAAAFACkAAAABAAEAAAAGACkAAAABAAEAAAAHACkAAAABAAEAAAAIACkAAAABAAEAAAAJACkAAAABAAEAAAAKACkAAAABAAEAAAALACkAAAABAAEAAAALACgAAAABAAEAAAAKACgAAAABAAEAAAAJACgAAAABAAEAAAAIACgAAAABAAEAAAAHACgAAAABAAEAAAAGACgAAAABAAEAAAAFACgAAAABAAEAAAAEACgAAAABAAEAAAADACgAAAABAAEAAAACACgAAAABAAEAAAAMACgAAAABAAEAAAANACgAAAABAAEAAAAOACgAAAABAAEAAAAPACgAAAABAAEAAAAQACgAAAABAAEAAAARACgAAAABAAEAAAAUACgAAAABAAEAAAAVACgAAAABAAEAAAAWACgAAAABAAEAAAAXACgAAAABAAEAAAAYACgAAAABAAEAAAAZACgAAAABAAEAAAAaACgAAAABAAEAAAAbACgAAAABAAEAAAAcACgAAAABAAEAAAAdACgAAAABAAEAAAAdACkAAAABAAEAAAAcACkAAAABAAEAAAAbACkAAAABAAEAAAAaACkAAAABAAEAAAAZACkAAAABAAEAAAAYACkAAAABAAEAAAAXACkAAAABAAEAAAAWACkAAAABAAEAAAAVACkAAAABAAEAAAAUACkAAAABAAEAAAARACkAAAABAAEAAAAQACkAAAABAAEAAAAPACkAAAABAAEAAAAOACkAAAABAAEAAAANACkAAAABAAEAAAAMACkAAAABAAEAAAAgACgAAAABAAEAAAAhACgAAAABAAEAAAAiACgAAAABAAEAAAAiACkAAAABAAEAAAAhACkAAAABAAEAAAAgACkAAAABAAEAAAABADYAAAABAAEAAAABADcAAAABAAEAAAAEADYAAAABAAEAAAAEADcAAAABAAEAAAAFADYAAAABAAEAAAAFADcAAAABAAEAAAAGADYAAAABAAEAAAAGADcAAAABAAEAAAAHADYAAAABAAEAAAAHADcAAAABAAEAAAAIADYAAAABAAEAAAAIADcAAAABAAEAAAAJADYAAAABAAEAAAAJADcAAAABAAEAAAAKADYAAAABAAEAAAAKADcAAAABAAEAAAALADYAAAABAAEAAAALADcAAAABAAEAAAAMADYAAAABAAEAAAAMADcAAAABAAEAAAANADYAAAABAAEAAAANADcAAAABAAEAAAAOADYAAAABAAEAAAAOADcAAAABAAEAAAAPADYAAAABAAEAAAAPADcAAAABAAEAAAAQADYAAAABAAEAAAAQADcAAAABAAEAAAARADYAAAABAAEAAAARADcAAAABAAEAAAASADYAAAABAAEAAAASADcAAAABAAEAAAATADYAAAABAAEAAAATADcAAAABAAEAAAAUADYAAAABAAEAAAAUADcAAAABAAEAAAAVADYAAAABAAEAAAAVADcAAAABAAEAAAAWADYAAAABAAEAAAAWADcAAAABAAEAAAAXADYAAAABAAEAAAAXADcAAAABAAEAAAAYADYAAAABAAEAAAAYADcAAAABAAEAAAAZADYAAAABAAEAAAAZADcAAAABAAEAAAAaADYAAAABAAEAAAAaADcAAAABAAEAAAAbADYAAAABAAEAAAAbADcAAAABAAEAAAAcADYAAAABAAEAAAAcADcAAAABAAEAAAAdADYAAAABAAEAAAAdADcAAAABAAEAAAAeADYAAAABAAEAAAAeADcAAAABAAEAAAAfADYAAAABAAEAAAAfADcAAAABAAEAAAAgADYAAAABAAEAAAAgADcAAAABAAEAAAAhADYAAAABAAEAAAAhADcAAAABAAEAAAAiADYAAAABAAEAAAAiADcAAAABAAEAAAABAEQAAAABAAEAAAABAEUAAAABAAEAAAACAEQAAAABAAEAAAACAEUAAAABAAEAAAADAEQAAAABAAEAAAADAEUAAAABAAEAAAAEAEQAAAABAAEAAAAEAEUAAAABAAEAAAAFAEQAAAABAAEAAAAFAEUAAAABAAEAAAAGAEQAAAABAAEAAAAGAEUAAAABAAEAAAAHAEQAAAABAAEAAAAHAEUAAAABAAEAAAAIAEQAAAABAAEAAAAIAEUAAAABAAEAAAAJAEQAAAABAAEAAAAJAEUAAAABAAEAAAAMAEQAAAABAAEAAAAMAEUAAAABAAEAAAANAEQAAAABAAEAAAANAEUAAAABAAEAAAAOAEQAAAABAAEAAAAOAEUAAAABAAEAAAAPAEQAAAABAAEAAAAPAEUAAAABAAEAAAAQAEQAAAABAAEAAAAQAEUAAAABAAEAAAARAEQAAAABAAEAAAARAEUAAAABAAEAAAASAEQAAAABAAEAAAASAEUAAAABAAEAAAATAEQAAAABAAEAAAATAEUAAAABAAEAAAAUAEQAAAABAAEAAAAUAEUAAAABAAEAAAAVAEQAAAABAAEAAAAVAEUAAAABAAEAAAAZAEQAAAABAAEAAAAZAEUAAAABAAEAAAAaAEQAAAABAAEAAAAaAEUAAAABAAEAAAAbAEQAAAABAAEAAAAbAEUAAAABAAEAAAAcAEQAAAABAAEAAAAcAEUAAAABAAEAAAAdAEQAAAABAAEAAAAdAEUAAAABAAEAAAAeAEQAAAABAAEAAAAeAEUAAAABAAEAAAAfAEQAAAABAAEAAAAfAEUAAAABAAEAAAAgAEQAAAABAAEAAAAgAEUAAAABAAEAAAAhAEQAAAABAAEAAAAhAEUAAAABAAEAAAAiAEQAAAABAAEAAAAiAEUAAAABAAEAAAABAEwAAAABAAEAAAACAEwAAAABAAEAAAADAEwAAAABAAEAAAAEAEwAAAABAAEAAAAFAEwAAAABAAEAAAAGAEwAAAABAAEAAAAHAEwAAAABAAEAAAAIAEwAAAABAAEAAAAJAEwAAAABAAEAAAAKAEwAAAABAAEAAAALAEwAAAABAAEAAAAMAEwAAAABAAEAAAANAEwAAAABAAEAAAAOAEwAAAABAAEAAAAPAEwAAAABAAEAAAAQAEwAAAABAAEAAAARAEwAAAABAAEAAAASAEwAAAABAAEAAAATAEwAAAABAAEAAAAUAEwAAAABAAEAAAAVAEwAAAABAAEAAAAWAEwAAAABAAEAAAAXAEwAAAABAAEAAAAYAEwAAAABAAEAAAAZAEwAAAABAAEAAAAaAEwAAAABAAEAAAAbAEwAAAABAAEAAAAcAEwAAAABAAEAAAAdAEwAAAABAAEAAAAeAEwAAAABAAEAAAAfAEwAAAABAAEAAAAgAEwAAAABAAEAAAAhAEwAAAABAAEAAAAiAEwAAAABAAEAAAAjAEwAAAABAAEAAAAkAEwAAAABAAEAAAAlAEwAAAABAAEAAAABABkAAAABAAEAAAABABgAAAABAAEAAAABABcAAAABAAEAAAABABYAAAABAAEAAAABABUAAAABAAEAAAABABQAAAABAAEAAAABABMAAAABAAEAAAABABIAAAABAAEAAAABABEAAAABAAEAAAABABAAAAABAAEAAAABAA8AAAABAAEAAAABAA4AAAABAAEAAAABABwAAAABAAEAAAABAB0AAAABAAEAAAABAB4AAAABAAEAAAABAB8AAAABAAEAAAABACAAAAABAAEAAAABACEAAAABAAEAAAABACIAAAABAAEAAAABACMAAAABAAEAAAABACQAAAABAAEAAAABACUAAAABAAEAAAABACYAAAABAAEAAAABACcAAAABAAEAAAABACoAAAABAAEAAAABACsAAAABAAEAAAABACwAAAABAAEAAAABAC0AAAABAAEAAAABAC4AAAABAAEAAAABAC8AAAABAAEAAAABADAAAAABAAEAAAABADEAAAABAAEAAAABADIAAAABAAEAAAABADMAAAABAAEAAAABADQAAAABAAEAAAABADUAAAABAAEAAAABADgAAAABAAEAAAABADkAAAABAAEAAAABADoAAAABAAEAAAABADsAAAABAAEAAAABADwAAAABAAEAAAABAD0AAAABAAEAAAABAD4AAAABAAEAAAABAD8AAAABAAEAAAABAEAAAAABAAEAAAABAEEAAAABAAEAAAABAEIAAAABAAEAAAABAEMAAAABAAEAAAABAEYAAAABAAEAAAABAEcAAAABAAEAAAABAEgAAAABAAEAAAABAEkAAAABAAEAAAABAEoAAAABAAEAAAABAEsAAAABAAEAAAAiAA4AAAABAAEAAAAiAA8AAAABAAEAAAAiABAAAAABAAEAAAAiABEAAAABAAEAAAAiABIAAAABAAEAAAAiABMAAAABAAEAAAAiABQAAAABAAEAAAAiABUAAAABAAEAAAAiABYAAAABAAEAAAAiABcAAAABAAEAAAAiABgAAAABAAEAAAAiABkAAAABAAEAAAAiABwAAAABAAEAAAAiAB0AAAABAAEAAAAiAB4AAAABAAEAAAAiAB8AAAABAAEAAAAiACAAAAABAAEAAAAiACEAAAABAAEAAAAiACIAAAABAAEAAAAiACMAAAABAAEAAAAiACQAAAABAAEAAAAiACUAAAABAAEAAAAiACYAAAABAAEAAAAiACcAAAABAAEAAAAiACoAAAABAAEAAAAiACsAAAABAAEAAAAiACwAAAABAAEAAAAiAC0AAAABAAEAAAAiAC4AAAABAAEAAAAiAC8AAAABAAEAAAAiADAAAAABAAEAAAAiADEAAAABAAEAAAAiADIAAAABAAEAAAAiADMAAAABAAEAAAAiADQAAAABAAEAAAAiADUAAAABAAEAAAAiADgAAAABAAEAAAAiADkAAAABAAEAAAAiADoAAAABAAEAAAAiADsAAAABAAEAAAAiADwAAAABAAEAAAAiAD0AAAABAAEAAAAiAD4AAAABAAEAAAAiAD8AAAABAAEAAAAiAEAAAAABAAEAAAAiAEEAAAABAAEAAAAiAEIAAAABAAEAAAAiAEMAAAABAAEAAAASACgAAAABAAEAAAASACkAAAABAAEAAAATACkAAAABAAEAAAATACgAAAABAAEAAAAYAEQAAAABAAEAAAAYAEUAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_ew56i")
+
+[node name="RessortChange2" parent="." instance=ExtResource("8_54ox0")]
+z_index = 2
+position = Vector2(736, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="RessortChange3" parent="." instance=ExtResource("8_54ox0")]
+z_index = 2
+position = Vector2(416, 1696)
+
+[node name="puceDonnee" parent="." instance=ExtResource("6_ohcy0")]
+position = Vector2(736, 2048)
