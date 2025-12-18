@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_vpy8g"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="6_hnhku"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yrb8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ab574"]
 texture = ExtResource("6_hnhku")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -16,12 +16,11 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_nlxq5"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4yrb8")
+sources/0 = SubResource("TileSetAtlasSource_ab574")
 
 [node name="villeenruine_a_NEW10" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
