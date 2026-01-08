@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxjvls4rc3t5u"]
+
+[ext_resource type="FontFile" uid="uid://cbj8usx8wede3" path="res://assets/fonts/BoldPixels.ttf" id="1_4ge8c"]
+
+[node name="world_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ButtonAtelier" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 102.0
+offset_right = 362.0
+offset_bottom = 402.0
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../ButtonVilleenRuine")
+theme_override_fonts/font = ExtResource("1_4ge8c")
+theme_override_font_sizes/font_size = 64
+text = "Atelier"
+
+[node name="ButtonVilleenRuine" type="Button" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 106.0
+offset_right = 817.0
+offset_bottom = 406.0
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../ButtonAtelier")
+focus_neighbor_bottom = NodePath("../ButtonPlainesVenteuses")
+theme_override_fonts/font = ExtResource("1_4ge8c")
+theme_override_font_sizes/font_size = 64
+text = "Ville en Ruine"
+autowrap_mode = 2
+
+[node name="ButtonPlainesVenteuses" type="Button" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 630.0
+offset_right = 909.0
+offset_bottom = 930.0
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../ButtonVilleenRuine")
+theme_override_fonts/font = ExtResource("1_4ge8c")
+theme_override_font_sizes/font_size = 64
+text = "Plaines Venteuses"
+autowrap_mode = 2
