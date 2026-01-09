@@ -133,6 +133,12 @@ position = Vector2(288, 1152)
 [node name="Vignes_change18" parent="Level elements" instance=ExtResource("5_y145j")]
 position = Vector2(992, 1216)
 
+[node name="Vignes_change32" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(928, 1216)
+
+[node name="Vignes_change33" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(1056, 1216)
+
 [node name="Vignes_change19" parent="Level elements" instance=ExtResource("5_y145j")]
 position = Vector2(992, 1280)
 
@@ -153,6 +159,10 @@ position = Vector2(992, 1600)
 
 [node name="Vignes_change25" parent="Level elements" instance=ExtResource("5_y145j")]
 position = Vector2(96, 1664)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Vignes_change34" parent="Level elements" instance=ExtResource("5_y145j")]
+position = Vector2(160, 1664)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change26" parent="Level elements" instance=ExtResource("5_y145j")]
@@ -429,9 +439,6 @@ position = Vector2(416, 1248)
 [node name="PicsNormal79" parent="Level elements" instance=ExtResource("6_v2g6t")]
 position = Vector2(480, 1248)
 
-[node name="PicsNormal80" parent="Level elements" instance=ExtResource("6_v2g6t")]
-position = Vector2(544, 1248)
-
 [node name="PicsNormal82" parent="Level elements" instance=ExtResource("6_v2g6t")]
 position = Vector2(672, 1248)
 
@@ -522,9 +529,6 @@ position = Vector2(224, 1696)
 [node name="PicsNormal114" parent="Level elements" instance=ExtResource("6_v2g6t")]
 position = Vector2(288, 1696)
 
-[node name="PicsNormal116" parent="Level elements" instance=ExtResource("6_v2g6t")]
-position = Vector2(480, 1696)
-
 [node name="PicsNormal117" parent="Level elements" instance=ExtResource("6_v2g6t")]
 position = Vector2(544, 1696)
 
@@ -533,9 +537,6 @@ position = Vector2(672, 1696)
 
 [node name="PicsNormal119" parent="Level elements" instance=ExtResource("6_v2g6t")]
 position = Vector2(608, 1696)
-
-[node name="PicsNormal120" parent="Level elements" instance=ExtResource("6_v2g6t")]
-position = Vector2(800, 1696)
 
 [node name="PicsNormal121" parent="Level elements" instance=ExtResource("6_v2g6t")]
 position = Vector2(864, 1696)
@@ -686,11 +687,26 @@ WHICH_CHARACTER_IS_IT = 1
 [node name="PicsChange" parent="Level elements" instance=ExtResource("8_w1m1x")]
 position = Vector2(608, 1248)
 
+[node name="RessortChange2" parent="Level elements" instance=ExtResource("8_54ox0")]
+z_index = 2
+position = Vector2(544, 1248)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange4" parent="Level elements" instance=ExtResource("8_w1m1x")]
+position = Vector2(544, 1248)
+
 [node name="PicsChange2" parent="Level elements" instance=ExtResource("8_w1m1x")]
 position = Vector2(736, 1696)
 
 [node name="PicsChange3" parent="Level elements" instance=ExtResource("8_w1m1x")]
 position = Vector2(416, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange5" parent="Level elements" instance=ExtResource("8_w1m1x")]
+position = Vector2(800, 1696)
+
+[node name="PicsChange6" parent="Level elements" instance=ExtResource("8_w1m1x")]
+position = Vector2(480, 1696)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
@@ -707,6 +723,15 @@ WHICH_CHARACTER_IS_IT = 1
 [node name="RessortChange3" parent="." instance=ExtResource("8_54ox0")]
 z_index = 2
 position = Vector2(416, 1696)
+
+[node name="RessortChange4" parent="." instance=ExtResource("8_54ox0")]
+z_index = 2
+position = Vector2(800, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="RessortChange5" parent="." instance=ExtResource("8_54ox0")]
+z_index = 2
+position = Vector2(480, 1696)
 
 [node name="puceDonnee" parent="." instance=ExtResource("6_ohcy0")]
 position = Vector2(736, 2048)

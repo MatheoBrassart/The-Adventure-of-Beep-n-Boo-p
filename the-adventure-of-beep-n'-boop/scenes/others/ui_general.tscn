@@ -206,7 +206,7 @@ grow_vertical = 2
 
 [node name="BlackTransitionAnimatedSprite2D" type="AnimatedSprite2D" parent="black_transition"]
 sprite_frames = SubResource("SpriteFrames_jlwm8")
-animation = &"active"
+animation = &"activating"
 
 [node name="Surrounders" type="Node2D" parent="black_transition"]
 position = Vector2(-44, -1060)
@@ -243,6 +243,16 @@ region_rect = Rect2(153, 3150, 1439, 1054)
 wait_time = 0.05
 one_shot = true
 
+[node name="BlackTransitionOngoingTimer" type="Timer" parent="black_transition"]
+wait_time = 1.5
+one_shot = true
+
+[node name="BlackTransitionOngoingTimerDelay" type="Timer" parent="black_transition"]
+wait_time = 0.009999999999999998
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="timeout" from="black_transition/TransitionWaiter" to="." method="_on_transition_waiter_timeout"]
+[connection signal="timeout" from="black_transition/BlackTransitionOngoingTimer" to="." method="_on_black_transition_ongoing_timer_timeout"]
+[connection signal="timeout" from="black_transition/BlackTransitionOngoingTimerDelay" to="." method="_on_black_transition_ongoing_timer_delay_timeout"]

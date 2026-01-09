@@ -1,16 +1,17 @@
 extends Control
 
-@onready var start_button: Button = $VBoxContainer/StartButton
+@onready var new_game_button: Button = $VBoxContainer/NewGameButton
+@onready var continue_button: Button = $VBoxContainer/ContinueButton
 @onready var options_button: Button = $VBoxContainer/OptionsButton
 @onready var quit_button: Button = $VBoxContainer/QuitButton
 
 
 func _ready() -> void:
 	
-	start_button.grab_focus()
+	new_game_button.grab_focus()
 
 
-func _on_start_button_pressed() -> void:
+func _on_new_game_button_pressed() -> void:
 	
 	get_tree().change_scene_to_file("res://scenes/levels/atelier/atelier_a_1.tscn")
 

@@ -47,18 +47,28 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 vertical = true
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../OptionsButton")
 theme_override_fonts/font = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 64
-text = "Start"
+text = "New Game"
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../NewGameButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+theme_override_fonts/font = ExtResource("2_ovrgc")
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "Continue"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_top = NodePath("../NewGameButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 theme_override_fonts/font = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 64
@@ -72,6 +82,6 @@ theme_override_fonts/font = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

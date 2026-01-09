@@ -1,46 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxjvls4rc3t5u"]
+[gd_scene load_steps=3 format=3 uid="uid://bxjvls4rc3t5u"]
 
 [ext_resource type="FontFile" uid="uid://cbj8usx8wede3" path="res://assets/fonts/BoldPixels.ttf" id="1_4ge8c"]
+[ext_resource type="Script" uid="uid://dvp020ca8tude" path="res://scripts/world_menu.gd" id="1_p8ikn"]
 
 [node name="world_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_p8ikn")
 
 [node name="ButtonAtelier" type="Button" parent="."]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 102.0
-offset_right = 362.0
-offset_bottom = 402.0
+offset_left = 96.0
+offset_top = 488.0
+offset_right = 246.0
+offset_bottom = 638.0
 size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../ButtonVilleenRuine")
 theme_override_fonts/font = ExtResource("1_4ge8c")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "Atelier"
 
 [node name="ButtonVilleenRuine" type="Button" parent="."]
 layout_mode = 0
-offset_left = 517.0
-offset_top = 106.0
-offset_right = 817.0
-offset_bottom = 406.0
+offset_left = 448.0
+offset_top = 400.0
+offset_right = 598.0
+offset_bottom = 550.0
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../ButtonAtelier")
 focus_neighbor_bottom = NodePath("../ButtonPlainesVenteuses")
 theme_override_fonts/font = ExtResource("1_4ge8c")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "Ville en Ruine"
 autowrap_mode = 2
 
 [node name="ButtonPlainesVenteuses" type="Button" parent="."]
 layout_mode = 0
-offset_left = 609.0
-offset_top = 630.0
-offset_right = 909.0
-offset_bottom = 930.0
+offset_left = 704.0
+offset_top = 688.0
+offset_right = 854.0
+offset_bottom = 838.0
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../ButtonVilleenRuine")
 theme_override_fonts/font = ExtResource("1_4ge8c")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "Plaines Venteuses"
 autowrap_mode = 2
+
+[connection signal="pressed" from="ButtonAtelier" to="." method="_on_button_atelier_pressed"]
+[connection signal="pressed" from="ButtonVilleenRuine" to="." method="_on_button_villeen_ruine_pressed"]

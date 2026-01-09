@@ -12,6 +12,7 @@ class_name Player
 @onready var rightSprite: AnimatedSprite2D = $SpriteBeep
 @onready var animatedSpriteChangeMoi: AnimatedSprite2D = $SpriteChangeMoi
 
+# Timers and Raycasts
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
@@ -45,25 +46,25 @@ var direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "mo
 # Variable that activates when the player hits a ressort
 var HIT_RESSORT = false
 
-# Dialogue-related variables
+# Dialogue and cutscenes-related variables
 var CURRENT_ACTIVE_DIALOGUE = "0"
 var HAS_TO_PLAY_DIALOGUE: bool = false
 
 var LEVEL_TO_LEAD_TO: String = "0"
 
-# Defines when the player can or can't move
+# Defines when the player can or can't move, during dialogues and cutscenes
 var CAN_MOVE: bool = true
 
 # Variable used to fix the crash problem when the player enters multiple death hitboxes at the same time
 var multiHitboxDeathFixer = 0
 
-
+# Defines at which location the player should spawn/respawn
 var RESPAWNERS_POSITIONS_NUMBER = 0
 
 
 func _ready() -> void:
 	
-	# Check at which location the player should spawn/respawn and which character should the player be respawn as
+	# Check at which location the player should spawn/respawn and which character should the player be respawned as
 	check_respawn_informations()
 	
 	# Check if a cutscene should be played
@@ -93,18 +94,12 @@ func _physics_process(delta: float) -> void:
 			HIT_RESSORT = false
 			CAN_HANG_AFTER_JUMP = true
 	
+	# Makes the player unable to fall faster than MAX_FREEFALLING_SPEED
 	if velocity.y > MAX_FREEFALLING_SPEED:
 		velocity.y = MAX_FREEFALLING_SPEED
 	
-	
-	# If the player can't move, stop all input possibilities
-	if CAN_MOVE == false:
-		rightSprite.play("idle")
-		return
-	
-	
 	# Handle jump
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and CAN_MOVE == true:
 		if HANGING == true:
 			HANGING = false
 			velocity.y = JUMP_VELOCITY
@@ -119,12 +114,12 @@ func _physics_process(delta: float) -> void:
 		coyote_timer.stop()
 	
 	# If player is moving up while jumping, can't hang again until release moving up
-	if Input.is_action_just_released("move_up"):
+	if Input.is_action_just_released("move_up") and CAN_MOVE == true:
 		if NEAR_VIGNES == true:
 			CAN_HANG_AFTER_JUMP = true
 	
 	
-	# Handle direction changes related to the player's current velocity
+	# Handle direction changes related to the player's current velocity for animations
 	if Input.is_action_just_pressed("move_right"):
 		DECCELERATION_DIRECTION = 1
 	
@@ -155,10 +150,12 @@ func _physics_process(delta: float) -> void:
 		CAN_HANG_AFTER_JUMP = true
 	
 	# If the player is near vignes and moves up, hang onto them
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("move_up") and CAN_MOVE == true:
 		if NEAR_VIGNES == true and CAN_HANG_AFTER_JUMP == true:
 			HANGING = true
 	
+	
+	# Checks if the player is currently going over MAX_SPEED. If yes, sets the speed as OVER_MAX_SPEED and slow down
 	if velocity.x > MAX_SPEED:
 		if velocity.x > MAX_SPEED * 2:
 			OVER_MAX_SPEED = MAX_SPEED * 2
@@ -176,7 +173,7 @@ func _physics_process(delta: float) -> void:
 		coyote_timer.start()
 	
 	
-	#Flip the sprite
+	#Flip the sprite depending on which direction the player is going
 	if direction_x > 0:
 		animatedSpriteBeep.flip_h = false
 		animatedSpriteBoop.flip_h = false
@@ -187,11 +184,14 @@ func _physics_process(delta: float) -> void:
 		animatedSpriteChangeMoi.flip_h = true
 	
 	#Play animations
+	if CAN_MOVE == false:
+		rightSprite.play("idle")
+	
 	if is_on_floor():
 		if direction_x == 0:
 			rightSprite.play("idle")
-		else:rightSprite.play("run")
-			
+		else:
+			rightSprite.play("run")
 	else:
 		if velocity.y < 0:
 			rightSprite.play("jump")
@@ -201,9 +201,13 @@ func _physics_process(delta: float) -> void:
 
 func handle_input() -> void:
 	
-	# Get directions and moves the player accordingly
-	direction_x = Input.get_axis("move_left", "move_right")
-	direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	# Get inputed directions and moves the player accordingly
+	if CAN_MOVE == true:
+		direction_x = Input.get_axis("move_left", "move_right")
+		direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	else:
+		direction_x = 0
+		direction_xANDy = 0
 	
 	if HANGING == false:
 		# Moves the player when they're not hanging
@@ -348,8 +352,7 @@ func finished_dialogue():
 		gameInformations.CUTSCENE_PremierEnregistrement = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
-		LEVEL_TO_LEAD_TO = "res://scenes/levels/villeenruine/villeenruine_a_1.tscn"
-		ui_general.activate_black_transition(self)
+		ui_general.activate_black_transition_nolevelswitch("WorldMenu", "a")
 	
 	if CURRENT_ACTIVE_DIALOGUE == "ArriveeVilleEnRuine":
 		gameInformations.CUTSCENE_ArriveeVilleEnRuine = true
