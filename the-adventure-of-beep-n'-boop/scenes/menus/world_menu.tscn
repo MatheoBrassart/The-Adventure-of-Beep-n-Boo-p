@@ -82,7 +82,7 @@ theme_override_font_sizes/font_size = 32
 text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="ButtonPlainesVenteuses" type="Button" parent="."]
 layout_mode = 0
