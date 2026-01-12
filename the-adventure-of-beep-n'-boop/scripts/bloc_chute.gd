@@ -10,7 +10,7 @@ var SHAKE_POWER = 0.1
 var SHAKE_RANGE = 3
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if SHOULD_BE_SHAKING == true:
 		sprite_2d.position = Vector2(randf_range(-SHAKE_RANGE, SHAKE_RANGE), randf_range(-SHAKE_RANGE, SHAKE_RANGE))
