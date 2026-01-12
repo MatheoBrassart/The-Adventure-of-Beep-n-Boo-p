@@ -5,6 +5,7 @@ class_name Player
 @onready var ui_general = get_tree().get_first_node_in_group("UIGeneral")
 @onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
 @onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
+@onready var saveLoad = get_tree().get_first_node_in_group("SaveLoad")
 
 # Animations
 @onready var animatedSpriteBeep: AnimatedSprite2D = $SpriteBeep
@@ -102,7 +103,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and CAN_MOVE == true:
 		if HANGING == true:
 			HANGING = false
-			velocity.y = JUMP_VELOCITY
 			# If player is moving up while jumping, can't hang again until release moving up
 			if Input.is_action_pressed("move_up"):
 				CAN_HANG_AFTER_JUMP = false

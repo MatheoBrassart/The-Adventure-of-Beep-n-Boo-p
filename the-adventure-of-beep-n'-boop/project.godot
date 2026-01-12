@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameInformations="*res://scenes/others/game_informations.tscn"
 DialogueSystem="*res://dialogues/dialogue_system.tscn"
 UiGeneral="*res://scenes/others/ui_general.tscn"
+SaveLoad="*res://scenes/others/save_load.tscn"
 
 [dialogue_manager]
 
@@ -51,6 +52,7 @@ Vignes=""
 VignesChange=""
 PuceDonnee=""
 ScieChange=""
+SaveLoad=""
 
 [input]
 
