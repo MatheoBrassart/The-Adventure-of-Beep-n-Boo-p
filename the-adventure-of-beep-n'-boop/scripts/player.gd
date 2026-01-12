@@ -352,7 +352,7 @@ func finished_dialogue():
 		gameInformations.CUTSCENE_PremierEnregistrement = true
 		CAN_MOVE = true
 		HAS_TO_PLAY_DIALOGUE = false
-		gameInformations.COMPLETEDLEVELS_LIST.atelier.b = true
+		gameInformations.COMPLETEDLEVELS_LIST["atelier"]["b"]["13"] = true
 		ui_general.activate_black_transition_nolevelswitch("WorldMenu", "a")
 	
 	if CURRENT_ACTIVE_DIALOGUE == "ArriveeVilleEnRuine":

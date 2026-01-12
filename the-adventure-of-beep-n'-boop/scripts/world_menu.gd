@@ -21,7 +21,7 @@ func _ready() -> void:
 	button_atelier.grab_focus()
 	
 	if IS_VILLEENRUINE_UNLOCKED == false:
-		if gameInformations.COMPLETEDLEVELS_LIST.atelier.b == true:
+		if gameInformations.COMPLETEDLEVELS_LIST["atelier"]["b"]["13"] == true:
 			LEVEL_TO_UNLOCK = "villeenruine"
 			world_unlock_timer.start()
 	else:

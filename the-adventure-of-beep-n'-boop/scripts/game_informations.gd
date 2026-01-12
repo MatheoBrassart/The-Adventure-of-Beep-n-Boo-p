@@ -21,7 +21,8 @@ var CUTSCENE_ArriveeVilleEnRuine: bool = false
 var COMPLETEDLEVELS_LIST: Dictionary = {
 	"atelier" = {
 		"b" = {
-			13: false
+			"c": false,
+			"13": false,
 		},
 	},
 	"villeenruine" = {
