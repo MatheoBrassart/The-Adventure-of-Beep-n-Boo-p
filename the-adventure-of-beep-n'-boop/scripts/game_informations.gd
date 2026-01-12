@@ -3,10 +3,8 @@ extends Node2D
 var listOfChanges = []
 var listOfPlayer = []
 
-var LEVELTEST_1 = "res://scenes/levels/level_test.tscn"
-var LEVELTEST_2 = "res://scenes/levels/level_test_2.tscn"
-var listOfLevels = [LEVELTEST_1, LEVELTEST_2]
 
+# ----- Handles Player Respawn -----
 var WHERE_TO_RESPAWN_PLAYER = 0
 var WHICH_CHARACTER_TO_RESPAWN = 0
 
@@ -17,6 +15,20 @@ var CUTSCENE_BoopReveil: bool = false
 var CUTSCENE_PremierEnregistrement: bool = false
 var CUTSCENE_SortieAtelier: bool = false
 var CUTSCENE_ArriveeVilleEnRuine: bool = false
+
+
+# ----- List of completed Levels -----
+var COMPLETEDLEVELS_LIST: Dictionary = {
+	"atelier" = {
+		"b" = {
+			13: false
+		},
+	},
+	"villeenruine" = {
+		1: false,
+		2: false,
+	},
+}
 
 
 # ----- List of obtained Puces de Données -----
