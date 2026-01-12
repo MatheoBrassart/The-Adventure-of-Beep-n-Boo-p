@@ -1,16 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtt4ag4d2qtqs"]
+[gd_scene load_steps=5 format=3 uid="uid://dtt4ag4d2qtqs"]
 
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="1_hrt4a"]
+[ext_resource type="Script" uid="uid://25s1nlicydx3" path="res://scripts/bloc_chute.gd" id="1_jao08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
-size = Vector2(30, 30)
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jao08"]
+size = Vector2(64, 16)
 
 [node name="BlocChute" type="StaticBody2D"]
+script = ExtResource("1_jao08")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 1)
 texture = ExtResource("1_hrt4a")
 region_enabled = true
 region_rect = Rect2(32, 32, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_i3sln")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_jao08")
+
+[node name="IncomingFallTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="IncomingFallTimer" to="." method="_on_incoming_fall_timer_timeout"]

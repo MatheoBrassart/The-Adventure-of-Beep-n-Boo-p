@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8j8o76qco2ax"]
+[gd_scene load_steps=9 format=3 uid="uid://b8j8o76qco2ax"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_6brol"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_ha63a"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="4_y4jno"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="5_wc4wy"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="6_wc4wy"]
+[ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_5ti25"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
 distance = -298.0
@@ -73,3 +74,6 @@ WHICH_CHARACTER_IS_IT = 1
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("6_wc4wy")]
 position = Vector2(464, 480)
 WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
+position = Vector2(608, 528)
