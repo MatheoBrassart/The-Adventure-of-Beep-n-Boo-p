@@ -58,12 +58,10 @@ TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("4_m65s8")]
 position = Vector2(160, 288)
 rotation = 1.5708
-RESSORT_DIRECTION = 3
 
 [node name="RessortNormal2" parent="Level elements" instance=ExtResource("4_m65s8")]
 position = Vector2(960, 384)
 rotation = 1.5708
-RESSORT_DIRECTION = 3
 
 [node name="PicsNormal6" parent="Level elements" instance=ExtResource("3_i0hj7")]
 position = Vector2(736, 256)

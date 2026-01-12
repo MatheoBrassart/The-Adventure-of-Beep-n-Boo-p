@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c5jbydwicia22" path="res://scripts/ressort_change.gd" id="1_60jv4"]
 [ext_resource type="Texture2D" uid="uid://dhu5nxoq6koll" path="res://assets/textures/RessortChangeSpritesheet.png" id="2_nphtc"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sogsb"]
 atlas = ExtResource("2_nphtc")
 region = Rect2(132, 66, 66, 66)
