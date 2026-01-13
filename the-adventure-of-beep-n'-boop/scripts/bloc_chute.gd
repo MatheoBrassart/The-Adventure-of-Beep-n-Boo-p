@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		sprite_2d.position = Vector2(randf_range(-BIG_SHAKE_RANGE, BIG_SHAKE_RANGE), randf_range(-BIG_SHAKE_RANGE, BIG_SHAKE_RANGE))
 	
 	# Respawn of it after some time and when the player was grounded
-	if WILL_RESPAWN == true:
+	if (SHOULD_RESPAWN == true) and (WILL_RESPAWN == true):
 		sprite_2d.visible = true
 		collision_shape_2d.disabled = false
 		area_2d.visible = true
@@ -49,8 +49,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	# Prepares the Bloc Chute to fall
 	if body.is_in_group("Player") == true:
-		SHOULD_BE_BIG_SHAKING = true
-		incoming_fall_timer.start()
+		if (body.global_position.y + 40) < self.global_position.y:
+			SHOULD_BE_BIG_SHAKING = true
+			incoming_fall_timer.start()
 
 
 func _on_incoming_fall_timer_timeout() -> void:
@@ -74,5 +75,4 @@ func _on_idle_shake_cooldown_timer_timeout() -> void:
 # If the cooldown is done and player is grounded, make the Bloc Chute respawn
 func _on_reconstruction_cooldown_timer_timeout() -> void:
 	
-	if SHOULD_RESPAWN == true:
 		WILL_RESPAWN = true

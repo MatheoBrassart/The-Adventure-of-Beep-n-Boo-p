@@ -288,7 +288,6 @@ func check_respawn_informations():
 		RESPAWNERS_POSITIONS_NUMBER = 0
 		for i in respawners_positions:
 			RESPAWNERS_POSITIONS_NUMBER += 1
-			print(RESPAWNERS_POSITIONS_NUMBER)
 			if RESPAWNERS_POSITIONS_NUMBER == gameInformations.WHERE_TO_RESPAWN_PLAYER:
 				position = i.position
 				pass
