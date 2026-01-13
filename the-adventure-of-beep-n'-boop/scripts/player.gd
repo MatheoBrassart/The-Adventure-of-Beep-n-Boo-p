@@ -18,6 +18,7 @@ class_name Player
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 @onready var ray_cast_2d_hanging_top_checker: RayCast2D = $RayCast2DHangingTopChecker
+@onready var ray_cast_2d_floor_type_checker: RayCast2D = $RayCast2DFloorTypeChecker
 
 # Base movement variables
 var MAX_SPEED = 300.0
@@ -61,6 +62,8 @@ var multiHitboxDeathFixer = 0
 
 # Defines at which location the player should spawn/respawn
 var RESPAWNERS_POSITIONS_NUMBER = 0
+
+var LIST_OF_BLOCSCHUTES = []
 
 
 func _ready() -> void:
@@ -197,6 +200,8 @@ func _physics_process(delta: float) -> void:
 			rightSprite.play("jump")
 		else:
 			rightSprite.play("fall")
+	
+	reset_blocchutes()
 
 
 func handle_input() -> void:
@@ -368,3 +373,18 @@ func switch_level():
 	
 	get_tree().change_scene_to_file.call_deferred(LEVEL_TO_LEAD_TO)
 	ui_general.deactivate_black_transition(self)
+
+
+# Function for reseting all Blocs Chutes in the level
+func reset_blocchutes():
+	
+	if is_on_floor():
+		var collider = ray_cast_2d_floor_type_checker.get_collider()
+		if collider is Node:
+			if collider.is_in_group("BlocChute"):
+				pass
+			else:
+				LIST_OF_BLOCSCHUTES = get_tree().get_nodes_in_group("BlocChute")
+				for i in LIST_OF_BLOCSCHUTES:
+					if (i.UNRESPAWNED == true) and (i.SHOULD_RESPAWN == false):
+						i.SHOULD_RESPAWN = true
