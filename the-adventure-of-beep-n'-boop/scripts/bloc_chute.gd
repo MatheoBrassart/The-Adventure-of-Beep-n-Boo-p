@@ -10,12 +10,13 @@ extends StaticBody2D
 @onready var idle_shake_cooldown_timer: Timer = $IdleShakeCooldownTimer
 @onready var reconstruction_cooldown_timer: Timer = $ReconstructionCooldownTimer
 
-
-var SHOULD_BE_SHAKING: bool = false
+# Shaking animations variables
+var SHOULD_BE_BIG_SHAKING: bool = false
 var SHAKE_POWER = 0.1
 var BIG_SHAKE_RANGE = 3
 var SMALL_SHAKE_RANGE = 1.5
 
+# Respawn variables
 var UNRESPAWNED:bool = false
 var SHOULD_RESPAWN: bool = false
 var WILL_RESPAWN:bool = false
@@ -23,15 +24,18 @@ var WILL_RESPAWN:bool = false
 
 func _ready() -> void:
 	
+	# Changes the size of the Bloc Chute based on the input number
 	if BLOC_SIZE == 1:
 		self.scale.x = 2
 
 
 func _process(_delta: float) -> void:
 	
-	if SHOULD_BE_SHAKING == true:
+	# Big shake when it's about to fall
+	if SHOULD_BE_BIG_SHAKING == true:
 		sprite_2d.position = Vector2(randf_range(-BIG_SHAKE_RANGE, BIG_SHAKE_RANGE), randf_range(-BIG_SHAKE_RANGE, BIG_SHAKE_RANGE))
 	
+	# Respawn of it after some time and when the player was grounded
 	if WILL_RESPAWN == true:
 		sprite_2d.visible = true
 		collision_shape_2d.disabled = false
@@ -43,14 +47,16 @@ func _process(_delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
+	# Prepares the Bloc Chute to fall
 	if body.is_in_group("Player") == true:
-		SHOULD_BE_SHAKING = true
+		SHOULD_BE_BIG_SHAKING = true
 		incoming_fall_timer.start()
 
 
 func _on_incoming_fall_timer_timeout() -> void:
 	
-	SHOULD_BE_SHAKING = false
+	# After the timer, makes the Bloc Chute fall
+	SHOULD_BE_BIG_SHAKING = false
 	sprite_2d.visible = false
 	collision_shape_2d.disabled = true
 	area_2d.visible = false
@@ -58,12 +64,14 @@ func _on_incoming_fall_timer_timeout() -> void:
 	reconstruction_cooldown_timer.start()
 
 
+# Loop for the Bloc Chute's idle small shake
 func _on_idle_shake_cooldown_timer_timeout() -> void:
 	
-	if SHOULD_BE_SHAKING == false:
+	if SHOULD_BE_BIG_SHAKING == false:
 		sprite_2d.position = Vector2(randf_range(-SMALL_SHAKE_RANGE, SMALL_SHAKE_RANGE), randf_range(-SMALL_SHAKE_RANGE, SMALL_SHAKE_RANGE))
 
 
+# If the cooldown is done and player is grounded, make the Bloc Chute respawn
 func _on_reconstruction_cooldown_timer_timeout() -> void:
 	
 	if SHOULD_RESPAWN == true:

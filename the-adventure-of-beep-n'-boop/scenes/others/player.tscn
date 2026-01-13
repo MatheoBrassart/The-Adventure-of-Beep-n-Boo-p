@@ -493,5 +493,3 @@ collide_with_bodies = false
 [node name="RayCast2DFloorTypeChecker" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
 target_position = Vector2(0, 56)
-
-[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_time_timeout"]

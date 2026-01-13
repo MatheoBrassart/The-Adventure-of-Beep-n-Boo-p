@@ -109,6 +109,7 @@ func _physics_process(delta: float) -> void:
 			# If player is moving up while jumping, can't hang again until release moving up
 			if Input.is_action_pressed("move_up"):
 				CAN_HANG_AFTER_JUMP = false
+			velocity.y = JUMP_VELOCITY
 		else:
 			jump_buffer_timer.start()
 	
