@@ -65,6 +65,10 @@ var RESPAWNERS_POSITIONS_NUMBER = 0
 
 var LIST_OF_BLOCSCHUTES = []
 
+var WIND_POWER = 0
+var WIND_DIRECTION = 0
+var WIND_MOVEMENTMULTIPLIER = 0
+
 
 func _ready() -> void:
 	
@@ -86,6 +90,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	print(velocity.x)
 	
 	# Add the gravity and reduces acceleration when in the air
 	if HANGING == false:
@@ -215,16 +221,21 @@ func handle_input() -> void:
 	else:
 		direction_x = 0
 		direction_xANDy = 0
+		
+	if (direction_x == 1) and (WIND_DIRECTION == -1):
+		WIND_MOVEMENTMULTIPLIER = -1
+	else:
+		WIND_MOVEMENTMULTIPLIER = 1
 	
 	if HANGING == false:
 		# Moves the player when they're not hanging
 		if direction_x == 0:
-			velocity.x = move_toward(velocity.x, 0, CURRENT_ACCELERATION)
+			velocity.x = move_toward(velocity.x, (0 + (WIND_POWER * WIND_DIRECTION)), CURRENT_ACCELERATION)
 		else:
 			if OVER_MAX_SPEED > 0:
-				velocity.x = move_toward(velocity.x, OVER_MAX_SPEED * direction_x, CURRENT_ACCELERATION)
+				velocity.x = move_toward(velocity.x, OVER_MAX_SPEED * direction_x, CURRENT_ACCELERATION - (WIND_POWER * WIND_MOVEMENTMULTIPLIER))
 			else:
-				velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x, CURRENT_ACCELERATION)
+				velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x + (WIND_POWER * WIND_MOVEMENTMULTIPLIER), CURRENT_ACCELERATION + (WIND_POWER * WIND_MOVEMENTMULTIPLIER))
 	else:
 		# Moves the player when they're hanging
 		velocity = direction_xANDy * MAX_HANGING_SPEED
@@ -232,6 +243,10 @@ func handle_input() -> void:
 			# Stops the player from moving over the top of the vignes
 			if ray_cast_2d_hanging_top_checker.is_colliding() == false:
 				velocity.y = 0
+	
+	WIND_POWER = 0
+	WIND_DIRECTION = 0
+	WIND_MOVEMENTMULTIPLIER = 0
 
 
 func switch_character():

@@ -19,7 +19,7 @@ rotation = -1.5707964
 zoom = Vector2(1.75, 1.75)
 
 [node name="Player" parent="." instance=ExtResource("1_6brol")]
-position = Vector2(352, 560)
+position = Vector2(368, 272)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 310)
@@ -33,39 +33,39 @@ position = Vector2(-16, 560)
 [node name="Level elements" type="Node2D" parent="."]
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("3_pnvdu")]
-position = Vector2(224, 544)
+position = Vector2(368, 352)
 
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("3_pnvdu")]
-position = Vector2(544, 240)
+position = Vector2(544, 48)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(288, 544)
+position = Vector2(288, 352)
 rotation = 1.5707964
 
 [node name="PicsChange3" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(160, 544)
+position = Vector2(160, 352)
 rotation = -1.5707964
 
 [node name="RessortChange" parent="Level elements" instance=ExtResource("6_wc4wy")]
-position = Vector2(224, 480)
+position = Vector2(224, 288)
 
 [node name="BlocChange3" parent="Level elements" instance=ExtResource("3_pnvdu")]
-position = Vector2(464, 544)
+position = Vector2(464, 352)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange4" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(528, 544)
+position = Vector2(528, 352)
 rotation = 1.5707964
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange5" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(400, 544)
+position = Vector2(400, 352)
 rotation = -1.5707964
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("6_wc4wy")]
-position = Vector2(464, 480)
+position = Vector2(464, 288)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="CourantAir2" parent="Level elements" instance=ExtResource("8_luxm6")]
@@ -75,7 +75,7 @@ WIND_POWER = 40
 [node name="CourantAir3" parent="Level elements" instance=ExtResource("8_luxm6")]
 position = Vector2(1248, 576)
 rotation = -1.5707964
-WIND_POWER = 60
+WIND_POWER = 50
 
 [node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
-position = Vector2(608, 528)
+position = Vector2(608, 336)
