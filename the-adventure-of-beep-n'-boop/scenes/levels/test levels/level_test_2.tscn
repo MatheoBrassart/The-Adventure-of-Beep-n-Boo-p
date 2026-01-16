@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_ha63a"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_pnvdu"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="4_y4jno"]
-[ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="5_wc4wy"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="6_wc4wy"]
 [ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_5ti25"]
+[ext_resource type="PackedScene" uid="uid://bw604do7cwlld" path="res://scenes/level design elements/courant_air.tscn" id="8_luxm6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
 distance = -298.0
@@ -36,7 +36,7 @@ position = Vector2(-16, 560)
 position = Vector2(224, 544)
 
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("3_pnvdu")]
-position = Vector2(688, 416)
+position = Vector2(544, 240)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange" parent="Level elements" instance=ExtResource("4_y4jno")]
@@ -46,13 +46,6 @@ rotation = 1.5707964
 [node name="PicsChange3" parent="Level elements" instance=ExtResource("4_y4jno")]
 position = Vector2(160, 544)
 rotation = -1.5707964
-
-[node name="PicsChange2" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(752, 576)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="PicsNormal" parent="Level elements" instance=ExtResource("5_wc4wy")]
-position = Vector2(752, 528)
 
 [node name="RessortChange" parent="Level elements" instance=ExtResource("6_wc4wy")]
 position = Vector2(224, 480)
@@ -74,6 +67,17 @@ WHICH_CHARACTER_IS_IT = 1
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("6_wc4wy")]
 position = Vector2(464, 480)
 WHICH_CHARACTER_IS_IT = 1
+
+[node name="CourantAir2" parent="Level elements" instance=ExtResource("8_luxm6")]
+position = Vector2(704, 384)
+scale = Vector2(1, 2)
+WIND_POWER = 40
+
+[node name="CourantAir3" parent="Level elements" instance=ExtResource("8_luxm6")]
+position = Vector2(896, 560)
+rotation = -1.5707964
+scale = Vector2(1, 2)
+WIND_POWER = 60
 
 [node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
 position = Vector2(608, 528)
