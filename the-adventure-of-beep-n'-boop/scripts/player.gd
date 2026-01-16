@@ -165,7 +165,8 @@ func _physics_process(delta: float) -> void:
 			OVER_MAX_SPEED = MAX_SPEED * 2
 		else:
 			OVER_MAX_SPEED = velocity.x
-		velocity.x -= CURRENT_ACCELERATION
+		if is_on_floor():
+			velocity.x -= CURRENT_ACCELERATION
 	else:
 		OVER_MAX_SPEED = 0
 	

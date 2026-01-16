@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
+
 var PLAYER: Node2D = null
 var IS_PLAYER_IN: bool = false
 
@@ -12,28 +14,18 @@ func _ready() -> void:
 	MAX_PUSH = WIND_POWER * 10
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
-	if IS_PLAYER_IN == true:
-		if round(self.rotation_degrees) == 0:
-			if PLAYER.velocity.y > MAX_PUSH * -1:
-				PLAYER.velocity.y = PLAYER.velocity.y + (WIND_POWER * -1)
-		elif round(self.rotation_degrees) == 90:
-			if PLAYER.velocity.x < MAX_PUSH:
-				PLAYER.velocity.x = PLAYER.velocity.x + WIND_POWER
-		elif round(self.rotation_degrees) == -90:
-			if PLAYER.velocity.x > MAX_PUSH * -1:
-				PLAYER.velocity.x = PLAYER.velocity.x + (WIND_POWER * -1)
-
-
-func _on_body_entered(body: Node2D) -> void:
-	
-	if body.is_in_group("Player") == true:
-		PLAYER = body
-		IS_PLAYER_IN = true
-
-
-func _on_body_exited(body: Node2D) -> void:
-	
-	if body == PLAYER:
-		IS_PLAYER_IN = false
+	if shape_cast_2d.is_colliding():
+		var collider = shape_cast_2d.get_collider(0)
+		if collider is Node:
+			if collider.is_in_group("Player"):
+				if round(self.rotation_degrees) == 0:
+					if collider.velocity.y > MAX_PUSH * -1:
+						collider.velocity.y = collider.velocity.y + (WIND_POWER * -1)
+				elif round(self.rotation_degrees) == 90:
+					if collider.velocity.x < MAX_PUSH:
+						collider.velocity.x = collider.velocity.x + WIND_POWER
+				elif round(self.rotation_degrees) == -90:
+					if collider.velocity.x > MAX_PUSH * -1:
+						collider.velocity.x = collider.velocity.x + (WIND_POWER * -1)

@@ -70,13 +70,11 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="CourantAir2" parent="Level elements" instance=ExtResource("8_luxm6")]
 position = Vector2(704, 384)
-scale = Vector2(1, 2)
 WIND_POWER = 40
 
 [node name="CourantAir3" parent="Level elements" instance=ExtResource("8_luxm6")]
-position = Vector2(896, 560)
+position = Vector2(1248, 576)
 rotation = -1.5707964
-scale = Vector2(1, 2)
 WIND_POWER = 60
 
 [node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
