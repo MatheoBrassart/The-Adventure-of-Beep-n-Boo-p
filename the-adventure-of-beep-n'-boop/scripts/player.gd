@@ -258,7 +258,7 @@ func handle_input() -> void:
 	
 	# Apply movement
 	if HANGING == false:
-		# If the player enters courant d'air, stops them firstly
+		# If the player enters a courant d'air, stops them firstly
 		if (not WIND_DIRECTION == 0) and (WIND_WASPLAYERSTOPPED) == false:
 			WIND_WASPLAYERSTOPPED = true
 			velocity.x = 0

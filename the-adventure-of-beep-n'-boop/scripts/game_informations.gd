@@ -2,6 +2,7 @@ extends Node2D
 
 var listOfChanges = []
 var listOfPlayer = []
+var listOfCourantsAirChanges = []
 
 
 # ----- Handles Player Respawn -----
@@ -70,3 +71,7 @@ func _process(_delta: float) -> void:
 		listOfPlayer = get_tree().get_nodes_in_group("Player")
 		for i in listOfPlayer: 
 			i.switch_character()
+		
+		listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
+		for i in listOfChanges: 
+			i.change_wind_direction()
