@@ -35,6 +35,9 @@ position = Vector2(-16, 560)
 [node name="BlocChange" parent="Level elements" instance=ExtResource("3_pnvdu")]
 position = Vector2(368, 352)
 
+[node name="BlocChange5" parent="Level elements" instance=ExtResource("3_pnvdu")]
+position = Vector2(1024, 592)
+
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("3_pnvdu")]
 position = Vector2(544, 48)
 WHICH_CHARACTER_IS_IT = 1
@@ -54,6 +57,10 @@ position = Vector2(224, 288)
 position = Vector2(464, 352)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="BlocChange4" parent="Level elements" instance=ExtResource("3_pnvdu")]
+position = Vector2(32, 592)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="PicsChange4" parent="Level elements" instance=ExtResource("4_y4jno")]
 position = Vector2(528, 352)
 rotation = 1.5707964
@@ -69,7 +76,8 @@ position = Vector2(464, 288)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="CourantAir2" parent="Level elements" instance=ExtResource("8_luxm6")]
-position = Vector2(704, 384)
+position = Vector2(608.00006, 512)
+scale = Vector2(6.1200023, 1)
 WIND_POWER = 40
 
 [node name="CourantAir3" parent="Level elements" instance=ExtResource("8_luxm6")]

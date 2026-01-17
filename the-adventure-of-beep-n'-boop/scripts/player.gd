@@ -30,6 +30,10 @@ var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
 const MAX_FREEFALLING_SPEED = 800
+# Speeds after all modifiers were applied
+var FINAL_MAXSPEED = 0
+var FINAL_ACCELERATION = 0
+var FINAL_HALT = 0
 
 # Hanging-related variables
 var VIGNES_SHAPECAST_CHECKER = null
@@ -68,6 +72,7 @@ var LIST_OF_BLOCSCHUTES = []
 var WIND_POWER = 0
 var WIND_DIRECTION = 0
 var WIND_MOVEMENTMULTIPLIER = 0
+var WIND_WASPLAYERSTOPPED: bool = false
 
 
 func _ready() -> void:
@@ -91,7 +96,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	print(velocity.x)
+	# print(velocity.x)
 	
 	# Add the gravity and reduces acceleration when in the air
 	if HANGING == false:
@@ -171,8 +176,7 @@ func _physics_process(delta: float) -> void:
 			OVER_MAX_SPEED = MAX_SPEED * 2
 		else:
 			OVER_MAX_SPEED = velocity.x
-		if is_on_floor():
-			velocity.x -= CURRENT_ACCELERATION
+		velocity.x -= CURRENT_ACCELERATION
 	else:
 		OVER_MAX_SPEED = 0
 	
@@ -214,28 +218,57 @@ func _physics_process(delta: float) -> void:
 
 func handle_input() -> void:
 	
-	# Get inputed directions and moves the player accordingly
+	# Get inputed directions
 	if CAN_MOVE == true:
 		direction_x = Input.get_axis("move_left", "move_right")
 		direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	else:
 		direction_x = 0
 		direction_xANDy = 0
-		
-	if (direction_x == 1) and (WIND_DIRECTION == -1):
-		WIND_MOVEMENTMULTIPLIER = -1
-	else:
-		WIND_MOVEMENTMULTIPLIER = 1
 	
-	if HANGING == false:
-		# Moves the player when they're not hanging
-		if direction_x == 0:
-			velocity.x = move_toward(velocity.x, (0 + (WIND_POWER * WIND_DIRECTION)), CURRENT_ACCELERATION)
-		else:
-			if OVER_MAX_SPEED > 0:
-				velocity.x = move_toward(velocity.x, OVER_MAX_SPEED * direction_x, CURRENT_ACCELERATION - (WIND_POWER * WIND_MOVEMENTMULTIPLIER))
+	# Set the final max speed and acceleration to their current normal ones
+	if OVER_MAX_SPEED > 0:
+		FINAL_MAXSPEED = OVER_MAX_SPEED
+	else:
+		FINAL_MAXSPEED = MAX_SPEED
+	
+	FINAL_ACCELERATION = CURRENT_ACCELERATION
+	
+	FINAL_HALT = 0
+	
+	# Movements: Wind modifiers
+	if not WIND_DIRECTION == 0:
+		if not direction_x == 0:
+			if (direction_x == -1) and (WIND_DIRECTION == -1):
+				WIND_MOVEMENTMULTIPLIER = 1
+			elif (direction_x == 1) and (WIND_DIRECTION == 1):
+				WIND_MOVEMENTMULTIPLIER = 1
 			else:
-				velocity.x = move_toward(velocity.x, MAX_SPEED * direction_x + (WIND_POWER * WIND_MOVEMENTMULTIPLIER), CURRENT_ACCELERATION + (WIND_POWER * WIND_MOVEMENTMULTIPLIER))
+				WIND_MOVEMENTMULTIPLIER = -1
+		else:
+			WIND_MOVEMENTMULTIPLIER = direction_x
+	else:
+		WIND_WASPLAYERSTOPPED = false
+	
+	FINAL_MAXSPEED += (WIND_POWER * WIND_MOVEMENTMULTIPLIER * 2)
+	FINAL_ACCELERATION += (WIND_POWER * WIND_MOVEMENTMULTIPLIER)
+	if FINAL_ACCELERATION < 0:
+		FINAL_ACCELERATION = 0
+	FINAL_HALT += (WIND_POWER * WIND_DIRECTION * 2)
+	
+	# Apply movement
+	if HANGING == false:
+		# If the player enters courant d'air, stops them firstly
+		if (not WIND_DIRECTION == 0) and (WIND_WASPLAYERSTOPPED) == false:
+			WIND_WASPLAYERSTOPPED = true
+			velocity.x = 0
+			FINAL_ACCELERATION = 100000
+			velocity.x = move_toward(velocity.x, FINAL_HALT, FINAL_ACCELERATION)
+		# Moves the player when they're not hanging
+		elif direction_x == 0:
+			velocity.x = move_toward(velocity.x, FINAL_HALT, FINAL_ACCELERATION)
+		else:
+			velocity.x = move_toward(velocity.x, FINAL_MAXSPEED * direction_x, FINAL_ACCELERATION)
 	else:
 		# Moves the player when they're hanging
 		velocity = direction_xANDy * MAX_HANGING_SPEED
