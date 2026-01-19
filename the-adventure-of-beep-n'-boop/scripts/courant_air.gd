@@ -1,14 +1,20 @@
 extends Area2D
 
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
+@onready var line_2d_particle_clipper: Line2D = $Line2DParticleClipper
+@onready var gpu_particles_2d: GPUParticles2D = $Line2DParticleClipper/GPUParticles2D
 
 @export var WIND_POWER = 0
 var MAX_PUSH = null
+
+var new_point_clip_setter = null
 
 
 func _ready() -> void:
 	
 	MAX_PUSH = WIND_POWER * 10
+	
+	gpu_particles_2d.amount = int(gpu_particles_2d.amount * self.transform.get_scale().x)
 
 
 func _process(_delta: float) -> void:
@@ -30,3 +36,22 @@ func _process(_delta: float) -> void:
 					if collider.velocity.x > MAX_PUSH * -1:
 						collider.WIND_POWER = WIND_POWER
 						collider.WIND_DIRECTION = -1
+	
+	set_particle_mask_size()
+
+
+func set_particle_mask_size():
+	
+	if shape_cast_2d.is_colliding():
+		var number_of_collision = shape_cast_2d.get_collision_count()
+		for i in number_of_collision:
+			var collider = shape_cast_2d.get_collider(i)
+			if collider is Node:
+				if collider.is_in_group("Player"):
+					continue
+				else:
+					new_point_clip_setter = line_2d_particle_clipper.to_local(shape_cast_2d.get_collision_point(0))
+					line_2d_particle_clipper.set_point_position(1, Vector2(0, new_point_clip_setter.y))
+					break
+	else:
+		line_2d_particle_clipper.set_point_position(1, Vector2(0, -1312))

@@ -20,9 +20,11 @@ zoom = Vector2(1.75, 1.75)
 
 [node name="Player" parent="." instance=ExtResource("1_6brol")]
 position = Vector2(368, 272)
+collision_layer = 129
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 310)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_ha63a")
@@ -34,6 +36,12 @@ position = Vector2(-16, 560)
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("3_pnvdu")]
 position = Vector2(368, 352)
+
+[node name="BlocChange5" parent="Level elements" instance=ExtResource("3_pnvdu")]
+position = Vector2(736, 160)
+
+[node name="BlocChange6" parent="Level elements" instance=ExtResource("3_pnvdu")]
+position = Vector2(800, 160)
 
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("3_pnvdu")]
 position = Vector2(544, 48)
@@ -55,7 +63,7 @@ position = Vector2(464, 352)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange4" parent="Level elements" instance=ExtResource("3_pnvdu")]
-position = Vector2(32, 592)
+position = Vector2(264, 552)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange4" parent="Level elements" instance=ExtResource("4_y4jno")]
@@ -72,8 +80,10 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(464, 288)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="CourantAir" parent="Level elements" instance=ExtResource("7_luxm6")]
+position = Vector2(768, 560)
+scale = Vector2(4, 1)
+WIND_POWER = 60
+
 [node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
 position = Vector2(608, 336)
-
-[node name="CourantAir" parent="." instance=ExtResource("7_luxm6")]
-position = Vector2(736, 352)
