@@ -78,4 +78,4 @@ func _on_idle_shake_cooldown_timer_timeout() -> void:
 # If the cooldown is done and player is grounded, make the Bloc Chute respawn
 func _on_reconstruction_cooldown_timer_timeout() -> void:
 	
-		WILL_RESPAWN = true
+	WILL_RESPAWN = true

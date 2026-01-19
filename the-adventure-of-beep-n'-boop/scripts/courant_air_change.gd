@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var player = get_tree().get_first_node_in_group("Player")
+
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 @onready var line_2d_particle_clipper: Line2D = $Line2DParticleClipper
 @onready var gpu_particles_2d: GPUParticles2D = $Line2DParticleClipper/GPUParticles2D
@@ -20,8 +22,7 @@ func _ready() -> void:
 	MAX_PUSH = WIND_POWER * 10
 	
 	# When appearing, check if the right character is active or not
-	var CURRENT_ACTIVE_CHARACTER = get_tree().get_first_node_in_group("Player")
-	if not CURRENT_ACTIVE_CHARACTER.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
+	if not player.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		CURRENT_WIND_DIRECTION = 1
 	
 	gpu_particles_2d.amount = int(gpu_particles_2d.amount * self.transform.get_scale().x)
@@ -91,6 +92,7 @@ func change_wind_direction():
 	
 	gpu_particles_2d.visible = true
 	gpu_particles_2d.amount += 1
+	player.WIND_WASPLAYERSTOPPED = false
 
 
 func set_particle_mask_size():
