@@ -49,8 +49,8 @@ var direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "mo
 # Variable that defines which character is currently active. 0 = Beep, 1 = Boop
 @export var CURRENT_ACTIVE_CHARACTER = 0
 
-# Variable that activates when the player hits a ressort
-var HIT_RESSORT = false
+# Variable that activates when the player hits a side ressort
+var HIT_SIDERESSORT: bool = false
 
 # Dialogue and cutscenes-related variables
 var CURRENT_ACTIVE_DIALOGUE = "0"
@@ -96,18 +96,21 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	# print(velocity.x)
+	print(velocity.x)
 	
 	# Add the gravity and reduces acceleration when in the air
 	if HANGING == false:
 		if not is_on_floor():
 			velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
-			if not HIT_RESSORT == true:
+			if not HIT_SIDERESSORT == true:
 				CURRENT_ACCELERATION = AIR_ACCELERATION_SETTER
 		else:
 			CURRENT_ACCELERATION = GROUND_ACCELERATION_SETTER
-			HIT_RESSORT = false
+			HIT_SIDERESSORT = false
 			CAN_HANG_AFTER_JUMP = true
+	
+	if self.velocity.x ==0:
+		HIT_SIDERESSORT = 0
 	
 	# Makes the player unable to fall faster than MAX_FREEFALLING_SPEED
 	if velocity.y > MAX_FREEFALLING_SPEED:
@@ -171,12 +174,12 @@ func _physics_process(delta: float) -> void:
 	
 	
 	# Checks if the player is currently going over MAX_SPEED. If yes, sets the speed as OVER_MAX_SPEED and slow down
-	if velocity.x > MAX_SPEED:
-		if velocity.x > MAX_SPEED * 2:
+	if abs(velocity.x) > MAX_SPEED:
+		if abs(velocity.x) > MAX_SPEED * 2:
 			OVER_MAX_SPEED = MAX_SPEED * 2
 		else:
-			OVER_MAX_SPEED = velocity.x
-		velocity.x -= CURRENT_ACCELERATION
+			OVER_MAX_SPEED = abs(velocity.x)
+		velocity.x = move_toward(velocity.x, MAX_SPEED, CURRENT_ACCELERATION)
 	else:
 		OVER_MAX_SPEED = 0
 	
@@ -226,11 +229,8 @@ func handle_input() -> void:
 		direction_x = 0
 		direction_xANDy = 0
 	
-	# Set the final max speed and acceleration to their current normal ones
-	if OVER_MAX_SPEED > 0:
-		FINAL_MAXSPEED = OVER_MAX_SPEED
-	else:
-		FINAL_MAXSPEED = MAX_SPEED
+	# Set the initial final max speed and acceleration to their current normal ones
+	FINAL_MAXSPEED = MAX_SPEED
 	
 	FINAL_ACCELERATION = CURRENT_ACCELERATION
 	
@@ -239,9 +239,7 @@ func handle_input() -> void:
 	# Movements: Wind modifiers
 	if not WIND_DIRECTION == 0:
 		if not direction_x == 0:
-			if (direction_x == -1) and (WIND_DIRECTION == -1):
-				WIND_MOVEMENTMULTIPLIER = 1
-			elif (direction_x == 1) and (WIND_DIRECTION == 1):
+			if direction_x == WIND_DIRECTION:
 				WIND_MOVEMENTMULTIPLIER = 1
 			else:
 				WIND_MOVEMENTMULTIPLIER = -1
@@ -255,6 +253,12 @@ func handle_input() -> void:
 	if FINAL_ACCELERATION < 0:
 		FINAL_ACCELERATION = 0
 	FINAL_HALT += (WIND_POWER * WIND_DIRECTION * 2)
+	
+	# Movements: Ressort modifiers
+	if HIT_SIDERESSORT == true:
+		
+		FINAL_MAXSPEED += move_toward(velocity.x, MAX_SPEED, 1000)
+		FINAL_HALT = move_toward(velocity.x, 0, 2)
 	
 	# Apply movement
 	if HANGING == false:
@@ -317,16 +321,6 @@ func player_death():
 	multiHitboxDeathFixer += 1
 	if multiHitboxDeathFixer == 1:
 		get_tree().reload_current_scene()
-
-
-func hit_ressort(is_side: bool):
-	
-	# Reduces the acceleration of the player when a side ressort is hit
-	HIT_RESSORT = true
-	if is_side == true:
-		CURRENT_ACCELERATION = 10
-	else:
-		CURRENT_ACCELERATION = 20
 
 
 func check_respawn_informations():

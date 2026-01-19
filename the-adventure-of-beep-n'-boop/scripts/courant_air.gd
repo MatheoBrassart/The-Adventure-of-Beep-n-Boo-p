@@ -30,13 +30,11 @@ func _process(_delta: float) -> void:
 						collider.velocity.y = collider.velocity.y + (WIND_POWER * -1)
 				
 				elif round(self.rotation_degrees) == 90:
-					if collider.velocity.x < MAX_PUSH:
-						collider.WIND_POWER = WIND_POWER
-						collider.WIND_DIRECTION = 1
+					collider.WIND_POWER = WIND_POWER
+					collider.WIND_DIRECTION = 1
 				elif round(self.rotation_degrees) == -90:
-					if collider.velocity.x > MAX_PUSH * -1:
-						collider.WIND_POWER = WIND_POWER
-						collider.WIND_DIRECTION = -1
+					collider.WIND_POWER = WIND_POWER
+					collider.WIND_DIRECTION = -1
 	
 	set_particle_mask_size()
 
