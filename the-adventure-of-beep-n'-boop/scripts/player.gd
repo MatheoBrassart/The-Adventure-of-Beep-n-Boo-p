@@ -96,8 +96,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	print(velocity.x)
-	
 	# Add the gravity and reduces acceleration when in the air
 	if HANGING == false:
 		if not is_on_floor():

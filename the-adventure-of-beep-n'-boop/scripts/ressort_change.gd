@@ -70,16 +70,16 @@ func deactivate():
 
 func _on_body_entered(body: Node2D) -> void:
 	
-	# Bounce the player when it touches it. Direction depends on its rotation.
+	# Bounces the player when they touches it. Direction depends on its rotation.
 	if body.is_in_group("Player") == true:
 		rightSprite.play("used")
-		
-		if round(self.rotation_degrees) == 90 or -90:
-			body.HIT_SIDERESSORT = true
-		
-		if round(self.rotation_degrees) == 0:
-			body.velocity.y = RESSORT_VELOCITY * -1
-		elif round(self.rotation_degrees) == 90:
-			body.velocity.x = RESSORT_VELOCITY
-		elif round(self.rotation_degrees) == -90:
-			body.velocity.x = RESSORT_VELOCITY * -1
+	
+		match round(self.rotation_degrees):
+			0.0:
+				body.velocity.y = RESSORT_VELOCITY * -1
+			90.0:
+				body.HIT_SIDERESSORT = true
+				body.velocity.x = RESSORT_VELOCITY
+			-90.0:
+				body.HIT_SIDERESSORT = true
+				body.velocity.x = RESSORT_VELOCITY * -1
