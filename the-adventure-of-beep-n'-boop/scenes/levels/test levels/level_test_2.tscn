@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_ha63a"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_pnvdu"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="4_y4jno"]
-[ext_resource type="PackedScene" uid="uid://dscc3ugphut8t" path="res://scenes/level design elements/courant_air_change.tscn" id="6_5ti25"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="6_wc4wy"]
 [ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_5ti25"]
+[ext_resource type="PackedScene" uid="uid://bw604do7cwlld" path="res://scenes/level design elements/courant_air.tscn" id="7_luxm6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
 distance = -298.0
@@ -72,11 +72,8 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(464, 288)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="CourantAirChange" parent="Level elements" instance=ExtResource("6_5ti25")]
-position = Vector2(1024, 576)
-rotation = -1.5707964
-WHICH_CHARACTER_IS_IT = 1
-WIND_POWER = 50
-
 [node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
 position = Vector2(608, 336)
+
+[node name="CourantAir" parent="." instance=ExtResource("7_luxm6")]
+position = Vector2(736, 352)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw604do7cwlld"]
+[gd_scene load_steps=6 format=3 uid="uid://bw604do7cwlld"]
 
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_7cm64"]
 [ext_resource type="Script" uid="uid://cg26ddujpl7p" path="res://scripts/courant_air.gd" id="1_tabl1"]
@@ -7,6 +7,12 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw1k3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tabl1"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(15, 50, 1)
+gravity = Vector3(50, 0, 0)
 
 [node name="CourantAir" type="Area2D"]
 script = ExtResource("1_tabl1")
@@ -22,3 +28,11 @@ shape = SubResource("RectangleShape2D_tabl1")
 scale = Vector2(1.6, 1.6)
 shape = SubResource("RectangleShape2D_dw1k3")
 target_position = Vector2(0, -789.99994)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 2
+texture = ExtResource("1_7cm64")
+lifetime = 2.0
+trail_enabled = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_tabl1")
