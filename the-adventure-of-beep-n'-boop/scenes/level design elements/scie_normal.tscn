@@ -8,6 +8,7 @@ size = Vector2(14, 46.800003)
 
 [node name="ScieNormal" type="Area2D"]
 z_index = 1
+collision_layer = 2
 script = ExtResource("1_152qo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -20,11 +20,10 @@ zoom = Vector2(1.75, 1.75)
 
 [node name="Player" parent="." instance=ExtResource("1_6brol")]
 position = Vector2(368, 272)
-collision_layer = 129
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 310)
-collision_layer = 4
+collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_ha63a")
@@ -81,7 +80,8 @@ position = Vector2(464, 288)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="CourantAir" parent="Level elements" instance=ExtResource("7_luxm6")]
-position = Vector2(768, 560)
+position = Vector2(1008, 560)
+rotation = -1.5707964
 scale = Vector2(4, 1)
 WIND_POWER = 60
 

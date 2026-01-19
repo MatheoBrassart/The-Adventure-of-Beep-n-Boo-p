@@ -9,6 +9,7 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw1k3"]
 
 [node name="CourantAirChange" type="Area2D" groups=["CourantAirChange"]]
+collision_layer = 4
 script = ExtResource("1_xbsy3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

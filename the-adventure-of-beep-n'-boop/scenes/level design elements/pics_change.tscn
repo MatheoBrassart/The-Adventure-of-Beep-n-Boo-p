@@ -166,6 +166,7 @@ size = Vector2(14, 10)
 
 [node name="PicsChange" type="Area2D" groups=["PicsChange"]]
 z_index = 1
+collision_layer = 2
 script = ExtResource("1_pgu3o")
 
 [node name="AnimatedSprite2DPicsChangeBeep" type="AnimatedSprite2D" parent="."]

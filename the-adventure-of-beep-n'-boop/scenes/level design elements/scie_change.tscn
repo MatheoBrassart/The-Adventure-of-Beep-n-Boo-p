@@ -8,6 +8,7 @@ size = Vector2(14, 46.800003)
 
 [node name="ScieChange" type="Area2D" groups=["ScieChange"]]
 z_index = 1
+collision_layer = 2
 script = ExtResource("1_mu1vk")
 
 [node name="AnimatedSprite2DScieChangeBeep" type="Sprite2D" parent="."]

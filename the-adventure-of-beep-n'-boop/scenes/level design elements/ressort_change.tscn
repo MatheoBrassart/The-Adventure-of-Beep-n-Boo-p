@@ -288,6 +288,7 @@ size = Vector2(9.5, 20)
 
 [node name="RessortChange" type="Area2D" groups=["RessortChange"]]
 z_index = 1
+collision_layer = 2
 script = ExtResource("1_60jv4")
 
 [node name="AnimatedSprite2DRessortChangeBeep" type="AnimatedSprite2D" parent="."]

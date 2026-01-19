@@ -10,6 +10,7 @@ size = Vector2(64, 32)
 size = Vector2(64, 16)
 
 [node name="BlocChute" type="StaticBody2D" groups=["BlocChute"]]
+collision_layer = 2
 script = ExtResource("1_jao08")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
