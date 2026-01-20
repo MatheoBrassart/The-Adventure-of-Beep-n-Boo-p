@@ -50,14 +50,14 @@ position = Vector2(1104, 336)
 [node name="level_switcher" parent="Level switchers" instance=ExtResource("3_njwn0")]
 position = Vector2(1200, 240)
 scale = Vector2(1, 3)
-TO_WHICH_WORLD_DOES_IT_LEADS = "villeenruine"
+TO_WHICH_WORLD_DOES_IT_LEADS = "plainesventeuses"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 9
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_njwn0")]
 position = Vector2(-48, 240)
 scale = Vector2(1, 3)
-TO_WHICH_WORLD_DOES_IT_LEADS = "villeenruine"
+TO_WHICH_WORLD_DOES_IT_LEADS = "plainesventeuses"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 7
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1

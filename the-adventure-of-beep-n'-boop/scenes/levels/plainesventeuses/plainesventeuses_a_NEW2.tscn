@@ -1,0 +1,183 @@
+[gd_scene load_steps=11 format=4 uid="uid://buvt6b0le6pii"]
+
+[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_8ysmo"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_fyoua"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_gtecn"]
+[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_ierdm"]
+[ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="6_8ysmo"]
+[ext_resource type="PackedScene" uid="uid://bw604do7cwlld" path="res://scenes/level design elements/courant_air.tscn" id="6_e74jj"]
+[ext_resource type="PackedScene" uid="uid://jdafmtmnfa1x" path="res://scenes/level design elements/bloc_sens_unique.tscn" id="7_fyoua"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_j3pqc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
+texture = ExtResource("7_j3pqc")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_02c06"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_7a1jm")
+
+[node name="plainesventeuses_a_NEW2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -100
+position = Vector2(598.62494, 303.99997)
+scale = Vector2(6.816589, 4.953704)
+texture = ExtResource("1_8ysmo")
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_fyoua")]
+position = Vector2(48, 528)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+position = Vector2(543, -144)
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1104, 336)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_gtecn")]
+position = Vector2(1200, 272)
+TO_WHICH_WORLD_DOES_IT_LEADS = "plainesventeuses"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 9
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_gtecn")]
+position = Vector2(-48, 528)
+TO_WHICH_WORLD_DOES_IT_LEADS = "plainesventeuses"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 7
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="Killzone" parent="Level elements" instance=ExtResource("4_ierdm")]
+position = Vector2(608, 832)
+
+[node name="CourantAir" parent="Level elements" instance=ExtResource("6_e74jj")]
+position = Vector2(1264, 400)
+rotation = -1.5707964
+scale = Vector2(3, 1)
+WIND_POWER = 50
+
+[node name="CourantAir2" parent="Level elements" instance=ExtResource("6_e74jj")]
+position = Vector2(-112, 128)
+rotation = 1.5707964
+scale = Vector2(4, 1)
+WIND_POWER = 50
+
+[node name="PicsNormal2" parent="Level elements" instance=ExtResource("6_8ysmo")]
+position = Vector2(96, 416)
+rotation = 1.5707964
+
+[node name="PicsNormal3" parent="Level elements" instance=ExtResource("6_8ysmo")]
+position = Vector2(480, 160)
+
+[node name="PicsNormal4" parent="Level elements" instance=ExtResource("6_8ysmo")]
+position = Vector2(800, 160)
+
+[node name="BlocSensUnique" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(80, 336)
+
+[node name="BlocSensUnique2" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(112, 336)
+
+[node name="BlocSensUnique24" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(144, 336)
+
+[node name="BlocSensUnique25" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(176, 336)
+
+[node name="BlocSensUnique3" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(336, 336)
+
+[node name="BlocSensUnique4" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(368, 336)
+
+[node name="BlocSensUnique7" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(400, 336)
+
+[node name="BlocSensUnique8" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(432, 336)
+
+[node name="BlocSensUnique17" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1008, 208)
+rotation = 3.1415927
+
+[node name="BlocSensUnique18" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1040, 208)
+rotation = 3.1415927
+
+[node name="BlocSensUnique21" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1008, 336)
+rotation = 3.1415927
+
+[node name="BlocSensUnique22" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1040, 336)
+rotation = 3.1415927
+
+[node name="BlocSensUnique23" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1072, 336)
+rotation = 3.1415927
+
+[node name="BlocSensUnique9" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1104, 368)
+rotation = -1.5707964
+
+[node name="BlocSensUnique10" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1104, 400)
+rotation = -1.5707964
+
+[node name="BlocSensUnique11" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(1104, 432)
+rotation = -1.5707964
+
+[node name="BlocSensUnique5" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(144, 208)
+
+[node name="BlocSensUnique12" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(48, 80)
+rotation = 1.5707964
+
+[node name="BlocSensUnique13" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(48, 112)
+rotation = 1.5707964
+
+[node name="BlocSensUnique14" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(48, 144)
+rotation = 1.5707964
+
+[node name="BlocSensUnique15" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(48, 176)
+rotation = 1.5707964
+
+[node name="BlocSensUnique6" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(176, 208)
+
+[node name="BlocSensUnique26" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(80, 208)
+
+[node name="BlocSensUnique27" parent="Level elements" instance=ExtResource("7_fyoua")]
+position = Vector2(112, 208)
+
+[node name="Background elements" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/xIAAAABAAEAAAD//xIAAAABAAEAAAAAABIAAAABAAEAAAABABIAAAABAAEAAAACABIAAAABAAEAAAADABIAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPAA4AAAABAAEAAAD+/w4AAAABAAEAAAD//w4AAAABAAEAAAAAAA4AAAABAAEAAAABAA4AAAABAAEAAAACAA4AAAABAAEAAAADAA4AAAABAAEAAAAEAA4AAAABAAEAAAAFAA4AAAABAAEAAAAGAA4AAAABAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAJAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAABAAEAAAAYAA4AAAABAAEAAAAZAA4AAAABAAEAAAAaAA4AAAABAAEAAAAbAA4AAAABAAEAAAAcAA4AAAABAAEAAAAdAA4AAAABAAEAAAAeAA4AAAABAAEAAAAfAA4AAAABAAEAAAAgAA4AAAABAAEAAAAhAA4AAAABAAEAAAAiAA4AAAABAAEAAAAjAA4AAAABAAEAAAAkAA4AAAABAAEAAAAlAA4AAAABAAEAAAABAA0AAAABAAEAAAABAAwAAAABAAEAAAABAAsAAAABAAEAAAABAAoAAAABAAEAAAABAAkAAAABAAEAAAABAAgAAAABAAEAAAABAAcAAAABAAEAAAABAAYAAAABAAEAAAABAAEAAAABAAEAAAAGAAgAAAABAAEAAAAGAAcAAAABAAEAAAAGAAYAAAABAAEAAAAGAAkAAAABAAEAAAAGAAoAAAABAAEAAAAHAAoAAAABAAEAAAAIAAoAAAABAAEAAAAJAAoAAAABAAEAAAAOAA4AAAABAAEAAAAOAA8AAAABAAEAAAAOABAAAAABAAEAAAAOABEAAAABAAEAAAAOAAoAAAABAAEAAAAPAAoAAAABAAEAAAAQAAoAAAABAAEAAAARAAoAAAABAAEAAAASAAoAAAABAAEAAAATAAoAAAABAAEAAAAUAAoAAAABAAEAAAAVAAoAAAABAAEAAAAWAAoAAAABAAEAAAAXAAoAAAABAAEAAAAYAAoAAAABAAEAAAAZAAoAAAABAAEAAAAaAAoAAAABAAEAAAAbAAoAAAABAAEAAAAcAAoAAAABAAEAAAAdAAoAAAABAAEAAAAiAAoAAAABAAEAAAAjAAoAAAABAAEAAAAkAAoAAAABAAEAAAAlAAoAAAABAAEAAAAiAAYAAAABAAEAAAAjAAYAAAABAAEAAAAkAAYAAAABAAEAAAAlAAYAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAAIAAEAAAABAAEAAAAJAAEAAAABAAEAAAAKAAEAAAABAAEAAAALAAEAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAAOAAEAAAABAAEAAAAPAAEAAAABAAEAAAAQAAEAAAABAAEAAAARAAEAAAABAAEAAAASAAEAAAABAAEAAAATAAEAAAABAAEAAAAUAAEAAAABAAEAAAAVAAEAAAABAAEAAAAWAAEAAAABAAEAAAAXAAEAAAABAAEAAAAYAAEAAAABAAEAAAAZAAEAAAABAAEAAAAaAAEAAAABAAEAAAAbAAEAAAABAAEAAAAcAAEAAAABAAEAAAAdAAEAAAABAAEAAAAeAAEAAAABAAEAAAAfAAEAAAABAAEAAAAgAAEAAAABAAEAAAAhAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAAAAAYAAAABAAEAAAD//wYAAAABAAEAAAD+/wYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAYAAAABAAEAAAAMAAYAAAABAAEAAAANAAYAAAABAAEAAAAOAAYAAAABAAEAAAAPAAYAAAABAAEAAAAQAAYAAAABAAEAAAARAAYAAAABAAEAAAASAAYAAAABAAEAAAATAAYAAAABAAEAAAAUAAYAAAABAAEAAAAVAAYAAAABAAEAAAAWAAYAAAABAAEAAAAXAAYAAAABAAEAAAAYAAYAAAABAAEAAAAZAAYAAAABAAEAAAAaAAYAAAABAAEAAAAbAAYAAAABAAEAAAAcAAYAAAABAAEAAAAdAAYAAAABAAEAAAAeAAoAAAABAAEAAAAeAAYAAAABAAEAAAAhAAYAAAABAAEAAAAhAAIAAAABAAEAAAAhAAMAAAABAAEAAAAhAAQAAAABAAEAAAAhAAUAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_02c06")
+
+[node name="PicsNormal" parent="." instance=ExtResource("6_8ysmo")]
+position = Vector2(1024, 128)
+rotation = -1.5707964
