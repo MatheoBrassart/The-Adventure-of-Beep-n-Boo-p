@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var dialogueSystem = get_tree().get_first_node_in_group("DialogueSystem")
+@onready var ui_general = get_tree().get_first_node_in_group("UIGeneral")
+
 var listOfChanges = []
 var listOfPlayer = []
 var listOfCourantsAirChanges = []
@@ -16,6 +19,8 @@ var CUTSCENE_BoopReveil: bool = false
 var CUTSCENE_PremierEnregistrement: bool = false
 var CUTSCENE_SortieAtelier: bool = false
 var CUTSCENE_ArriveeVilleEnRuine: bool = false
+
+var CURRENT_ACTIVE_DIALOGUE: String = "0"
 
 
 # ----- List of completed Levels -----
@@ -46,6 +51,7 @@ var PUCES_LIST: Dictionary = {
 
 func _process(_delta: float) -> void:
 	
+	# ----- Change-Moi -----
 	if Input.is_action_just_pressed("switch_character"):
 		
 		listOfChanges = get_tree().get_nodes_in_group("BlocChange")
@@ -75,3 +81,82 @@ func _process(_delta: float) -> void:
 		listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
 		for i in listOfChanges: 
 			i.change_wind_direction()
+
+
+func check_cutscene_informations(whichCutscene: String):
+	
+	match whichCutscene:
+		"BeepReveil":
+			if CUTSCENE_BeepReveil == false:
+				CURRENT_ACTIVE_DIALOGUE = "BeepReveil"
+				var player = get_tree().get_first_node_in_group("Player")
+				player.CAN_MOVE = false
+				dialogueSystem.play_dialogue("BeepReveil", 0)
+		
+		"BoopReveil":
+			if CUTSCENE_BoopReveil == false:
+				CURRENT_ACTIVE_DIALOGUE = "BoopReveil"
+				var player = get_tree().get_first_node_in_group("Player")
+				player.CAN_MOVE = false
+				dialogueSystem.play_dialogue("PlaceholderBoopReveil", 0)
+	
+		"PremierEnregistrement":
+			if CUTSCENE_PremierEnregistrement == false:
+				CURRENT_ACTIVE_DIALOGUE = "PremierEnregistrement"
+				var player = get_tree().get_first_node_in_group("Player")
+				player.CAN_MOVE = false
+				dialogueSystem.play_dialogue("PlaceholderPremierEnregistrement", 0)
+	
+		"SortieAtelier":
+			if CUTSCENE_SortieAtelier == false:
+				CURRENT_ACTIVE_DIALOGUE = "SortieAtelier"
+				var player = get_tree().get_first_node_in_group("Player")
+				player.CAN_MOVE = false
+				if player.CURRENT_ACTIVE_CHARACTER == 0:
+					dialogueSystem.play_dialogue("SortieAtelierVBeep", 0)
+				else:
+					dialogueSystem.play_dialogue("SortieAtelierVBoop", 0)
+		
+		"ArriveeVilleEnRuine":
+			if CUTSCENE_ArriveeVilleEnRuine == false:
+				CURRENT_ACTIVE_DIALOGUE = "ArriveeVilleEnRuine"
+				var player = get_tree().get_first_node_in_group("Player")
+				player.CAN_MOVE = false
+				dialogueSystem.play_dialogue("ArriveeVilleEnRuine", 0)
+		
+		"FinDemo2":
+			CURRENT_ACTIVE_DIALOGUE = "FinDemo2"
+			var player = get_tree().get_first_node_in_group("Player")
+			player.CAN_MOVE = false
+			dialogueSystem.play_dialogue("FinDemo2", 0)
+
+
+func finished_dialogue():
+	
+	if CURRENT_ACTIVE_DIALOGUE == "BeepReveil":
+		CUTSCENE_BeepReveil = true
+		var player = get_tree().get_first_node_in_group("Player")
+		player.CAN_MOVE = true
+		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
+		ordiTuto.animation_player.play("tutoApparition")
+		ordiTuto.animation.play("move")
+	
+	if CURRENT_ACTIVE_DIALOGUE == "BoopReveil":
+		CUTSCENE_BoopReveil = true
+		var player = get_tree().get_first_node_in_group("Player")
+		player.CAN_MOVE = true
+	
+	if CURRENT_ACTIVE_DIALOGUE == "SortieAtelier":
+		CUTSCENE_PremierEnregistrement = true
+		var player = get_tree().get_first_node_in_group("Player")
+		player.CAN_MOVE = true
+		COMPLETEDLEVELS_LIST["atelier"]["b"]["13"] = true
+		ui_general.activate_black_transition_nolevelswitch("WorldMenu", "a")
+	
+	if CURRENT_ACTIVE_DIALOGUE == "ArriveeVilleEnRuine":
+		CUTSCENE_ArriveeVilleEnRuine = true
+		var player = get_tree().get_first_node_in_group("Player")
+		player.CAN_MOVE = true
+	
+	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
+		get_tree().quit()

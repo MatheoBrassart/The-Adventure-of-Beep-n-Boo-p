@@ -343,7 +343,7 @@ visible_ratio = 0.0
 [node name="Faces" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(120, 96)
 sprite_frames = SubResource("SpriteFrames_x2b6m")
-animation = &"beepHappy"
+animation = &"nothing"
 
 [node name="BarreEspace" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
 position = Vector2(1296, 168)

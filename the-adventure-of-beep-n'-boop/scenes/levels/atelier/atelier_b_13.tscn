@@ -57,6 +57,7 @@ TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 [node name="cutscenePlayer" parent="Level elements" instance=ExtResource("3_gqwg8")]
 position = Vector2(1888, 64)
 scale = Vector2(1, 4.175)
+WHICH_CUTSCENE = "SortieAtelier"
 
 [node name="Background elements" type="Node2D" parent="."]
 

@@ -1,5 +1,7 @@
 extends Control
 
+@onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
+
 @onready var black_transition_animated_sprite_2d: AnimatedSprite2D = $black_transition/BlackTransitionAnimatedSprite2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var black_transition: Control = $black_transition
@@ -99,7 +101,5 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 	
 	surrounders.visible = false
 	if WHAT_TO_DO_AFTER_TRANSITION == "SwitchLevel":
-		player = get_tree().get_first_node_in_group("Player")
 		if get_tree().get_current_scene().get_name() == "villeenruine_a_1":
-			player.HAS_TO_PLAY_DIALOGUE = true
-			player.check_cutscene_informations()
+			gameInformations.check_cutscene_informations("ArriveeVilleEnRuine")

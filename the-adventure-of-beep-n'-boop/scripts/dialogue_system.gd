@@ -122,8 +122,8 @@ func _process(_delta: float) -> void:
 			else:
 				IS_DIALOGUE_ONGOING = false
 				animation_player_boxApparition.play("dialogueBoxDisparition")
-				var player = get_tree().get_first_node_in_group("Player")
-				player.finished_dialogue()
+				var gameInformations = get_tree().get_first_node_in_group("GameInformations")
+				gameInformations.finished_dialogue()
 		
 
 

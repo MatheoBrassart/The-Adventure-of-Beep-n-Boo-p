@@ -248,7 +248,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="BlackTransitionOngoingTimerDelay" type="Timer" parent="black_transition"]
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
