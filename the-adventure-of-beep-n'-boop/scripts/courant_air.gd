@@ -8,6 +8,8 @@ extends Area2D
 @export var WIND_POWER = 0
 var MAX_PUSH = null
 
+var PLAYER_HASBEENSTOPPED: bool = false
+
 var new_point_clip_setter = null
 
 
@@ -24,17 +26,30 @@ func _process(_delta: float) -> void:
 		var collider = shape_cast_2d.get_collider(0)
 		if collider is Node:
 			if collider.is_in_group("Player"):
-				
-				if round(self.rotation_degrees) == 0:
-					if collider.velocity.y > MAX_PUSH * -1:
-						collider.velocity.y = collider.velocity.y + (WIND_POWER * -1)
-				
-				elif round(self.rotation_degrees) == 90:
-					collider.WIND_POWER = WIND_POWER
-					collider.WIND_DIRECTION = 1
-				elif round(self.rotation_degrees) == -90:
-					collider.WIND_POWER = WIND_POWER
-					collider.WIND_DIRECTION = -1
+				match round(self.rotation_degrees):
+					0.0:
+						if collider.velocity.y > MAX_PUSH * -1:
+							collider.velocity.y = collider.velocity.y + (WIND_POWER * -1)
+					90.0:
+						collider.WIND_POWER = WIND_POWER
+						collider.WIND_DIRECTION = 1
+						if PLAYER_HASBEENSTOPPED == false:
+							collider.velocity.x = 0
+							collider.velocity.x = move_toward(0, (WIND_POWER * (round(self.rotation_degrees) / 90) * 2.8), 100000)
+							PLAYER_HASBEENSTOPPED = true
+					-90.0:
+						collider.WIND_POWER = WIND_POWER
+						collider.WIND_DIRECTION = -1
+						if PLAYER_HASBEENSTOPPED == false:
+							collider.velocity.x = 0
+							collider.velocity.x = move_toward(0, (WIND_POWER * (round(self.rotation_degrees) / 90) * 2.8), 100000)
+							PLAYER_HASBEENSTOPPED = true
+			else:
+				PLAYER_HASBEENSTOPPED = false
+		else:
+			PLAYER_HASBEENSTOPPED = false
+	else:
+		PLAYER_HASBEENSTOPPED = false
 	
 	set_particle_mask_size()
 

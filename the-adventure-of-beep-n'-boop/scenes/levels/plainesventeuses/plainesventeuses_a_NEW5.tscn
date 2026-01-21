@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://cw1coyyc4e2dy"]
 
-[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_v2sr7"]
+[ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_4moe5"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_pxy55"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_4moe5"]
 [ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="3_pslcx"]
@@ -23,11 +23,10 @@ sources/0 = SubResource("TileSetAtlasSource_7a1jm")
 [node name="plainesventeuses_a_NEW5" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
-texture = ExtResource("1_v2sr7")
+texture = ExtResource("1_4moe5")
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 
@@ -68,17 +67,14 @@ position = Vector2(608, 832)
 [node name="CourantAir" parent="Level elements" instance=ExtResource("5_5tu1u")]
 position = Vector2(384, 688)
 scale = Vector2(8, 1)
-WIND_POWER = 50
 
 [node name="CourantAir2" parent="Level elements" instance=ExtResource("5_5tu1u")]
 position = Vector2(896, 688)
 scale = Vector2(8, 1)
-WIND_POWER = 50
 
 [node name="CourantAir3" parent="Level elements" instance=ExtResource("5_5tu1u")]
 position = Vector2(1408, 688)
 scale = Vector2(8, 1)
-WIND_POWER = 50
 
 [node name="ScieNormal5" parent="Level elements" instance=ExtResource("6_pxy55")]
 position = Vector2(288, 32)
@@ -96,10 +92,10 @@ position = Vector2(640, 360)
 position = Vector2(640, 224)
 
 [node name="ScieNormal24" parent="Level elements" instance=ExtResource("6_pxy55")]
-position = Vector2(1664, 416)
+position = Vector2(1664, 408)
 
 [node name="ScieNormal25" parent="Level elements" instance=ExtResource("6_pxy55")]
-position = Vector2(1664, 224)
+position = Vector2(1664, 232)
 
 [node name="ScieNormal12" parent="Level elements" instance=ExtResource("6_pxy55")]
 position = Vector2(1152, 168)

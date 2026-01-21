@@ -79,9 +79,7 @@ func _ready() -> void:
 	
 	# Check at which location the player should spawn/respawn and which character should the player be respawned as
 	check_respawn_informations()
-	
-	# Check if a cutscene should be played
-	check_cutscene_informations()
+
 	
 	# When appearing, hides the incorrect sprite and set the correct one as rightSprite
 	if CURRENT_ACTIVE_CHARACTER == 0:
@@ -243,8 +241,6 @@ func handle_input() -> void:
 				WIND_MOVEMENTMULTIPLIER = -1
 		else:
 			WIND_MOVEMENTMULTIPLIER = direction_x
-	else:
-		WIND_WASPLAYERSTOPPED = false
 	
 	FINAL_MAXSPEED += (WIND_POWER * WIND_MOVEMENTMULTIPLIER * 2)
 	FINAL_ACCELERATION += (WIND_POWER * WIND_MOVEMENTMULTIPLIER)
@@ -260,14 +256,8 @@ func handle_input() -> void:
 	
 	# Apply movement
 	if HANGING == false:
-		# If the player enters a courant d'air, stops them firstly
-		if (not WIND_DIRECTION == 0) and (WIND_WASPLAYERSTOPPED) == false:
-			WIND_WASPLAYERSTOPPED = true
-			velocity.x = 0
-			FINAL_ACCELERATION = 100000
-			velocity.x = move_toward(velocity.x, FINAL_HALT, FINAL_ACCELERATION)
 		# Moves the player when they're not hanging
-		elif direction_x == 0:
+		if direction_x == 0:
 			velocity.x = move_toward(velocity.x, FINAL_HALT, FINAL_ACCELERATION)
 		else:
 			velocity.x = move_toward(velocity.x, FINAL_MAXSPEED * direction_x, FINAL_ACCELERATION)
@@ -337,77 +327,6 @@ func check_respawn_informations():
 	# Gets the last active character, and respawn the player as them
 	if gameInformations.WHICH_CHARACTER_TO_RESPAWN == 1:
 		CURRENT_ACTIVE_CHARACTER = 1
-
-
-func check_cutscene_informations():
-	
-	if get_tree().get_current_scene().get_name() == "atelier_a_1":
-		if gameInformations.CUTSCENE_BeepReveil == false:
-			CURRENT_ACTIVE_DIALOGUE = "BeepReveil"
-			CAN_MOVE = false
-			dialogueSystem.play_dialogue("BeepReveil", 0)
-	
-	if get_tree().get_current_scene().get_name() == "atelier_a_8" and HAS_TO_PLAY_DIALOGUE == true:
-		if gameInformations.CUTSCENE_BoopReveil == false:
-			CURRENT_ACTIVE_DIALOGUE = "BoopReveil"
-			CAN_MOVE = false
-			dialogueSystem.play_dialogue("PlaceholderBoopReveil", 0)
-	
-	if get_tree().get_current_scene().get_name() == "atelier_b_9" and HAS_TO_PLAY_DIALOGUE == true:
-		if gameInformations.CUTSCENE_PremierEnregistrement == false:
-			CURRENT_ACTIVE_DIALOGUE = "PremierEnregistrement"
-			CAN_MOVE = false
-			dialogueSystem.play_dialogue("PlaceholderPremierEnregistrement", 0)
-	
-	if get_tree().get_current_scene().get_name() == "atelier_b_13" and HAS_TO_PLAY_DIALOGUE == true:
-		if gameInformations.CUTSCENE_SortieAtelier == false:
-			CURRENT_ACTIVE_DIALOGUE = "SortieAtelier"
-			CAN_MOVE = false
-			if CURRENT_ACTIVE_CHARACTER == 0:
-				dialogueSystem.play_dialogue("SortieAtelierVBeep", 0)
-			else:
-				dialogueSystem.play_dialogue("SortieAtelierVBoop", 0)
-	
-	if get_tree().get_current_scene().get_name() == "villeenruine_a_1" and HAS_TO_PLAY_DIALOGUE == true:
-		if gameInformations.CUTSCENE_ArriveeVilleEnRuine == false:
-			CURRENT_ACTIVE_DIALOGUE = "ArriveeVilleEnRuine"
-			CAN_MOVE = false
-			dialogueSystem.play_dialogue("ArriveeVilleEnRuine", 0)
-	
-	if get_tree().get_current_scene().get_name() == "villeenruine_a_8" and HAS_TO_PLAY_DIALOGUE == true:
-			CURRENT_ACTIVE_DIALOGUE = "FinDemo2"
-			CAN_MOVE = false
-			dialogueSystem.play_dialogue("FinDemo2", 0)
-
-func finished_dialogue():
-	
-	if CURRENT_ACTIVE_DIALOGUE == "BeepReveil":
-		gameInformations.CUTSCENE_BeepReveil = true
-		CAN_MOVE = true
-		HAS_TO_PLAY_DIALOGUE = false
-		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
-		ordiTuto.animation_player.play("tutoApparition")
-		ordiTuto.animation.play("move")
-	
-	if CURRENT_ACTIVE_DIALOGUE == "BoopReveil":
-		gameInformations.CUTSCENE_BoopReveil = true
-		CAN_MOVE = true
-		HAS_TO_PLAY_DIALOGUE = false
-	
-	if CURRENT_ACTIVE_DIALOGUE == "SortieAtelier":
-		gameInformations.CUTSCENE_PremierEnregistrement = true
-		CAN_MOVE = true
-		HAS_TO_PLAY_DIALOGUE = false
-		gameInformations.COMPLETEDLEVELS_LIST["atelier"]["b"]["13"] = true
-		ui_general.activate_black_transition_nolevelswitch("WorldMenu", "a")
-	
-	if CURRENT_ACTIVE_DIALOGUE == "ArriveeVilleEnRuine":
-		gameInformations.CUTSCENE_ArriveeVilleEnRuine = true
-		CAN_MOVE = true
-		HAS_TO_PLAY_DIALOGUE = false
-	
-	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
-		get_tree().quit()
 
 
 func switch_level():

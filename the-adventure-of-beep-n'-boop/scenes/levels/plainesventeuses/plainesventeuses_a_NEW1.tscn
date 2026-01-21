@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://cdvlbmi4g6df1"]
 
-[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_66l38"]
+[ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_3dq48"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_3dq48"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_njwn0"]
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_c5ccj"]
@@ -22,11 +22,10 @@ sources/0 = SubResource("TileSetAtlasSource_7a1jm")
 [node name="plainesventeuses_a_NEW1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
-texture = ExtResource("1_66l38")
+texture = ExtResource("1_3dq48")
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 

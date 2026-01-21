@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://37rh0g80kwcq"]
 
-[ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_os5f8"]
+[ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_lvyrc"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_7w1dr"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_lvyrc"]
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_2hn28"]
@@ -24,11 +24,10 @@ sources/0 = SubResource("TileSetAtlasSource_7a1jm")
 [node name="plainesventeuses_a_NEW4" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
-texture = ExtResource("1_os5f8")
+texture = ExtResource("1_lvyrc")
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 
@@ -105,6 +104,12 @@ position = Vector2(224, 32)
 
 [node name="ScieNormal2" parent="Level elements" instance=ExtResource("7_7w1dr")]
 position = Vector2(288, 32)
+
+[node name="ScieNormal3" parent="Level elements" instance=ExtResource("7_7w1dr")]
+position = Vector2(768, 32)
+
+[node name="ScieNormal4" parent="Level elements" instance=ExtResource("7_7w1dr")]
+position = Vector2(832, 32)
 
 [node name="PicsNormal2" parent="Level elements" instance=ExtResource("9_lvyrc")]
 position = Vector2(352, 544)
