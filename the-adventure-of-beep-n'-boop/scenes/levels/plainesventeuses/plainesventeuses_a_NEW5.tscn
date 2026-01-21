@@ -67,14 +67,17 @@ position = Vector2(608, 832)
 [node name="CourantAir" parent="Level elements" instance=ExtResource("5_5tu1u")]
 position = Vector2(384, 688)
 scale = Vector2(8, 1)
+WIND_POWER = 50.0
 
 [node name="CourantAir2" parent="Level elements" instance=ExtResource("5_5tu1u")]
 position = Vector2(896, 688)
 scale = Vector2(8, 1)
+WIND_POWER = 50.0
 
 [node name="CourantAir3" parent="Level elements" instance=ExtResource("5_5tu1u")]
 position = Vector2(1408, 688)
 scale = Vector2(8, 1)
+WIND_POWER = 50.0
 
 [node name="ScieNormal5" parent="Level elements" instance=ExtResource("6_pxy55")]
 position = Vector2(288, 32)

@@ -67,6 +67,7 @@ position = Vector2(608, 832)
 position = Vector2(1264, 464)
 rotation = -1.5707964
 scale = Vector2(3, 1)
+WIND_POWER = 100.0
 
 [node name="BlocSensUnique9" parent="Level elements" instance=ExtResource("6_4o7th")]
 position = Vector2(976, 432)
@@ -84,6 +85,7 @@ rotation = -1.5707964
 position = Vector2(-112, 304)
 rotation = 1.5707964
 scale = Vector2(3, 1)
+WIND_POWER = 50.0
 
 [node name="BlocSensUnique13" parent="Level elements" instance=ExtResource("6_4o7th")]
 position = Vector2(112, 304)

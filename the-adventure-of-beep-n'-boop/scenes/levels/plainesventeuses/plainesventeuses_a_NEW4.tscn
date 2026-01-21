@@ -68,7 +68,7 @@ position = Vector2(608, 832)
 [node name="CourantAir" parent="Level elements" instance=ExtResource("5_8g4cl")]
 position = Vector2(256, 688)
 scale = Vector2(4, 1)
-WIND_POWER = 30
+WIND_POWER = 35.0
 
 [node name="BlocSensUnique9" parent="Level elements" instance=ExtResource("6_l8sjy")]
 position = Vector2(272, 592)
@@ -85,7 +85,7 @@ position = Vector2(208, 592)
 [node name="CourantAir2" parent="Level elements" instance=ExtResource("5_8g4cl")]
 position = Vector2(800, 688)
 scale = Vector2(4, 1)
-WIND_POWER = 25
+WIND_POWER = 25.0
 
 [node name="BlocSensUnique13" parent="Level elements" instance=ExtResource("6_l8sjy")]
 position = Vector2(816, 592)

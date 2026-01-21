@@ -5,7 +5,7 @@ extends Area2D
 @onready var gpu_particles_2d: GPUParticles2D = $Line2DParticleClipper/GPUParticles2D
 @onready var shape_cast_2d_particles_setter: ShapeCast2D = $ShapeCast2DParticlesSetter
 
-@export var WIND_POWER = 0
+@export var WIND_POWER = 0.0
 var MAX_PUSH = null
 
 var PLAYER_HASBEENSTOPPED: bool = false
@@ -18,6 +18,11 @@ func _ready() -> void:
 	MAX_PUSH = WIND_POWER * 10
 	
 	gpu_particles_2d.amount = int(gpu_particles_2d.amount * self.transform.get_scale().x)
+	
+	if (round(self.rotation_degrees) == 0) or (round(self.rotation_degrees) == 180):
+		gpu_particles_2d.speed_scale = WIND_POWER / 25
+	else:
+		gpu_particles_2d.speed_scale = WIND_POWER / 50
 
 
 func _process(_delta: float) -> void:
