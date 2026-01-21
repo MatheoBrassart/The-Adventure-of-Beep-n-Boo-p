@@ -19,6 +19,7 @@ var CUTSCENE_BoopReveil: bool = false
 var CUTSCENE_PremierEnregistrement: bool = false
 var CUTSCENE_SortieAtelier: bool = false
 var CUTSCENE_ArriveeVilleEnRuine: bool = false
+var CUTSCENE_ArriveePlainesVenteuses: bool = false
 
 var CURRENT_ACTIVE_DIALOGUE: String = "0"
 
@@ -124,6 +125,13 @@ func check_cutscene_informations(whichCutscene: String):
 				player.CAN_MOVE = false
 				dialogueSystem.play_dialogue("ArriveeVilleEnRuine", 0)
 		
+		"ArriveePlainesVenteuses":
+			if CUTSCENE_ArriveePlainesVenteuses == false:
+				CURRENT_ACTIVE_DIALOGUE = "ArriveePlainesVenteuses"
+				var player = get_tree().get_first_node_in_group("Player")
+				player.CAN_MOVE = false
+				dialogueSystem.play_dialogue("ArriveePlainesVenteuses", 0)
+		
 		"FinDemo2":
 			CURRENT_ACTIVE_DIALOGUE = "FinDemo2"
 			var player = get_tree().get_first_node_in_group("Player")
@@ -155,6 +163,11 @@ func finished_dialogue():
 	
 	if CURRENT_ACTIVE_DIALOGUE == "ArriveeVilleEnRuine":
 		CUTSCENE_ArriveeVilleEnRuine = true
+		var player = get_tree().get_first_node_in_group("Player")
+		player.CAN_MOVE = true
+	
+	if CURRENT_ACTIVE_DIALOGUE == "ArriveePlainesVenteuses":
+		CUTSCENE_ArriveePlainesVenteuses = true
 		var player = get_tree().get_first_node_in_group("Player")
 		player.CAN_MOVE = true
 	

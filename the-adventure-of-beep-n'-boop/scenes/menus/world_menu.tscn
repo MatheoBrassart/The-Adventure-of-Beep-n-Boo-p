@@ -108,4 +108,5 @@ libraries = {
 
 [connection signal="pressed" from="ButtonAtelier" to="." method="_on_button_atelier_pressed"]
 [connection signal="pressed" from="ButtonVilleenRuine" to="." method="_on_button_villeen_ruine_pressed"]
+[connection signal="pressed" from="ButtonPlainesVenteuses" to="." method="_on_button_plaines_venteuses_pressed"]
 [connection signal="timeout" from="WorldUnlockTimer" to="." method="_on_world_unlock_timer_timeout"]

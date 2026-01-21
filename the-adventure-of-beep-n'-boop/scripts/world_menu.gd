@@ -37,6 +37,10 @@ func _on_button_villeen_ruine_pressed() -> void:
 	ui_general.activate_black_transition_nolevelswitch("SwitchLevel", "res://scenes/levels/villeenruine/villeenruine_a_1.tscn")
 
 
+func _on_button_plaines_venteuses_pressed() -> void:
+	
+	ui_general.activate_black_transition_nolevelswitch("SwitchLevel", "res://scenes/levels/plainesventeuses/plainesventeuses_a_1.tscn")
+
 func _on_world_unlock_timer_timeout() -> void:
 	if LEVEL_TO_UNLOCK == "villeenruine":
 		animation_player.play("unlock_villeenruine")

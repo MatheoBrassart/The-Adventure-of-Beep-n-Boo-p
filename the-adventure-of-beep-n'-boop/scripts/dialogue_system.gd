@@ -59,6 +59,15 @@ var DIALOGUE_LIST: Dictionary = {
 		"4" = {"Character": "Boop", "Message": "... Et je n'ai pas vraiment envie de mourrir à cause de toi.", "face": "boopBored"},
 		"5" = {"Character": "Beep", "Message": "On verra bien, hein.", "face": "beepNeutral"},
 	},
+	"ArriveePlainesVenteuses" = {
+		"0" = {"Character": "Beep", "Message": "Whoa, c’est immense ici !", "face": "beepNeutral"},
+		"1" = {"Character": "Boop", "Message": "Et encore plus vert que cette ville...", "face": "boopBored"},
+		"2" = {"Character": "Beep", "Message": "C’est quoi ses immenses ventilateurs au loin ? Pourquoi y’en a autant ?", "face": "beepNeutral"},
+		"3" = {"Character": "Boop", "Message": "Je ne sais pas, mais je suppose que ça doit avoir un lien avec ce vent...", "face": "boopBored"},
+		"4" = {"Character": "Boop", "Message": "Encore heureux que notre créatrice n’a pas équipé nos capteurs de température de ressentis organiques...", "face": "boopBored"},
+		"5" = {"Character": "Beep", "Message": "Bah, j’aime bien pouvoir penser de moi-même, mais j'ai pas vraiment envie de recevoir toutes les faiblesses organiques d’un nymalus non plus.", "face": "beepNeutral"},
+		"6" = {"Character": "Beep", "Message": "Mais en tout cas j’adore cette sensation, aller on y va !", "face": "beepNeutral"},
+	},
 	"FinDemo2" = {
 		"0" = {"Character": "Le créateur", "Message": "Eeeet cette deuxième demo est terminée, gg !", "face": "leCreateur"},
 		"1" = {"Character": "Le créateur", "Message": "De nouveau, tous retours sont appréciés.", "face": "leCreateur"},
