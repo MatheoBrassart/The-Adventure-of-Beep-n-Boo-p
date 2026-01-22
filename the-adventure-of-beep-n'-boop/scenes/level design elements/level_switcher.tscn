@@ -7,7 +7,7 @@
 size = Vector2(20, 98)
 
 [node name="level_switcher" type="Area2D"]
-collision_layer = 8
+collision_layer = 128
 script = ExtResource("1_qvkg8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
