@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccb73shaqgtk0"]
+
+[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_qjeo7"]
+[ext_resource type="Script" uid="uid://bc6ev7p3nrj1p" path="res://scripts/laser.gd" id="1_rvhhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tabl1"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw1k3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbsy3"]
+
+[node name="Laser" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_rvhhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.24999999)
+texture = ExtResource("1_qjeo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tabl1")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.7, 1.6)
+shape = SubResource("RectangleShape2D_dw1k3")
+target_position = Vector2(0, -789.99994)
+collision_mask = 15
+
+[node name="ShapeCast2DLine2DSetter" type="ShapeCast2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.7, 1.6)
+shape = SubResource("RectangleShape2D_xbsy3")
+target_position = Vector2(0, -789.99994)
+collision_mask = 14
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 32)
+scale = Vector2(0.99999994, 0.99999994)
+points = PackedVector2Array(0, -48, 0, -1312)
+width = 16.0
+default_color = Color(1, 0.49019608, 0, 1)

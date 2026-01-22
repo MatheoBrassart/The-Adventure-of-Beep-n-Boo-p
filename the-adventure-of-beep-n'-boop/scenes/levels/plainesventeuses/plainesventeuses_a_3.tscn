@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="6_jiwpc"]
 [ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_2lkdw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od8eg"]
 texture = ExtResource("6_jiwpc")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -18,7 +18,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_02c06"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_7a1jm")
+sources/0 = SubResource("TileSetAtlasSource_od8eg")
 
 [node name="plainesventeuses_a_3" type="Node2D"]
 
@@ -83,13 +83,16 @@ position = Vector2(768, 480)
 position = Vector2(736, 416)
 
 [node name="ScieNormal3" parent="Level elements" instance=ExtResource("5_wm2hd")]
-position = Vector2(504, 224)
+position = Vector2(480, 224)
 
 [node name="ScieNormal15" parent="Level elements" instance=ExtResource("5_wm2hd")]
-position = Vector2(584, 224)
+position = Vector2(608, 224)
 
 [node name="ScieNormal16" parent="Level elements" instance=ExtResource("5_wm2hd")]
-position = Vector2(544, 152)
+position = Vector2(544, 224)
+
+[node name="ScieNormal17" parent="Level elements" instance=ExtResource("5_wm2hd")]
+position = Vector2(544, 160)
 
 [node name="puceDonnee" parent="Level elements" instance=ExtResource("6_c4wpq")]
 position = Vector2(352, 224)

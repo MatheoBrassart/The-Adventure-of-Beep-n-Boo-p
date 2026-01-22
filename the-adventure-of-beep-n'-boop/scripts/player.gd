@@ -69,10 +69,14 @@ var RESPAWNERS_POSITIONS_NUMBER = 0
 
 var LIST_OF_BLOCSCHUTES = []
 
+# Courant Air-related variables
 var WIND_POWER = 0
 var WIND_DIRECTION = 0
 var WIND_MOVEMENTMULTIPLIER = 0
 var WIND_WASPLAYERSTOPPED: bool = false
+
+# If > 1: Player is in a Zone Anti-Change
+var ISIN_ZONEANTICHANGE = 0
 
 
 func _ready() -> void:

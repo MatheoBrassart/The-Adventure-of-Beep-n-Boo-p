@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8j8o76qco2ax"]
+[gd_scene load_steps=12 format=3 uid="uid://b8j8o76qco2ax"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_6brol"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_ha63a"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="4_y4jno"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="6_wc4wy"]
 [ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_5ti25"]
+[ext_resource type="PackedScene" uid="uid://dscc3ugphut8t" path="res://scenes/level design elements/courant_air_change.tscn" id="7_051pd"]
 [ext_resource type="PackedScene" uid="uid://bw604do7cwlld" path="res://scenes/level design elements/courant_air.tscn" id="7_luxm6"]
 [ext_resource type="PackedScene" uid="uid://c5b4lesamqpsx" path="res://scenes/level design elements/zone_anti_change.tscn" id="8_051pd"]
 [ext_resource type="PackedScene" uid="uid://ccb73shaqgtk0" path="res://scenes/level design elements/laser.tscn" id="9_4a0pe"]
@@ -89,6 +90,12 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(768, 368)
 scale = Vector2(4, 1)
 WIND_POWER = 50.0
+
+[node name="CourantAirChange" parent="Level elements" instance=ExtResource("7_051pd")]
+position = Vector2(1024, 144)
+rotation = -1.5707964
+scale = Vector2(4, 1)
+WIND_POWER = 50
 
 [node name="Zone Anti-Change" parent="Level elements" instance=ExtResource("8_051pd")]
 position = Vector2(160, 112)
