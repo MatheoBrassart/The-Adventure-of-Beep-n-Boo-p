@@ -11,6 +11,7 @@ func _process(_delta: float) -> void:
 	
 	if shape_cast_2d.is_colliding():
 		var collider = shape_cast_2d.get_collider(0)
+		print(collider)
 		if collider is Node:
 			if collider.is_in_group("Player"):
 				

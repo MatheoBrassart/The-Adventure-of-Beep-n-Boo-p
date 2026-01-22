@@ -22,17 +22,17 @@ texture = ExtResource("1_qjeo7")
 shape = SubResource("RectangleShape2D_tabl1")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-position = Vector2(0, -32)
-scale = Vector2(0.7, 1.6)
+position = Vector2(0, -16)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_dw1k3")
-target_position = Vector2(0, -789.99994)
+target_position = Vector2(0, -1805.7141)
 collision_mask = 15
 
 [node name="ShapeCast2DLine2DSetter" type="ShapeCast2D" parent="."]
-position = Vector2(0, -32)
-scale = Vector2(0.7, 1.6)
+position = Vector2(0, -16)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_xbsy3")
-target_position = Vector2(0, -789.99994)
+target_position = Vector2(0, -1805.7141)
 collision_mask = 14
 
 [node name="Line2D" type="Line2D" parent="."]
