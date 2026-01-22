@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsq0cmeybxioc"]
+
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_v4bqd"]
+[ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="2_dwj7a"]
+[ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="3_v1818"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
+distance = -298.0
+
+[sub_resource type="Curve2D" id="Curve2D_dwj7a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -416, 0, 0, 0, 0, 256, -416, 0, 0, 0, 0, 256, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Level Test 3" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(548.7, 308.6)
+rotation = -1.5707964
+zoom = Vector2(1.75, 1.75)
+
+[node name="Player" parent="." instance=ExtResource("1_v4bqd")]
+position = Vector2(160, 512)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 310)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ha63a")
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="Bloc Mouvant" parent="." instance=ExtResource("2_dwj7a")]
+position = Vector2(416, 544)
+curve = SubResource("Curve2D_dwj7a")
+
+[node name="PicsNormal" parent="Bloc Mouvant" instance=ExtResource("3_v1818")]
+position = Vector2(0, -64)

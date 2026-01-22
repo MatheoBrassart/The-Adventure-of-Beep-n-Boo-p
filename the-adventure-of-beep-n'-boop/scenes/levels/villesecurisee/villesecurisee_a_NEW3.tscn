@@ -293,6 +293,20 @@ position = Vector2(992, -416)
 position = Vector2(1248, 160)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="BlocChange10" parent="Level elements" instance=ExtResource("7_7vuto")]
+position = Vector2(64, 576)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange11" parent="Level elements" instance=ExtResource("7_7vuto")]
+position = Vector2(64, 640)
+
+[node name="BlocChange12" parent="Level elements" instance=ExtResource("7_7vuto")]
+position = Vector2(0, 576)
+
+[node name="BlocChange13" parent="Level elements" instance=ExtResource("7_7vuto")]
+position = Vector2(0, 640)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="Background elements" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
