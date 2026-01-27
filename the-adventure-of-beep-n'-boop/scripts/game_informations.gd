@@ -84,6 +84,10 @@ func _process(_delta: float) -> void:
 			listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
 			for i in listOfChanges: 
 				i.change_wind_direction()
+			
+			listOfChanges = get_tree().get_nodes_in_group("BlocMouvant")
+			for i in listOfChanges: 
+				i.pause_unpause_movement()
 
 
 func check_cutscene_informations(whichCutscene: String):

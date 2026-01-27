@@ -44,7 +44,7 @@ _data = {
 &"move": SubResource("Animation_etuca")
 }
 
-[node name="Bloc Mouvant" type="Path2D"]
+[node name="Bloc Mouvant" type="Path2D" groups=["BlocMouvant"]]
 script = ExtResource("1_etuca")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
