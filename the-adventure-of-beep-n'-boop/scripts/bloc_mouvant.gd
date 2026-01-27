@@ -3,7 +3,6 @@ extends Node2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 
 @export var LOOP: bool = true
-@export var NONLOOP_SPEED: float = 100.0
 @export var LOOP_SPEED: float = 2.0
 
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
@@ -30,16 +29,13 @@ func _ready() -> void:
 	if LOOP == true:
 		animation_player.speed_scale = LOOP_SPEED
 		animation_player.play("move")
-		set_process(false)
+	else:
+		animation_player.speed_scale = LOOP_SPEED
+		animation_player.play("move_noloop")
 	
 	# When appearing, check if the right character is active or not
 	if not player.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		pause_unpause_movement()
-
-
-func _process(delta: float) -> void:
-	
-	path_follow_2d.progress += NONLOOP_SPEED * delta
 
 
 func pause_unpause_movement():

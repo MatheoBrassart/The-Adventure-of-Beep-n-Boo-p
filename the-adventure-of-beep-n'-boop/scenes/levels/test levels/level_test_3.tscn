@@ -36,7 +36,6 @@ shape = SubResource("WorldBoundaryShape2D_ha63a")
 [node name="Bloc Mouvant" parent="Level elements" instance=ExtResource("2_dwj7a")]
 position = Vector2(672, 544)
 curve = SubResource("Curve2D_dwj7a")
-LOOP_SPEED = 1.0
 
 [node name="PicsNormal" parent="Level elements/Bloc Mouvant" instance=ExtResource("3_v1818")]
 position = Vector2(-64, 0)

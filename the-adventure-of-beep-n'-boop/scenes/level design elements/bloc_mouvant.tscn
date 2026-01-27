@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://du6gqgfykobe"]
+[gd_scene load_steps=8 format=3 uid="uid://du6gqgfykobe"]
 
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_7vqdq"]
 [ext_resource type="Script" uid="uid://hof1d5ae2dnl" path="res://scripts/bloc_mouvant.gd" id="1_etuca"]
@@ -38,10 +38,27 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_hh0md"]
+resource_name = "move_noloop"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hh0md"]
 _data = {
 &"RESET": SubResource("Animation_kkxpf"),
-&"move": SubResource("Animation_etuca")
+&"move": SubResource("Animation_etuca"),
+&"move_noloop": SubResource("Animation_hh0md")
 }
 
 [node name="Bloc Mouvant" type="Path2D" groups=["BlocMouvant"]]
