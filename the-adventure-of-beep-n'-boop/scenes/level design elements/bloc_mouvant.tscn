@@ -53,6 +53,12 @@ rotates = false
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
+[node name="Line2D" type="Line2D" parent="."]
+z_index = -10
+closed = true
+width = 5.0
+default_color = Color(0.5489626, 0.5489626, 0.54896253, 1)
+
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
