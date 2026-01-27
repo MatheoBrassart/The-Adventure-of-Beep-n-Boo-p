@@ -56,6 +56,7 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_7vqdq")
 
