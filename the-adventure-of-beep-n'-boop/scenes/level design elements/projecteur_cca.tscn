@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4mgskvc6sxel"]
+
+[ext_resource type="Script" uid="uid://ub42k5vslpl" path="res://scripts/projecteur_cca.gd" id="1_ir4xj"]
+[ext_resource type="Texture2D" uid="uid://dirb2o44mcphe" path="res://assets/colors/WhiteCircle.png" id="2_h1v86"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4i6nc"]
+radius = 128.0
+
+[node name="Projecteur CCA" type="Area2D"]
+script = ExtResource("1_ir4xj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(1.1377778, 1.1377778)
+texture = ExtResource("2_h1v86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4i6nc")
+
+[node name="DetectionTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="DetectionTimer" to="." method="_on_detection_timer_timeout"]
