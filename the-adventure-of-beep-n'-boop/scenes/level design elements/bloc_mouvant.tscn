@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://du6gqgfykobe"]
+[gd_scene load_steps=9 format=3 uid="uid://du6gqgfykobe"]
 
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_7vqdq"]
 [ext_resource type="Script" uid="uid://hof1d5ae2dnl" path="res://scripts/bloc_mouvant.gd" id="1_etuca"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="2_0q51q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_etuca"]
-size = Vector2(128, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt2ss"]
+size = Vector2(64, 64)
 
 [sub_resource type="Animation" id="Animation_kkxpf"]
 length = 0.001
@@ -79,13 +80,18 @@ default_color = Color(0.5489626, 0.5489626, 0.54896253, 1)
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7vqdq")
+scale = Vector2(2, 2)
+texture = ExtResource("2_0q51q")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_etuca")
+shape = SubResource("RectangleShape2D_xt2ss")
+
+[node name="Sprite2D2" type="Sprite2D" parent="AnimatableBody2D"]
+modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_7vqdq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -55,39 +55,40 @@ func _process(_delta: float) -> void:
 	# ----- Change-Moi -----
 	if Input.is_action_just_pressed("switch_character"):
 		var player = get_tree().get_first_node_in_group("Player")
-		if player.ISIN_ZONEANTICHANGE == 0:
-		
-			listOfChanges = get_tree().get_nodes_in_group("BlocChange")
-			for i in listOfChanges: 
-				i.switch_state()
+		if not player == null:
+			if player.ISIN_ZONEANTICHANGE == 0:
 			
-			listOfChanges = get_tree().get_nodes_in_group("PicsChange")
-			for i in listOfChanges: 
-				i.switch_state()
-			
-			listOfChanges = get_tree().get_nodes_in_group("RessortChange")
-			for i in listOfChanges: 
-				i.switch_state()
+				listOfChanges = get_tree().get_nodes_in_group("BlocChange")
+				for i in listOfChanges: 
+					i.switch_state()
 				
-			listOfChanges = get_tree().get_nodes_in_group("VignesChange")
-			for i in listOfChanges: 
-				i.switch_state()
-			
-			listOfChanges = get_tree().get_nodes_in_group("ScieChange")
-			for i in listOfChanges: 
-				i.switch_state()
+				listOfChanges = get_tree().get_nodes_in_group("PicsChange")
+				for i in listOfChanges: 
+					i.switch_state()
 				
-			listOfPlayer = get_tree().get_nodes_in_group("Player")
-			for i in listOfPlayer: 
-				i.switch_character()
-			
-			listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
-			for i in listOfChanges: 
-				i.change_wind_direction()
-			
-			listOfChanges = get_tree().get_nodes_in_group("BlocMouvant")
-			for i in listOfChanges: 
-				i.pause_unpause_movement()
+				listOfChanges = get_tree().get_nodes_in_group("RessortChange")
+				for i in listOfChanges: 
+					i.switch_state()
+					
+				listOfChanges = get_tree().get_nodes_in_group("VignesChange")
+				for i in listOfChanges: 
+					i.switch_state()
+				
+				listOfChanges = get_tree().get_nodes_in_group("ScieChange")
+				for i in listOfChanges: 
+					i.switch_state()
+					
+				listOfPlayer = get_tree().get_nodes_in_group("Player")
+				for i in listOfPlayer: 
+					i.switch_character()
+				
+				listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
+				for i in listOfChanges: 
+					i.change_wind_direction()
+				
+				listOfChanges = get_tree().get_nodes_in_group("BlocMouvant")
+				for i in listOfChanges: 
+					i.pause_unpause_movement()
 
 
 func check_cutscene_informations(whichCutscene: String):

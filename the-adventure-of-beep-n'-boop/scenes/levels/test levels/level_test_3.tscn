@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsq0cmeybxioc"]
+[gd_scene load_steps=6 format=3 uid="uid://dsq0cmeybxioc"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_v4bqd"]
 [ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="2_dwj7a"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="3_v1818"]
-[ext_resource type="PackedScene" uid="uid://bqklsg5jjjxdq" path="res://scenes/level design elements/ressort_normal.tscn" id="4_rs2q3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
 distance = -298.0
@@ -36,10 +35,8 @@ shape = SubResource("WorldBoundaryShape2D_ha63a")
 [node name="Bloc Mouvant" parent="Level elements" instance=ExtResource("2_dwj7a")]
 position = Vector2(672, 544)
 curve = SubResource("Curve2D_dwj7a")
+LOOP_SPEED = 1.0
 
 [node name="PicsNormal" parent="Level elements/Bloc Mouvant" instance=ExtResource("3_v1818")]
 position = Vector2(-64, 0)
 rotation = -1.5707964
-
-[node name="RessortNormal" parent="Level elements/Bloc Mouvant" instance=ExtResource("4_rs2q3")]
-position = Vector2(0, -64)
