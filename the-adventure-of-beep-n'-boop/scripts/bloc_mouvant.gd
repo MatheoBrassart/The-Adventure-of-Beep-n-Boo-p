@@ -8,12 +8,15 @@ extends Node2D
 @export var BLOC_SCALEX = 1
 @export var BLOC_SCALEY = 1
 
+@export var ORIGINALBLOC_ON = true
+
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animatable_body_2d: AnimatableBody2D = $AnimatableBody2D
 @onready var line_2d: Line2D = $Line2D
 
 @onready var sprite_2d: Sprite2D = $AnimatableBody2D/Sprite2D
+@onready var sprite_2d_2: Sprite2D = $AnimatableBody2D/Sprite2D2
 @onready var collision_shape_2d: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
 
 # Defines which character this bloc is for. 0 = Beep, 1 = Boop
@@ -26,6 +29,12 @@ func _ready() -> void:
 	sprite_2d.scale.y = sprite_2d.scale.y * BLOC_SCALEY
 	collision_shape_2d.scale.x = collision_shape_2d.scale.x * BLOC_SCALEX
 	collision_shape_2d.scale.y = collision_shape_2d.scale.y * BLOC_SCALEY
+	
+	if ORIGINALBLOC_ON == false:
+		sprite_2d.visible = false
+		sprite_2d_2.visible = false
+		line_2d.visible = false
+		collision_shape_2d.disabled = true
 	
 	# Get the non-component children of this node, unchild them and child them to the Bloc Mouvant
 	for child in get_children():
