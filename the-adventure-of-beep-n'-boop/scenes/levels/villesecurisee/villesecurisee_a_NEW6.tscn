@@ -127,6 +127,22 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(320, 480)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="ScieChange10" parent="Level elements" instance=ExtResource("9_a527v")]
+position = Vector2(192, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange11" parent="Level elements" instance=ExtResource("9_a527v")]
+position = Vector2(448, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange12" parent="Level elements" instance=ExtResource("9_a527v")]
+position = Vector2(704, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange13" parent="Level elements" instance=ExtResource("9_a527v")]
+position = Vector2(960, 384)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="ScieChange3" parent="Level elements" instance=ExtResource("9_a527v")]
 position = Vector2(384, 544)
 WHICH_CHARACTER_IS_IT = 1

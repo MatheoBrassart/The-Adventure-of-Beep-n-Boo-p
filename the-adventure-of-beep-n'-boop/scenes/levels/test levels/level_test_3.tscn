@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsq0cmeybxioc"]
+[gd_scene load_steps=8 format=3 uid="uid://dsq0cmeybxioc"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_v4bqd"]
 [ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="2_dwj7a"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="3_v1818"]
 [ext_resource type="PackedScene" uid="uid://c4mgskvc6sxel" path="res://scenes/level design elements/projecteur_cca.tscn" id="4_rs2q3"]
+[ext_resource type="PackedScene" uid="uid://dq2pibepa6vul" path="res://scenes/level design elements/machine_statut.tscn" id="5_hu8my"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
 distance = -298.0
@@ -22,7 +23,7 @@ rotation = -1.5707964
 zoom = Vector2(1.75, 1.75)
 
 [node name="Player" parent="." instance=ExtResource("1_v4bqd")]
-position = Vector2(160, 512)
+position = Vector2(144, 336)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 310)
@@ -45,3 +46,7 @@ rotation = -1.5707964
 [node name="Projecteur CCA" parent="Level elements" instance=ExtResource("4_rs2q3")]
 position = Vector2(416, 448)
 DETECTION_TIMER_SETTER = 2.0
+
+[node name="Machine Statut" parent="." instance=ExtResource("5_hu8my")]
+position = Vector2(192, 480)
+BEEP_DOUBLESAUT = true

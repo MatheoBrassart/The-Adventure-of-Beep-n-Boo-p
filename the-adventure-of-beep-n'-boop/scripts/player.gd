@@ -78,6 +78,10 @@ var WIND_WASPLAYERSTOPPED: bool = false
 # If > 1: Player is in a Zone Anti-Change
 var ISIN_ZONEANTICHANGE = 0
 
+# Status de personnage: Double Saut de Beep
+var STATUTPERS_DOUBLESAUT: bool = false
+var CAN_DOUBLEJUMP: bool = false
+
 
 func _ready() -> void:
 	
@@ -217,6 +221,8 @@ func _physics_process(delta: float) -> void:
 			rightSprite.play("fall")
 	
 	reset_blocchutes()
+	
+	double_jump()
 
 
 func handle_input() -> void:
@@ -352,3 +358,16 @@ func reset_blocchutes():
 				for i in LIST_OF_BLOCSCHUTES:
 					if (i.UNRESPAWNED == true) and (i.SHOULD_RESPAWN == false):
 						i.SHOULD_RESPAWN = true
+
+
+# Function for controlling Double Saut de Beep
+func double_jump():
+	
+	if STATUTPERS_DOUBLESAUT == true:
+		var collider = ray_cast_2d_floor_type_checker.get_collider()
+		if not collider is Node:
+			if (Input.is_action_just_pressed("jump")) and (CAN_DOUBLEJUMP == true) and (CAN_MOVE == true) and (CURRENT_ACTIVE_CHARACTER == 0):
+				velocity.y = JUMP_VELOCITY
+				CAN_DOUBLEJUMP = false
+		else:
+			CAN_DOUBLEJUMP = true

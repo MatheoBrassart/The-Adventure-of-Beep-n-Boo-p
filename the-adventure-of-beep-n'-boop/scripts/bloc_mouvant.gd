@@ -32,7 +32,7 @@ func _ready() -> void:
 	
 	if ORIGINALBLOC_ON == false:
 		sprite_2d.visible = false
-		sprite_2d_2.visible = false
+		# sprite_2d_2.visible = false
 		line_2d.visible = false
 		collision_shape_2d.disabled = true
 	
