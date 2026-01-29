@@ -11,8 +11,10 @@ extends Area2D
 @export var WHICH_CHARACTER_IS_IT = 0
 var CURRENT_WIND_DIRECTION = 0
 
-@export var WIND_POWER = 0
+@export var WIND_POWER = 0.0
 var MAX_PUSH = null
+
+var PLAYER_HASBEENSTOPPED: bool = false
 
 var new_point_clip_setter = null
 
@@ -26,6 +28,11 @@ func _ready() -> void:
 		CURRENT_WIND_DIRECTION = 1
 	
 	gpu_particles_2d.amount = int(gpu_particles_2d.amount * self.transform.get_scale().x)
+	
+	if (round(self.rotation_degrees) == 0) or (round(self.rotation_degrees) == 180):
+		gpu_particles_2d.speed_scale = WIND_POWER / 25
+	else:
+		gpu_particles_2d.speed_scale = WIND_POWER / 50
 
 
 
@@ -40,6 +47,13 @@ func _process(_delta: float) -> void:
 					airblow_forward(collider)
 				else:
 					airblow_backward(collider)
+				
+			else:
+				PLAYER_HASBEENSTOPPED = false
+		else:
+			PLAYER_HASBEENSTOPPED = false
+	else:
+		PLAYER_HASBEENSTOPPED = false
 	
 	set_particle_mask_size()
 	
@@ -50,31 +64,48 @@ func _process(_delta: float) -> void:
 func airblow_forward(collider: Node2D):
 	
 	# the air blows forward
-	if round(self.rotation_degrees) == 0:
-		if collider.velocity.y > MAX_PUSH * -1:
-			collider.velocity.y = collider.velocity.y + (WIND_POWER * -1)
-				
-	elif round(self.rotation_degrees) == 90:
-		collider.WIND_POWER = WIND_POWER
-		collider.WIND_DIRECTION = 1
-	elif round(self.rotation_degrees) == -90:
-		collider.WIND_POWER = WIND_POWER
-		collider.WIND_DIRECTION = -1
+	match round(self.rotation_degrees):
+		0.0:
+			if collider.velocity.y > MAX_PUSH * -1:
+				collider.velocity.y = collider.velocity.y + (WIND_POWER * -1)
+		90.0:
+			collider.WIND_POWER = WIND_POWER
+			collider.WIND_DIRECTION = 1
+			if PLAYER_HASBEENSTOPPED == false:
+				collider.velocity.x = 0
+				collider.velocity.x = move_toward(0, (WIND_POWER * (round(self.rotation_degrees) / 90) * 2.8), 100000)
+				PLAYER_HASBEENSTOPPED = true
+		-90.0:
+			collider.WIND_POWER = WIND_POWER
+			collider.WIND_DIRECTION = -1
+			if PLAYER_HASBEENSTOPPED == false:
+				collider.velocity.x = 0
+				collider.velocity.x = move_toward(0, (WIND_POWER * (round(self.rotation_degrees) / 90) * 2.8), 100000)
+				PLAYER_HASBEENSTOPPED = true
 
 
 func airblow_backward(collider: Node2D):
 	
 	# the air blows backward
-	if round(self.rotation_degrees) == 0:
-		if collider.velocity.y > MAX_PUSH:
-			collider.velocity.y = collider.velocity.y + WIND_POWER
+	match round(self.rotation_degrees):
+		0.0:
+			if collider.velocity.y > MAX_PUSH:
+				collider.velocity.y = collider.velocity.y + WIND_POWER
 				
-	elif round(self.rotation_degrees) == 90:
-		collider.WIND_POWER = WIND_POWER
-		collider.WIND_DIRECTION = -1
-	elif round(self.rotation_degrees) == -90:
-		collider.WIND_POWER = WIND_POWER
-		collider.WIND_DIRECTION = 1
+		90.0:
+			collider.WIND_POWER = WIND_POWER
+			collider.WIND_DIRECTION = -1
+			if PLAYER_HASBEENSTOPPED == false:
+				collider.velocity.x = 0
+				collider.velocity.x = move_toward(0, (WIND_POWER * (round(self.rotation_degrees) / 90) * 2.8), 100000)
+				PLAYER_HASBEENSTOPPED = true
+		-90.0:
+			collider.WIND_POWER = WIND_POWER
+			collider.WIND_DIRECTION = 1
+			if PLAYER_HASBEENSTOPPED == false:
+				collider.velocity.x = 0
+				collider.velocity.x = move_toward(0, (WIND_POWER * (round(self.rotation_degrees) / 90) * 2.8), 100000)
+				PLAYER_HASBEENSTOPPED = true
 
 
 func change_wind_direction():

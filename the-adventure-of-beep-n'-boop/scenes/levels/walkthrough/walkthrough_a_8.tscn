@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=4 uid="uid://bye3yp5upqdlh"]
+
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_ptfl7"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_rkgaq"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_2it4a"]
+[ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="4_vvynd"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="5_4v0ak"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1w42k"]
+texture = ExtResource("5_4v0ak")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_fkydg"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1w42k")
+
+[node name="walkthrough_a_8" type="Node2D"]
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("1_ptfl7")]
+position = Vector2(32, 240)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+position = Vector2(543, -144)
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1120, 240)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("2_rkgaq")]
+position = Vector2(1200, 240)
+TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 9
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_rkgaq")]
+position = Vector2(-48, 144)
+scale = Vector2(1, 3)
+TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 7
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="BlocChange" parent="Level elements" instance=ExtResource("3_2it4a")]
+position = Vector2(192, 320)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange2" parent="Level elements" instance=ExtResource("3_2it4a")]
+position = Vector2(256, 320)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange3" parent="Level elements" instance=ExtResource("3_2it4a")]
+position = Vector2(192, 448)
+
+[node name="BlocChange4" parent="Level elements" instance=ExtResource("3_2it4a")]
+position = Vector2(256, 448)
+
+[node name="BlocChange5" parent="Level elements" instance=ExtResource("3_2it4a")]
+position = Vector2(896, 384)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange" parent="Level elements" instance=ExtResource("4_vvynd")]
+position = Vector2(448, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange2" parent="Level elements" instance=ExtResource("4_vvynd")]
+position = Vector2(704, 544)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/wkAAAABAAEAAAD//wkAAAABAAEAAAAAAAkAAAABAAEAAAABAAkAAAABAAEAAAACAAkAAAABAAEAAAADAAkAAAABAAEAAAAEAAkAAAABAAEAAAAEAAoAAAABAAEAAAAEAAsAAAABAAEAAAAEAAwAAAABAAEAAAAEAA0AAAABAAEAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEABAAAAABAAEAAAAEABEAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPABIAAAABAAEAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAASABIAAAABAAEAAAATABIAAAABAAEAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAdABEAAAABAAEAAAAdABAAAAABAAEAAAAdAA8AAAABAAEAAAAeAA8AAAABAAEAAAAeABAAAAABAAEAAAAeABEAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAfABEAAAABAAEAAAAfABAAAAABAAEAAAAfAA8AAAABAAEAAAAfAA4AAAABAAEAAAAfAA0AAAABAAEAAAAfAAwAAAABAAEAAAAfAAsAAAABAAEAAAAfAAoAAAABAAEAAAAfAAkAAAABAAEAAAAgAAkAAAABAAEAAAAhAAkAAAABAAEAAAAiAAkAAAABAAEAAAAjAAkAAAABAAEAAAAkAAkAAAABAAEAAAAlAAkAAAABAAEAAAAJAP7/AAABAAEAAAAJAP//AAABAAEAAAAJAAAAAAABAAEAAAAJAAEAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAABAAEAAAAJAAsAAAABAAEAAAAJAAwAAAABAAEAAAAJAA0AAAABAAEAAAAJAA4AAAABAAEAAAAKAA4AAAABAAEAAAALAA4AAAABAAEAAAAMAA4AAAABAAEAAAANAA4AAAABAAEAAAAOAA4AAAABAAEAAAAPAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAABAAEAAAAYAA4AAAABAAEAAAAZAA4AAAABAAEAAAAaAA4AAAABAAEAAAAaAA0AAAABAAEAAAAaAAwAAAABAAEAAAAaAAsAAAABAAEAAAAaAAoAAAABAAEAAAAaAAkAAAABAAEAAAAaAAgAAAABAAEAAAAaAAcAAAABAAEAAAAaAAYAAAABAAEAAAAaAAUAAAABAAEAAAAbAAUAAAABAAEAAAAcAAUAAAABAAEAAAAdAAUAAAABAAEAAAAeAAUAAAABAAEAAAAfAAUAAAABAAEAAAAgAAUAAAABAAEAAAAhAAUAAAABAAEAAAAiAAUAAAABAAEAAAAjAAUAAAABAAEAAAAkAAUAAAABAAEAAAAlAAUAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_fkydg")

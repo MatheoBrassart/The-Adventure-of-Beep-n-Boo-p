@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=4 uid="uid://b35cyqbu0vss3"]
+
+[ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_6aryj"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_ie76m"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_uxw1f"]
+[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_ybjp3"]
+[ext_resource type="PackedScene" uid="uid://bw604do7cwlld" path="res://scenes/level design elements/courant_air.tscn" id="5_1nv5x"]
+[ext_resource type="PackedScene" uid="uid://jdafmtmnfa1x" path="res://scenes/level design elements/bloc_sens_unique.tscn" id="6_2yjkh"]
+[ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_uivg8"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="8_r35tq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
+texture = ExtResource("8_r35tq")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_02c06"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_7a1jm")
+
+[node name="walkthrough_a_30" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(598.62494, 303.99997)
+scale = Vector2(6.816589, 4.953704)
+texture = ExtResource("1_6aryj")
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_ie76m")]
+position = Vector2(48, 144)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+position = Vector2(543, -144)
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1104, 368)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_uxw1f")]
+position = Vector2(1200, 368)
+TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 31
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_uxw1f")]
+position = Vector2(-48, 144)
+TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 29
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="Killzone" parent="Level elements" instance=ExtResource("4_ybjp3")]
+position = Vector2(608, 832)
+
+[node name="CourantAir" parent="Level elements" instance=ExtResource("5_1nv5x")]
+position = Vector2(1264, 480)
+rotation = -1.5707964
+scale = Vector2(2, 1)
+WIND_POWER = 50.0
+
+[node name="CourantAir2" parent="Level elements" instance=ExtResource("5_1nv5x")]
+position = Vector2(1264, 544)
+rotation = -1.5707964
+scale = Vector2(2, 1)
+WIND_POWER = 50.0
+
+[node name="BlocSensUnique9" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(1040, 496)
+rotation = -1.5707964
+
+[node name="BlocSensUnique12" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(1040, 464)
+rotation = -1.5707964
+
+[node name="BlocSensUnique10" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(1040, 528)
+rotation = -1.5707964
+
+[node name="BlocSensUnique11" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(1040, 560)
+rotation = -1.5707964
+
+[node name="BlocSensUnique13" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(528, 208)
+rotation = 3.1415927
+
+[node name="BlocSensUnique14" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(560, 208)
+rotation = 3.1415927
+
+[node name="BlocSensUnique15" parent="Level elements" instance=ExtResource("6_2yjkh")]
+position = Vector2(592, 208)
+rotation = 3.1415927
+
+[node name="BlocChute" parent="Level elements" instance=ExtResource("7_uivg8")]
+position = Vector2(224, 432)
+
+[node name="BlocChute2" parent="Level elements" instance=ExtResource("7_uivg8")]
+position = Vector2(448, 432)
+
+[node name="BlocChute3" parent="Level elements" instance=ExtResource("7_uivg8")]
+position = Vector2(672, 432)
+
+[node name="BlocChute4" parent="Level elements" instance=ExtResource("7_uivg8")]
+position = Vector2(896, 432)
+
+[node name="Background elements" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/xIAAAABAAEAAAD//xIAAAABAAEAAAAAABIAAAABAAEAAAABABIAAAABAAEAAAACABIAAAABAAEAAAADABIAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAABAAYAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAAAAAYAAAABAAEAAAD//wYAAAABAAEAAAD+/wYAAAABAAEAAAAPABIAAAABAAEAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAASABIAAAABAAEAAAATABIAAAABAAEAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAgABIAAAABAAEAAAAhABIAAAABAAEAAAAiABIAAAABAAEAAAAjABIAAAABAAEAAAAkABIAAAABAAEAAAAlABIAAAABAAEAAAAjAA0AAAABAAEAAAAiAA0AAAABAAEAAAAhAA0AAAABAAEAAAAgAA0AAAABAAEAAAAkAA0AAAABAAEAAAAlAA0AAAABAAEAAAAAAAcAAAABAAEAAAAAAAgAAAABAAEAAAAAAAkAAAABAAEAAAAAAAoAAAABAAEAAAAAAAsAAAABAAEAAAAAAAwAAAABAAEAAAAAAA0AAAABAAEAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAAAABAAAAABAAEAAAAAABEAAAABAAEAAAABAA4AAAABAAEAAAACAA4AAAABAAEAAAACAA8AAAABAAEAAAACABAAAAABAAEAAAAEABEAAAABAAEAAAAEABAAAAABAAEAAAADABAAAAABAAEAAAACAAYAAAABAAEAAAADAAYAAAABAAEAAAAEAAYAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAAMAAEAAAABAAEAAAALAAEAAAABAAEAAAAKAAEAAAABAAEAAAAJAAEAAAABAAEAAAAIAAEAAAABAAEAAAAHAAEAAAABAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAPAAYAAAABAAEAAAAOAAYAAAABAAEAAAANAAYAAAABAAEAAAAMAAYAAAABAAEAAAALAAYAAAABAAEAAAATAAYAAAABAAEAAAATAAUAAAABAAEAAAATAAQAAAABAAEAAAATAAMAAAABAAEAAAATAAIAAAABAAEAAAATAAEAAAABAAEAAAASAAEAAAABAAEAAAARAAEAAAABAAEAAAAQAAEAAAABAAEAAAAPAAEAAAABAAEAAAAOAAEAAAABAAEAAAANAAEAAAABAAEAAAAUAAYAAAABAAEAAAAVAAYAAAABAAEAAAAWAAYAAAABAAEAAAAXAAYAAAABAAEAAAAYAAYAAAABAAEAAAAZAAYAAAABAAEAAAAaAAYAAAABAAEAAAAbAAYAAAABAAEAAAAcAAYAAAABAAEAAAAdAAYAAAABAAEAAAAeAAYAAAABAAEAAAAfAAYAAAABAAEAAAAgAAYAAAABAAEAAAAhAAYAAAABAAEAAAAiAAYAAAABAAEAAAAjAAYAAAABAAEAAAAkAAYAAAABAAEAAAAlAAYAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_02c06")

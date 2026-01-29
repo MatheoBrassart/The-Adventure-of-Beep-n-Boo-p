@@ -1,15 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://duqi688qf1sox"]
+[gd_scene load_steps=10 format=4 uid="uid://db68q1pa4mjq3"]
 
-[ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_nh8ty"]
-[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_magc7"]
-[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_dnim5"]
-[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_nirti"]
-[ext_resource type="PackedScene" uid="uid://ccb73shaqgtk0" path="res://scenes/level design elements/laser.tscn" id="5_3gjvb"]
-[ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="6_nh8ty"]
-[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_nnmjk"]
+[ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_onk5h"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_xcv7g"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_06nv1"]
+[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_0c2tg"]
+[ext_resource type="PackedScene" uid="uid://ccb73shaqgtk0" path="res://scenes/level design elements/laser.tscn" id="5_kr27u"]
+[ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="6_abanb"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_5s6on"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
-texture = ExtResource("7_nnmjk")
+texture = ExtResource("7_5s6on")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -19,18 +19,17 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_7a1jm")
 
-[node name="villesecurisee_a_NEW2" type="Node2D"]
+[node name="walkthrough_a_41" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
-texture = ExtResource("1_nh8ty")
+texture = ExtResource("1_onk5h")
 
 [node name="Original Player Spawns" type="Node2D" parent="."]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_magc7")]
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_xcv7g")]
 position = Vector2(48, 464)
 
 [node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
@@ -46,13 +45,13 @@ position = Vector2(1104, 464)
 
 [node name="Level switchers" type="Node2D" parent="."]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_dnim5")]
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_06nv1")]
 position = Vector2(1200, 464)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 42
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_dnim5")]
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_06nv1")]
 position = Vector2(-48, 384)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -62,71 +61,71 @@ TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
 [node name="Level elements" type="Node2D" parent="."]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_nirti")]
+[node name="Killzone" parent="Level elements" instance=ExtResource("4_0c2tg")]
 position = Vector2(608, 832)
 
-[node name="Laser2" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser2" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(320, 160)
 rotation = 3.1415927
 
-[node name="Laser6" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser6" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(448, 224)
 rotation = 3.1415927
 
-[node name="Laser7" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser7" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(576, 224)
 
-[node name="Laser17" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser17" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(64, 96)
 
-[node name="Laser8" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser8" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(832, 480)
 
-[node name="Laser9" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser9" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(576, 432)
 rotation = 3.1415927
 
-[node name="Laser10" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser10" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(768, 224)
 rotation = 1.5707964
 
-[node name="Laser12" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser12" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(832, 160)
 rotation = 3.1415927
 
-[node name="Laser13" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser13" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(896, 224)
 rotation = 3.1415927
 
-[node name="Laser15" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser15" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(1024, 224)
 rotation = 1.5707964
 
-[node name="Laser16" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser16" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(1024, 432)
 rotation = -1.5707964
 
-[node name="Laser14" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser14" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(1024, 32)
 rotation = 3.1415927
 
-[node name="Laser11" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser11" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(704, 352)
 rotation = 3.1415927
 
-[node name="Laser3" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser3" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(64, 352)
 rotation = -1.5707964
 
-[node name="Laser5" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser5" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(192, 224)
 rotation = 1.5707964
 
-[node name="Laser4" parent="Level elements" instance=ExtResource("5_3gjvb")]
+[node name="Laser4" parent="Level elements" instance=ExtResource("5_kr27u")]
 position = Vector2(192, 480)
 rotation = 1.5707964
 
-[node name="puceDonnee" parent="Level elements" instance=ExtResource("6_nh8ty")]
+[node name="puceDonnee" parent="Level elements" instance=ExtResource("6_abanb")]
 position = Vector2(576, 32)
 
 [node name="Background elements" type="Node2D" parent="."]

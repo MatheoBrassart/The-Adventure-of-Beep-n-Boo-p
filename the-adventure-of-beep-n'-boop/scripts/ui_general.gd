@@ -102,7 +102,11 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 	surrounders.visible = false
 	if WHAT_TO_DO_AFTER_TRANSITION == "SwitchLevel":
 		match get_tree().get_current_scene().get_name():
+			"atelier_a_1":
+				gameInformations.check_cutscene_informations("BeepReveil")
 			"villeenruine_a_1":
 				gameInformations.check_cutscene_informations("ArriveeVilleEnRuine")
 			"plainesventeuses_a_1":
 				gameInformations.check_cutscene_informations("ArriveePlainesVenteuses")
+			_:
+				player.CAN_MOVE = true

@@ -56,13 +56,13 @@ texture = ExtResource("1_xl5u1")
 shape = SubResource("RectangleShape2D_tabl1")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-scale = Vector2(1.6, 1.6)
+scale = Vector2(1.5, 1.6)
 shape = SubResource("RectangleShape2D_dw1k3")
 target_position = Vector2(0, -789.99994)
 collision_mask = 15
 
 [node name="ShapeCast2DParticlesSetter" type="ShapeCast2D" parent="."]
-scale = Vector2(1.6, 1.6)
+scale = Vector2(1.5, 1.6)
 shape = SubResource("RectangleShape2D_xbsy3")
 target_position = Vector2(0, -789.99994)
 collision_mask = 14

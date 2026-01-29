@@ -1,0 +1,421 @@
+[gd_scene load_steps=15 format=4 uid="uid://b2vvcxuroq7f1"]
+
+[ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_8j4k1"]
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_3q23c"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_mok28"]
+[ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_365kn"]
+[ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="5_7e4d5"]
+[ext_resource type="PackedScene" uid="uid://c4mgskvc6sxel" path="res://scenes/level design elements/projecteur_cca.tscn" id="6_roiyc"]
+[ext_resource type="PackedScene" uid="uid://jdafmtmnfa1x" path="res://scenes/level design elements/bloc_sens_unique.tscn" id="7_omweg"]
+[ext_resource type="PackedScene" uid="uid://cg7cx0l0pahpq" path="res://scenes/level design elements/scie_change.tscn" id="8_gxvry"]
+[ext_resource type="PackedScene" uid="uid://c5b4lesamqpsx" path="res://scenes/level design elements/zone_anti_change.tscn" id="9_6skto"]
+[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="10_waqw1"]
+
+[sub_resource type="Curve2D" id="Curve2D_8g22j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 448, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_40uoy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -896, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_210xj"]
+texture = ExtResource("10_waqw1")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_b70oq"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_210xj")
+
+[node name="walkthrough_a_48" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(598.62494, 303.99997)
+scale = Vector2(6.816589, 4.953704)
+texture = ExtResource("1_8j4k1")
+
+[node name="Original Player Spawns" type="Node2D" parent="."]
+
+[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_3q23c")]
+position = Vector2(48, 112)
+
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+rotation = -1.5708
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+position = Vector2(1104, 496)
+
+[node name="Level switchers" type="Node2D" parent="."]
+
+[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_mok28")]
+position = Vector2(1200, 448)
+scale = Vector2(1, 2)
+TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 49
+
+[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_mok28")]
+position = Vector2(-48, 112)
+TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
+TO_WHICH_SECTION_DOES_IT_LEADS = "a"
+TO_WHICH_LEVEL_DOES_IT_LEADS = 47
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
+
+[node name="Level elements" type="Node2D" parent="."]
+
+[node name="Killzone" parent="Level elements" instance=ExtResource("4_365kn")]
+position = Vector2(608, 832)
+
+[node name="Bloc Mouvant" parent="Level elements" instance=ExtResource("5_7e4d5")]
+position = Vector2(160, 272)
+curve = SubResource("Curve2D_8g22j")
+ORIGINALBLOC_ON = false
+
+[node name="Projecteur CCA" parent="Level elements/Bloc Mouvant" instance=ExtResource("6_roiyc")]
+scale = Vector2(0.7, 0.7)
+DETECTION_TIMER_SETTER = 0.2
+
+[node name="BlocSensUnique" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(80, 496)
+
+[node name="BlocSensUnique2" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(112, 496)
+
+[node name="BlocSensUnique9" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(816, 368)
+
+[node name="BlocSensUnique10" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(848, 368)
+
+[node name="BlocSensUnique3" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(80, 432)
+
+[node name="BlocSensUnique4" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(112, 432)
+
+[node name="BlocSensUnique7" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(816, 496)
+
+[node name="BlocSensUnique8" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(848, 496)
+
+[node name="BlocSensUnique11" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(816, 432)
+
+[node name="BlocSensUnique12" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(848, 432)
+
+[node name="BlocSensUnique5" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(80, 368)
+
+[node name="BlocSensUnique6" parent="Level elements" instance=ExtResource("7_omweg")]
+position = Vector2(112, 368)
+
+[node name="Bloc Mouvant2" parent="Level elements" instance=ExtResource("5_7e4d5")]
+position = Vector2(1056, 464)
+curve = SubResource("Curve2D_40uoy")
+LOOP_SPEED = 1.4
+ORIGINALBLOC_ON = false
+
+[node name="Projecteur CCA" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_roiyc")]
+scale = Vector2(0.7, 0.7)
+DETECTION_TIMER_SETTER = 0.2
+
+[node name="ScieChange" parent="Level elements" instance=ExtResource("8_gxvry")]
+position = Vector2(448, 176)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange2" parent="Level elements" instance=ExtResource("8_gxvry")]
+position = Vector2(512, 176)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="Node2D" type="Node2D" parent="Level elements"]
+
+[node name="Zone Anti-Change" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(608, 272)
+
+[node name="Zone Anti-Change3" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(608, 208)
+
+[node name="Zone Anti-Change4" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(608, 336)
+
+[node name="Zone Anti-Change2" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(672, 272)
+
+[node name="Zone Anti-Change5" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(672, 208)
+
+[node name="Zone Anti-Change6" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(672, 336)
+
+[node name="Zone Anti-Change7" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(480, 272)
+
+[node name="Zone Anti-Change8" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(480, 208)
+
+[node name="Zone Anti-Change9" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(480, 336)
+
+[node name="Zone Anti-Change10" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(544, 272)
+
+[node name="Zone Anti-Change11" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(544, 208)
+
+[node name="Zone Anti-Change12" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(544, 336)
+
+[node name="Zone Anti-Change13" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(352, 272)
+
+[node name="Zone Anti-Change14" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(352, 208)
+
+[node name="Zone Anti-Change15" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(352, 336)
+
+[node name="Zone Anti-Change16" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(416, 272)
+
+[node name="Zone Anti-Change17" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(416, 208)
+
+[node name="Zone Anti-Change18" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(416, 336)
+
+[node name="Zone Anti-Change19" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(224, 272)
+
+[node name="Zone Anti-Change20" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(224, 208)
+
+[node name="Zone Anti-Change21" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(224, 336)
+
+[node name="Zone Anti-Change22" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(288, 272)
+
+[node name="Zone Anti-Change23" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(288, 208)
+
+[node name="Zone Anti-Change24" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(288, 336)
+
+[node name="Zone Anti-Change37" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(608, 464)
+
+[node name="Zone Anti-Change38" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(608, 400)
+
+[node name="Zone Anti-Change39" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(608, 528)
+
+[node name="Zone Anti-Change40" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(672, 464)
+
+[node name="Zone Anti-Change41" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(672, 400)
+
+[node name="Zone Anti-Change42" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(672, 528)
+
+[node name="Zone Anti-Change43" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(480, 464)
+
+[node name="Zone Anti-Change44" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(480, 400)
+
+[node name="Zone Anti-Change45" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(480, 528)
+
+[node name="Zone Anti-Change46" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(544, 464)
+
+[node name="Zone Anti-Change47" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(544, 400)
+
+[node name="Zone Anti-Change48" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(544, 528)
+
+[node name="Zone Anti-Change61" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 272)
+
+[node name="Zone Anti-Change62" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 208)
+
+[node name="Zone Anti-Change63" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 336)
+
+[node name="Zone Anti-Change64" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 272)
+
+[node name="Zone Anti-Change65" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 208)
+
+[node name="Zone Anti-Change66" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 336)
+
+[node name="Zone Anti-Change67" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 272)
+
+[node name="Zone Anti-Change68" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 208)
+
+[node name="Zone Anti-Change82" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 144)
+
+[node name="Zone Anti-Change83" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 144)
+
+[node name="Zone Anti-Change84" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 144)
+
+[node name="Zone Anti-Change85" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 80)
+
+[node name="Zone Anti-Change86" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 80)
+
+[node name="Zone Anti-Change87" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 80)
+
+[node name="Zone Anti-Change88" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 16)
+
+[node name="Zone Anti-Change89" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 16)
+
+[node name="Zone Anti-Change90" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 16)
+
+[node name="Zone Anti-Change69" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 336)
+
+[node name="Zone Anti-Change70" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 464)
+
+[node name="Zone Anti-Change71" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 400)
+
+[node name="Zone Anti-Change72" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(800, 528)
+
+[node name="Zone Anti-Change73" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 464)
+
+[node name="Zone Anti-Change74" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 400)
+
+[node name="Zone Anti-Change75" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(864, 528)
+
+[node name="Zone Anti-Change79" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(928, 464)
+
+[node name="Zone Anti-Change80" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(928, 400)
+
+[node name="Zone Anti-Change81" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(928, 528)
+
+[node name="Zone Anti-Change76" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 464)
+
+[node name="Zone Anti-Change77" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 400)
+
+[node name="Zone Anti-Change78" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(736, 528)
+
+[node name="Zone Anti-Change49" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(352, 464)
+
+[node name="Zone Anti-Change50" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(352, 400)
+
+[node name="Zone Anti-Change51" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(352, 528)
+
+[node name="Zone Anti-Change52" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(416, 464)
+
+[node name="Zone Anti-Change53" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(416, 400)
+
+[node name="Zone Anti-Change54" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(416, 528)
+
+[node name="Zone Anti-Change55" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(224, 464)
+
+[node name="Zone Anti-Change56" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(224, 400)
+
+[node name="Zone Anti-Change57" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(224, 528)
+
+[node name="Zone Anti-Change58" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(288, 464)
+
+[node name="Zone Anti-Change59" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(288, 400)
+
+[node name="Zone Anti-Change60" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(288, 528)
+
+[node name="Zone Anti-Change25" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(96, 272)
+
+[node name="Zone Anti-Change26" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(96, 208)
+
+[node name="Zone Anti-Change27" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(96, 336)
+
+[node name="Zone Anti-Change28" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(160, 272)
+
+[node name="Zone Anti-Change29" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(160, 208)
+
+[node name="Zone Anti-Change30" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(160, 336)
+
+[node name="Zone Anti-Change31" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(96, 464)
+
+[node name="Zone Anti-Change32" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(96, 400)
+
+[node name="Zone Anti-Change33" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(96, 528)
+
+[node name="Zone Anti-Change34" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(160, 464)
+
+[node name="Zone Anti-Change35" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(160, 400)
+
+[node name="Zone Anti-Change36" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+position = Vector2(160, 528)
+
+[node name="Background elements" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAYAAAABAAEAAAABAAcAAAABAAEAAAABAAgAAAABAAEAAAABAAkAAAABAAEAAAABAAoAAAABAAEAAAABAAsAAAABAAEAAAABAAwAAAABAAEAAAABAA0AAAABAAEAAAABAA4AAAABAAEAAAABAA8AAAABAAEAAAABABAAAAABAAEAAAABABEAAAABAAEAAAD+/wUAAAABAAEAAAD+/xEAAAABAAEAAAD//wUAAAABAAEAAAD//xEAAAABAAEAAAAAAAUAAAABAAEAAAAAABEAAAABAAEAAAABAAUAAAABAAEAAAACAAUAAAABAAEAAAACABEAAAABAAEAAAADAAUAAAABAAEAAAADABEAAAABAAEAAAAEAAUAAAABAAEAAAAEABEAAAABAAEAAAAFAAUAAAABAAEAAAAFABEAAAABAAEAAAAGAAUAAAABAAEAAAAGABEAAAABAAEAAAAHAAUAAAABAAEAAAAHABEAAAABAAEAAAAIAAUAAAABAAEAAAAIAAsAAAABAAEAAAAIABEAAAABAAEAAAAJAAUAAAABAAEAAAAJAAsAAAABAAEAAAAJABEAAAABAAEAAAAKAAUAAAABAAEAAAAKAAsAAAABAAEAAAAKABEAAAABAAEAAAALAAUAAAABAAEAAAALAAsAAAABAAEAAAALABEAAAABAAEAAAAMAAUAAAABAAEAAAAMAAsAAAABAAEAAAAMABEAAAABAAEAAAANABEAAAABAAEAAAAOABEAAAABAAEAAAAPABEAAAABAAEAAAAQABEAAAABAAEAAAARABEAAAABAAEAAAASABEAAAABAAEAAAATABEAAAABAAEAAAAUABEAAAABAAEAAAAVABEAAAABAAEAAAAWABEAAAABAAEAAAAXABEAAAABAAEAAAAYABEAAAABAAEAAAAZABEAAAABAAEAAAAaABEAAAABAAEAAAAbABEAAAABAAEAAAAcABEAAAABAAEAAAAdABEAAAABAAEAAAAeABEAAAABAAEAAAAfABEAAAABAAEAAAAgABEAAAABAAEAAAAhABEAAAABAAEAAAAiABEAAAABAAEAAAAjABEAAAABAAEAAAAkABEAAAABAAEAAAAlAAsAAAABAAEAAAAlABEAAAABAAEAAAANAAsAAAABAAEAAAAOAAsAAAABAAEAAAAPAAsAAAABAAEAAAAQAAsAAAABAAEAAAARAAsAAAABAAEAAAASAAUAAAABAAEAAAASAAsAAAABAAEAAAATAAUAAAABAAEAAAATAAsAAAABAAEAAAAUAAUAAAABAAEAAAAUAAsAAAABAAEAAAAVAAUAAAABAAEAAAAVAAsAAAABAAEAAAAWAAUAAAABAAEAAAAWAAsAAAABAAEAAAAfAAsAAAABAAEAAAAgAAsAAAABAAEAAAARAAUAAAABAAEAAAAWAP3/AAABAAEAAAAWAP7/AAABAAEAAAAWAP//AAABAAEAAAAWAAAAAAABAAEAAAAWAAEAAAABAAEAAAAWAAIAAAABAAEAAAAWAAMAAAABAAEAAAAWAAQAAAABAAEAAAAWAAYAAAABAAEAAAAWAAcAAAABAAEAAAAWAAgAAAABAAEAAAAWAAkAAAABAAEAAAAWAAoAAAABAAEAAAAbAP3/AAABAAEAAAAbAP7/AAABAAEAAAAbAP//AAABAAEAAAAbAAAAAAABAAEAAAAbAAEAAAABAAEAAAAbAAIAAAABAAEAAAAbAAMAAAABAAEAAAAbAAQAAAABAAEAAAAbAAUAAAABAAEAAAAbAAYAAAABAAEAAAAbAAcAAAABAAEAAAAbAAgAAAABAAEAAAAbAAkAAAABAAEAAAAbAAoAAAABAAEAAAAbAAsAAAABAAEAAAAcAAsAAAABAAEAAAAdAAsAAAABAAEAAAAeAAsAAAABAAEAAAAhAAsAAAABAAEAAAAiAAsAAAABAAEAAAAjAAsAAAABAAEAAAAkAAsAAAABAAEAAAAcAP3/AAABAAEAAAAcAP7/AAABAAEAAAAcAP//AAABAAEAAAAcAAAAAAABAAEAAAAcAAEAAAABAAEAAAAcAAIAAAABAAEAAAAcAAMAAAABAAEAAAAcAAQAAAABAAEAAAAcAAUAAAABAAEAAAAcAAYAAAABAAEAAAAcAAcAAAABAAEAAAAcAAgAAAABAAEAAAAcAAkAAAABAAEAAAAcAAoAAAABAAEAAAAdAP3/AAABAAEAAAAdAP7/AAABAAEAAAAdAP//AAABAAEAAAAdAAAAAAABAAEAAAAdAAEAAAABAAEAAAAdAAIAAAABAAEAAAAdAAMAAAABAAEAAAAdAAQAAAABAAEAAAAdAAUAAAABAAEAAAAdAAYAAAABAAEAAAAdAAcAAAABAAEAAAAdAAgAAAABAAEAAAAdAAkAAAABAAEAAAAdAAoAAAABAAEAAAAeAP3/AAABAAEAAAAeAP7/AAABAAEAAAAeAP//AAABAAEAAAAeAAAAAAABAAEAAAAeAAEAAAABAAEAAAAeAAIAAAABAAEAAAAeAAMAAAABAAEAAAAeAAQAAAABAAEAAAAeAAUAAAABAAEAAAAeAAYAAAABAAEAAAAeAAcAAAABAAEAAAAeAAgAAAABAAEAAAAeAAkAAAABAAEAAAAeAAoAAAABAAEAAAAfAP3/AAABAAEAAAAfAP7/AAABAAEAAAAfAP//AAABAAEAAAAfAAAAAAABAAEAAAAfAAEAAAABAAEAAAAfAAIAAAABAAEAAAAfAAMAAAABAAEAAAAfAAQAAAABAAEAAAAfAAUAAAABAAEAAAAfAAYAAAABAAEAAAAfAAcAAAABAAEAAAAfAAgAAAABAAEAAAAfAAkAAAABAAEAAAAfAAoAAAABAAEAAAAgAP3/AAABAAEAAAAgAP7/AAABAAEAAAAgAP//AAABAAEAAAAgAAAAAAABAAEAAAAgAAEAAAABAAEAAAAgAAIAAAABAAEAAAAgAAMAAAABAAEAAAAgAAQAAAABAAEAAAAgAAUAAAABAAEAAAAgAAYAAAABAAEAAAAgAAcAAAABAAEAAAAgAAgAAAABAAEAAAAgAAkAAAABAAEAAAAgAAoAAAABAAEAAAAhAP3/AAABAAEAAAAhAP7/AAABAAEAAAAhAP//AAABAAEAAAAhAAAAAAABAAEAAAAhAAEAAAABAAEAAAAhAAIAAAABAAEAAAAhAAMAAAABAAEAAAAhAAQAAAABAAEAAAAhAAUAAAABAAEAAAAhAAYAAAABAAEAAAAhAAcAAAABAAEAAAAhAAgAAAABAAEAAAAhAAkAAAABAAEAAAAhAAoAAAABAAEAAAAiAP3/AAABAAEAAAAiAP7/AAABAAEAAAAiAP//AAABAAEAAAAiAAAAAAABAAEAAAAiAAEAAAABAAEAAAAiAAIAAAABAAEAAAAiAAMAAAABAAEAAAAiAAQAAAABAAEAAAAiAAUAAAABAAEAAAAiAAYAAAABAAEAAAAiAAcAAAABAAEAAAAiAAgAAAABAAEAAAAiAAkAAAABAAEAAAAiAAoAAAABAAEAAAAjAP3/AAABAAEAAAAjAP7/AAABAAEAAAAjAP//AAABAAEAAAAjAAAAAAABAAEAAAAjAAEAAAABAAEAAAAjAAIAAAABAAEAAAAjAAMAAAABAAEAAAAjAAQAAAABAAEAAAAjAAUAAAABAAEAAAAjAAYAAAABAAEAAAAjAAcAAAABAAEAAAAjAAgAAAABAAEAAAAjAAkAAAABAAEAAAAjAAoAAAABAAEAAAAkAP3/AAABAAEAAAAkAP7/AAABAAEAAAAkAP//AAABAAEAAAAkAAAAAAABAAEAAAAkAAEAAAABAAEAAAAkAAIAAAABAAEAAAAkAAMAAAABAAEAAAAkAAQAAAABAAEAAAAkAAUAAAABAAEAAAAkAAYAAAABAAEAAAAkAAcAAAABAAEAAAAkAAgAAAABAAEAAAAkAAkAAAABAAEAAAAkAAoAAAABAAEAAAAlAP3/AAABAAEAAAAlAP7/AAABAAEAAAAlAP//AAABAAEAAAAlAAAAAAABAAEAAAAlAAEAAAABAAEAAAAlAAIAAAABAAEAAAAlAAMAAAABAAEAAAAlAAQAAAABAAEAAAAlAAUAAAABAAEAAAAlAAYAAAABAAEAAAAlAAcAAAABAAEAAAAlAAgAAAABAAEAAAAlAAkAAAABAAEAAAAlAAoAAAABAAEAAAAXAAAAAAABAAEAAAAYAAAAAAABAAEAAAAZAAAAAAABAAEAAAAaAAAAAAABAAEAAAAXAP//AAABAAEAAAAYAP//AAABAAEAAAAZAP//AAABAAEAAAAaAP//AAABAAEAAAAaAP7/AAABAAEAAAAaAP3/AAABAAEAAAAZAP3/AAABAAEAAAAYAP3/AAABAAEAAAAXAP3/AAABAAEAAAAXAP7/AAABAAEAAAAYAP7/AAABAAEAAAAZAP7/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_b70oq")
