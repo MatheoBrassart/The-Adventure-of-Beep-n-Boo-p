@@ -81,6 +81,7 @@ var ISIN_ZONEANTICHANGE = 0
 # Status de personnage: Double Saut de Beep
 var STATUTPERS_DOUBLESAUT: bool = false
 var CAN_DOUBLEJUMP: bool = false
+var COYOTETIME_FAILSAFE = true
 
 
 func _ready() -> void:
@@ -193,6 +194,7 @@ func _physics_process(delta: float) -> void:
 	
 	if was_on_floor and !is_on_floor() and !Input.is_action_just_pressed("jump"):
 		coyote_timer.start()
+		COYOTETIME_FAILSAFE = false
 	
 	
 	#Flip the sprite depending on which direction the player is going
@@ -366,8 +368,11 @@ func double_jump():
 	if STATUTPERS_DOUBLESAUT == true:
 		var collider = ray_cast_2d_floor_type_checker.get_collider()
 		if not collider is Node:
-			if (Input.is_action_just_pressed("jump")) and (CAN_DOUBLEJUMP == true) and (CAN_MOVE == true) and (CURRENT_ACTIVE_CHARACTER == 0):
+			if (Input.is_action_just_pressed("jump")) and (CAN_DOUBLEJUMP == true) and (CAN_MOVE == true) and (CURRENT_ACTIVE_CHARACTER == 0) and (COYOTETIME_FAILSAFE == true):
 				velocity.y = JUMP_VELOCITY
 				CAN_DOUBLEJUMP = false
 		else:
 			CAN_DOUBLEJUMP = true
+		
+		if coyote_timer.is_stopped():
+			COYOTETIME_FAILSAFE = true
