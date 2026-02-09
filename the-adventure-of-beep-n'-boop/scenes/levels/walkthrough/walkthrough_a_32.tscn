@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dxspy5d67k2q4"]
+[gd_scene load_steps=12 format=4 uid="uid://dxspy5d67k2q4"]
 
 [ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_5fegd"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_d66ab"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://yas2w0t37dpb" path="res://scenes/level design elements/scie_normal.tscn" id="6_boogm"]
 [ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="7_87bdv"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="8_3vk3h"]
+[ext_resource type="PackedScene" uid="uid://cg7cx0l0pahpq" path="res://scenes/level design elements/scie_change.tscn" id="8_d66ab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
 texture = ExtResource("8_3vk3h")
@@ -89,7 +90,7 @@ position = Vector2(416, 32)
 position = Vector2(640, 480)
 
 [node name="ScieNormal10" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(640, 360)
+position = Vector2(640, 352)
 
 [node name="ScieNormal11" parent="Level elements" instance=ExtResource("6_boogm")]
 position = Vector2(640, 224)
@@ -144,6 +145,19 @@ position = Vector2(1504, 32)
 
 [node name="puceDonnee" parent="Level elements" instance=ExtResource("7_87bdv")]
 position = Vector2(1664, 320)
+
+[node name="ScieChange" parent="Level elements" instance=ExtResource("8_d66ab")]
+position = Vector2(640, 96)
+
+[node name="ScieChange3" parent="Level elements" instance=ExtResource("8_d66ab")]
+position = Vector2(1664, 96)
+
+[node name="ScieChange4" parent="Level elements" instance=ExtResource("8_d66ab")]
+position = Vector2(1664, 544)
+
+[node name="ScieChange2" parent="Level elements" instance=ExtResource("8_d66ab")]
+position = Vector2(1152, 320)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
 

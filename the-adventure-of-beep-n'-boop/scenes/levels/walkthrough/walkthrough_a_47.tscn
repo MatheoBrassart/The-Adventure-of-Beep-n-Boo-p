@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b54kupbog1dwg"]
+[gd_scene load_steps=11 format=4 uid="uid://b54kupbog1dwg"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_nhlpe"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_3jpt8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_n4u1x"]
 [ext_resource type="PackedScene" uid="uid://c4mgskvc6sxel" path="res://scenes/level design elements/projecteur_cca.tscn" id="5_guttp"]
 [ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="6_bm1nw"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="7_3jpt8"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_fvk32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
@@ -67,10 +68,102 @@ position = Vector2(576, 2560)
 [node name="Projecteur CCA" parent="Level elements" instance=ExtResource("5_guttp")]
 position = Vector2(576, 1728.0001)
 scale = Vector2(5, 5)
-DETECTION_TIMER_SETTER = 3.2
+DETECTION_TIMER_SETTER = 3.5
 
 [node name="puceDonnee" parent="Level elements" instance=ExtResource("6_bm1nw")]
 position = Vector2(80, 1936)
+
+[node name="BlocChange" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(544, 352)
+
+[node name="BlocChange2" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(608, 352)
+
+[node name="BlocChange3" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(544, 288)
+
+[node name="BlocChange4" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(608, 288)
+
+[node name="BlocChange5" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(800, 2144)
+
+[node name="BlocChange6" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(800, 2208)
+
+[node name="BlocChange24" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(192, 2144)
+
+[node name="BlocChange25" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(192, 2208)
+
+[node name="BlocChange7" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(64, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange8" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(128, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange9" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(192, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange10" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(256, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange11" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(320, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange12" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(384, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange13" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(448, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange14" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(512, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange15" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(576, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange16" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(640, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange17" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(704, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange18" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(768, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange19" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(832, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange20" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(896, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange21" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(960, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange22" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(1024, 1696)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange23" parent="Level elements" instance=ExtResource("7_3jpt8")]
+position = Vector2(1088, 1696)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
 

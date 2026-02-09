@@ -169,7 +169,7 @@ rotation = -1.5707964
 [node name="Bloc Mouvant2" parent="Level elements" instance=ExtResource("5_yk55i")]
 position = Vector2(672, 304)
 curve = SubResource("Curve2D_sie35")
-LOOP_SPEED = 1.0
+LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsNormal5" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_2ej7m")]
@@ -190,7 +190,7 @@ rotation = -1.5707964
 [node name="Bloc Mouvant6" parent="Level elements" instance=ExtResource("5_yk55i")]
 position = Vector2(864, 400)
 curve = SubResource("Curve2D_pssi5")
-LOOP_SPEED = 1.0
+LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsNormal9" parent="Level elements/Bloc Mouvant6" instance=ExtResource("6_2ej7m")]
@@ -211,13 +211,13 @@ rotation = -1.5707964
 [node name="Bloc Mouvant7" parent="Level elements" instance=ExtResource("5_yk55i")]
 position = Vector2(816, 160)
 curve = SubResource("Curve2D_v52l0")
-LOOP_SPEED = 1.0
+LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Bloc Mouvant8" parent="Level elements" instance=ExtResource("5_yk55i")]
 position = Vector2(720, 544)
 curve = SubResource("Curve2D_pw17e")
-LOOP_SPEED = 1.0
+LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]

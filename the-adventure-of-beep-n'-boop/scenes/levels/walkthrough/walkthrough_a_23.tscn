@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dxsk7rffw857k"]
+[gd_scene load_steps=11 format=4 uid="uid://dxsk7rffw857k"]
 
 [ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_cg2k2"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_38ge6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_v62ra"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="5_5taa3"]
 [ext_resource type="PackedScene" uid="uid://drx8qwx2h15ko" path="res://scenes/level design elements/vignes_normal.tscn" id="6_rykpy"]
+[ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="7_38ge6"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_b42u0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv3go"]
@@ -285,6 +286,48 @@ position = Vector2(928, 288)
 
 [node name="Vignes_normal28" parent="Level elements" instance=ExtResource("6_rykpy")]
 position = Vector2(992, 288)
+
+[node name="PicsChange" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(160, 544)
+
+[node name="PicsChange2" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(224, 544)
+
+[node name="PicsChange3" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(288, 544)
+
+[node name="PicsChange4" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(352, 544)
+
+[node name="PicsChange5" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(416, 544)
+
+[node name="PicsChange6" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(480, 544)
+
+[node name="PicsChange7" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(544, 544)
+
+[node name="PicsChange8" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(608, 544)
+
+[node name="PicsChange9" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(672, 544)
+
+[node name="PicsChange10" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(736, 544)
+
+[node name="PicsChange11" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(800, 544)
+
+[node name="PicsChange12" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(864, 544)
+
+[node name="PicsChange13" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(928, 544)
+
+[node name="PicsChange14" parent="Level elements" instance=ExtResource("7_38ge6")]
+position = Vector2(992, 544)
 
 [node name="Background elements" type="Node2D" parent="."]
 
