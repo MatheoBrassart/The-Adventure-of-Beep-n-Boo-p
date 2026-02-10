@@ -47,13 +47,15 @@ position = Vector2(1104, 464)
 [node name="Level switchers" type="Node2D" parent="."]
 
 [node name="level_switcher" parent="Level switchers" instance=ExtResource("3_f6k1l")]
-position = Vector2(1200, 464)
+position = Vector2(1200, 320)
+scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 38
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_f6k1l")]
-position = Vector2(-48, 464)
+position = Vector2(-48, 320)
+scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 36
@@ -137,6 +139,18 @@ position = Vector2(544, 352)
 
 [node name="Zone Anti-Change22" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
 position = Vector2(544, 288)
+
+[node name="Zone Anti-Change49" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+position = Vector2(416, 416)
+
+[node name="Zone Anti-Change50" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+position = Vector2(416, 480)
+
+[node name="Zone Anti-Change51" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+position = Vector2(480, 480)
+
+[node name="Zone Anti-Change52" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+position = Vector2(480, 416)
 
 [node name="Zone Anti-Change23" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
 position = Vector2(608, 288)

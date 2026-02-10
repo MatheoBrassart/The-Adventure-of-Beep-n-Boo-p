@@ -53,8 +53,8 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 19
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_cuweb")]
-position = Vector2(-48, 368)
-scale = Vector2(1, 3)
+position = Vector2(-48, 272)
+scale = Vector2(1, 5)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 17

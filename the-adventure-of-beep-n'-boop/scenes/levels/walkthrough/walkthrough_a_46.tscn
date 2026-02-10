@@ -45,13 +45,15 @@ position = Vector2(1104, 80)
 [node name="Level switchers" type="Node2D" parent="."]
 
 [node name="level_switcher" parent="Level switchers" instance=ExtResource("3_jw0ag")]
-position = Vector2(1200, 80)
+position = Vector2(1200, -64)
+scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 47
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_jw0ag")]
-position = Vector2(-48, 80)
+position = Vector2(-48, -64)
+scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 45

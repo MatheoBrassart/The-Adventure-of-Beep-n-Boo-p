@@ -45,7 +45,8 @@ position = Vector2(1104, 464)
 [node name="Level switchers" type="Node2D" parent="."]
 
 [node name="level_switcher" parent="Level switchers" instance=ExtResource("3_l4f1l")]
-position = Vector2(1200, 464)
+position = Vector2(1200, 320)
+scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 29

@@ -67,7 +67,8 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 49
 
 [node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_mok28")]
-position = Vector2(-48, 112)
+position = Vector2(-48, -32)
+scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 47
@@ -81,11 +82,10 @@ position = Vector2(608, 832)
 [node name="Bloc Mouvant" parent="Level elements" instance=ExtResource("5_7e4d5")]
 position = Vector2(160, 272)
 curve = SubResource("Curve2D_8g22j")
+LOOP_SPEED = 1.0
 ORIGINALBLOC_ON = false
 
 [node name="Projecteur CCA" parent="Level elements/Bloc Mouvant" instance=ExtResource("6_roiyc")]
-scale = Vector2(0.7, 0.7)
-DETECTION_TIMER_SETTER = 0.2
 
 [node name="BlocSensUnique" parent="Level elements" instance=ExtResource("7_omweg")]
 position = Vector2(80, 496)
@@ -126,12 +126,10 @@ position = Vector2(112, 368)
 [node name="Bloc Mouvant2" parent="Level elements" instance=ExtResource("5_7e4d5")]
 position = Vector2(1056, 464)
 curve = SubResource("Curve2D_40uoy")
-LOOP_SPEED = 1.4
+LOOP_SPEED = 1.0
 ORIGINALBLOC_ON = false
 
 [node name="Projecteur CCA" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_roiyc")]
-scale = Vector2(0.7, 0.7)
-DETECTION_TIMER_SETTER = 0.2
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("8_2oykb")]
 position = Vector2(448, 192)
