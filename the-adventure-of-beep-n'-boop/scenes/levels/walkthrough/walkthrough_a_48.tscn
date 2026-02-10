@@ -86,6 +86,7 @@ LOOP_SPEED = 1.0
 ORIGINALBLOC_ON = false
 
 [node name="Projecteur CCA" parent="Level elements/Bloc Mouvant" instance=ExtResource("6_roiyc")]
+scale = Vector2(1.1, 1.1)
 
 [node name="BlocSensUnique" parent="Level elements" instance=ExtResource("7_omweg")]
 position = Vector2(80, 496)
@@ -126,10 +127,11 @@ position = Vector2(112, 368)
 [node name="Bloc Mouvant2" parent="Level elements" instance=ExtResource("5_7e4d5")]
 position = Vector2(1056, 464)
 curve = SubResource("Curve2D_40uoy")
-LOOP_SPEED = 1.0
+LOOP_SPEED = 0.7
 ORIGINALBLOC_ON = false
 
 [node name="Projecteur CCA" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_roiyc")]
+scale = Vector2(1.1, 1.1)
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("8_2oykb")]
 position = Vector2(448, 192)

@@ -142,6 +142,10 @@ position = Vector2(640, 352)
 rotation = -1.5707964
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="PicsChange12" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(640, 224)
+rotation = 1.5707964
+
 [node name="PicsChange8" parent="Level elements" instance=ExtResource("8_xcv7g")]
 position = Vector2(960, 32)
 rotation = -1.5707964
@@ -152,9 +156,17 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange3" parent="Level elements" instance=ExtResource("8_xcv7g")]
 position = Vector2(448, 160)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange4" parent="Level elements" instance=ExtResource("8_xcv7g")]
 position = Vector2(832, 96)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange10" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(768, 160)
+
+[node name="PicsChange11" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(896, 160)
 
 [node name="PicsChange5" parent="Level elements" instance=ExtResource("8_xcv7g")]
 position = Vector2(1024, 368)
