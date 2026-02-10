@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b2vvcxuroq7f1"]
+[gd_scene load_steps=14 format=4 uid="uid://b2vvcxuroq7f1"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_8j4k1"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_3q23c"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="5_7e4d5"]
 [ext_resource type="PackedScene" uid="uid://c4mgskvc6sxel" path="res://scenes/level design elements/projecteur_cca.tscn" id="6_roiyc"]
 [ext_resource type="PackedScene" uid="uid://jdafmtmnfa1x" path="res://scenes/level design elements/bloc_sens_unique.tscn" id="7_omweg"]
-[ext_resource type="PackedScene" uid="uid://cg7cx0l0pahpq" path="res://scenes/level design elements/scie_change.tscn" id="8_gxvry"]
-[ext_resource type="PackedScene" uid="uid://c5b4lesamqpsx" path="res://scenes/level design elements/zone_anti_change.tscn" id="9_6skto"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="8_2oykb"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="10_waqw1"]
 
 [sub_resource type="Curve2D" id="Curve2D_8g22j"]
@@ -134,285 +133,36 @@ ORIGINALBLOC_ON = false
 scale = Vector2(0.7, 0.7)
 DETECTION_TIMER_SETTER = 0.2
 
-[node name="ScieChange" parent="Level elements" instance=ExtResource("8_gxvry")]
-position = Vector2(448, 176)
-WHICH_CHARACTER_IS_IT = 1
+[node name="BlocChange" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(448, 192)
 
-[node name="ScieChange2" parent="Level elements" instance=ExtResource("8_gxvry")]
-position = Vector2(512, 176)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Node2D" type="Node2D" parent="Level elements"]
-
-[node name="Zone Anti-Change" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(608, 272)
-
-[node name="Zone Anti-Change3" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(608, 208)
-
-[node name="Zone Anti-Change4" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(608, 336)
-
-[node name="Zone Anti-Change2" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(672, 272)
-
-[node name="Zone Anti-Change5" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(672, 208)
-
-[node name="Zone Anti-Change6" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(672, 336)
-
-[node name="Zone Anti-Change7" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(480, 272)
-
-[node name="Zone Anti-Change8" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(480, 208)
-
-[node name="Zone Anti-Change9" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(480, 336)
-
-[node name="Zone Anti-Change10" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(544, 272)
-
-[node name="Zone Anti-Change11" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(544, 208)
-
-[node name="Zone Anti-Change12" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(544, 336)
-
-[node name="Zone Anti-Change13" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(352, 272)
-
-[node name="Zone Anti-Change14" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(352, 208)
-
-[node name="Zone Anti-Change15" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(352, 336)
-
-[node name="Zone Anti-Change16" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(416, 272)
-
-[node name="Zone Anti-Change17" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(416, 208)
-
-[node name="Zone Anti-Change18" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(416, 336)
-
-[node name="Zone Anti-Change19" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(224, 272)
-
-[node name="Zone Anti-Change20" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(224, 208)
-
-[node name="Zone Anti-Change21" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(224, 336)
-
-[node name="Zone Anti-Change22" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+[node name="BlocChange5" parent="Level elements" instance=ExtResource("8_2oykb")]
 position = Vector2(288, 272)
 
-[node name="Zone Anti-Change23" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(288, 208)
-
-[node name="Zone Anti-Change24" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(288, 336)
-
-[node name="Zone Anti-Change37" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(608, 464)
-
-[node name="Zone Anti-Change38" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(608, 400)
-
-[node name="Zone Anti-Change39" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(608, 528)
-
-[node name="Zone Anti-Change40" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(672, 464)
-
-[node name="Zone Anti-Change41" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(672, 400)
-
-[node name="Zone Anti-Change42" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(672, 528)
-
-[node name="Zone Anti-Change43" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(480, 464)
-
-[node name="Zone Anti-Change44" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(480, 400)
-
-[node name="Zone Anti-Change45" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(480, 528)
-
-[node name="Zone Anti-Change46" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(544, 464)
-
-[node name="Zone Anti-Change47" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(544, 400)
-
-[node name="Zone Anti-Change48" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(544, 528)
-
-[node name="Zone Anti-Change61" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 272)
-
-[node name="Zone Anti-Change62" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 208)
-
-[node name="Zone Anti-Change63" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 336)
-
-[node name="Zone Anti-Change64" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 272)
-
-[node name="Zone Anti-Change65" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 208)
-
-[node name="Zone Anti-Change66" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 336)
-
-[node name="Zone Anti-Change67" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 272)
-
-[node name="Zone Anti-Change68" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 208)
-
-[node name="Zone Anti-Change82" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 144)
-
-[node name="Zone Anti-Change83" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 144)
-
-[node name="Zone Anti-Change84" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 144)
-
-[node name="Zone Anti-Change85" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 80)
-
-[node name="Zone Anti-Change86" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 80)
-
-[node name="Zone Anti-Change87" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 80)
-
-[node name="Zone Anti-Change88" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 16)
-
-[node name="Zone Anti-Change89" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 16)
-
-[node name="Zone Anti-Change90" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 16)
-
-[node name="Zone Anti-Change69" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 336)
-
-[node name="Zone Anti-Change70" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 464)
-
-[node name="Zone Anti-Change71" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 400)
-
-[node name="Zone Anti-Change72" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(800, 528)
-
-[node name="Zone Anti-Change73" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 464)
-
-[node name="Zone Anti-Change74" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 400)
-
-[node name="Zone Anti-Change75" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(864, 528)
-
-[node name="Zone Anti-Change79" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(928, 464)
-
-[node name="Zone Anti-Change80" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(928, 400)
-
-[node name="Zone Anti-Change81" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(928, 528)
-
-[node name="Zone Anti-Change76" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 464)
-
-[node name="Zone Anti-Change77" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 400)
-
-[node name="Zone Anti-Change78" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(736, 528)
-
-[node name="Zone Anti-Change49" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(352, 464)
-
-[node name="Zone Anti-Change50" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(352, 400)
-
-[node name="Zone Anti-Change51" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(352, 528)
-
-[node name="Zone Anti-Change52" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(416, 464)
-
-[node name="Zone Anti-Change53" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(416, 400)
-
-[node name="Zone Anti-Change54" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(416, 528)
-
-[node name="Zone Anti-Change55" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(224, 464)
-
-[node name="Zone Anti-Change56" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(224, 400)
-
-[node name="Zone Anti-Change57" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(224, 528)
-
-[node name="Zone Anti-Change58" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
+[node name="BlocChange6" parent="Level elements" instance=ExtResource("8_2oykb")]
 position = Vector2(288, 464)
 
-[node name="Zone Anti-Change59" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(288, 400)
+[node name="BlocChange7" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(416, 464)
+WHICH_CHARACTER_IS_IT = 1
 
-[node name="Zone Anti-Change60" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(288, 528)
+[node name="BlocChange8" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(544, 464)
 
-[node name="Zone Anti-Change25" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(96, 272)
+[node name="BlocChange9" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(672, 464)
+WHICH_CHARACTER_IS_IT = 1
 
-[node name="Zone Anti-Change26" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(96, 208)
+[node name="BlocChange2" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(512, 192)
 
-[node name="Zone Anti-Change27" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(96, 336)
+[node name="BlocChange3" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(160, 384)
+WHICH_CHARACTER_IS_IT = 1
 
-[node name="Zone Anti-Change28" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(160, 272)
-
-[node name="Zone Anti-Change29" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(160, 208)
-
-[node name="Zone Anti-Change30" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(160, 336)
-
-[node name="Zone Anti-Change31" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(96, 464)
-
-[node name="Zone Anti-Change32" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(96, 400)
-
-[node name="Zone Anti-Change33" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(96, 528)
-
-[node name="Zone Anti-Change34" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(160, 464)
-
-[node name="Zone Anti-Change35" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(160, 400)
-
-[node name="Zone Anti-Change36" parent="Level elements/Node2D" instance=ExtResource("9_6skto")]
-position = Vector2(160, 528)
+[node name="BlocChange4" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(224, 384)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
 

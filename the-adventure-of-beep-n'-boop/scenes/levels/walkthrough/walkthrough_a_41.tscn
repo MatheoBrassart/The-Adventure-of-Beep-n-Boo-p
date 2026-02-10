@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://db68q1pa4mjq3"]
+[gd_scene load_steps=11 format=4 uid="uid://db68q1pa4mjq3"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_onk5h"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_xcv7g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ccb73shaqgtk0" path="res://scenes/level design elements/laser.tscn" id="5_kr27u"]
 [ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="6_abanb"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_5s6on"]
+[ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="8_xcv7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a1jm"]
 texture = ExtResource("7_5s6on")
@@ -127,6 +128,41 @@ rotation = 1.5707964
 
 [node name="puceDonnee" parent="Level elements" instance=ExtResource("6_abanb")]
 position = Vector2(576, 32)
+
+[node name="PicsChange" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(64, 288)
+
+[node name="PicsChange6" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(128, 224)
+rotation = -1.5707964
+
+[node name="PicsChange7" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(640, 352)
+rotation = -1.5707964
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange8" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(960, 32)
+rotation = -1.5707964
+
+[node name="PicsChange2" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(320, 96)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange3" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(448, 160)
+
+[node name="PicsChange4" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(832, 96)
+
+[node name="PicsChange5" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(1024, 368)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange9" parent="Level elements" instance=ExtResource("8_xcv7g")]
+position = Vector2(896, 480)
+rotation = 1.5707964
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
 

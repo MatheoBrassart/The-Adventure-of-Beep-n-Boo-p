@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bjy5cs1gb4m3p"]
+[gd_scene load_steps=12 format=4 uid="uid://bjy5cs1gb4m3p"]
 
 [ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_44psh"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_3o6uh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="6_lrage"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_xtv4p"]
 [ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="8_2cfqp"]
+[ext_resource type="PackedScene" uid="uid://cg7cx0l0pahpq" path="res://scenes/level design elements/scie_change.tscn" id="9_3o6uh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od8eg"]
 texture = ExtResource("7_xtv4p")
@@ -108,3 +109,38 @@ position = Vector2(1024, 400)
 
 [node name="BlocChute2" parent="." instance=ExtResource("8_2cfqp")]
 position = Vector2(1024, 272)
+
+[node name="ScieChange" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(352, 352)
+
+[node name="ScieChange2" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(416, 416)
+
+[node name="ScieChange4" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(288, 416)
+
+[node name="ScieChange3" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(448, 480)
+
+[node name="ScieChange5" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(256, 480)
+
+[node name="ScieChange6" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(736, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange7" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(800, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange8" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(672, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange9" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(832, 480)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="ScieChange10" parent="." instance=ExtResource("9_3o6uh")]
+position = Vector2(640, 480)
+WHICH_CHARACTER_IS_IT = 1

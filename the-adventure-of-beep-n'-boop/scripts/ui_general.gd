@@ -108,5 +108,7 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 				gameInformations.check_cutscene_informations("ArriveeVilleEnRuine")
 			"plainesventeuses_a_1":
 				gameInformations.check_cutscene_informations("ArriveePlainesVenteuses")
+			"walkthrough_a_1":
+				gameInformations.check_cutscene_informations("BeepReveilWalkthrough")
 			_:
 				player.CAN_MOVE = true

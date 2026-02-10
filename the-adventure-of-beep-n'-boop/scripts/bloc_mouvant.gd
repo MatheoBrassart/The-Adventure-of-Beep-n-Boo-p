@@ -23,6 +23,8 @@ extends Node2D
 @export var WHICH_CHARACTER_IS_IT = 0
 var ISMOVEMENT_PAUSED = 0
 
+var CAN_BESTOPPED = true
+
 func _ready() -> void:
 	
 	sprite_2d.scale.x = sprite_2d.scale.x * BLOC_SCALEX
@@ -32,7 +34,7 @@ func _ready() -> void:
 	
 	if ORIGINALBLOC_ON == false:
 		sprite_2d.visible = false
-		# sprite_2d_2.visible = false
+		sprite_2d_2.visible = false
 		line_2d.visible = false
 		collision_shape_2d.disabled = true
 	
@@ -41,6 +43,8 @@ func _ready() -> void:
 		if (not child == path_follow_2d) and (not child == animatable_body_2d) and (not child == animation_player) and (not child == line_2d):
 			remove_child(child)
 			animatable_body_2d.add_child(child)
+			if child.is_in_group("ProjecteurCCA"):
+				CAN_BESTOPPED = false
 	
 	for i in self.curve.point_count:
 		line_2d.add_point(self.curve.get_point_position(i))
@@ -60,9 +64,10 @@ func _ready() -> void:
 
 func pause_unpause_movement():
 	
-	if ISMOVEMENT_PAUSED == 0:
-		animation_player.speed_scale = 0
-		ISMOVEMENT_PAUSED = 1
-	else:
-		animation_player.speed_scale = LOOP_SPEED
-		ISMOVEMENT_PAUSED = 0
+	if CAN_BESTOPPED == true:
+		if ISMOVEMENT_PAUSED == 0:
+			animation_player.speed_scale = 0
+			ISMOVEMENT_PAUSED = 1
+		else:
+			animation_player.speed_scale = LOOP_SPEED
+			ISMOVEMENT_PAUSED = 0

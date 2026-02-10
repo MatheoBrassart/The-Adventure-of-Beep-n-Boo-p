@@ -72,6 +72,16 @@ var DIALOGUE_LIST: Dictionary = {
 		"0" = {"Character": "Le créateur", "Message": "Eeeet cette deuxième demo est terminée, gg !", "face": "leCreateur"},
 		"1" = {"Character": "Le créateur", "Message": "De nouveau, tous retours sont appréciés.", "face": "leCreateur"},
 		"2" = {"Character": "Le créateur", "Message": "Merci donc d'avoir jouer !", "face": "leCreateur"},
+	},
+	"BeepReveilWalkthrough" = {
+		"0" = {"Character": "Beep", "Message": "...", "face": "beepNeutral"},
+		"1" = {"Character": "Beep", "Message": "J'ai l'impression que quelque chose à changé ...", "face": "beepNeutral"},
+		"2" = {"Character": "Le créateur", "Message": "Bienvenu dans ce walkthrough de mon jeu, The Adventure of Beep n' Boop !", "face": "leCreateur"},
+		"3" = {"Character": "Le créateur", "Message": "Ce walkthrough d'une cinquantaine de niveaux servira à montrer toutes les mécaniques qui ont été codées jusqu'ici.", "face": "leCreateur"},
+		"4" = {"Character": "Le créateur", "Message": "Peut-être que se sera un peu long ou un peur court, tout dépends du skill du testeur, on verra bien.", "face": "leCreateur"},
+		"5" = {"Character": "Le créateur", "Message": "Sur ce, que l'aventure commence !", "face": "leCreateur"},
+		"6" = {"Character": "Beep", "Message": "Ah ok.", "face": "beepNeutral"},
+		"7" = {"Character": "Boop", "Message": "Bon bah aller, bouge !", "face": "boopBored"},
 	}
 }
 

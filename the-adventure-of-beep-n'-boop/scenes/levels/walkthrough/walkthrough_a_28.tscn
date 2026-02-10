@@ -80,6 +80,9 @@ position = Vector2(432, 352)
 [node name="ScieNormal3" parent="Level elements" instance=ExtResource("5_ccnea")]
 position = Vector2(832, 224)
 
+[node name="ScieNormal14" parent="Level elements" instance=ExtResource("5_ccnea")]
+position = Vector2(640, 352)
+
 [node name="ScieNormal4" parent="Level elements" instance=ExtResource("5_ccnea")]
 position = Vector2(896, 224)
 
@@ -94,6 +97,9 @@ position = Vector2(960, 352)
 
 [node name="ScieNormal9" parent="Level elements" instance=ExtResource("5_ccnea")]
 position = Vector2(928, 416)
+
+[node name="ScieNormal15" parent="Level elements" instance=ExtResource("5_ccnea")]
+position = Vector2(992, 416)
 
 [node name="ScieNormal10" parent="Level elements" instance=ExtResource("5_ccnea")]
 position = Vector2(896, 480)

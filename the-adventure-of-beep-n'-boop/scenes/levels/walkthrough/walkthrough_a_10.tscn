@@ -50,6 +50,7 @@ scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 9
+TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
 [node name="Level elements" type="Node2D" parent="."]
 

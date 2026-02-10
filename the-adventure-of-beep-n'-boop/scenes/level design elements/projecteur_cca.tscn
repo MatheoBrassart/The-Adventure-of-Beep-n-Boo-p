@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4i6nc"]
 radius = 128.0
 
-[node name="Projecteur CCA" type="Area2D"]
+[node name="Projecteur CCA" type="Area2D" groups=["ProjecteurCCA"]]
 script = ExtResource("1_ir4xj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
