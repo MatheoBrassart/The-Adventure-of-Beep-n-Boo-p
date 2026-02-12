@@ -5,12 +5,13 @@ extends Area2D
 @export var WHICH_CHARACTER_IS_IT = 0
 
 # Animations
-@onready var animatedSpritePicsChangeBeep: Sprite2D = $AnimatedSprite2DScieChangeBeep
-@onready var animatedSpritePicsChangeBoop: Sprite2D = $AnimatedSprite2DScieChangeBoop
-@onready var rightSprite: Sprite2D = $AnimatedSprite2DScieChangeBeep
+@onready var animatedSpritePicsChangeBeep: AnimatedSprite2D = $AnimatedSprite2DScieChangeBeep
+@onready var animatedSpritePicsChangeBoop: AnimatedSprite2D = $AnimatedSprite2DScieChangeBoop
+@onready var rightSprite: AnimatedSprite2D = $AnimatedSprite2DScieChangeBeep
 @onready var collisionShape2D: CollisionShape2D = $CollisionShape2D
 
 var ISACTIVE = 1
+var REPLAY_DEFAULTANIMATION = false
 
 func _ready() -> void:
 	
@@ -26,9 +27,9 @@ func _ready() -> void:
 	var CURRENT_ACTIVE_CHARACTER = get_tree().get_first_node_in_group("Player")
 	if not CURRENT_ACTIVE_CHARACTER.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		deactivate()
-		# rightSprite.play("defaultInactive")
-	# else:
-		# rightSprite.play("defaultActive")
+		rightSprite.play("defaultInactive")
+	else:
+		rightSprite.play("defaultActive")
 
 
 func _process(_delta: float) -> void:
@@ -49,23 +50,16 @@ func activate():
 	
 	# Activates the scie
 	ISACTIVE = 1
-	# rightSprite.play("activating")
-	if WHICH_CHARACTER_IS_IT == 0:
-		rightSprite.modulate = Color(1.0, 0.579, 0.515, 1.0)
-	else:
-		rightSprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	rightSprite.play("activating")
 	collisionShape2D.disabled = false
+	REPLAY_DEFAULTANIMATION = true
 
 
 func deactivate():
 	
 	# Dectivates the scie
 	ISACTIVE = 0
-	# rightSprite.play("deactivating")
-	if WHICH_CHARACTER_IS_IT == 0:
-		rightSprite.modulate = Color(1.0, 0.579, 0.515, 0.5)
-	else:
-		rightSprite.modulate = Color(1.0, 1.0, 1.0, 0.5)
+	rightSprite.play("deactivating")
 	collisionShape2D.disabled = true
 
 
@@ -74,3 +68,17 @@ func _on_body_entered(body: Node2D) -> void:
 	# Kills the player when they touch it
 	if body.is_in_group("Player") == true:
 		body.player_death.call_deferred()
+
+
+func _on_animated_sprite_2d_scie_change_beep_animation_finished() -> void:
+	
+	if REPLAY_DEFAULTANIMATION == true:
+		rightSprite.play("defaultActive")
+		REPLAY_DEFAULTANIMATION = false
+
+
+func _on_animated_sprite_2d_scie_change_boop_animation_finished() -> void:
+	
+	if REPLAY_DEFAULTANIMATION == true:
+		rightSprite.play("defaultActive")
+		REPLAY_DEFAULTANIMATION = false

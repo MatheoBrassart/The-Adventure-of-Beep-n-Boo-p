@@ -83,10 +83,13 @@ scale = Vector2(8, 1)
 WIND_POWER = 50.0
 
 [node name="ScieNormal5" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(288, 32)
+position = Vector2(320, 32)
+
+[node name="ScieNormal26" parent="Level elements" instance=ExtResource("6_boogm")]
+position = Vector2(256, 32)
 
 [node name="ScieNormal6" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(416, 32)
+position = Vector2(448, 32)
 
 [node name="ScieNormal9" parent="Level elements" instance=ExtResource("6_boogm")]
 position = Vector2(640, 480)
@@ -98,10 +101,10 @@ position = Vector2(640, 352)
 position = Vector2(640, 224)
 
 [node name="ScieNormal24" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(1664, 408)
+position = Vector2(1664, 400)
 
 [node name="ScieNormal25" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(1664, 232)
+position = Vector2(1664, 240)
 
 [node name="ScieNormal12" parent="Level elements" instance=ExtResource("6_boogm")]
 position = Vector2(1152, 168)
@@ -116,34 +119,40 @@ position = Vector2(1152, 616)
 position = Vector2(1152, 480)
 
 [node name="ScieNormal7" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(352, 32)
+position = Vector2(384, 32)
 
 [node name="ScieNormal8" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(480, 32)
+position = Vector2(512, 32)
 
 [node name="ScieNormal16" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(800, 32)
+position = Vector2(832, 32)
+
+[node name="ScieNormal28" parent="Level elements" instance=ExtResource("6_boogm")]
+position = Vector2(768, 32)
 
 [node name="ScieNormal17" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(928, 32)
+position = Vector2(960, 32)
 
 [node name="ScieNormal18" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(864, 32)
+position = Vector2(896, 32)
 
 [node name="ScieNormal19" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(992, 32)
+position = Vector2(1024, 32)
 
 [node name="ScieNormal20" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(1312, 32)
+position = Vector2(1344, 32)
+
+[node name="ScieNormal30" parent="Level elements" instance=ExtResource("6_boogm")]
+position = Vector2(1280, 32)
 
 [node name="ScieNormal21" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(1440, 32)
+position = Vector2(1472, 32)
 
 [node name="ScieNormal22" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(1376, 32)
+position = Vector2(1408, 32)
 
 [node name="ScieNormal23" parent="Level elements" instance=ExtResource("6_boogm")]
-position = Vector2(1504, 32)
+position = Vector2(1536, 32)
 
 [node name="puceDonnee" parent="Level elements" instance=ExtResource("7_87bdv")]
 position = Vector2(1664, 320)

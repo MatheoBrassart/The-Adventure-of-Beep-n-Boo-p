@@ -1,29 +1,199 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg7cx0l0pahpq"]
+[gd_scene load_steps=24 format=3 uid="uid://cg7cx0l0pahpq"]
 
 [ext_resource type="Script" uid="uid://bmfvi7n7c3e1a" path="res://scripts/scie_change.gd" id="1_mu1vk"]
-[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="2_0hm0h"]
+[ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_mu1vk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
-size = Vector2(12, 38.4)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hm0h"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(198, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmc26"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(132, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3jcu"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(0, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gn8b"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(132, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d0y0"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(198, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bkmn"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(264, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndld8"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(0, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db18f"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(66, 528, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia1er"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(264, 528, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ye3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hm0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmc26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3jcu")
+}],
+"loop": false,
+"name": &"activating",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gn8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d0y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bkmn")
+}],
+"loop": false,
+"name": &"deactivating",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndld8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db18f")
+}],
+"loop": true,
+"name": &"defaultActive",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia1er")
+}],
+"loop": false,
+"name": &"defaultInactive",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu1vk"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(198, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ye3j"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(132, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbtfa"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(0, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il6rf"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(132, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yg3j"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(198, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbkkt"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(264, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pltag"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(0, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gudju"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(66, 594, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jcgb"]
+atlas = ExtResource("2_mu1vk")
+region = Rect2(264, 594, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydaeh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu1vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ye3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbtfa")
+}],
+"loop": false,
+"name": &"activating",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il6rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yg3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbkkt")
+}],
+"loop": false,
+"name": &"deactivating",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pltag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gudju")
+}],
+"loop": true,
+"name": &"defaultActive",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jcgb")
+}],
+"loop": false,
+"name": &"defaultInactive",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mu1vk"]
+radius = 20.0
 
 [node name="ScieChange" type="Area2D" groups=["ScieChange"]]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_mu1vk")
 
-[node name="AnimatedSprite2DScieChangeBeep" type="Sprite2D" parent="."]
-modulate = Color(1, 0.57857543, 0.5151607, 1)
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("2_0hm0h")
-region_rect = Rect2(0, 396, 66, 66)
+[node name="AnimatedSprite2DScieChangeBeep" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7ye3j")
+animation = &"deactivating"
 
-[node name="AnimatedSprite2DScieChangeBoop" type="Sprite2D" parent="."]
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("2_0hm0h")
-region_rect = Rect2(0, 396, 66, 66)
+[node name="AnimatedSprite2DScieChangeBoop" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ydaeh")
+animation = &"deactivating"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4, 1.25)
-shape = SubResource("RectangleShape2D_i3sln")
+shape = SubResource("CircleShape2D_mu1vk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2DScieChangeBeep" to="." method="_on_animated_sprite_2d_scie_change_beep_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2DScieChangeBoop" to="." method="_on_animated_sprite_2d_scie_change_boop_animation_finished"]
