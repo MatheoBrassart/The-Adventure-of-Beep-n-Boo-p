@@ -59,7 +59,7 @@ position = Vector2(-48, 264)
 scale = Vector2(1, 5)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
-TO_WHICH_LEVEL_DOES_IT_LEADS = 27
+TO_WHICH_LEVEL_DOES_IT_LEADS = 28
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
 [node name="Level elements" type="Node2D" parent="."]
@@ -86,10 +86,10 @@ position = Vector2(768, 480)
 position = Vector2(736, 416)
 
 [node name="ScieNormal3" parent="Level elements" instance=ExtResource("5_tqaro")]
-position = Vector2(480, 224)
+position = Vector2(464, 192)
 
 [node name="ScieNormal15" parent="Level elements" instance=ExtResource("5_tqaro")]
-position = Vector2(608, 224)
+position = Vector2(624, 192)
 
 [node name="ScieNormal16" parent="Level elements" instance=ExtResource("5_tqaro")]
 position = Vector2(544, 224)

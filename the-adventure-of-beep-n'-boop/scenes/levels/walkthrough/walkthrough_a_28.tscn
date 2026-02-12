@@ -73,10 +73,10 @@ position = Vector2(544, 480)
 position = Vector2(400, 416)
 
 [node name="ScieNormal12" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(368, 352)
+position = Vector2(368, 368)
 
 [node name="ScieNormal13" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(432, 352)
+position = Vector2(432, 368)
 
 [node name="ScieNormal3" parent="Level elements" instance=ExtResource("5_ccnea")]
 position = Vector2(832, 224)
@@ -85,28 +85,34 @@ position = Vector2(832, 224)
 position = Vector2(640, 352)
 
 [node name="ScieNormal4" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(896, 224)
+position = Vector2(896, 240)
 
 [node name="ScieNormal6" parent="Level elements" instance=ExtResource("5_ccnea")]
 position = Vector2(928, 288)
 
 [node name="ScieNormal7" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(896, 352)
+position = Vector2(896, 336)
 
 [node name="ScieNormal8" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(960, 352)
+position = Vector2(960, 336)
 
 [node name="ScieNormal9" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(928, 416)
+position = Vector2(928, 384)
+
+[node name="ScieNormal16" parent="Level elements" instance=ExtResource("5_ccnea")]
+position = Vector2(992, 384)
+
+[node name="ScieNormal17" parent="Level elements" instance=ExtResource("5_ccnea")]
+position = Vector2(992, 480)
 
 [node name="ScieNormal15" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(992, 416)
+position = Vector2(960, 432)
 
 [node name="ScieNormal10" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(896, 480)
+position = Vector2(896, 432)
 
 [node name="ScieNormal11" parent="Level elements" instance=ExtResource("5_ccnea")]
-position = Vector2(960, 480)
+position = Vector2(928, 480)
 
 [node name="Background elements" type="Node2D" parent="."]
 

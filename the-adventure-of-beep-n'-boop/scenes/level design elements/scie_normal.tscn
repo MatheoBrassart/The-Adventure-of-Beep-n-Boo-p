@@ -1,25 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://yas2w0t37dpb"]
+[gd_scene load_steps=7 format=3 uid="uid://yas2w0t37dpb"]
 
 [ext_resource type="Script" uid="uid://dk3hd2p0abnpo" path="res://scripts/scie_normal.gd" id="1_152qo"]
-[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="2_152qo"]
+[ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_152qo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
-size = Vector2(12, 38.4)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr6x1"]
+atlas = ExtResource("2_152qo")
+region = Rect2(0, 462, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uide"]
+atlas = ExtResource("2_152qo")
+region = Rect2(66, 462, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfxa0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr6x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uide")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_152qo"]
+radius = 20.0
 
 [node name="ScieNormal" type="Area2D"]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_152qo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.3841858e-07, -1.4305115e-06)
-scale = Vector2(0.37499997, 0.37499997)
-texture = ExtResource("2_152qo")
-region_rect = Rect2(0, 396, 66, 66)
+sprite_frames = SubResource("SpriteFrames_vfxa0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.1920929e-06)
-scale = Vector2(4, 1.25)
-shape = SubResource("RectangleShape2D_i3sln")
+shape = SubResource("CircleShape2D_152qo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
