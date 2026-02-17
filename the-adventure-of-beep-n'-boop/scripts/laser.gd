@@ -3,8 +3,18 @@ extends StaticBody2D
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 @onready var line_2d: Line2D = $Line2D
 @onready var shape_cast_2d_line_2d_setter: ShapeCast2D = $ShapeCast2DLine2DSetter
+@onready var animated_sprite_2d_base: AnimatedSprite2D = $AnimatedSprite2DBase
+@onready var animated_sprite_2d_laser: AnimatedSprite2D = $Line2D/AnimatedSprite2DLaser
+@onready var animated_sprite_2d_laser_2: AnimatedSprite2D = $Line2D/AnimatedSprite2DLaser2
 
 var new_point_clip_setter = null
+
+
+func _ready() -> void:
+	
+	animated_sprite_2d_base.play("default")
+	animated_sprite_2d_laser.play("default")
+	animated_sprite_2d_laser_2.play("default")
 
 
 func _process(_delta: float) -> void:
