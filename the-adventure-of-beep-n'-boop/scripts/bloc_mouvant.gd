@@ -18,6 +18,7 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $AnimatableBody2D/Sprite2D
 @onready var sprite_2d_2: Sprite2D = $AnimatableBody2D/Sprite2D2
 @onready var collision_shape_2d: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
+@onready var sprite_2d_noloop_stopper: Sprite2D = $Sprite2DNoloopStopper
 
 # Defines which character this bloc is for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
@@ -40,7 +41,7 @@ func _ready() -> void:
 	
 	# Get the non-component children of this node, unchild them and child them to the Bloc Mouvant
 	for child in get_children():
-		if (not child == path_follow_2d) and (not child == animatable_body_2d) and (not child == animation_player) and (not child == line_2d):
+		if (not child == path_follow_2d) and (not child == animatable_body_2d) and (not child == animation_player) and (not child == line_2d) and (not child == sprite_2d_noloop_stopper):
 			remove_child(child)
 			animatable_body_2d.add_child(child)
 			if child.is_in_group("ProjecteurCCA"):
@@ -60,6 +61,13 @@ func _ready() -> void:
 	# When appearing, check if the right character is active or not
 	if not player.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		pause_unpause_movement()
+	
+	# If LOOP is false, put the noloopstopper at the end of the line, otherwise hide it
+	if LOOP == false:
+		var lastPoint = (line_2d.get_point_count() - 1)
+		sprite_2d_noloop_stopper.position = Vector2((line_2d.get_point_position(lastPoint).x), (line_2d.get_point_position(lastPoint).y))
+	else:
+		sprite_2d_noloop_stopper.visible = false
 
 
 func pause_unpause_movement():

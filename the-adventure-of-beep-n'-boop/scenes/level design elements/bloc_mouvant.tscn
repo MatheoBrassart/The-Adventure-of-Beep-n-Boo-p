@@ -98,3 +98,9 @@ texture = ExtResource("1_7vqdq")
 libraries = {
 &"": SubResource("AnimationLibrary_hh0md")
 }
+
+[node name="Sprite2DNoloopStopper" type="Sprite2D" parent="."]
+modulate = Color(0.3779188, 0.37791887, 0.37791884, 1)
+position = Vector2(9.536743e-07, -64)
+scale = Vector2(0.24999999, 0.24999997)
+texture = ExtResource("1_7vqdq")
