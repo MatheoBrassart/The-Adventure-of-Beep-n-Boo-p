@@ -121,6 +121,12 @@ position = Vector2(704, 64)
 [node name="BlocChange14" parent="Level elements" instance=ExtResource("7_rfbca")]
 position = Vector2(704, 0)
 
+[node name="BlocChange15" parent="Level elements" instance=ExtResource("7_rfbca")]
+position = Vector2(768, -64)
+
+[node name="BlocChange16" parent="Level elements" instance=ExtResource("7_rfbca")]
+position = Vector2(704, -64)
+
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("7_rfbca")]
 position = Vector2(320, 448)
 
