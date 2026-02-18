@@ -41,4 +41,4 @@ func set_laser_size():
 		line_2d.set_point_position(1, Vector2(0, -1856))
 	
 	
-	animated_sprite_2d_laser_tip.position = Vector2(0, (line_2d.get_point_position(1).y + 30))
+	animated_sprite_2d_laser_tip.position = Vector2(0, (line_2d.get_point_position(1).y + 32))

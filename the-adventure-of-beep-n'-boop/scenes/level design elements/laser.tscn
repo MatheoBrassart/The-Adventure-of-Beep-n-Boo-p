@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccb73shaqgtk0"]
+[gd_scene load_steps=23 format=3 uid="uid://ccb73shaqgtk0"]
 
 [ext_resource type="Script" uid="uid://bc6ev7p3nrj1p" path="res://scripts/laser.gd" id="1_rvhhc"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_rvhhc"]
@@ -97,7 +97,36 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tabl1"]
 size = Vector2(58, 47)
 
+[sub_resource type="Gradient" id="Gradient_rvhhc"]
+offsets = PackedFloat32Array(0, 0.4032258, 1)
+colors = PackedColorArray(0.36862746, 0.36862746, 0.36862746, 1, 0.36862746, 0.36862746, 0.36862746, 1, 0.36862746, 0.36862746, 0.36862746, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a02uw"]
+gradient = SubResource("Gradient_rvhhc")
+
+[sub_resource type="Curve" id="Curve_rvhhc"]
+_data = [Vector2(0.0066666603, 0.011235952), 0.0, 0.0, 0, 0, Vector2(0.20000002, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.022471905), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a02uw"]
+curve = SubResource("Curve_rvhhc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ofvc"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 1.0
+direction = Vector3(1, 0, 1)
+initial_velocity_min = -1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -20, 0)
+linear_accel_min = 9.999997
+linear_accel_max = 39.999996
+scale_min = 10.0
+scale_max = 20.0
+scale_curve = SubResource("CurveTexture_a02uw")
+color_ramp = SubResource("GradientTexture1D_a02uw")
+
 [node name="Laser" type="StaticBody2D"]
+z_index = 1
 collision_layer = 4
 script = ExtResource("1_rvhhc")
 
@@ -148,3 +177,9 @@ sprite_frames = SubResource("SpriteFrames_yec56")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_tabl1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-18, 31)
+lifetime = 2.0
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_1ofvc")
