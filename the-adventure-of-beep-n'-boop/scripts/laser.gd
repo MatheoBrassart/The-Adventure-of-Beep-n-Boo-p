@@ -16,6 +16,7 @@ func _ready() -> void:
 	animated_sprite_2d_base.play("default")
 	animated_sprite_2d_laser.play("default")
 	animated_sprite_2d_laser_2.play("default")
+	animated_sprite_2d_laser_tip.play("default")
 
 
 func _process(_delta: float) -> void:
