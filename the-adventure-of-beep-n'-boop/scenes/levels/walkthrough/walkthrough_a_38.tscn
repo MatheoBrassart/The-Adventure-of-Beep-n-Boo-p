@@ -288,7 +288,7 @@ position = Vector2(576, 240)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange2" parent="." instance=ExtResource("8_tgbu6")]
-position = Vector2(832, 224)
+position = Vector2(832, 248)
 
 [node name="ScieChange3" parent="." instance=ExtResource("8_tgbu6")]
-position = Vector2(832, 416)
+position = Vector2(832, 392)

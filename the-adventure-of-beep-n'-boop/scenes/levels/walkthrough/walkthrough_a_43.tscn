@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bruu65l0wudoq"]
+[gd_scene load_steps=19 format=4 uid="uid://bruu65l0wudoq"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_0lbik"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_73gpw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_5yk4b"]
 [ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="5_yk55i"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="6_2ej7m"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="7_73gpw"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_eji6c"]
 
 [sub_resource type="Curve2D" id="Curve2D_hrpey"]
@@ -220,6 +221,13 @@ position = Vector2(720, 544)
 curve = SubResource("Curve2D_pw17e")
 LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange" parent="Level elements" instance=ExtResource("7_73gpw")]
+position = Vector2(64, 640)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange2" parent="Level elements" instance=ExtResource("7_73gpw")]
+position = Vector2(0, 640)
 
 [node name="Background elements" type="Node2D" parent="."]
 

@@ -75,106 +75,96 @@ position = Vector2(96, 1936)
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(544, 352)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(608, 352)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange3" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(544, 288)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange4" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(608, 288)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange5" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(800, 2144)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange6" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(800, 2208)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange24" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(192, 2144)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange25" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(192, 2208)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange26" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(192, 1792)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange28" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(192, 1728)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange27" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(192, 1856)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange7" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(64, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange8" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(128, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange9" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(192, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange10" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(256, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange11" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(320, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange12" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(384, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange13" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(448, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange14" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(512, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange15" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(576, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange16" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(640, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange17" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(704, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange18" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(768, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange19" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(832, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange20" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(896, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange21" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(960, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange22" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(1024, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange23" parent="Level elements" instance=ExtResource("7_3jpt8")]
 position = Vector2(1088, 1664)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
 

@@ -159,16 +159,18 @@ position = Vector2(1664, 320)
 
 [node name="ScieChange" parent="Level elements" instance=ExtResource("8_d66ab")]
 position = Vector2(640, 96)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange3" parent="Level elements" instance=ExtResource("8_d66ab")]
 position = Vector2(1664, 96)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange4" parent="Level elements" instance=ExtResource("8_d66ab")]
 position = Vector2(1664, 544)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="ScieChange2" parent="Level elements" instance=ExtResource("8_d66ab")]
 position = Vector2(1152, 320)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="."]
 

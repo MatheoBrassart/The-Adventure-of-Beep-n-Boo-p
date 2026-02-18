@@ -226,39 +226,41 @@ rotation = 3.1415927
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("7_boefp")]
 position = Vector2(800, 224)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("7_boefp")]
 position = Vector2(864, 224)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange" parent="Level elements" instance=ExtResource("8_nmyf1")]
 position = Vector2(800, 160)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange2" parent="Level elements" instance=ExtResource("8_nmyf1")]
 position = Vector2(864, 160)
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange3" parent="Level elements" instance=ExtResource("8_nmyf1")]
 position = Vector2(800, 288)
 rotation = 3.1415927
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange4" parent="Level elements" instance=ExtResource("8_nmyf1")]
 position = Vector2(864, 288)
 rotation = 3.1415927
+WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange3" parent="Level elements" instance=ExtResource("7_boefp")]
 position = Vector2(800, 448)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange4" parent="Level elements" instance=ExtResource("7_boefp")]
 position = Vector2(864, 448)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange5" parent="Level elements" instance=ExtResource("8_nmyf1")]
 position = Vector2(800, 384)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange6" parent="Level elements" instance=ExtResource("8_nmyf1")]
 position = Vector2(864, 384)
-WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocSensUnique" parent="Level elements" instance=ExtResource("9_wn011")]
 position = Vector2(432, 144)

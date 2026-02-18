@@ -126,18 +126,15 @@ scale_curve = SubResource("CurveTexture_a02uw")
 color_ramp = SubResource("GradientTexture1D_a02uw")
 
 [node name="Laser" type="StaticBody2D"]
-z_index = 1
 collision_layer = 4
 script = ExtResource("1_rvhhc")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_dw1k3")
 target_position = Vector2(0, -1805.7141)
 collision_mask = 15
 
 [node name="ShapeCast2DLine2DSetter" type="ShapeCast2D" parent="."]
-position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_xbsy3")
 target_position = Vector2(0, -1805.7141)
 collision_mask = 14
@@ -179,6 +176,7 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_tabl1")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 10
 position = Vector2(-18, 31)
 lifetime = 2.0
 preprocess = 1.0
