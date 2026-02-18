@@ -6,6 +6,7 @@ extends StaticBody2D
 @onready var animated_sprite_2d_base: AnimatedSprite2D = $AnimatedSprite2DBase
 @onready var animated_sprite_2d_laser: AnimatedSprite2D = $Line2D/AnimatedSprite2DLaser
 @onready var animated_sprite_2d_laser_2: AnimatedSprite2D = $Line2D/AnimatedSprite2DLaser2
+@onready var animated_sprite_2d_laser_tip: AnimatedSprite2D = $AnimatedSprite2DLaserTip
 
 var new_point_clip_setter = null
 
@@ -38,3 +39,6 @@ func set_laser_size():
 			line_2d.set_point_position(1, Vector2(0, new_point_clip_setter.y))
 	else:
 		line_2d.set_point_position(1, Vector2(0, -1856))
+	
+	
+	animated_sprite_2d_laser_tip.position = Vector2(0, (line_2d.get_point_position(1).y + 30))
