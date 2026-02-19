@@ -57,6 +57,7 @@ BlocChute=""
 CourantAirChange=""
 BlocMouvant=""
 ProjecteurCCA=""
+MachineStatut=""
 
 [input]
 

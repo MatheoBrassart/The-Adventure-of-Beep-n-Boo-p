@@ -7,6 +7,9 @@ var listOfChanges = []
 var listOfPlayer = []
 var listOfCourantsAirChanges = []
 
+var HAS_LIMITECHANGEMOI: bool = false
+var CHANGEMOI_RESTANTS = 0
+
 
 # ----- Handles Player Respawn -----
 var WHERE_TO_RESPAWN_PLAYER = 0
@@ -58,39 +61,51 @@ func _process(_delta: float) -> void:
 		var player = get_tree().get_first_node_in_group("Player")
 		if not player == null:
 			if player.ISIN_ZONEANTICHANGE == 0:
-			
-				listOfChanges = get_tree().get_nodes_in_group("BlocChange")
-				for i in listOfChanges: 
-					i.switch_state()
 				
-				listOfChanges = get_tree().get_nodes_in_group("PicsChange")
-				for i in listOfChanges: 
-					i.switch_state()
-				
-				listOfChanges = get_tree().get_nodes_in_group("RessortChange")
-				for i in listOfChanges: 
-					i.switch_state()
-					
-				listOfChanges = get_tree().get_nodes_in_group("VignesChange")
-				for i in listOfChanges: 
-					i.switch_state()
-				
-				listOfChanges = get_tree().get_nodes_in_group("ScieChange")
-				for i in listOfChanges: 
-					i.switch_state()
-					
-				listOfPlayer = get_tree().get_nodes_in_group("Player")
-				for i in listOfPlayer: 
-					i.switch_character()
-				
-				listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
-				for i in listOfChanges: 
-					i.change_wind_direction()
-				
-				listOfChanges = get_tree().get_nodes_in_group("BlocMouvant")
-				for i in listOfChanges: 
-					i.pause_unpause_movement()
+				listOfChanges = get_tree().get_nodes_in_group("MachineStatut")
+				for i in listOfChanges:
+					if i.CHANGEMOI_RESTANTS > 0:
+						HAS_LIMITECHANGEMOI = true
+						i.CHANGEMOI_RESTANTS -= 1
+						activate_changemoi_effects()
+						
+				if (HAS_LIMITECHANGEMOI == false):
+					activate_changemoi_effects()
 
+
+func activate_changemoi_effects():
+	
+	listOfChanges = get_tree().get_nodes_in_group("BlocChange")
+	for i in listOfChanges: 
+		i.switch_state()
+				
+	listOfChanges = get_tree().get_nodes_in_group("PicsChange")
+	for i in listOfChanges: 
+		i.switch_state()
+				
+	listOfChanges = get_tree().get_nodes_in_group("RessortChange")
+	for i in listOfChanges: 
+		i.switch_state()
+					
+	listOfChanges = get_tree().get_nodes_in_group("VignesChange")
+	for i in listOfChanges: 
+		i.switch_state()
+				
+	listOfChanges = get_tree().get_nodes_in_group("ScieChange")
+	for i in listOfChanges: 
+		i.switch_state()
+					
+	listOfPlayer = get_tree().get_nodes_in_group("Player")
+	for i in listOfPlayer: 
+		i.switch_character()
+				
+	listOfChanges = get_tree().get_nodes_in_group("CourantAirChange")
+	for i in listOfChanges: 
+		i.change_wind_direction()
+				
+	listOfChanges = get_tree().get_nodes_in_group("BlocMouvant")
+	for i in listOfChanges: 
+		i.pause_unpause_movement()
 
 func check_cutscene_informations(whichCutscene: String):
 	

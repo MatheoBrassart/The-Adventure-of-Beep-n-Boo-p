@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://citsi8bky4sa0"]
+[gd_scene load_steps=9 format=4 uid="uid://citsi8bky4sa0"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_1ihad"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_fvvl1"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_sqes0"]
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_yq35s"]
+[ext_resource type="PackedScene" uid="uid://dq2pibepa6vul" path="res://scenes/level design elements/machine_statut.tscn" id="6_jxgjj"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="9_hshf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_210xj"]
@@ -69,3 +70,7 @@ position = Vector2(608, 832)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD//xAAAAABAAEAAAD+/xAAAAABAAEAAAAAABAAAAABAAEAAAABABAAAAABAAEAAAACABAAAAABAAEAAAADABAAAAABAAEAAAAEABAAAAABAAEAAAAFABAAAAABAAEAAAAGABAAAAABAAEAAAAHABAAAAABAAEAAAAIABAAAAABAAEAAAAJABAAAAABAAEAAAAKABAAAAABAAEAAAALABAAAAABAAEAAAAMABAAAAABAAEAAAANABAAAAABAAEAAAAOABAAAAABAAEAAAAPABAAAAABAAEAAAAQABAAAAABAAEAAAARABAAAAABAAEAAAASABAAAAABAAEAAAATABAAAAABAAEAAAAUABAAAAABAAEAAAAVABAAAAABAAEAAAAWABAAAAABAAEAAAAXABAAAAABAAEAAAAYABAAAAABAAEAAAAZABAAAAABAAEAAAAaABAAAAABAAEAAAAbABAAAAABAAEAAAAcABAAAAABAAEAAAAdABAAAAABAAEAAAAeABAAAAABAAEAAAAfABAAAAABAAEAAAAgABAAAAABAAEAAAAhABAAAAABAAEAAAAiABAAAAABAAEAAAAjABAAAAABAAEAAAAkABAAAAABAAEAAAAlABAAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_b70oq")
+
+[node name="Machine Statut" parent="." instance=ExtResource("6_jxgjj")]
+position = Vector2(192, 384)
+NIVEAU_LIMITECHANGEMOI = 5
