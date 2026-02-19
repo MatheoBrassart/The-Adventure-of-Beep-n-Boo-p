@@ -16,6 +16,7 @@ class_name Player
 # Timers and Raycasts
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
+@onready var level_reset_timer: Timer = $LevelResetTimer
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 @onready var ray_cast_2d_hanging_top_checker: RayCast2D = $RayCast2DHangingTopChecker
 @onready var ray_cast_2d_floor_type_checker: RayCast2D = $RayCast2DFloorTypeChecker
@@ -225,6 +226,8 @@ func _physics_process(delta: float) -> void:
 	reset_blocchutes()
 	
 	double_jump()
+	
+	reset_level()
 
 
 func handle_input() -> void:
@@ -376,3 +379,17 @@ func double_jump():
 		
 		if coyote_timer.is_stopped():
 			COYOTETIME_FAILSAFE = true
+
+
+func reset_level():
+	
+	if Input.is_action_just_pressed("ResetLevel"):
+		level_reset_timer.start()
+	
+	if Input.is_action_just_released("ResetLevel"):
+		level_reset_timer.stop()
+
+
+func _on_level_reset_timer_timeout() -> void:
+	
+	player_death()

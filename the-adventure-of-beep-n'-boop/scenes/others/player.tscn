@@ -474,6 +474,9 @@ one_shot = true
 wait_time = 0.15
 one_shot = true
 
+[node name="LevelResetTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 position = Vector2(0, 3)
 scale = Vector2(1, 0.7)
@@ -495,3 +498,5 @@ collide_with_bodies = false
 position = Vector2(0, 8)
 target_position = Vector2(0, 56)
 collision_mask = 31
+
+[connection signal="timeout" from="LevelResetTimer" to="." method="_on_level_reset_timer_timeout"]
