@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dq2pibepa6vul" path="res://scenes/level design elements/machine_statut.tscn" id="6_jxgjj"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="9_hshf0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_210xj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kcb6"]
 texture = ExtResource("9_hshf0")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -17,7 +17,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_b70oq"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_210xj")
+sources/0 = SubResource("TileSetAtlasSource_1kcb6")
 
 [node name="walkthrough_a_49" type="Node2D"]
 
