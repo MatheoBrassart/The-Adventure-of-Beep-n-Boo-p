@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b2vvcxuroq7f1"]
+[gd_scene load_steps=15 format=4 uid="uid://b2vvcxuroq7f1"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_8j4k1"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_3q23c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4mgskvc6sxel" path="res://scenes/level design elements/projecteur_cca.tscn" id="6_roiyc"]
 [ext_resource type="PackedScene" uid="uid://jdafmtmnfa1x" path="res://scenes/level design elements/bloc_sens_unique.tscn" id="7_omweg"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="8_2oykb"]
+[ext_resource type="PackedScene" uid="uid://c5b4lesamqpsx" path="res://scenes/level design elements/zone_anti_change.tscn" id="9_8j4k1"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="10_waqw1"]
 
 [sub_resource type="Curve2D" id="Curve2D_8g22j"]
@@ -155,6 +156,10 @@ position = Vector2(544, 464)
 position = Vector2(672, 464)
 WHICH_CHARACTER_IS_IT = 1
 
+[node name="BlocChange10" parent="Level elements" instance=ExtResource("8_2oykb")]
+position = Vector2(1056, 464)
+WHICH_CHARACTER_IS_IT = 1
+
 [node name="BlocChange2" parent="Level elements" instance=ExtResource("8_2oykb")]
 position = Vector2(512, 192)
 
@@ -165,6 +170,26 @@ WHICH_CHARACTER_IS_IT = 1
 [node name="BlocChange4" parent="Level elements" instance=ExtResource("8_2oykb")]
 position = Vector2(224, 384)
 WHICH_CHARACTER_IS_IT = 1
+
+[node name="Zone Anti-Change" type="Node2D" parent="Level elements"]
+
+[node name="Zone Anti-Change2" parent="Level elements" instance=ExtResource("9_8j4k1")]
+position = Vector2(1120, 432)
+
+[node name="Zone Anti-Change3" parent="Level elements" instance=ExtResource("9_8j4k1")]
+position = Vector2(1120, 496)
+
+[node name="Zone Anti-Change4" parent="Level elements" instance=ExtResource("9_8j4k1")]
+position = Vector2(1056, 432)
+
+[node name="Zone Anti-Change5" parent="Level elements" instance=ExtResource("9_8j4k1")]
+position = Vector2(1056, 496)
+
+[node name="Zone Anti-Change6" parent="Level elements" instance=ExtResource("9_8j4k1")]
+position = Vector2(1184, 432)
+
+[node name="Zone Anti-Change7" parent="Level elements" instance=ExtResource("9_8j4k1")]
+position = Vector2(1184, 496)
 
 [node name="Background elements" type="Node2D" parent="."]
 

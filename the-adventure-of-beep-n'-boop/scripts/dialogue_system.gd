@@ -82,6 +82,11 @@ var DIALOGUE_LIST: Dictionary = {
 		"5" = {"Character": "Le créateur", "Message": "Sur ce, que l'aventure commence !", "face": "leCreateur"},
 		"6" = {"Character": "Beep", "Message": "Ah ok.", "face": "beepNeutral"},
 		"7" = {"Character": "Boop", "Message": "Bon bah aller, bouge !", "face": "boopBored"},
+	},
+	"FinDemo4" = {
+		"0" = {"Character": "Le créateur", "Message": "Eeeet cette quatrième demo est encore terminée, gg !", "face": "leCreateur"},
+		"1" = {"Character": "Le créateur", "Message": "Tous retours sont appréciés, comme d'habitude.", "face": "leCreateur"},
+		"2" = {"Character": "Le créateur", "Message": "Merci donc d'avoir jouer !", "face": "leCreateur"},
 	}
 }
 

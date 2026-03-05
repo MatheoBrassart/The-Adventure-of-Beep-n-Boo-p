@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://db6p28su22b82"]
+[gd_scene load_steps=13 format=4 uid="uid://db6p28su22b82"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_no3nh"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_s8g5o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="7_i2dr7"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="7_s8g5o"]
 [ext_resource type="PackedScene" uid="uid://ccb73shaqgtk0" path="res://scenes/level design elements/laser.tscn" id="8_y2bh6"]
+[ext_resource type="PackedScene" uid="uid://bsbra8n6jqa3w" path="res://scenes/others/cutscene_player.tscn" id="9_er648"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urjqf"]
 texture = ExtResource("7_i2dr7")
@@ -211,6 +212,10 @@ rotation = 3.1415927
 
 [node name="BlocChange18" parent="Level elements" instance=ExtResource("6_80vli")]
 position = Vector2(832, 128)
+
+[node name="cutscenePlayer" parent="Level elements" instance=ExtResource("9_er648")]
+position = Vector2(1088, 272)
+WHICH_CUTSCENE = "FinDemo4"
 
 [node name="Background elements" type="Node2D" parent="."]
 

@@ -67,6 +67,7 @@ func _process(_delta: float) -> void:
 					if i.CHANGEMOI_RESTANTS > 0:
 						HAS_LIMITECHANGEMOI = true
 						i.CHANGEMOI_RESTANTS -= 1
+						i.remaining_change.text = str(i.CHANGEMOI_RESTANTS)
 						activate_changemoi_effects()
 						
 				if (HAS_LIMITECHANGEMOI == false):
@@ -166,6 +167,12 @@ func check_cutscene_informations(whichCutscene: String):
 			var player = get_tree().get_first_node_in_group("Player")
 			player.CAN_MOVE = false
 			dialogueSystem.play_dialogue("BeepReveilWalkthrough", 0)
+		
+		"FinDemo4":
+			CURRENT_ACTIVE_DIALOGUE = "FinDemo4"
+			var player = get_tree().get_first_node_in_group("Player")
+			player.CAN_MOVE = false
+			dialogueSystem.play_dialogue("FinDemo4", 0)
 
 
 func finished_dialogue():
@@ -206,4 +213,8 @@ func finished_dialogue():
 		player.CAN_MOVE = true
 	
 	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
+		pass
+		#get_tree().quit()
+	
+	if CURRENT_ACTIVE_DIALOGUE == "FinDemo4":
 		get_tree().quit()
