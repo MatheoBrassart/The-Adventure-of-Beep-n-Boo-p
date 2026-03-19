@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsq0cmeybxioc"]
+[gd_scene load_steps=10 format=3 uid="uid://dsq0cmeybxioc"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_v4bqd"]
 [ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="2_dwj7a"]
 [ext_resource type="PackedScene" uid="uid://cbx1ueo2fg2le" path="res://scenes/level design elements/pics_normal.tscn" id="3_v1818"]
 [ext_resource type="PackedScene" uid="uid://c4mgskvc6sxel" path="res://scenes/level design elements/projecteur_cca.tscn" id="4_rs2q3"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="5_0swoe"]
 [ext_resource type="PackedScene" uid="uid://dq2pibepa6vul" path="res://scenes/level design elements/machine_statut.tscn" id="5_hu8my"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
@@ -14,6 +15,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -256, 0, 0, 0, 0, 0, -256, -400, 0, 0, 0, 0, 0, -400, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0swoe"]
+polygon = PackedVector2Array(32, 32, 32, 0, -32, 0, -32, 32)
 
 [node name="Level Test 3" type="Node2D"]
 
@@ -47,6 +51,18 @@ rotation = -1.5707964
 position = Vector2(416, 448)
 DETECTION_TIMER_SETTER = 2.0
 
+[node name="BlocChange" parent="Level elements" instance=ExtResource("5_0swoe")]
+position = Vector2(496, 160)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Level elements/BlocChange"]
+occluder = SubResource("OccluderPolygon2D_0swoe")
+
 [node name="Machine Statut" parent="." instance=ExtResource("5_hu8my")]
 position = Vector2(192, 480)
 BEEP_DOUBLESAUT = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+shadow_enabled = true
