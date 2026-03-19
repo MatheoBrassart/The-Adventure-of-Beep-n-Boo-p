@@ -1,6 +1,8 @@
 extends Area2D
 
 class_name RessortChange
+@onready var left_gpu_particles_2d: GPUParticles2D = $LeftGPUParticles2D
+@onready var right_gpu_particles_2d: GPUParticles2D = $RightGPUParticles2D
 
 # Defines which character the ressort is for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
@@ -83,3 +85,9 @@ func _on_body_entered(body: Node2D) -> void:
 			-90.0:
 				body.HIT_SIDERESSORT = true
 				body.velocity.x = RESSORT_VELOCITY * -1
+		
+		left_gpu_particles_2d.restart()
+		right_gpu_particles_2d.restart()
+	
+		left_gpu_particles_2d.emitting = true
+		right_gpu_particles_2d.emitting = true

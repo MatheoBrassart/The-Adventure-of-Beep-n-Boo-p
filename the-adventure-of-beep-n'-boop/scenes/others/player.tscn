@@ -1,9 +1,10 @@
-[gd_scene load_steps=63 format=3 uid="uid://bpyurbx843djn"]
+[gd_scene load_steps=70 format=3 uid="uid://bpyurbx843djn"]
 
 [ext_resource type="Script" uid="uid://dod5w3objikpo" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://jqi3evs3kwx1" path="res://assets/textures/BoopSpritesheet.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://bymn7h2gre4h0" path="res://assets/textures/BeepSpritesheet.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://qt7towh3xdcr" path="res://assets/textures/ChangeMoiSpritesheet.png" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://c4w0a4iask4rx" path="res://scripts/particles_controller.gd" id="5_0u0et"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
 atlas = ExtResource("2_qhqgy")
@@ -440,6 +441,42 @@ size = Vector2(2.2, 7.1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37q5r"]
 
+[sub_resource type="Curve" id="Curve_37q5r"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.098484844, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0u0et"]
+curve = SubResource("Curve_37q5r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yaob3"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 30.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_0u0et")
+
+[sub_resource type="Curve" id="Curve_0u0et"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12878788, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yaob3"]
+curve = SubResource("Curve_0u0et")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0u0et"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -0.2, 0)
+spread = 5.0
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_yaob3")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 collision_mask = 255
@@ -498,5 +535,35 @@ collide_with_bodies = false
 position = Vector2(0, 8)
 target_position = Vector2(0, 56)
 collision_mask = 31
+
+[node name="ParticlesController" type="Node2D" parent="."]
+z_index = -5
+script = ExtResource("5_0u0et")
+
+[node name="WalkingGPUParticles2D" type="GPUParticles2D" parent="ParticlesController"]
+position = Vector2(0, 44)
+emitting = false
+amount = 2
+lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_yaob3")
+
+[node name="JumpFallLeftGPUParticles2D" type="GPUParticles2D" parent="ParticlesController"]
+position = Vector2(0, 47)
+emitting = false
+amount = 5
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0u0et")
+
+[node name="JumpFallRightGPUParticles2D" type="GPUParticles2D" parent="ParticlesController"]
+position = Vector2(0, 47)
+scale = Vector2(-1, 1)
+emitting = false
+amount = 5
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0u0et")
 
 [connection signal="timeout" from="LevelResetTimer" to="." method="_on_level_reset_timer_timeout"]

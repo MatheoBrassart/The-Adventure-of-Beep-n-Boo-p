@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
+@onready var left_gpu_particles_2d: GPUParticles2D = $LeftGPUParticles2D
+@onready var right_gpu_particles_2d: GPUParticles2D = $RightGPUParticles2D
 
 # Power of the ressort
 const RESSORT_VELOCITY = 900.0
@@ -26,3 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 			-90.0:
 				body.HIT_SIDERESSORT = true
 				body.velocity.x = RESSORT_VELOCITY * -1
+		
+		left_gpu_particles_2d.restart()
+		right_gpu_particles_2d.restart()
+	
+		left_gpu_particles_2d.emitting = true
+		right_gpu_particles_2d.emitting = true

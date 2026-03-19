@@ -12,6 +12,7 @@ class_name Player
 @onready var animatedSpriteBoop: AnimatedSprite2D = $SpriteBoop
 @onready var rightSprite: AnimatedSprite2D = $SpriteBeep
 @onready var animatedSpriteChangeMoi: AnimatedSprite2D = $SpriteChangeMoi
+@onready var particles_controller: Node2D = $ParticlesController
 
 # Timers and Raycasts
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -31,6 +32,8 @@ var DECCELERATION_DIRECTION = 0
 const JUMP_VELOCITY = -625.0
 const GRAVITY_MULTIPLIER = 1.5
 const MAX_FREEFALLING_SPEED = 800
+
+var WAS_AIRBORNE = false
 # Speeds after all modifiers were applied
 var FINAL_MAXSPEED = 0
 var FINAL_ACCELERATION = 0
@@ -115,7 +118,7 @@ func _physics_process(delta: float) -> void:
 			HIT_SIDERESSORT = false
 			CAN_HANG_AFTER_JUMP = true
 	
-	if self.velocity.x ==0:
+	if self.velocity.x == 0:
 		HIT_SIDERESSORT = 0
 	
 	# Makes the player unable to fall faster than MAX_FREEFALLING_SPEED
@@ -130,11 +133,13 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("move_up"):
 				CAN_HANG_AFTER_JUMP = false
 			velocity.y = JUMP_VELOCITY
+			particles_controller.jumpfall_particles()
 		else:
 			jump_buffer_timer.start()
 	
 	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
+		particles_controller.jumpfall_particles()
 		coyote_timer.stop()
 	
 	# If player is moving up while jumping, can't hang again until release moving up
@@ -203,10 +208,12 @@ func _physics_process(delta: float) -> void:
 		animatedSpriteBeep.flip_h = false
 		animatedSpriteBoop.flip_h = false
 		animatedSpriteChangeMoi.flip_h = false
+		particles_controller.scale.x = 1
 	elif direction_x < 0:
 		animatedSpriteBeep.flip_h = true
 		animatedSpriteBoop.flip_h = true
 		animatedSpriteChangeMoi.flip_h = true
+		particles_controller.scale.x = -1
 	
 	#Play animations
 	if CAN_MOVE == false:
@@ -215,13 +222,22 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction_x == 0:
 			rightSprite.play("idle")
+			particles_controller.walking_gpu_particles_2d.emitting = false
 		else:
 			rightSprite.play("run")
+			particles_controller.walking_gpu_particles_2d.emitting = true
 	else:
 		if velocity.y < 0:
 			rightSprite.play("jump")
 		else:
 			rightSprite.play("fall")
+	
+	if velocity.y >= 100.0:
+		WAS_AIRBORNE = true
+	
+	if is_on_floor() and WAS_AIRBORNE == true:
+		particles_controller.jumpfall_particles()
+		WAS_AIRBORNE = false
 	
 	reset_blocchutes()
 	

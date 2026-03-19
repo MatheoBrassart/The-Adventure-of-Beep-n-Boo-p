@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dxd3i08icmkgx"]
+[gd_scene load_steps=41 format=3 uid="uid://dxd3i08icmkgx"]
 
 [ext_resource type="Script" uid="uid://c5jbydwicia22" path="res://scripts/ressort_change.gd" id="1_60jv4"]
 [ext_resource type="Texture2D" uid="uid://dhu5nxoq6koll" path="res://assets/textures/RessortChangeSpritesheet.png" id="2_nphtc"]
@@ -286,6 +286,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
 size = Vector2(9.5, 20)
 
+[sub_resource type="Curve" id="Curve_60jv4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12878788, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yaob3"]
+curve = SubResource("Curve_60jv4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dpxw5"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -0.2, 0)
+spread = 5.0
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_yaob3")
+
 [node name="RessortChange" type="Area2D" groups=["RessortChange"]]
 z_index = 1
 collision_layer = 2
@@ -304,5 +322,26 @@ animation = &"used"
 position = Vector2(4.76837e-07, 20.5)
 scale = Vector2(4, 1.25)
 shape = SubResource("RectangleShape2D_i3sln")
+
+[node name="LeftGPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -5
+position = Vector2(0, 30)
+emitting = false
+amount = 3
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dpxw5")
+
+[node name="RightGPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -5
+position = Vector2(0, 30)
+scale = Vector2(-1, 1)
+emitting = false
+amount = 3
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dpxw5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

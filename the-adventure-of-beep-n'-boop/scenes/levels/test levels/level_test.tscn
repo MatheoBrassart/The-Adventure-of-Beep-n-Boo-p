@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://drqelc53l2yhn" path="res://scenes/level design elements/vignes_change.tscn" id="9_4wobs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e73ws"]
+distance = 16.0
 
 [node name="LevelTest" type="Node2D"]
 
@@ -40,7 +41,7 @@ zoom = Vector2(1.75, 1.75)
 position = Vector2(-31, 620)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, -4)
+position = Vector2(-1, 4)
 shape = SubResource("WorldBoundaryShape2D_e73ws")
 
 [node name="Level elements" type="Node2D" parent="."]
@@ -56,7 +57,7 @@ WHICH_CHARACTER_IS_IT = 1
 position = Vector2(96, 584)
 
 [node name="PicsChangeBeep2" parent="Level elements" instance=ExtResource("2_4ptlp")]
-position = Vector2(592, 584)
+position = Vector2(592, 576)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange" parent="Level elements" instance=ExtResource("3_ycf23")]
@@ -67,27 +68,25 @@ position = Vector2(592, 376)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(840, 584)
+position = Vector2(832, 576)
 
 [node name="RessortChange2" parent="Level elements" instance=ExtResource("4_4ptlp")]
-position = Vector2(1024, 584)
+position = Vector2(1024, 576)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="RessortChange3" parent="Level elements" instance=ExtResource("4_4ptlp")]
 position = Vector2(656, 376)
 rotation = 1.5708
-RESSORT_DIRECTION = 3
 
 [node name="RessortChange4" parent="Level elements" instance=ExtResource("4_4ptlp")]
 position = Vector2(872, 376)
 rotation = -1.5708
-RESSORT_DIRECTION = 4
 
 [node name="BlocChange3" parent="Level elements" instance=ExtResource("3_ycf23")]
 position = Vector2(96, 520)
 
 [node name="PicsNormal" parent="Level elements" instance=ExtResource("6_uh3ll")]
-position = Vector2(464, 584)
+position = Vector2(464, 576)
 
 [node name="RessortNormal" parent="Level elements" instance=ExtResource("7_4lw2e")]
 position = Vector2(96, 456)
