@@ -11,8 +11,13 @@ extends Control
 @onready var black_transition_ongoing_timer: Timer = $black_transition/BlackTransitionOngoingTimer
 @onready var black_transition_ongoing_timer_delay: Timer = $black_transition/BlackTransitionOngoingTimerDelay
 
+@onready var double_saut_beep_sprite_2d: Sprite2D = $status/DoubleSautBeepSprite2D
+@onready var status_animation_player: AnimationPlayer = $status/StatusAnimationPlayer
+
 var WHAT_TO_DO_AFTER_TRANSITION:String = "a"
 var LEVEL_TO_LEAD_TO:String = "a"
+
+var PLAY_DBP = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -72,3 +77,12 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 				gameInformations.check_cutscene_informations("BeepReveilWalkthrough")
 			_:
 				player.CAN_MOVE = true
+	
+	if WHAT_TO_DO_AFTER_TRANSITION == "SwitchLevel":
+		var machine = get_tree().get_first_node_in_group("MachineStatut")
+		if not machine == null:
+			if (machine.BEEP_DOUBLESAUT == true) and (double_saut_beep_sprite_2d.visible == false):
+				status_animation_player.play("DSB_Apparition")
+		else:
+			if double_saut_beep_sprite_2d.visible == true:
+				double_saut_beep_sprite_2d.visible = false

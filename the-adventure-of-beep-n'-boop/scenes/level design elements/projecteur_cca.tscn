@@ -1,25 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4mgskvc6sxel"]
+[gd_scene format=3 uid="uid://c4mgskvc6sxel"]
 
 [ext_resource type="Script" uid="uid://ub42k5vslpl" path="res://scripts/projecteur_cca.gd" id="1_ir4xj"]
-[ext_resource type="Texture2D" uid="uid://dirb2o44mcphe" path="res://assets/colors/WhiteCircle.png" id="2_h1v86"]
+[ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_h1v86"]
+[ext_resource type="Texture2D" uid="uid://bktrkdllnqjyp" path="res://assets/textures/ProjecteurProgress.png" id="3_t3nsd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1v86"]
+atlas = ExtResource("2_h1v86")
+region = Rect2(726, 264, 264, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3nsd"]
+atlas = ExtResource("2_h1v86")
+region = Rect2(726, 0, 264, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a477c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1v86")
+}],
+"loop": false,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3nsd")
+}],
+"loop": false,
+"name": &"inactive",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4i6nc"]
 radius = 128.0
 
-[node name="Projecteur CCA" type="Area2D" groups=["ProjecteurCCA"]]
+[sub_resource type="Animation" id="Animation_a477c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5a1h0"]
+resource_name = "detecting"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68q50"]
+_data = {
+&"RESET": SubResource("Animation_a477c"),
+&"detecting": SubResource("Animation_5a1h0")
+}
+
+[node name="Projecteur CCA" type="Area2D" unique_id=22081777 groups=["ProjecteurCCA"]]
+z_index = -5
 script = ExtResource("1_ir4xj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=338613821]
 z_index = -1
-position = Vector2(9.536743e-07, 9.536743e-07)
-scale = Vector2(1.1377778, 1.1377778)
-texture = ExtResource("2_h1v86")
+sprite_frames = SubResource("SpriteFrames_a477c")
+animation = &"active"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=889228985]
+visible = false
 shape = SubResource("CircleShape2D_4i6nc")
 
-[node name="DetectionTimer" type="Timer" parent="."]
+[node name="DetectionTimer" type="Timer" parent="." unique_id=476447806]
 one_shot = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1340760192]
+offset_left = -127.0
+offset_top = -127.0
+offset_right = 127.0
+offset_bottom = 127.0
+fill_mode = 4
+texture_under = ExtResource("3_t3nsd")
+texture_progress = ExtResource("3_t3nsd")
+tint_progress = Color(0.65882355, 0.19607843, 0.13725491, 1)
+
+[node name="DetectionAnimationPlayer" type="AnimationPlayer" parent="." unique_id=2100864541]
+libraries/ = SubResource("AnimationLibrary_68q50")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

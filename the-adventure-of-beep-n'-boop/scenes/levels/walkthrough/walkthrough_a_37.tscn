@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cvpd3vmraoiu8"]
+[gd_scene format=4 uid="uid://cvpd3vmraoiu8"]
 
 [ext_resource type="Texture2D" uid="uid://dqe4r7sca62gk" path="res://assets/colors/BleuVert_Ciel_(couleur).jpg" id="1_4mpsi"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_sdnmu"]
@@ -20,20 +20,20 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_od8eg")
 
-[node name="walkthrough_a_37" type="Node2D"]
+[node name="walkthrough_a_37" type="Node2D" unique_id=1397690168]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1479662897]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_4mpsi")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=857602930]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_sdnmu")]
+[node name="Player" parent="Original Player Spawns" unique_id=1101667840 instance=ExtResource("2_sdnmu")]
 position = Vector2(48, 464)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=770826369]
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
@@ -41,19 +41,19 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1670239449 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 464)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=1294532685]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_f6k1l")]
+[node name="level_switcher" parent="Level switchers" unique_id=318564720 instance=ExtResource("3_f6k1l")]
 position = Vector2(1200, 320)
 scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 38
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_f6k1l")]
+[node name="level_switcher2" parent="Level switchers" unique_id=1787193918 instance=ExtResource("3_f6k1l")]
 position = Vector2(-48, 320)
 scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -61,225 +61,225 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 36
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=962331393]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_u45ch")]
+[node name="Killzone" parent="Level elements" unique_id=1205287454 instance=ExtResource("4_u45ch")]
 position = Vector2(608, 832)
 
-[node name="BlocChange" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange" parent="Level elements" unique_id=348629161 instance=ExtResource("5_hqm6g")]
 position = Vector2(416, 480)
 
-[node name="BlocChange2" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange2" parent="Level elements" unique_id=544160455 instance=ExtResource("5_hqm6g")]
 position = Vector2(416, 416)
 
-[node name="BlocChange5" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange5" parent="Level elements" unique_id=919800624 instance=ExtResource("5_hqm6g")]
 position = Vector2(480, 480)
 
-[node name="BlocChange6" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange6" parent="Level elements" unique_id=597740347 instance=ExtResource("5_hqm6g")]
 position = Vector2(480, 416)
 
-[node name="BlocChange7" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange7" parent="Level elements" unique_id=89815763 instance=ExtResource("5_hqm6g")]
 position = Vector2(544, 224)
 
-[node name="BlocChange8" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange8" parent="Level elements" unique_id=2092397337 instance=ExtResource("5_hqm6g")]
 position = Vector2(544, 160)
 
-[node name="BlocChange9" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange9" parent="Level elements" unique_id=1270368835 instance=ExtResource("5_hqm6g")]
 position = Vector2(608, 160)
 
-[node name="BlocChange11" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange11" parent="Level elements" unique_id=1823541622 instance=ExtResource("5_hqm6g")]
 position = Vector2(544, 96)
 
-[node name="BlocChange12" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange12" parent="Level elements" unique_id=630029536 instance=ExtResource("5_hqm6g")]
 position = Vector2(608, 96)
 
-[node name="BlocChange10" parent="Level elements" instance=ExtResource("5_hqm6g")]
+[node name="BlocChange10" parent="Level elements" unique_id=2016177018 instance=ExtResource("5_hqm6g")]
 position = Vector2(608, 224)
 
-[node name="PicsChange" parent="Level elements" instance=ExtResource("6_7q8y2")]
+[node name="PicsChange" parent="Level elements" unique_id=1335383288 instance=ExtResource("6_7q8y2")]
 position = Vector2(480, 96)
 rotation = -1.5707964
 
-[node name="PicsChange2" parent="Level elements" instance=ExtResource("6_7q8y2")]
+[node name="PicsChange2" parent="Level elements" unique_id=356517930 instance=ExtResource("6_7q8y2")]
 position = Vector2(480, 160)
 rotation = -1.5707964
 
-[node name="PicsChange3" parent="Level elements" instance=ExtResource("6_7q8y2")]
+[node name="PicsChange3" parent="Level elements" unique_id=690594386 instance=ExtResource("6_7q8y2")]
 position = Vector2(480, 224)
 rotation = -1.5707964
 
-[node name="PicsChange4" parent="Level elements" instance=ExtResource("6_7q8y2")]
+[node name="PicsChange4" parent="Level elements" unique_id=449020594 instance=ExtResource("6_7q8y2")]
 position = Vector2(672, 96)
 rotation = 1.5707964
 
-[node name="PicsChange5" parent="Level elements" instance=ExtResource("6_7q8y2")]
+[node name="PicsChange5" parent="Level elements" unique_id=123926712 instance=ExtResource("6_7q8y2")]
 position = Vector2(672, 160)
 rotation = 1.5707964
 
-[node name="PicsChange6" parent="Level elements" instance=ExtResource("6_7q8y2")]
+[node name="PicsChange6" parent="Level elements" unique_id=761531891 instance=ExtResource("6_7q8y2")]
 position = Vector2(672, 224)
 rotation = 1.5707964
 
-[node name="Node2D" type="Node2D" parent="Level elements"]
+[node name="Node2D" type="Node2D" parent="Level elements" unique_id=1401759881]
 
-[node name="Zone Anti-Change" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change" parent="Level elements/Node2D" unique_id=1711242619 instance=ExtResource("7_eebns")]
 position = Vector2(416, 224)
 
-[node name="Zone Anti-Change2" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change2" parent="Level elements/Node2D" unique_id=1476014600 instance=ExtResource("7_eebns")]
 position = Vector2(480, 224)
 
-[node name="Zone Anti-Change19" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change19" parent="Level elements/Node2D" unique_id=1690707120 instance=ExtResource("7_eebns")]
 position = Vector2(480, 288)
 
-[node name="Zone Anti-Change20" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change20" parent="Level elements/Node2D" unique_id=950806103 instance=ExtResource("7_eebns")]
 position = Vector2(480, 352)
 
-[node name="Zone Anti-Change21" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change21" parent="Level elements/Node2D" unique_id=195094088 instance=ExtResource("7_eebns")]
 position = Vector2(544, 352)
 
-[node name="Zone Anti-Change22" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change22" parent="Level elements/Node2D" unique_id=1279887078 instance=ExtResource("7_eebns")]
 position = Vector2(544, 288)
 
-[node name="Zone Anti-Change49" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change49" parent="Level elements/Node2D" unique_id=1282658185 instance=ExtResource("7_eebns")]
 position = Vector2(416, 416)
 
-[node name="Zone Anti-Change50" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change50" parent="Level elements/Node2D" unique_id=2010961931 instance=ExtResource("7_eebns")]
 position = Vector2(416, 480)
 
-[node name="Zone Anti-Change51" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change51" parent="Level elements/Node2D" unique_id=1256858818 instance=ExtResource("7_eebns")]
 position = Vector2(480, 480)
 
-[node name="Zone Anti-Change52" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change52" parent="Level elements/Node2D" unique_id=1513360381 instance=ExtResource("7_eebns")]
 position = Vector2(480, 416)
 
-[node name="Zone Anti-Change23" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change23" parent="Level elements/Node2D" unique_id=1612493878 instance=ExtResource("7_eebns")]
 position = Vector2(608, 288)
 
-[node name="Zone Anti-Change24" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change24" parent="Level elements/Node2D" unique_id=869263995 instance=ExtResource("7_eebns")]
 position = Vector2(672, 288)
 
-[node name="Zone Anti-Change25" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change25" parent="Level elements/Node2D" unique_id=1212209150 instance=ExtResource("7_eebns")]
 position = Vector2(672, 352)
 
-[node name="Zone Anti-Change26" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change26" parent="Level elements/Node2D" unique_id=641616674 instance=ExtResource("7_eebns")]
 position = Vector2(608, 352)
 
-[node name="Zone Anti-Change3" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change3" parent="Level elements/Node2D" unique_id=1791966425 instance=ExtResource("7_eebns")]
 position = Vector2(416, 160)
 
-[node name="Zone Anti-Change4" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change4" parent="Level elements/Node2D" unique_id=1379815958 instance=ExtResource("7_eebns")]
 position = Vector2(480, 160)
 
-[node name="Zone Anti-Change5" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change5" parent="Level elements/Node2D" unique_id=2102624746 instance=ExtResource("7_eebns")]
 position = Vector2(416, 96)
 
-[node name="Zone Anti-Change6" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change6" parent="Level elements/Node2D" unique_id=1241559412 instance=ExtResource("7_eebns")]
 position = Vector2(480, 96)
 
-[node name="Zone Anti-Change27" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change27" parent="Level elements/Node2D" unique_id=2026599866 instance=ExtResource("7_eebns")]
 position = Vector2(416, 32)
 
-[node name="Zone Anti-Change33" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change33" parent="Level elements/Node2D" unique_id=2088734205 instance=ExtResource("7_eebns")]
 position = Vector2(352, 480)
 
-[node name="Zone Anti-Change34" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change34" parent="Level elements/Node2D" unique_id=1459574480 instance=ExtResource("7_eebns")]
 position = Vector2(352, 416)
 
-[node name="Zone Anti-Change35" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change35" parent="Level elements/Node2D" unique_id=298038214 instance=ExtResource("7_eebns")]
 position = Vector2(352, 352)
 
-[node name="Zone Anti-Change36" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change36" parent="Level elements/Node2D" unique_id=633180879 instance=ExtResource("7_eebns")]
 position = Vector2(352, 288)
 
-[node name="Zone Anti-Change37" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change37" parent="Level elements/Node2D" unique_id=1670799714 instance=ExtResource("7_eebns")]
 position = Vector2(352, 224)
 
-[node name="Zone Anti-Change38" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change38" parent="Level elements/Node2D" unique_id=1408402639 instance=ExtResource("7_eebns")]
 position = Vector2(352, 160)
 
-[node name="Zone Anti-Change39" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change39" parent="Level elements/Node2D" unique_id=316992741 instance=ExtResource("7_eebns")]
 position = Vector2(352, 96)
 
-[node name="Zone Anti-Change40" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change40" parent="Level elements/Node2D" unique_id=1340588039 instance=ExtResource("7_eebns")]
 position = Vector2(352, 32)
 
-[node name="Zone Anti-Change41" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change41" parent="Level elements/Node2D" unique_id=559825286 instance=ExtResource("7_eebns")]
 position = Vector2(800, 480)
 
-[node name="Zone Anti-Change42" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change42" parent="Level elements/Node2D" unique_id=1042342375 instance=ExtResource("7_eebns")]
 position = Vector2(800, 416)
 
-[node name="Zone Anti-Change43" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change43" parent="Level elements/Node2D" unique_id=1613267508 instance=ExtResource("7_eebns")]
 position = Vector2(800, 352)
 
-[node name="Zone Anti-Change44" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change44" parent="Level elements/Node2D" unique_id=767225173 instance=ExtResource("7_eebns")]
 position = Vector2(800, 288)
 
-[node name="Zone Anti-Change45" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change45" parent="Level elements/Node2D" unique_id=873050491 instance=ExtResource("7_eebns")]
 position = Vector2(800, 224)
 
-[node name="Zone Anti-Change46" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change46" parent="Level elements/Node2D" unique_id=44038640 instance=ExtResource("7_eebns")]
 position = Vector2(800, 160)
 
-[node name="Zone Anti-Change47" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change47" parent="Level elements/Node2D" unique_id=1655058919 instance=ExtResource("7_eebns")]
 position = Vector2(800, 96)
 
-[node name="Zone Anti-Change48" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change48" parent="Level elements/Node2D" unique_id=1882153158 instance=ExtResource("7_eebns")]
 position = Vector2(800, 32)
 
-[node name="Zone Anti-Change28" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change28" parent="Level elements/Node2D" unique_id=288509002 instance=ExtResource("7_eebns")]
 position = Vector2(480, 32)
 
-[node name="Zone Anti-Change29" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change29" parent="Level elements/Node2D" unique_id=1105251822 instance=ExtResource("7_eebns")]
 position = Vector2(544, 32)
 
-[node name="Zone Anti-Change30" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change30" parent="Level elements/Node2D" unique_id=239206912 instance=ExtResource("7_eebns")]
 position = Vector2(608, 32)
 
-[node name="Zone Anti-Change31" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change31" parent="Level elements/Node2D" unique_id=108809342 instance=ExtResource("7_eebns")]
 position = Vector2(672, 32)
 
-[node name="Zone Anti-Change32" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change32" parent="Level elements/Node2D" unique_id=621823357 instance=ExtResource("7_eebns")]
 position = Vector2(736, 32)
 
-[node name="Zone Anti-Change13" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change13" parent="Level elements/Node2D" unique_id=1144020031 instance=ExtResource("7_eebns")]
 position = Vector2(544, 224)
 
-[node name="Zone Anti-Change14" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change14" parent="Level elements/Node2D" unique_id=874090709 instance=ExtResource("7_eebns")]
 position = Vector2(608, 224)
 
-[node name="Zone Anti-Change15" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change15" parent="Level elements/Node2D" unique_id=1788444497 instance=ExtResource("7_eebns")]
 position = Vector2(544, 160)
 
-[node name="Zone Anti-Change16" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change16" parent="Level elements/Node2D" unique_id=1587264679 instance=ExtResource("7_eebns")]
 position = Vector2(608, 160)
 
-[node name="Zone Anti-Change17" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change17" parent="Level elements/Node2D" unique_id=2127693787 instance=ExtResource("7_eebns")]
 position = Vector2(544, 96)
 
-[node name="Zone Anti-Change18" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change18" parent="Level elements/Node2D" unique_id=751667702 instance=ExtResource("7_eebns")]
 position = Vector2(608, 96)
 
-[node name="Zone Anti-Change7" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change7" parent="Level elements/Node2D" unique_id=1019067280 instance=ExtResource("7_eebns")]
 position = Vector2(672, 224)
 
-[node name="Zone Anti-Change8" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change8" parent="Level elements/Node2D" unique_id=1574036638 instance=ExtResource("7_eebns")]
 position = Vector2(736, 224)
 
-[node name="Zone Anti-Change9" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change9" parent="Level elements/Node2D" unique_id=766424212 instance=ExtResource("7_eebns")]
 position = Vector2(672, 160)
 
-[node name="Zone Anti-Change10" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change10" parent="Level elements/Node2D" unique_id=1098663431 instance=ExtResource("7_eebns")]
 position = Vector2(736, 160)
 
-[node name="Zone Anti-Change11" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change11" parent="Level elements/Node2D" unique_id=368325171 instance=ExtResource("7_eebns")]
 position = Vector2(672, 96)
 
-[node name="Zone Anti-Change12" parent="Level elements/Node2D" instance=ExtResource("7_eebns")]
+[node name="Zone Anti-Change12" parent="Level elements/Node2D" unique_id=1552456154 instance=ExtResource("7_eebns")]
 position = Vector2(736, 96)
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=1593786370]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=417399968]
 tile_map_data = PackedByteArray("AAAIABAAAAABAAEAAAAHABAAAAABAAEAAAAGABAAAAABAAEAAAAFABAAAAABAAEAAAAEABAAAAABAAEAAAADABAAAAABAAEAAAACABAAAAABAAEAAAABABAAAAABAAEAAAAAABAAAAABAAEAAAAJABAAAAABAAEAAAAKABAAAAABAAEAAAALABAAAAABAAEAAAAMABAAAAABAAEAAAANABAAAAABAAEAAAAOABAAAAABAAEAAAAPABAAAAABAAEAAAAQABAAAAABAAEAAAARABAAAAABAAEAAAASABAAAAABAAEAAAATABAAAAABAAEAAAAUABAAAAABAAEAAAAVABAAAAABAAEAAAAWABAAAAABAAEAAAAXABAAAAABAAEAAAAYABAAAAABAAEAAAAZABAAAAABAAEAAAAaABAAAAABAAEAAAAbABAAAAABAAEAAAAcABAAAAABAAEAAAAdABAAAAABAAEAAAAeABAAAAABAAEAAAAfABAAAAABAAEAAAAgABAAAAABAAEAAAAhABAAAAABAAEAAAAiABAAAAABAAEAAAAjABAAAAABAAEAAAD//xAAAAABAAEAAAD+/xAAAAABAAEAAAAkABAAAAABAAEAAAAlABAAAAABAAEAAAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAAWAAgAAAABAAEAAAAWAAkAAAABAAEAAAAWAAoAAAABAAEAAAAWAAsAAAABAAEAAAAWAAwAAAABAAEAAAAWAA0AAAABAAEAAAAWAA4AAAABAAEAAAAWAA8AAAABAAEAAAAXAAgAAAABAAEAAAAXAAkAAAABAAEAAAAXAAoAAAABAAEAAAAXAAsAAAABAAEAAAAXAAwAAAABAAEAAAAXAA0AAAABAAEAAAAXAA4AAAABAAEAAAAXAA8AAAABAAEAAAA=")
 tile_set = SubResource("TileSet_02c06")

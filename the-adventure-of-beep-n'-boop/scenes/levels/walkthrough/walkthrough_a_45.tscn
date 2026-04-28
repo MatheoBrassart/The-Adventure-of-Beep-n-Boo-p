@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b0o165d18le1l"]
+[gd_scene format=4 uid="uid://b0o165d18le1l"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_87le7"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_r7jmv"]
@@ -27,20 +27,20 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_7a1jm")
 
-[node name="walkthrough_a_45" type="Node2D"]
+[node name="walkthrough_a_45" type="Node2D" unique_id=581663087]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=294186469]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_87le7")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=1912040026]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_r7jmv")]
+[node name="Player" parent="Original Player Spawns" unique_id=1251431544 instance=ExtResource("2_r7jmv")]
 position = Vector2(48, 528)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=212789330]
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
@@ -48,138 +48,138 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1891221958 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 528)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=1261954599]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_7ftnb")]
+[node name="level_switcher" parent="Level switchers" unique_id=960089730 instance=ExtResource("3_7ftnb")]
 position = Vector2(1200, 528)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 46
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_7ftnb")]
+[node name="level_switcher2" parent="Level switchers" unique_id=949350079 instance=ExtResource("3_7ftnb")]
 position = Vector2(-48, 528)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 44
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=451084158]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_el5v6")]
+[node name="Killzone" parent="Level elements" unique_id=1629960446 instance=ExtResource("4_el5v6")]
 position = Vector2(608, 832)
 
-[node name="CourantAir" parent="Level elements" instance=ExtResource("5_v0ue6")]
+[node name="CourantAir" parent="Level elements" unique_id=102924705 instance=ExtResource("5_v0ue6")]
 position = Vector2(1264, 416)
 rotation = -1.5707964
 scale = Vector2(2, 1)
 WIND_POWER = 400.0
 
-[node name="CourantAir2" parent="Level elements" instance=ExtResource("5_v0ue6")]
+[node name="CourantAir2" parent="Level elements" unique_id=1066963925 instance=ExtResource("5_v0ue6")]
 position = Vector2(1264, 352)
 rotation = -1.5707964
 scale = Vector2(2, 1)
 WIND_POWER = 400.0
 
-[node name="CourantAir3" parent="Level elements" instance=ExtResource("5_v0ue6")]
+[node name="CourantAir3" parent="Level elements" unique_id=1079974596 instance=ExtResource("5_v0ue6")]
 position = Vector2(1264, 288)
 rotation = -1.5707964
 scale = Vector2(2, 1)
 WIND_POWER = 400.0
 
-[node name="Bloc Mouvant" parent="Level elements" instance=ExtResource("6_3ibok")]
+[node name="Bloc Mouvant" parent="Level elements" unique_id=959186212 instance=ExtResource("6_3ibok")]
 position = Vector2(1120, 96)
 curve = SubResource("Curve2D_05nc7")
 BLOC_SCALEY = 3
 
-[node name="BlocSensUnique" parent="Level elements" instance=ExtResource("7_hcmei")]
+[node name="BlocSensUnique" parent="Level elements" unique_id=885842163 instance=ExtResource("7_hcmei")]
 position = Vector2(1072, 432)
 rotation = -1.5707964
 
-[node name="BlocSensUnique2" parent="Level elements" instance=ExtResource("7_hcmei")]
+[node name="BlocSensUnique2" parent="Level elements" unique_id=1337666383 instance=ExtResource("7_hcmei")]
 position = Vector2(1072, 400)
 rotation = -1.5707964
 
-[node name="BlocSensUnique3" parent="Level elements" instance=ExtResource("7_hcmei")]
+[node name="BlocSensUnique3" parent="Level elements" unique_id=375406680 instance=ExtResource("7_hcmei")]
 position = Vector2(1072, 368)
 rotation = -1.5707964
 
-[node name="BlocSensUnique4" parent="Level elements" instance=ExtResource("7_hcmei")]
+[node name="BlocSensUnique4" parent="Level elements" unique_id=306112721 instance=ExtResource("7_hcmei")]
 position = Vector2(1072, 336)
 rotation = -1.5707964
 
-[node name="BlocSensUnique5" parent="Level elements" instance=ExtResource("7_hcmei")]
+[node name="BlocSensUnique5" parent="Level elements" unique_id=1015123367 instance=ExtResource("7_hcmei")]
 position = Vector2(1072, 304)
 rotation = -1.5707964
 
-[node name="BlocSensUnique6" parent="Level elements" instance=ExtResource("7_hcmei")]
+[node name="BlocSensUnique6" parent="Level elements" unique_id=1234681562 instance=ExtResource("7_hcmei")]
 position = Vector2(1072, 272)
 rotation = -1.5707964
 
-[node name="ScieChange" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange" parent="Level elements" unique_id=760113634 instance=ExtResource("8_kxvbe")]
 position = Vector2(256, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange2" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange2" parent="Level elements" unique_id=1359338018 instance=ExtResource("8_kxvbe")]
 position = Vector2(320, 480)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange10" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange10" parent="Level elements" unique_id=228059991 instance=ExtResource("8_kxvbe")]
 position = Vector2(192, 384)
 
-[node name="ScieChange14" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange14" parent="Level elements" unique_id=935701797 instance=ExtResource("8_kxvbe")]
 position = Vector2(320, 312)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange15" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange15" parent="Level elements" unique_id=1220997777 instance=ExtResource("8_kxvbe")]
 position = Vector2(576, 312)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange16" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange16" parent="Level elements" unique_id=2069621870 instance=ExtResource("8_kxvbe")]
 position = Vector2(840, 312)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange11" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange11" parent="Level elements" unique_id=390868291 instance=ExtResource("8_kxvbe")]
 position = Vector2(448, 384)
 
-[node name="ScieChange12" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange12" parent="Level elements" unique_id=994025757 instance=ExtResource("8_kxvbe")]
 position = Vector2(704, 384)
 
-[node name="ScieChange13" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange13" parent="Level elements" unique_id=1578858608 instance=ExtResource("8_kxvbe")]
 position = Vector2(960, 384)
 
-[node name="ScieChange3" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange3" parent="Level elements" unique_id=1981615268 instance=ExtResource("8_kxvbe")]
 position = Vector2(384, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange4" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange4" parent="Level elements" unique_id=872822386 instance=ExtResource("8_kxvbe")]
 position = Vector2(768, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange5" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange5" parent="Level elements" unique_id=287061724 instance=ExtResource("8_kxvbe")]
 position = Vector2(832, 480)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange6" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange6" parent="Level elements" unique_id=1698084862 instance=ExtResource("8_kxvbe")]
 position = Vector2(896, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange7" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange7" parent="Level elements" unique_id=1632523922 instance=ExtResource("8_kxvbe")]
 position = Vector2(512, 480)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange8" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange8" parent="Level elements" unique_id=141249923 instance=ExtResource("8_kxvbe")]
 position = Vector2(576, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="ScieChange9" parent="Level elements" instance=ExtResource("8_kxvbe")]
+[node name="ScieChange9" parent="Level elements" unique_id=1054910038 instance=ExtResource("8_kxvbe")]
 position = Vector2(640, 480)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=295628240]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=801715883]
 tile_map_data = PackedByteArray("AAAjABIAAAABAAEAAAAiABIAAAABAAEAAAAhABIAAAABAAEAAAAgABIAAAABAAEAAAAkABIAAAABAAEAAAAlABIAAAABAAEAAAD+/xIAAAABAAEAAAD//xIAAAABAAEAAAAAABIAAAABAAEAAAABABIAAAABAAEAAAACABIAAAABAAEAAAADABIAAAABAAEAAAAFABIAAAABAAEAAAAEABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPABIAAAABAAEAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAASABIAAAABAAEAAAATABIAAAABAAEAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAFAA4AAAABAAEAAAAFAA8AAAABAAEAAAAFABAAAAABAAEAAAAFABEAAAABAAEAAAANAA4AAAABAAEAAAANAA8AAAABAAEAAAANABAAAAABAAEAAAANABEAAAABAAEAAAAVAA4AAAABAAEAAAAVAA8AAAABAAEAAAAVABAAAAABAAEAAAAVABEAAAABAAEAAAAGAA4AAAABAAEAAAAGAA8AAAABAAEAAAAGABAAAAABAAEAAAAGABEAAAABAAEAAAAOAA4AAAABAAEAAAAOAA8AAAABAAEAAAAOABAAAAABAAEAAAAOABEAAAABAAEAAAAWAA4AAAABAAEAAAAWAA8AAAABAAEAAAAWABAAAAABAAEAAAAWABEAAAABAAEAAAAAAA4AAAABAAEAAAABAA4AAAABAAEAAAACAA4AAAABAAEAAAACAA0AAAABAAEAAAACAAwAAAABAAEAAAACAAsAAAABAAEAAAACAAoAAAABAAEAAAACAAkAAAABAAEAAAACAAgAAAABAAEAAAACAAcAAAABAAEAAAABAAcAAAABAAEAAAAAAAcAAAABAAEAAAD//w4AAAABAAEAAAD+/w4AAAABAAEAAAD//wcAAAABAAEAAAD+/wcAAAABAAEAAAAlAA4AAAABAAEAAAAkAA4AAAABAAEAAAAjAA4AAAABAAEAAAAiAA4AAAABAAEAAAAhAA4AAAABAAEAAAAhAAcAAAABAAEAAAAkAAcAAAABAAEAAAAlAAcAAAABAAEAAAAdAA4AAAABAAEAAAAdAA8AAAABAAEAAAAdABAAAAABAAEAAAAdABEAAAABAAEAAAAeAA4AAAABAAEAAAAeAA8AAAABAAEAAAAeABAAAAABAAEAAAAeABEAAAABAAEAAAAhAAAAAAABAAEAAAAhAAEAAAABAAEAAAAhAAIAAAABAAEAAAAhAAMAAAABAAEAAAAhAAQAAAABAAEAAAAhAAUAAAABAAEAAAAhAAYAAAABAAEAAAAhAP7/AAABAAEAAAAhAP//AAABAAEAAAA=")
 tile_set = SubResource("TileSet_02c06")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://db6p28su22b82"]
+[gd_scene format=4 uid="uid://db6p28su22b82"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_no3nh"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_s8g5o"]
@@ -22,22 +22,21 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_urjqf")
 
-[node name="walkthrough_a_51" type="Node2D"]
+[node name="walkthrough_a_51" type="Node2D" unique_id=1725544799]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=64356034]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_no3nh")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=1802603089]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_s8g5o")]
+[node name="Player" parent="Original Player Spawns" unique_id=639897601 instance=ExtResource("2_s8g5o")]
 position = Vector2(48, 272)
 CURRENT_ACTIVE_CHARACTER = 1
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=210518882]
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
@@ -45,19 +44,19 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1983575379 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 272)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=415152717]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_y2bh6")]
+[node name="level_switcher" parent="Level switchers" unique_id=1512878276 instance=ExtResource("3_y2bh6")]
 position = Vector2(1200, 128)
 scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 52
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_y2bh6")]
+[node name="level_switcher2" parent="Level switchers" unique_id=1903425523 instance=ExtResource("3_y2bh6")]
 position = Vector2(-48, 128)
 scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -65,160 +64,160 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 50
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=285239021]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_er648")]
+[node name="Killzone" parent="Level elements" unique_id=869156510 instance=ExtResource("4_er648")]
 position = Vector2(608, 832)
 
-[node name="Machine Statut" parent="Level elements" instance=ExtResource("5_k2t3e")]
+[node name="Machine Statut" parent="Level elements" unique_id=1194822408 instance=ExtResource("5_k2t3e")]
 position = Vector2(80, 192)
 NIVEAU_LIMITECHANGEMOI = 4
 
-[node name="BlocChange" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange" parent="Level elements" unique_id=349285483 instance=ExtResource("6_80vli")]
 position = Vector2(192, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange2" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange2" parent="Level elements" unique_id=200954029 instance=ExtResource("6_80vli")]
 position = Vector2(256, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange3" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange3" parent="Level elements" unique_id=1096433406 instance=ExtResource("6_80vli")]
 position = Vector2(320, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange4" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange4" parent="Level elements" unique_id=1994335877 instance=ExtResource("6_80vli")]
 position = Vector2(384, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange5" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange5" parent="Level elements" unique_id=2130644568 instance=ExtResource("6_80vli")]
 position = Vector2(448, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange6" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange6" parent="Level elements" unique_id=1097867867 instance=ExtResource("6_80vli")]
 position = Vector2(512, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange7" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange7" parent="Level elements" unique_id=992897658 instance=ExtResource("6_80vli")]
 position = Vector2(576, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange8" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange8" parent="Level elements" unique_id=862839160 instance=ExtResource("6_80vli")]
 position = Vector2(640, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange9" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange9" parent="Level elements" unique_id=1093770804 instance=ExtResource("6_80vli")]
 position = Vector2(704, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange10" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange10" parent="Level elements" unique_id=1569755177 instance=ExtResource("6_80vli")]
 position = Vector2(768, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange11" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange11" parent="Level elements" unique_id=1050496389 instance=ExtResource("6_80vli")]
 position = Vector2(832, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange12" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange12" parent="Level elements" unique_id=1952801187 instance=ExtResource("6_80vli")]
 position = Vector2(896, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange13" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange13" parent="Level elements" unique_id=2026157678 instance=ExtResource("6_80vli")]
 position = Vector2(960, 608)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange" parent="Level elements" unique_id=31343083 instance=ExtResource("7_s8g5o")]
 position = Vector2(192, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange2" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange2" parent="Level elements" unique_id=232669636 instance=ExtResource("7_s8g5o")]
 position = Vector2(256, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange3" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange3" parent="Level elements" unique_id=956389256 instance=ExtResource("7_s8g5o")]
 position = Vector2(320, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange4" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange4" parent="Level elements" unique_id=1468292727 instance=ExtResource("7_s8g5o")]
 position = Vector2(384, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange5" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange5" parent="Level elements" unique_id=2047150018 instance=ExtResource("7_s8g5o")]
 position = Vector2(448, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange6" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange6" parent="Level elements" unique_id=234697156 instance=ExtResource("7_s8g5o")]
 position = Vector2(512, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange7" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange7" parent="Level elements" unique_id=2102116554 instance=ExtResource("7_s8g5o")]
 position = Vector2(576, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange8" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange8" parent="Level elements" unique_id=1672439865 instance=ExtResource("7_s8g5o")]
 position = Vector2(640, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange9" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange9" parent="Level elements" unique_id=825204976 instance=ExtResource("7_s8g5o")]
 position = Vector2(704, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange10" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange10" parent="Level elements" unique_id=1385254937 instance=ExtResource("7_s8g5o")]
 position = Vector2(768, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange11" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange11" parent="Level elements" unique_id=1782654949 instance=ExtResource("7_s8g5o")]
 position = Vector2(832, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange12" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange12" parent="Level elements" unique_id=108188961 instance=ExtResource("7_s8g5o")]
 position = Vector2(896, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange13" parent="Level elements" instance=ExtResource("7_s8g5o")]
+[node name="RessortChange13" parent="Level elements" unique_id=1375048489 instance=ExtResource("7_s8g5o")]
 position = Vector2(960, 544)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="Laser" parent="Level elements" instance=ExtResource("8_y2bh6")]
+[node name="Laser" parent="Level elements" unique_id=1431823751 instance=ExtResource("8_y2bh6")]
 position = Vector2(320, 32)
 rotation = 3.1415927
 
-[node name="BlocChange14" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange14" parent="Level elements" unique_id=1459220156 instance=ExtResource("6_80vli")]
 position = Vector2(320, 128)
 
-[node name="Laser2" parent="Level elements" instance=ExtResource("8_y2bh6")]
+[node name="Laser2" parent="Level elements" unique_id=449046220 instance=ExtResource("8_y2bh6")]
 position = Vector2(448, 32)
 rotation = 3.1415927
 
-[node name="BlocChange15" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange15" parent="Level elements" unique_id=1485333705 instance=ExtResource("6_80vli")]
 position = Vector2(448, 128)
 
-[node name="Laser3" parent="Level elements" instance=ExtResource("8_y2bh6")]
+[node name="Laser3" parent="Level elements" unique_id=94828760 instance=ExtResource("8_y2bh6")]
 position = Vector2(576, 32)
 rotation = 3.1415927
 
-[node name="BlocChange16" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange16" parent="Level elements" unique_id=1776655461 instance=ExtResource("6_80vli")]
 position = Vector2(576, 128)
 
-[node name="Laser4" parent="Level elements" instance=ExtResource("8_y2bh6")]
+[node name="Laser4" parent="Level elements" unique_id=967866485 instance=ExtResource("8_y2bh6")]
 position = Vector2(704, 32)
 rotation = 3.1415927
 
-[node name="BlocChange17" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange17" parent="Level elements" unique_id=1536307583 instance=ExtResource("6_80vli")]
 position = Vector2(704, 128)
 
-[node name="Laser5" parent="Level elements" instance=ExtResource("8_y2bh6")]
+[node name="Laser5" parent="Level elements" unique_id=1090518396 instance=ExtResource("8_y2bh6")]
 position = Vector2(832, 32)
 rotation = 3.1415927
 
-[node name="BlocChange18" parent="Level elements" instance=ExtResource("6_80vli")]
+[node name="BlocChange18" parent="Level elements" unique_id=1105039190 instance=ExtResource("6_80vli")]
 position = Vector2(832, 128)
 
-[node name="cutscenePlayer" parent="Level elements" instance=ExtResource("9_er648")]
+[node name="cutscenePlayer" parent="Level elements" unique_id=1866201372 instance=ExtResource("9_er648")]
 position = Vector2(1088, 272)
 WHICH_CUTSCENE = "FinDemo4"
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=836109025]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=344846710]
 tile_map_data = PackedByteArray("AAAEABMAAAABAAEAAAAEABQAAAABAAEAAAAEABUAAAABAAEAAAAfABMAAAABAAEAAAAfABQAAAABAAEAAAAfABUAAAABAAEAAAD+/woAAAABAAEAAAD//woAAAABAAEAAAAAAAoAAAABAAEAAAABAAoAAAABAAEAAAACAAoAAAABAAEAAAADAAoAAAABAAEAAAAEAAoAAAABAAEAAAAfAAoAAAABAAEAAAAgAAoAAAABAAEAAAAhAAoAAAABAAEAAAAiAAoAAAABAAEAAAAjAAoAAAABAAEAAAAkAAoAAAABAAEAAAAlAAoAAAABAAEAAAAEAAsAAAABAAEAAAAEAAwAAAABAAEAAAAEAA0AAAABAAEAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEABAAAAABAAEAAAAEABEAAAABAAEAAAAEABIAAAABAAEAAAAfAAsAAAABAAEAAAAfAAwAAAABAAEAAAAfAA0AAAABAAEAAAAfAA4AAAABAAEAAAAfAA8AAAABAAEAAAAfABAAAAABAAEAAAAfABEAAAABAAEAAAAfABIAAAABAAEAAAAIAAQAAAABAAEAAAAIAAMAAAABAAEAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAEAAAAIAP//AAABAAEAAAAIAP7/AAABAAEAAAALAAQAAAABAAEAAAAMAAQAAAABAAEAAAAPAAQAAAABAAEAAAAQAAQAAAABAAEAAAATAAQAAAABAAEAAAAUAAQAAAABAAEAAAAXAAQAAAABAAEAAAAYAAQAAAABAAEAAAAbAAQAAAABAAEAAAAbAAMAAAABAAEAAAAbAAIAAAABAAEAAAAbAAEAAAABAAEAAAAbAAAAAAABAAEAAAAbAP//AAABAAEAAAAbAP7/AAABAAEAAAALAAMAAAABAAEAAAALAAIAAAABAAEAAAALAAEAAAABAAEAAAALAAAAAAABAAEAAAALAP//AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAAMAP//AAABAAEAAAAMAAAAAAABAAEAAAAMAAEAAAABAAEAAAAMAAIAAAABAAEAAAAMAAMAAAABAAEAAAAPAP7/AAABAAEAAAAPAP//AAABAAEAAAAPAAAAAAABAAEAAAAPAAEAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAAQAP7/AAABAAEAAAAQAP//AAABAAEAAAAQAAAAAAABAAEAAAAQAAEAAAABAAEAAAAQAAIAAAABAAEAAAAQAAMAAAABAAEAAAATAP7/AAABAAEAAAATAP//AAABAAEAAAATAAAAAAABAAEAAAATAAEAAAABAAEAAAATAAIAAAABAAEAAAATAAMAAAABAAEAAAAUAP7/AAABAAEAAAAUAP//AAABAAEAAAAUAAAAAAABAAEAAAAUAAEAAAABAAEAAAAUAAIAAAABAAEAAAAUAAMAAAABAAEAAAAXAP7/AAABAAEAAAAXAP//AAABAAEAAAAXAAAAAAABAAEAAAAXAAEAAAABAAEAAAAXAAIAAAABAAEAAAAXAAMAAAABAAEAAAAYAP7/AAABAAEAAAAYAP//AAABAAEAAAAYAAAAAAABAAEAAAAYAAEAAAABAAEAAAAYAAIAAAABAAEAAAAYAAMAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_a8etj")

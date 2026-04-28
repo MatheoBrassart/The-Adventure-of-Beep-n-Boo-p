@@ -1,11 +1,112 @@
-[gd_scene load_steps=9 format=3 uid="uid://du6gqgfykobe"]
+[gd_scene format=3 uid="uid://du6gqgfykobe"]
 
-[ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_7vqdq"]
 [ext_resource type="Script" uid="uid://hof1d5ae2dnl" path="res://scripts/bloc_mouvant.gd" id="1_etuca"]
-[ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="2_0q51q"]
+[ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_kkxpf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkxpf"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(528, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c8gt"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(594, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh0md"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(528, 0, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3c8gt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkxpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8gt")
+}],
+"loop": true,
+"name": &"active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh0md")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt2ss"]
 size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kco0"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(528, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckfm3"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(594, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvxc0"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(660, 66, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aisey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kco0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckfm3")
+}],
+"loop": true,
+"name": &"active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvxc0")
+}],
+"loop": false,
+"name": &"inactive",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhswl"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(528, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4aom"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(594, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxwle"]
+atlas = ExtResource("2_kkxpf")
+region = Rect2(660, 132, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kco0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhswl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4aom")
+}],
+"loop": true,
+"name": &"active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxwle")
+}],
+"loop": false,
+"name": &"inactive",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_kkxpf"]
 length = 0.001
@@ -62,45 +163,50 @@ _data = {
 &"move_noloop": SubResource("Animation_hh0md")
 }
 
-[node name="Bloc Mouvant" type="Path2D" groups=["BlocMouvant"]]
+[node name="Bloc Mouvant" type="Path2D" unique_id=12580584 groups=["BlocMouvant"]]
 script = ExtResource("1_etuca")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=659881115]
 rotates = false
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=62170535]
 remote_path = NodePath("../../AnimatableBody2D")
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Line2D" type="Line2D" parent="." unique_id=354606609]
 z_index = -10
+texture_repeat = 2
 closed = true
 width = 5.0
 default_color = Color(0.5489626, 0.5489626, 0.54896253, 1)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1783444263]
 collision_layer = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-scale = Vector2(2, 2)
-texture = ExtResource("2_0q51q")
-region_enabled = true
-region_rect = Rect2(32, 32, 32, 32)
+[node name="BodyAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=823897616]
+sprite_frames = SubResource("SpriteFrames_3c8gt")
+animation = &"active"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=340606123]
 shape = SubResource("RectangleShape2D_xt2ss")
 
-[node name="Sprite2D2" type="Sprite2D" parent="AnimatableBody2D"]
+[node name="HoverAnimatedSprite2DBeep" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=224852584]
 modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_7vqdq")
+sprite_frames = SubResource("SpriteFrames_aisey")
+animation = &"active"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_hh0md")
-}
+[node name="HoverAnimatedSprite2DBoop" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=1134871701]
+modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
+sprite_frames = SubResource("SpriteFrames_0kco0")
+animation = &"active"
+frame = 1
+frame_progress = 0.49678838
 
-[node name="Sprite2DNoloopStopper" type="Sprite2D" parent="."]
-modulate = Color(0.3779188, 0.37791887, 0.37791884, 1)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2051997839]
+libraries/ = SubResource("AnimationLibrary_hh0md")
+
+[node name="Sprite2DNoloopStopper" type="Sprite2D" parent="." unique_id=184981625]
+z_index = -1
 position = Vector2(9.536743e-07, -64)
-scale = Vector2(0.24999999, 0.24999997)
-texture = ExtResource("1_7vqdq")
+texture = ExtResource("2_kkxpf")
+region_enabled = true
+region_rect = Rect2(681, 22, 22, 22)

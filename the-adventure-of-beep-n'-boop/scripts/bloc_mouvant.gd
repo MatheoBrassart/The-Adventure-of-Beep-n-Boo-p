@@ -15,8 +15,12 @@ extends Node2D
 @onready var animatable_body_2d: AnimatableBody2D = $AnimatableBody2D
 @onready var line_2d: Line2D = $Line2D
 
-@onready var sprite_2d: Sprite2D = $AnimatableBody2D/Sprite2D
-@onready var sprite_2d_2: Sprite2D = $AnimatableBody2D/Sprite2D2
+@onready var body_animated_sprite_2d: AnimatedSprite2D = $AnimatableBody2D/BodyAnimatedSprite2D
+
+@onready var hover_animated_sprite_2d_beep: AnimatedSprite2D = $AnimatableBody2D/HoverAnimatedSprite2DBeep
+@onready var hover_animated_sprite_2d_boop: AnimatedSprite2D = $AnimatableBody2D/HoverAnimatedSprite2DBoop
+@onready var rightSprite: AnimatedSprite2D = $AnimatableBody2D/HoverAnimatedSprite2DBeep
+
 @onready var collision_shape_2d: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
 @onready var sprite_2d_noloop_stopper: Sprite2D = $Sprite2DNoloopStopper
 
@@ -28,16 +32,28 @@ var CAN_BESTOPPED = true
 
 func _ready() -> void:
 	
-	sprite_2d.scale.x = sprite_2d.scale.x * BLOC_SCALEX
-	sprite_2d.scale.y = sprite_2d.scale.y * BLOC_SCALEY
+	body_animated_sprite_2d.scale.x = body_animated_sprite_2d.scale.x * BLOC_SCALEX
+	body_animated_sprite_2d.scale.y = body_animated_sprite_2d.scale.y * BLOC_SCALEY
 	collision_shape_2d.scale.x = collision_shape_2d.scale.x * BLOC_SCALEX
 	collision_shape_2d.scale.y = collision_shape_2d.scale.y * BLOC_SCALEY
 	
 	if ORIGINALBLOC_ON == false:
-		sprite_2d.visible = false
-		sprite_2d_2.visible = false
+		body_animated_sprite_2d.visible = false
+		hover_animated_sprite_2d_beep.visible = false
 		line_2d.visible = false
 		collision_shape_2d.disabled = true
+	
+	# When appearing, hides the incorrect sprite and set the correct one as rightSprite
+	if WHICH_CHARACTER_IS_IT == 0:
+		hover_animated_sprite_2d_boop.visible = false
+		rightSprite = hover_animated_sprite_2d_beep
+	else:
+		hover_animated_sprite_2d_beep.visible = false
+		rightSprite = hover_animated_sprite_2d_boop
+	
+	# Base animations
+	body_animated_sprite_2d.play("idle")
+	rightSprite.play("inactive")
 	
 	# Get the non-component children of this node, unchild them and child them to the Bloc Mouvant
 	for child in get_children():
@@ -61,6 +77,8 @@ func _ready() -> void:
 	# When appearing, check if the right character is active or not
 	if not player.CURRENT_ACTIVE_CHARACTER == WHICH_CHARACTER_IS_IT:
 		pause_unpause_movement()
+	else:
+		rightSprite.play("active")
 	
 	# If LOOP is false, put the noloopstopper at the end of the line, otherwise hide it
 	if LOOP == false:
@@ -75,7 +93,11 @@ func pause_unpause_movement():
 	if CAN_BESTOPPED == true:
 		if ISMOVEMENT_PAUSED == 0:
 			animation_player.speed_scale = 0
+			body_animated_sprite_2d.play("idle")
+			rightSprite.play("inactive")
 			ISMOVEMENT_PAUSED = 1
 		else:
 			animation_player.speed_scale = LOOP_SPEED
+			body_animated_sprite_2d.play("active")
+			rightSprite.play("active")
 			ISMOVEMENT_PAUSED = 0

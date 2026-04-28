@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://c2jyf42ntykf2"]
+[gd_scene format=3 uid="uid://c2jyf42ntykf2"]
 
 [ext_resource type="Texture2D" uid="uid://eg0k8vakqgln" path="res://assets/UI/BlackTransition.png" id="1_g1gnd"]
 [ext_resource type="Script" uid="uid://bkdl6hlfro1lg" path="res://scripts/ui_general.gd" id="1_ild4u"]
+[ext_resource type="Texture2D" uid="uid://d0qorpk41siec" path="res://assets/UI/Status.png" id="3_r4axy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ild4u"]
 atlas = ExtResource("1_g1gnd")
@@ -180,7 +181,116 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ui_general" type="Control" groups=["UIGeneral"]]
+[sub_resource type="Animation" id="Animation_r4axy"]
+resource_name = "DSB_Apparition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoubleSautBeepSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(600, 336), Vector2(600, 336), Vector2(64, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoubleSautBeepSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(5.912981, 5.912981, 5.912981, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoubleSautBeepSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(3, 3), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoubleSautBeepSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fised"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoubleSautBeepSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(940, 520)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoubleSautBeepSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoubleSautBeepSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DoubleSautBeepSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qc1ah"]
+_data = {
+&"DSB_Apparition": SubResource("Animation_r4axy"),
+&"RESET": SubResource("Animation_fised")
+}
+
+[node name="ui_general" type="Control" unique_id=922764358 groups=["UIGeneral"]]
 z_index = 50
 layout_mode = 3
 anchors_preset = 15
@@ -190,7 +300,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ild4u")
 
-[node name="black_transition" type="Control" parent="."]
+[node name="black_transition" type="Control" parent="." unique_id=1047534654]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -204,54 +314,71 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BlackTransitionAnimatedSprite2D" type="AnimatedSprite2D" parent="black_transition"]
+[node name="BlackTransitionAnimatedSprite2D" type="AnimatedSprite2D" parent="black_transition" unique_id=934120486]
 sprite_frames = SubResource("SpriteFrames_jlwm8")
 animation = &"activating"
 
-[node name="Surrounders" type="Node2D" parent="black_transition"]
+[node name="Surrounders" type="Node2D" parent="black_transition" unique_id=2015529915]
 position = Vector2(-44, -1060)
 scale = Vector2(3.1744268, 1)
 
-[node name="Surrounder" type="Sprite2D" parent="black_transition/Surrounders"]
+[node name="Surrounder" type="Sprite2D" parent="black_transition/Surrounders" unique_id=329909139]
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("1_g1gnd")
 region_enabled = true
 region_rect = Rect2(153, 3150, 1439, 1054)
 
-[node name="Surrounder3" type="Sprite2D" parent="black_transition/Surrounders"]
+[node name="Surrounder3" type="Sprite2D" parent="black_transition/Surrounders" unique_id=193779930]
 position = Vector2(-499.539, 857.9999)
 scale = Vector2(0.3054947, 2.296015)
 texture = ExtResource("1_g1gnd")
 region_enabled = true
 region_rect = Rect2(153, 3150, 1439, 1054)
 
-[node name="Surrounder4" type="Sprite2D" parent="black_transition/Surrounders"]
+[node name="Surrounder4" type="Sprite2D" parent="black_transition/Surrounders" unique_id=1199231723]
 position = Vector2(532.6946, 1028.9999)
 scale = Vector2(0.3054947, 2.296015)
 texture = ExtResource("1_g1gnd")
 region_enabled = true
 region_rect = Rect2(153, 3150, 1439, 1054)
 
-[node name="Surrounder2" type="Sprite2D" parent="black_transition/Surrounders"]
+[node name="Surrounder2" type="Sprite2D" parent="black_transition/Surrounders" unique_id=260439487]
 position = Vector2(9.450531, 2123.9998)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("1_g1gnd")
 region_enabled = true
 region_rect = Rect2(153, 3150, 1439, 1054)
 
-[node name="TransitionWaiter" type="Timer" parent="black_transition"]
+[node name="TransitionWaiter" type="Timer" parent="black_transition" unique_id=1253674987]
 wait_time = 0.05
 one_shot = true
 
-[node name="BlackTransitionOngoingTimer" type="Timer" parent="black_transition"]
+[node name="BlackTransitionOngoingTimer" type="Timer" parent="black_transition" unique_id=1658568779]
 wait_time = 1.5
 one_shot = true
 
-[node name="BlackTransitionOngoingTimerDelay" type="Timer" parent="black_transition"]
+[node name="BlackTransitionOngoingTimerDelay" type="Timer" parent="black_transition" unique_id=703330784]
 wait_time = 0.05
 one_shot = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="status" type="Control" parent="." unique_id=453624307]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DoubleSautBeepSprite2D" type="Sprite2D" parent="status" unique_id=251498450]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(940, 520)
+scale = Vector2(3, 3)
+texture = ExtResource("3_r4axy")
+region_enabled = true
+region_rect = Rect2(0, 0, 77, 56)
+
+[node name="StatusAnimationPlayer" type="AnimationPlayer" parent="status" unique_id=318512619]
+libraries/ = SubResource("AnimationLibrary_qc1ah")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1394554260]
 
 [connection signal="timeout" from="black_transition/TransitionWaiter" to="." method="_on_transition_waiter_timeout"]
 [connection signal="timeout" from="black_transition/BlackTransitionOngoingTimer" to="." method="_on_black_transition_ongoing_timer_timeout"]

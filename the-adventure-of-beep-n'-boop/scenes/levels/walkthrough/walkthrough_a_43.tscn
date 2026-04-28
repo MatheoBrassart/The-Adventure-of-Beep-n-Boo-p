@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bruu65l0wudoq"]
+[gd_scene format=4 uid="uid://bruu65l0wudoq"]
 
 [ext_resource type="Texture2D" uid="uid://djmaj68efnecj" path="res://assets/colors/RougeSombre_Ciel_(couleur).png" id="1_0lbik"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_73gpw"]
@@ -69,20 +69,20 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_7a1jm")
 
-[node name="walkthrough_a_43" type="Node2D"]
+[node name="walkthrough_a_43" type="Node2D" unique_id=1164809443]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2031992393]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_0lbik")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=342537350]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_73gpw")]
+[node name="Player" parent="Original Player Spawns" unique_id=1458540668 instance=ExtResource("2_73gpw")]
 position = Vector2(48, 528)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=520790969]
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
@@ -90,19 +90,19 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1617129148 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 144)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=2131310321]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_g0cue")]
+[node name="level_switcher" parent="Level switchers" unique_id=1896002019 instance=ExtResource("3_g0cue")]
 position = Vector2(1200, 0)
 scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 44
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_g0cue")]
+[node name="level_switcher2" parent="Level switchers" unique_id=2011760967 instance=ExtResource("3_g0cue")]
 position = Vector2(-48, 384)
 scale = Vector2(1, 4)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -110,132 +110,136 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 42
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=935662009]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_5yk4b")]
+[node name="Killzone" parent="Level elements" unique_id=68152411 instance=ExtResource("4_5yk4b")]
 position = Vector2(608, 832)
 
-[node name="Bloc Mouvant" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant" parent="Level elements" unique_id=531932185 instance=ExtResource("5_yk55i")]
 position = Vector2(288, 544)
 curve = SubResource("Curve2D_hrpey")
 LOOP_SPEED = 1.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="Bloc Mouvant3" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant3" parent="Level elements" unique_id=1816238672 instance=ExtResource("5_yk55i")]
 position = Vector2(288, 256)
 curve = SubResource("Curve2D_eew4a")
 LOOP_SPEED = 1.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsNormal5" parent="Level elements/Bloc Mouvant3" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal5" parent="Level elements/Bloc Mouvant3" unique_id=79059843 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, -64)
 
-[node name="PicsNormal6" parent="Level elements/Bloc Mouvant3" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal6" parent="Level elements/Bloc Mouvant3" unique_id=523449094 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, 64)
 rotation = -3.1415925
 
-[node name="PicsNormal7" parent="Level elements/Bloc Mouvant3" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal7" parent="Level elements/Bloc Mouvant3" unique_id=310279838 instance=ExtResource("6_2ej7m")]
 position = Vector2(64, 0)
 rotation = 1.5707964
 
-[node name="PicsNormal8" parent="Level elements/Bloc Mouvant3" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal8" parent="Level elements/Bloc Mouvant3" unique_id=485280850 instance=ExtResource("6_2ej7m")]
 position = Vector2(-64, 0)
 rotation = -1.5707964
 
-[node name="Bloc Mouvant4" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant4" parent="Level elements" unique_id=1293170265 instance=ExtResource("5_yk55i")]
 position = Vector2(480, 160)
 curve = SubResource("Curve2D_pntp6")
 LOOP_SPEED = 1.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="Bloc Mouvant5" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant5" parent="Level elements" unique_id=857095805 instance=ExtResource("5_yk55i")]
 position = Vector2(480, 448)
 curve = SubResource("Curve2D_sg40u")
 LOOP_SPEED = 1.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsNormal" parent="Level elements/Bloc Mouvant5" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal" parent="Level elements/Bloc Mouvant5" unique_id=658320518 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, -64)
 
-[node name="PicsNormal4" parent="Level elements/Bloc Mouvant5" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal4" parent="Level elements/Bloc Mouvant5" unique_id=283634330 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, 64)
 rotation = 3.1415927
 
-[node name="PicsNormal2" parent="Level elements/Bloc Mouvant5" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal2" parent="Level elements/Bloc Mouvant5" unique_id=706701256 instance=ExtResource("6_2ej7m")]
 position = Vector2(64, 0)
 rotation = 1.5707964
 
-[node name="PicsNormal3" parent="Level elements/Bloc Mouvant5" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal3" parent="Level elements/Bloc Mouvant5" unique_id=1474591884 instance=ExtResource("6_2ej7m")]
 position = Vector2(-64, 0)
 rotation = -1.5707964
 
-[node name="Bloc Mouvant2" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant2" parent="Level elements" unique_id=1167706539 instance=ExtResource("5_yk55i")]
 position = Vector2(672, 304)
 curve = SubResource("Curve2D_sie35")
 LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsNormal5" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal5" parent="Level elements/Bloc Mouvant2" unique_id=1413360490 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, -64)
 
-[node name="PicsNormal6" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal6" parent="Level elements/Bloc Mouvant2" unique_id=1278219888 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, 64)
 rotation = -3.1415925
 
-[node name="PicsNormal7" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal7" parent="Level elements/Bloc Mouvant2" unique_id=1174048791 instance=ExtResource("6_2ej7m")]
 position = Vector2(64, 0)
 rotation = 1.5707964
 
-[node name="PicsNormal8" parent="Level elements/Bloc Mouvant2" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal8" parent="Level elements/Bloc Mouvant2" unique_id=111035369 instance=ExtResource("6_2ej7m")]
 position = Vector2(-64, 0)
 rotation = -1.5707964
 
-[node name="Bloc Mouvant6" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant6" parent="Level elements" unique_id=594970512 instance=ExtResource("5_yk55i")]
 position = Vector2(864, 400)
 curve = SubResource("Curve2D_pssi5")
 LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsNormal9" parent="Level elements/Bloc Mouvant6" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal9" parent="Level elements/Bloc Mouvant6" unique_id=1799693424 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, -64)
 
-[node name="PicsNormal10" parent="Level elements/Bloc Mouvant6" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal10" parent="Level elements/Bloc Mouvant6" unique_id=524462027 instance=ExtResource("6_2ej7m")]
 position = Vector2(0, 64)
 rotation = -3.1415925
 
-[node name="PicsNormal11" parent="Level elements/Bloc Mouvant6" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal11" parent="Level elements/Bloc Mouvant6" unique_id=1959307245 instance=ExtResource("6_2ej7m")]
 position = Vector2(64, 0)
 rotation = 1.5707964
 
-[node name="PicsNormal12" parent="Level elements/Bloc Mouvant6" instance=ExtResource("6_2ej7m")]
+[node name="PicsNormal12" parent="Level elements/Bloc Mouvant6" unique_id=986109724 instance=ExtResource("6_2ej7m")]
 position = Vector2(-64, 0)
 rotation = -1.5707964
 
-[node name="Bloc Mouvant7" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant7" parent="Level elements" unique_id=865151125 instance=ExtResource("5_yk55i")]
 position = Vector2(816, 160)
 curve = SubResource("Curve2D_v52l0")
 LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="Bloc Mouvant8" parent="Level elements" instance=ExtResource("5_yk55i")]
+[node name="Bloc Mouvant8" parent="Level elements" unique_id=1648870387 instance=ExtResource("5_yk55i")]
 position = Vector2(720, 544)
 curve = SubResource("Curve2D_pw17e")
 LOOP_SPEED = 3.0
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange" parent="Level elements" instance=ExtResource("7_73gpw")]
+[node name="BlocChange" parent="Level elements" unique_id=664879984 instance=ExtResource("7_73gpw")]
 position = Vector2(64, 640)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange2" parent="Level elements" instance=ExtResource("7_73gpw")]
+[node name="BlocChange2" parent="Level elements" unique_id=1257999925 instance=ExtResource("7_73gpw")]
 position = Vector2(0, 640)
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=215576512]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=526003305]
 tile_map_data = PackedByteArray("AAD+/xIAAAABAAEAAAD//xIAAAABAAEAAAAAABIAAAABAAEAAAABABIAAAABAAEAAAACABIAAAABAAEAAAADABIAAAABAAEAAAADABMAAAABAAEAAAADABQAAAABAAEAAAADABUAAAABAAEAAAAjAAYAAAABAAEAAAAiAAYAAAABAAEAAAAhAAYAAAABAAEAAAAgAAYAAAABAAEAAAAkAAYAAAABAAEAAAAlAAYAAAABAAEAAAAgAAcAAAABAAEAAAAgAAgAAAABAAEAAAAgAAkAAAABAAEAAAAgAAoAAAABAAEAAAAgAAsAAAABAAEAAAAgAAwAAAABAAEAAAAgAA0AAAABAAEAAAAgAA4AAAABAAEAAAAgAA8AAAABAAEAAAAgABAAAAABAAEAAAAgABEAAAABAAEAAAAgABIAAAABAAEAAAAgABMAAAABAAEAAAAgABQAAAABAAEAAAAgABUAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_02c06")
 
-[node name="PicsChange" parent="." instance=ExtResource("9_g0cue")]
+[node name="PicsChange" parent="." unique_id=173941042 instance=ExtResource("9_g0cue")]
 position = Vector2(1056, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange2" parent="." unique_id=1617662513 instance=ExtResource("9_g0cue")]
+position = Vector2(1120, 160)
 WHICH_CHARACTER_IS_IT = 1
