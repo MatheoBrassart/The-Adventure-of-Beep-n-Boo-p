@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://yas2w0t37dpb"]
+[gd_scene format=3 uid="uid://yas2w0t37dpb"]
 
 [ext_resource type="Script" uid="uid://dk3hd2p0abnpo" path="res://scripts/scie_normal.gd" id="1_152qo"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_152qo"]
@@ -28,16 +28,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_152qo"]
 radius = 20.0
 
-[node name="ScieNormal" type="Area2D"]
+[node name="ScieNormal" type="Area2D" unique_id=1962981925]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_152qo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1016221705]
 position = Vector2(-2.3841858e-07, -1.4305115e-06)
 sprite_frames = SubResource("SpriteFrames_vfxa0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522995142]
 position = Vector2(0, -1.1920929e-06)
 shape = SubResource("CircleShape2D_152qo")
 

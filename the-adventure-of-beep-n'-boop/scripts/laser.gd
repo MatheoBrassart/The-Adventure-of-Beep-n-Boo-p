@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 		if collider is Node:
 			if collider.is_in_group("Player"):
 				
-				collider.player_death.call_deferred()
+				collider.player_death.call_deferred(self)
 	
 	set_laser_size()
 

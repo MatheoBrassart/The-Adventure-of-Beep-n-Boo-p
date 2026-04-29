@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b0c3ta4epvr3w"]
+[gd_scene format=3 uid="uid://b0c3ta4epvr3w"]
 
 [ext_resource type="Script" uid="uid://020er7btcdo" path="res://scripts/pics_change.gd" id="1_pgu3o"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_mclrw"]
@@ -164,20 +164,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
 size = Vector2(14, 10)
 
-[node name="PicsChange" type="Area2D" groups=["PicsChange"]]
+[node name="PicsChange" type="Area2D" unique_id=1866596800 groups=["PicsChange"]]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_pgu3o")
 
-[node name="AnimatedSprite2DPicsChangeBeep" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DPicsChangeBeep" type="AnimatedSprite2D" parent="." unique_id=379886205]
 sprite_frames = SubResource("SpriteFrames_canlg")
 animation = &"deactivating"
 
-[node name="AnimatedSprite2DPicsChangeBoop" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DPicsChangeBoop" type="AnimatedSprite2D" parent="." unique_id=1298610433]
 sprite_frames = SubResource("SpriteFrames_hrs60")
 animation = &"defaultInactive"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1861918307]
 position = Vector2(0, 23.25)
 scale = Vector2(4, 1.25)
 shape = SubResource("RectangleShape2D_i3sln")

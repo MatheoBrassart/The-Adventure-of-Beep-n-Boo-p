@@ -13,6 +13,8 @@ class_name Player
 @onready var rightSprite: AnimatedSprite2D = $SpriteBeep
 @onready var animatedSpriteChangeMoi: AnimatedSprite2D = $SpriteChangeMoi
 @onready var particles_controller: Node2D = $ParticlesController
+@onready var death_animation_player: AnimationPlayer = $DeathAnimationPlayer
+@onready var sprite_death_effect: AnimatedSprite2D = $SpriteDeathEffect
 
 # Timers and Raycasts
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -34,6 +36,7 @@ const GRAVITY_MULTIPLIER = 1.5
 const MAX_FREEFALLING_SPEED = 800
 
 var WAS_AIRBORNE = false
+
 # Speeds after all modifiers were applied
 var FINAL_MAXSPEED = 0
 var FINAL_ACCELERATION = 0
@@ -61,6 +64,8 @@ var CURRENT_ACTIVE_DIALOGUE = "0"
 var HAS_TO_PLAY_DIALOGUE: bool = false
 
 var LEVEL_TO_LEAD_TO: String = "0"
+
+var DYING = false
 
 # Defines when the player can or can't move, during dialogues and cutscenes
 var CAN_MOVE: bool = true
@@ -107,16 +112,19 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	# Add the gravity and reduces acceleration when in the air
-	if HANGING == false:
-		if not is_on_floor():
-			velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
-			if not HIT_SIDERESSORT == true:
-				CURRENT_ACCELERATION = AIR_ACCELERATION_SETTER
-		else:
-			CURRENT_ACCELERATION = GROUND_ACCELERATION_SETTER
-			HIT_SIDERESSORT = false
-			CAN_HANG_AFTER_JUMP = true
+	if DYING == false:
+		# Add the gravity and reduces acceleration when in the air
+		if HANGING == false:
+			if not is_on_floor():
+				velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
+				if HIT_SIDERESSORT == false:
+					CURRENT_ACCELERATION = AIR_ACCELERATION_SETTER
+			else:
+				CURRENT_ACCELERATION = GROUND_ACCELERATION_SETTER
+				HIT_SIDERESSORT = false
+				CAN_HANG_AFTER_JUMP = true
+	else:
+		velocity = Vector2.ZERO
 	
 	if self.velocity.x == 0:
 		HIT_SIDERESSORT = 0
@@ -216,21 +224,23 @@ func _physics_process(delta: float) -> void:
 		particles_controller.scale.x = -1
 	
 	#Play animations
-	if CAN_MOVE == false:
-		rightSprite.play("idle")
-	
-	if is_on_floor():
-		if direction_x == 0:
+	if DYING == false:
+		
+		if CAN_MOVE == false:
 			rightSprite.play("idle")
-			particles_controller.walking_gpu_particles_2d.emitting = false
+		
+		if is_on_floor():
+			if direction_x == 0:
+				rightSprite.play("idle")
+				particles_controller.walking_gpu_particles_2d.emitting = false
+			else:
+				rightSprite.play("run")
+				particles_controller.walking_gpu_particles_2d.emitting = true
 		else:
-			rightSprite.play("run")
-			particles_controller.walking_gpu_particles_2d.emitting = true
-	else:
-		if velocity.y < 0:
-			rightSprite.play("jump")
-		else:
-			rightSprite.play("fall")
+			if velocity.y < 0:
+				rightSprite.play("jump")
+			else:
+				rightSprite.play("fall")
 	
 	if velocity.y >= 100.0:
 		WAS_AIRBORNE = true
@@ -335,11 +345,28 @@ func switch_to_boop():
 	animatedSpriteBeep.hide()
 
 
-func player_death():
+func player_death(killer: Node2D):
 	
 	multiHitboxDeathFixer += 1
 	if multiHitboxDeathFixer == 1:
-		get_tree().reload_current_scene()
+		
+		CAN_MOVE = false
+		DYING = true
+		
+		rightSprite.play("death")
+		if killer.global_position > self.global_position:
+			death_animation_player.play("death_left")
+		else:
+			animatedSpriteBeep.flip_h = true
+			animatedSpriteBoop.flip_h = true
+			death_animation_player.play("death_right")
+		sprite_death_effect.visible = true
+		sprite_death_effect.play("activate")
+		#sprite_death_effect.queue("end")
+		
+		await get_tree().create_timer(0.5).timeout
+		ui_general.activate_black_transition_nolevelswitch("SwitchLevel", get_tree().get_current_scene().get_scene_file_path())
+		#get_tree().reload_current_scene()
 
 
 func check_respawn_informations():
@@ -408,4 +435,4 @@ func reset_level():
 
 func _on_level_reset_timer_timeout() -> void:
 	
-	player_death()
+	player_death(self)

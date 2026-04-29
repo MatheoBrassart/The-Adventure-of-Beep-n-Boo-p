@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ccb73shaqgtk0"]
+[gd_scene format=3 uid="uid://ccb73shaqgtk0"]
 
 [ext_resource type="Script" uid="uid://bc6ev7p3nrj1p" path="res://scripts/laser.gd" id="1_rvhhc"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_rvhhc"]
@@ -132,21 +132,21 @@ scale_max = 20.0
 scale_curve = SubResource("CurveTexture_a02uw")
 color_ramp = SubResource("GradientTexture1D_a02uw")
 
-[node name="Laser" type="StaticBody2D"]
+[node name="Laser" type="StaticBody2D" unique_id=1005698046]
 collision_layer = 4
 script = ExtResource("1_rvhhc")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=1210792097]
 shape = SubResource("RectangleShape2D_dw1k3")
 target_position = Vector2(0, -1805.7141)
 collision_mask = 15
 
-[node name="ShapeCast2DLine2DSetter" type="ShapeCast2D" parent="."]
+[node name="ShapeCast2DLine2DSetter" type="ShapeCast2D" parent="." unique_id=1714057560]
 shape = SubResource("RectangleShape2D_xbsy3")
 target_position = Vector2(0, -1805.7141)
 collision_mask = 14
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Line2D" type="Line2D" parent="." unique_id=478827397]
 clip_children = 1
 position = Vector2(0, 32)
 scale = Vector2(0.99999994, 0.99999994)
@@ -154,36 +154,36 @@ points = PackedVector2Array(0, -48, 0, -1856)
 width = 24.0
 default_color = Color(1, 0.49019608, 0, 1)
 
-[node name="AnimatedSprite2DLaser" type="AnimatedSprite2D" parent="Line2D"]
+[node name="AnimatedSprite2DLaser" type="AnimatedSprite2D" parent="Line2D" unique_id=1195543836]
 texture_repeat = 2
 position = Vector2(-1.9073486e-06, -391.00003)
 sprite_frames = SubResource("SpriteFrames_el71x")
 frame = 3
 frame_progress = 0.0017379721
 
-[node name="AnimatedSprite2DLaser2" type="AnimatedSprite2D" parent="Line2D"]
+[node name="AnimatedSprite2DLaser2" type="AnimatedSprite2D" parent="Line2D" unique_id=1730716485]
 texture_repeat = 2
 position = Vector2(-1.1920929e-07, -1051.0001)
 sprite_frames = SubResource("SpriteFrames_el71x")
 frame = 3
 frame_progress = 0.0017379721
 
-[node name="AnimatedSprite2DBase" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DBase" type="AnimatedSprite2D" parent="." unique_id=667512612]
 position = Vector2(-9.536743e-07, 0)
 sprite_frames = SubResource("SpriteFrames_1ofvc")
 frame = 1
 frame_progress = 0.55838716
 
-[node name="AnimatedSprite2DLaserTip" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DLaserTip" type="AnimatedSprite2D" parent="." unique_id=1275057757]
 position = Vector2(0, -128)
 sprite_frames = SubResource("SpriteFrames_yec56")
 frame_progress = 0.75515574
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067837202]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_tabl1")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1867992233]
 z_index = 10
 position = Vector2(-18, 31)
 lifetime = 2.0

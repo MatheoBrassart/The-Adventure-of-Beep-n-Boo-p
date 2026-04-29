@@ -67,7 +67,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# Kills the player when they touch it
 	if body.is_in_group("Player") == true:
-		body.player_death.call_deferred()
+		body.player_death.call_deferred(self)
 
 
 func _on_animated_sprite_2d_scie_change_beep_animation_finished() -> void:

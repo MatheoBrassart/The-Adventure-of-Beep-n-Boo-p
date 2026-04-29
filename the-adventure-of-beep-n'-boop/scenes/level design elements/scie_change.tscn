@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cg7cx0l0pahpq"]
+[gd_scene format=3 uid="uid://cg7cx0l0pahpq"]
 
 [ext_resource type="Script" uid="uid://bmfvi7n7c3e1a" path="res://scripts/scie_change.gd" id="1_mu1vk"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_mu1vk"]
@@ -206,20 +206,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mu1vk"]
 radius = 20.0
 
-[node name="ScieChange" type="Area2D" groups=["ScieChange"]]
+[node name="ScieChange" type="Area2D" unique_id=779036824 groups=["ScieChange"]]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_mu1vk")
 
-[node name="AnimatedSprite2DScieChangeBeep" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DScieChangeBeep" type="AnimatedSprite2D" parent="." unique_id=1333926933]
 sprite_frames = SubResource("SpriteFrames_7ye3j")
 animation = &"deactivating"
 
-[node name="AnimatedSprite2DScieChangeBoop" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DScieChangeBoop" type="AnimatedSprite2D" parent="." unique_id=849102040]
 sprite_frames = SubResource("SpriteFrames_ydaeh")
 animation = &"defaultInactive"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=933191621]
 shape = SubResource("CircleShape2D_mu1vk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

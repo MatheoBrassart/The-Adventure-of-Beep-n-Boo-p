@@ -233,6 +233,58 @@ tracks/3/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_qc1ah"]
+resource_name = "LCM_Apparition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LimiteChangeMoiSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(600, 336), Vector2(600, 336), Vector2(64, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LimiteChangeMoiSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(5.912981, 5.912981, 5.912981, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LimiteChangeMoiSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(3, 3), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LimiteChangeMoiSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_fised"]
 length = 0.001
 tracks/0/type = "value"
@@ -287,6 +339,7 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qc1ah"]
 _data = {
 &"DSB_Apparition": SubResource("Animation_r4axy"),
+&"LCM_Apparition": SubResource("Animation_qc1ah"),
 &"RESET": SubResource("Animation_fised")
 }
 
@@ -354,7 +407,6 @@ wait_time = 0.05
 one_shot = true
 
 [node name="BlackTransitionOngoingTimer" type="Timer" parent="black_transition" unique_id=1658568779]
-wait_time = 1.5
 one_shot = true
 
 [node name="BlackTransitionOngoingTimerDelay" type="Timer" parent="black_transition" unique_id=703330784]
@@ -374,6 +426,15 @@ scale = Vector2(3, 3)
 texture = ExtResource("3_r4axy")
 region_enabled = true
 region_rect = Rect2(0, 0, 77, 56)
+
+[node name="LimiteChangeMoiSprite2D" type="Sprite2D" parent="status" unique_id=1827360901]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(600, 336)
+scale = Vector2(3, 3)
+texture = ExtResource("3_r4axy")
+region_enabled = true
+region_rect = Rect2(102, 0, 38, 67)
 
 [node name="StatusAnimationPlayer" type="AnimationPlayer" parent="status" unique_id=318512619]
 libraries/ = SubResource("AnimationLibrary_qc1ah")

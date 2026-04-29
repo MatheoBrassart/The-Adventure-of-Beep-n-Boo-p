@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cfd8ednchaxpf"]
+[gd_scene format=4 uid="uid://cfd8ednchaxpf"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_clhoj"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_ax2oy"]
@@ -16,14 +16,14 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_85m2v")
 
-[node name="walkthrough_a_1" type="Node2D"]
+[node name="walkthrough_a_1" type="Node2D" unique_id=1475943448]
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=218034183]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("1_clhoj")]
+[node name="Player" parent="Original Player Spawns" unique_id=47345654 instance=ExtResource("1_clhoj")]
 position = Vector2(560, 432)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=1087528457]
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
@@ -31,26 +31,26 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1143094591 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 432)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=833670615]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("2_ax2oy")]
+[node name="level_switcher" parent="Level switchers" unique_id=1148168824 instance=ExtResource("2_ax2oy")]
 position = Vector2(1200, 336)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 2
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=1565374706]
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=1145934692]
 
-[node name="ordiTuto" parent="Background elements" instance=ExtResource("3_65g3a")]
+[node name="ordiTuto" parent="Background elements" unique_id=1651821795 instance=ExtResource("3_65g3a")]
 position = Vector2(704, 336)
 WHICH_TUTORIAL = "nothing"
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=168556536]
 tile_map_data = PackedByteArray("AAAFAP7/AAABAAEAAAAFAP//AAABAAEAAAAFAAAAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAFAAcAAAABAAEAAAAFAAgAAAABAAEAAAAFAAkAAAABAAEAAAAFAAoAAAABAAEAAAAFAAsAAAABAAEAAAAFAAwAAAABAAEAAAAFAA0AAAABAAEAAAAFAA4AAAABAAEAAAAFAA8AAAABAAEAAAAGAA8AAAABAAEAAAAHAA8AAAABAAEAAAAIAA8AAAABAAEAAAAJAA8AAAABAAEAAAAKAA8AAAABAAEAAAALAA8AAAABAAEAAAAMAA8AAAABAAEAAAANAA8AAAABAAEAAAAOAA8AAAABAAEAAAAPAA8AAAABAAEAAAAQAA8AAAABAAEAAAARAA8AAAABAAEAAAASAA8AAAABAAEAAAATAA8AAAABAAEAAAAUAA8AAAABAAEAAAAVAA8AAAABAAEAAAAWAA8AAAABAAEAAAAXAA8AAAABAAEAAAAYAA8AAAABAAEAAAAZAA8AAAABAAEAAAAaAA8AAAABAAEAAAAbAA8AAAABAAEAAAAcAA8AAAABAAEAAAAdAA8AAAABAAEAAAAeAA8AAAABAAEAAAAfAA8AAAABAAEAAAAgAA8AAAABAAEAAAAhAA8AAAABAAEAAAAiAA8AAAABAAEAAAAjAA8AAAABAAEAAAAkAA8AAAABAAEAAAAlAA8AAAABAAEAAAA=")
 tile_set = SubResource("TileSet_bq4ka")

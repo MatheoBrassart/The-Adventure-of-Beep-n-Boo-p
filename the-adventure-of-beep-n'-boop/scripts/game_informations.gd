@@ -211,6 +211,9 @@ func finished_dialogue():
 		CUTSCENE_BeepReveilWalkthrough = true
 		var player = get_tree().get_first_node_in_group("Player")
 		player.CAN_MOVE = true
+		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
+		ordiTuto.animation_player.play("tutoApparition")
+		ordiTuto.animation.play("move")
 	
 	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
 		pass

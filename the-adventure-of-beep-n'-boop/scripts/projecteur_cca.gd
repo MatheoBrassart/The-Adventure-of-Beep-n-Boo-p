@@ -35,4 +35,4 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_detection_timer_timeout() -> void:
 	
-	player.player_death.call_deferred()
+	player.player_death.call_deferred(self)
