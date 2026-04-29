@@ -68,6 +68,8 @@ func _process(_delta: float) -> void:
 						HAS_LIMITECHANGEMOI = true
 						i.CHANGEMOI_RESTANTS -= 1
 						i.remaining_change.text = str(i.CHANGEMOI_RESTANTS)
+						if i.CHANGEMOI_RESTANTS == 0:
+							i.remaining_change.modulate = Color(0.888, 0.301, 0.291, 1.0)
 						activate_changemoi_effects()
 						
 				if (HAS_LIMITECHANGEMOI == false):
