@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://xatj01x6ypv5"]
+[gd_scene format=4 uid="uid://xatj01x6ypv5"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_wpctn"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_4on7r"]
@@ -17,14 +17,14 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ndt72")
 
-[node name="walkthrough_a_7" type="Node2D"]
+[node name="walkthrough_a_7" type="Node2D" unique_id=96009645]
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=1979658433]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("1_wpctn")]
+[node name="Player" parent="Original Player Spawns" unique_id=302049703 instance=ExtResource("1_wpctn")]
 position = Vector2(48, 432)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=1300589873]
 position = Vector2(559, -144)
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
@@ -33,19 +33,19 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1446837637 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 240)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=1595389985]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("2_4on7r")]
+[node name="level_switcher" parent="Level switchers" unique_id=619553059 instance=ExtResource("2_4on7r")]
 position = Vector2(1200, 224.00002)
 scale = Vector2(1, 1.5381684)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 8
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_4on7r")]
+[node name="level_switcher2" parent="Level switchers" unique_id=1988110068 instance=ExtResource("2_4on7r")]
 position = Vector2(-48, 336)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -53,52 +53,52 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 6
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=680735875]
 
-[node name="PicsNormal5" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal5" parent="Level elements" unique_id=1326527102 instance=ExtResource("3_0b6ke")]
 position = Vector2(256, 384)
 
-[node name="PicsNormal14" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal14" parent="Level elements" unique_id=1307133984 instance=ExtResource("3_0b6ke")]
 position = Vector2(640, 256)
 
-[node name="PicsNormal6" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal6" parent="Level elements" unique_id=1441208708 instance=ExtResource("3_0b6ke")]
 position = Vector2(320, 448)
 rotation = 1.5708
 
-[node name="PicsNormal11" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal11" parent="Level elements" unique_id=823128725 instance=ExtResource("3_0b6ke")]
 position = Vector2(704, 448)
 rotation = 1.5708
 
-[node name="PicsNormal12" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal12" parent="Level elements" unique_id=696314481 instance=ExtResource("3_0b6ke")]
 position = Vector2(704, 384)
 rotation = 1.5708
 
-[node name="PicsNormal13" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal13" parent="Level elements" unique_id=1789364418 instance=ExtResource("3_0b6ke")]
 position = Vector2(704, 320)
 rotation = 1.5708
 
-[node name="PicsNormal8" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal8" parent="Level elements" unique_id=1291501674 instance=ExtResource("3_0b6ke")]
 position = Vector2(576, 448)
 rotation = -1.5708
 
-[node name="PicsNormal9" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal9" parent="Level elements" unique_id=1379071119 instance=ExtResource("3_0b6ke")]
 position = Vector2(576, 384)
 rotation = -1.5708
 
-[node name="PicsNormal10" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal10" parent="Level elements" unique_id=2120975008 instance=ExtResource("3_0b6ke")]
 position = Vector2(576, 320)
 rotation = -1.5708
 
-[node name="PicsNormal7" parent="Level elements" instance=ExtResource("3_0b6ke")]
+[node name="PicsNormal7" parent="Level elements" unique_id=888824954 instance=ExtResource("3_0b6ke")]
 position = Vector2(192, 448)
 rotation = -1.5708
 
-[node name="RessortNormal" parent="Level elements" instance=ExtResource("4_txb1k")]
+[node name="RessortNormal" parent="Level elements" unique_id=972517698 instance=ExtResource("4_txb1k")]
 position = Vector2(544, 448)
 
-[node name="RessortNormal2" parent="Level elements" instance=ExtResource("4_txb1k")]
+[node name="RessortNormal2" parent="Level elements" unique_id=1690888590 instance=ExtResource("4_txb1k")]
 position = Vector2(928, 448)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1249763974]
 tile_map_data = PackedByteArray("AAD+/w8AAAABAAEAAAD//w8AAAABAAEAAAAAAA8AAAABAAEAAAABAA8AAAABAAEAAAACAA8AAAABAAEAAAADAA8AAAABAAEAAAAEAA8AAAABAAEAAAAFAA8AAAABAAEAAAAGAA8AAAABAAEAAAAHAA8AAAABAAEAAAAIAA8AAAABAAEAAAAIAA4AAAABAAEAAAAIAA0AAAABAAEAAAAHAA0AAAABAAEAAAAHAA4AAAABAAEAAAAJAA8AAAABAAEAAAAKAA8AAAABAAEAAAALAA8AAAABAAEAAAAMAA8AAAABAAEAAAANAA8AAAABAAEAAAAOAA8AAAABAAEAAAAPAA8AAAABAAEAAAAQAA8AAAABAAEAAAARAA8AAAABAAEAAAASAA8AAAABAAEAAAATAA8AAAABAAEAAAAUAA8AAAABAAEAAAAUAA4AAAABAAEAAAAUAA0AAAABAAEAAAAUAAwAAAABAAEAAAAUAAsAAAABAAEAAAAUAAoAAAABAAEAAAAUAAkAAAABAAEAAAATAAkAAAABAAEAAAATAAoAAAABAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAATAA0AAAABAAEAAAATAA4AAAABAAEAAAAVAA8AAAABAAEAAAAWAA8AAAABAAEAAAAXAA8AAAABAAEAAAAYAA8AAAABAAEAAAAZAA8AAAABAAEAAAAaAA8AAAABAAEAAAAbAA8AAAABAAEAAAAcAA8AAAABAAEAAAAdAA8AAAABAAEAAAAeAA8AAAABAAEAAAAfAA8AAAABAAEAAAAfAA4AAAABAAEAAAAfAA0AAAABAAEAAAAfAAwAAAABAAEAAAAfAAsAAAABAAEAAAAfAAoAAAABAAEAAAAfAAkAAAABAAEAAAAgAAkAAAABAAEAAAAhAAkAAAABAAEAAAAiAAkAAAABAAEAAAAjAAkAAAABAAEAAAAkAAkAAAABAAEAAAAlAAkAAAABAAEAAAAfAP7/AAABAAEAAAAfAP//AAABAAEAAAAfAAAAAAABAAEAAAAfAAEAAAABAAEAAAAfAAIAAAABAAEAAAAfAAMAAAABAAEAAAAfAAQAAAABAAEAAAAgAAQAAAABAAEAAAAhAAQAAAABAAEAAAAiAAQAAAABAAEAAAAjAAQAAAABAAEAAAAkAAQAAAABAAEAAAAlAAQAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_2xo5x")
