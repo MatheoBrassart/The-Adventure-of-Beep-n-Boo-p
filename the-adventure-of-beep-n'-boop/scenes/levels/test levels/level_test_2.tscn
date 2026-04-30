@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8j8o76qco2ax"]
+[gd_scene format=3 uid="uid://b8j8o76qco2ax"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_6brol"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_ha63a"]
@@ -8,103 +8,101 @@
 [ext_resource type="PackedScene" uid="uid://dtt4ag4d2qtqs" path="res://scenes/level design elements/bloc_chute.tscn" id="7_5ti25"]
 [ext_resource type="PackedScene" uid="uid://bw604do7cwlld" path="res://scenes/level design elements/courant_air.tscn" id="7_luxm6"]
 [ext_resource type="PackedScene" uid="uid://c5b4lesamqpsx" path="res://scenes/level design elements/zone_anti_change.tscn" id="8_051pd"]
-[ext_resource type="PackedScene" uid="uid://ccb73shaqgtk0" path="res://scenes/level design elements/laser.tscn" id="9_4a0pe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
 distance = -298.0
 
-[node name="Level Test 2" type="Node2D"]
+[node name="Level Test 2" type="Node2D" unique_id=1087338107]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1273446190]
 position = Vector2(548.7, 308.6)
 rotation = -1.5707964
 zoom = Vector2(1.75, 1.75)
 
-[node name="Player" parent="." instance=ExtResource("1_6brol")]
+[node name="Player" parent="." unique_id=133387150 instance=ExtResource("1_6brol")]
 position = Vector2(368, 272)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=108401073]
 position = Vector2(0, 310)
 collision_layer = 128
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1457180664]
 shape = SubResource("WorldBoundaryShape2D_ha63a")
 
-[node name="level_switcher" parent="." instance=ExtResource("2_ha63a")]
+[node name="level_switcher" parent="." unique_id=642374352 instance=ExtResource("2_ha63a")]
 position = Vector2(-16, 560)
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=1171762854]
 
-[node name="BlocChange" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange" parent="Level elements" unique_id=1196522075 instance=ExtResource("3_pnvdu")]
 position = Vector2(368, 352)
 
-[node name="BlocChange5" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange5" parent="Level elements" unique_id=307540222 instance=ExtResource("3_pnvdu")]
 position = Vector2(736, 160)
 
-[node name="BlocChange6" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange6" parent="Level elements" unique_id=1494891308 instance=ExtResource("3_pnvdu")]
 position = Vector2(800, 160)
 
-[node name="BlocChange2" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange2" parent="Level elements" unique_id=815837049 instance=ExtResource("3_pnvdu")]
 position = Vector2(544, 48)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsChange" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(288, 352)
+[node name="PicsChange" parent="Level elements" unique_id=918268516 instance=ExtResource("4_y4jno")]
+position = Vector2(336, 352)
 rotation = 1.5707964
 
-[node name="PicsChange3" parent="Level elements" instance=ExtResource("4_y4jno")]
-position = Vector2(160, 352)
+[node name="PicsChange3" parent="Level elements" unique_id=1123738775 instance=ExtResource("4_y4jno")]
+position = Vector2(208, 352)
 rotation = -1.5707964
 
-[node name="RessortChange" parent="Level elements" instance=ExtResource("6_wc4wy")]
-position = Vector2(224, 288)
+[node name="RessortChange" parent="Level elements" unique_id=1805394919 instance=ExtResource("6_wc4wy")]
+position = Vector2(272, 288)
 
-[node name="BlocChange3" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange3" parent="Level elements" unique_id=1855835850 instance=ExtResource("3_pnvdu")]
 position = Vector2(464, 352)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange4" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange8" parent="Level elements" unique_id=533362891 instance=ExtResource("3_pnvdu")]
+position = Vector2(272, 352)
+
+[node name="BlocChange4" parent="Level elements" unique_id=1697571045 instance=ExtResource("3_pnvdu")]
 position = Vector2(288, 576)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange7" parent="Level elements" instance=ExtResource("3_pnvdu")]
+[node name="BlocChange7" parent="Level elements" unique_id=1750655372 instance=ExtResource("3_pnvdu")]
 position = Vector2(288, 512)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsChange4" parent="Level elements" instance=ExtResource("4_y4jno")]
+[node name="PicsChange4" parent="Level elements" unique_id=1037206860 instance=ExtResource("4_y4jno")]
 position = Vector2(528, 352)
 rotation = 1.5707964
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsChange5" parent="Level elements" instance=ExtResource("4_y4jno")]
+[node name="PicsChange5" parent="Level elements" unique_id=763115927 instance=ExtResource("4_y4jno")]
 position = Vector2(400, 352)
 rotation = -1.5707964
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="RessortChange2" parent="Level elements" instance=ExtResource("6_wc4wy")]
+[node name="RessortChange2" parent="Level elements" unique_id=1380773967 instance=ExtResource("6_wc4wy")]
 position = Vector2(464, 288)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="CourantAir" parent="Level elements" instance=ExtResource("7_luxm6")]
+[node name="CourantAir" parent="Level elements" unique_id=192570552 instance=ExtResource("7_luxm6")]
 position = Vector2(768, 368)
 scale = Vector2(4, 1)
 WIND_POWER = 50.0
 
-[node name="Zone Anti-Change" parent="Level elements" instance=ExtResource("8_051pd")]
+[node name="Zone Anti-Change" parent="Level elements" unique_id=2120311870 instance=ExtResource("8_051pd")]
 position = Vector2(160, 112)
 
-[node name="Zone Anti-Change2" parent="Level elements" instance=ExtResource("8_051pd")]
+[node name="Zone Anti-Change2" parent="Level elements" unique_id=609870296 instance=ExtResource("8_051pd")]
 position = Vector2(96, 112)
 
-[node name="Zone Anti-Change3" parent="Level elements" instance=ExtResource("8_051pd")]
+[node name="Zone Anti-Change3" parent="Level elements" unique_id=811099932 instance=ExtResource("8_051pd")]
 position = Vector2(96, 48)
 
-[node name="Zone Anti-Change4" parent="Level elements" instance=ExtResource("8_051pd")]
+[node name="Zone Anti-Change4" parent="Level elements" unique_id=1391603360 instance=ExtResource("8_051pd")]
 position = Vector2(160, 48)
 
-[node name="Laser" parent="Level elements" instance=ExtResource("9_4a0pe")]
-position = Vector2(1024, 576)
-rotation = -1.5707964
-
-[node name="BlocChute" parent="." instance=ExtResource("7_5ti25")]
+[node name="BlocChute" parent="." unique_id=130317077 instance=ExtResource("7_5ti25")]
 position = Vector2(608, 336)
