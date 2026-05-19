@@ -14,6 +14,7 @@ scale = Vector2(1, 2)
 texture = ExtResource("1_rarox")
 
 [node name="RemainingChange" type="Label" parent="." unique_id=1237421111]
+visible = false
 offset_left = -32.0
 offset_top = -192.0
 offset_right = 32.0

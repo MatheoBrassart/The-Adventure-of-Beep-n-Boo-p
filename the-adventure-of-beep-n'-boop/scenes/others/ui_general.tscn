@@ -203,10 +203,10 @@ tracks/1/path = NodePath("DoubleSautBeepSprite2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.5, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(5.912981, 5.912981, 5.912981, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(5.912981, 5.912981, 5.912981, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.7058824)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -255,10 +255,10 @@ tracks/1/path = NodePath("LimiteChangeMoiSprite2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.5, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(5.912981, 5.912981, 5.912981, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(5.912981, 5.912981, 5.912981, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.7058824)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -396,8 +396,8 @@ region_enabled = true
 region_rect = Rect2(153, 3150, 1439, 1054)
 
 [node name="Surrounder2" type="Sprite2D" parent="black_transition/Surrounders" unique_id=260439487]
-position = Vector2(9.450531, 2123.9998)
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(25.83144, 1948)
+scale = Vector2(-1, -1)
 texture = ExtResource("1_g1gnd")
 region_enabled = true
 region_rect = Rect2(153, 3150, 1439, 1054)
@@ -428,10 +428,9 @@ region_enabled = true
 region_rect = Rect2(0, 0, 77, 56)
 
 [node name="LimiteChangeMoiSprite2D" type="Sprite2D" parent="status" unique_id=1827360901]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.7058824)
 z_index = -1
-position = Vector2(600, 336)
-scale = Vector2(3, 3)
+position = Vector2(64, 48)
 texture = ExtResource("3_r4axy")
 region_enabled = true
 region_rect = Rect2(102, 0, 38, 67)

@@ -6,7 +6,7 @@ extends Node2D
 @onready var jump_fall_left_gpu_particles_2d: GPUParticles2D = $JumpFallLeftGPUParticles2D
 @onready var jump_fall_right_gpu_particles_2d: GPUParticles2D = $JumpFallRightGPUParticles2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if player.is_on_floor():
 		if player.direction_x == 0:

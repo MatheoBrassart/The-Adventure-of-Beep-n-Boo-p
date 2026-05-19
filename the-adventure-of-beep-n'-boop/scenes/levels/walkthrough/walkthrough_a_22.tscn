@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dny8ftkeesbxh"]
+[gd_scene format=4 uid="uid://dny8ftkeesbxh"]
 
 [ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_gwrwj"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_8dw4v"]
@@ -18,20 +18,20 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0lao2")
 
-[node name="walkthrough_a_22" type="Node2D"]
+[node name="walkthrough_a_22" type="Node2D" unique_id=862594796]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1945363570]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_gwrwj")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=559461367]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_8dw4v")]
+[node name="Player" parent="Original Player Spawns" unique_id=1640733104 instance=ExtResource("2_8dw4v")]
 position = Vector2(48, 528)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=1034802860]
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
@@ -39,19 +39,19 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 647
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=754451176 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 528)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=1463553475]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_ro71j")]
+[node name="level_switcher" parent="Level switchers" unique_id=1908715345 instance=ExtResource("3_ro71j")]
 position = Vector2(1200, 432)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 23
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_ro71j")]
+[node name="level_switcher2" parent="Level switchers" unique_id=884821652 instance=ExtResource("3_ro71j")]
 position = Vector2(-48, 432)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -59,169 +59,169 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 21
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=899696306]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_lem8p")]
+[node name="Killzone" parent="Level elements" unique_id=222180520 instance=ExtResource("4_lem8p")]
 position = Vector2(608, 832)
 
-[node name="BlocSensUnique" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique" parent="Level elements" unique_id=186087730 instance=ExtResource("6_4gbi6")]
 position = Vector2(368, 464)
 rotation = -3.1415925
 
-[node name="BlocSensUnique2" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique2" parent="Level elements" unique_id=407626961 instance=ExtResource("6_4gbi6")]
 position = Vector2(400, 464)
 rotation = -3.1415925
 
-[node name="BlocSensUnique3" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique3" parent="Level elements" unique_id=1131015219 instance=ExtResource("6_4gbi6")]
 position = Vector2(432, 464)
 rotation = -3.1415925
 
-[node name="BlocSensUnique4" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique4" parent="Level elements" unique_id=1597217464 instance=ExtResource("6_4gbi6")]
 position = Vector2(208, 464)
 
-[node name="BlocSensUnique9" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique9" parent="Level elements" unique_id=312018580 instance=ExtResource("6_4gbi6")]
 position = Vector2(368, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique10" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique10" parent="Level elements" unique_id=61568361 instance=ExtResource("6_4gbi6")]
 position = Vector2(400, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique11" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique11" parent="Level elements" unique_id=1158027221 instance=ExtResource("6_4gbi6")]
 position = Vector2(432, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique13" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique13" parent="Level elements" unique_id=1894332235 instance=ExtResource("6_4gbi6")]
 position = Vector2(464, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique15" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique15" parent="Level elements" unique_id=250188136 instance=ExtResource("6_4gbi6")]
 position = Vector2(528, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique23" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique23" parent="Level elements" unique_id=1824021351 instance=ExtResource("6_4gbi6")]
 position = Vector2(560, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique33" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique33" parent="Level elements" unique_id=92928167 instance=ExtResource("6_4gbi6")]
 position = Vector2(592, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique34" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique34" parent="Level elements" unique_id=131284937 instance=ExtResource("6_4gbi6")]
 position = Vector2(624, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique40" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique40" parent="Level elements" unique_id=442655647 instance=ExtResource("6_4gbi6")]
 position = Vector2(848, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique41" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique41" parent="Level elements" unique_id=1686889970 instance=ExtResource("6_4gbi6")]
 position = Vector2(880, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique42" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique42" parent="Level elements" unique_id=1140415101 instance=ExtResource("6_4gbi6")]
 position = Vector2(912, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique43" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique43" parent="Level elements" unique_id=701230858 instance=ExtResource("6_4gbi6")]
 position = Vector2(944, 208)
 rotation = -3.1415925
 
-[node name="BlocSensUnique35" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique35" parent="Level elements" unique_id=1301735509 instance=ExtResource("6_4gbi6")]
 position = Vector2(688, 208)
 
-[node name="BlocSensUnique36" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique36" parent="Level elements" unique_id=1163191519 instance=ExtResource("6_4gbi6")]
 position = Vector2(720, 208)
 
-[node name="BlocSensUnique37" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique37" parent="Level elements" unique_id=285592485 instance=ExtResource("6_4gbi6")]
 position = Vector2(752, 208)
 
-[node name="BlocSensUnique38" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique38" parent="Level elements" unique_id=1700286243 instance=ExtResource("6_4gbi6")]
 position = Vector2(784, 208)
 
-[node name="BlocSensUnique12" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique12" parent="Level elements" unique_id=876613104 instance=ExtResource("6_4gbi6")]
 position = Vector2(208, 208)
 
-[node name="BlocSensUnique5" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique5" parent="Level elements" unique_id=160620818 instance=ExtResource("6_4gbi6")]
 position = Vector2(368, 336)
 
-[node name="BlocSensUnique6" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique6" parent="Level elements" unique_id=884181511 instance=ExtResource("6_4gbi6")]
 position = Vector2(400, 336)
 
-[node name="BlocSensUnique7" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique7" parent="Level elements" unique_id=2116722879 instance=ExtResource("6_4gbi6")]
 position = Vector2(432, 336)
 
-[node name="BlocSensUnique14" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique14" parent="Level elements" unique_id=231872547 instance=ExtResource("6_4gbi6")]
 position = Vector2(464, 464)
 rotation = -3.1415925
 
-[node name="BlocSensUnique29" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique29" parent="Level elements" unique_id=1647014628 instance=ExtResource("6_4gbi6")]
 position = Vector2(464, 336)
 
-[node name="BlocSensUnique8" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique8" parent="Level elements" unique_id=4446671 instance=ExtResource("6_4gbi6")]
 position = Vector2(208, 336)
 rotation = 3.1415927
 
-[node name="BlocSensUnique16" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique16" parent="Level elements" unique_id=78912243 instance=ExtResource("6_4gbi6")]
 position = Vector2(240, 464)
 
-[node name="BlocSensUnique17" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique17" parent="Level elements" unique_id=1745698661 instance=ExtResource("6_4gbi6")]
 position = Vector2(272, 464)
 
-[node name="BlocSensUnique18" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique18" parent="Level elements" unique_id=1613772303 instance=ExtResource("6_4gbi6")]
 position = Vector2(240, 208)
 
-[node name="BlocSensUnique19" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique19" parent="Level elements" unique_id=1776833618 instance=ExtResource("6_4gbi6")]
 position = Vector2(272, 208)
 
-[node name="BlocSensUnique20" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique20" parent="Level elements" unique_id=571956656 instance=ExtResource("6_4gbi6")]
 position = Vector2(496, 176)
 rotation = 1.5707964
 
-[node name="BlocSensUnique21" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique21" parent="Level elements" unique_id=653643726 instance=ExtResource("6_4gbi6")]
 position = Vector2(496, 144)
 rotation = 1.5707964
 
-[node name="BlocSensUnique22" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique22" parent="Level elements" unique_id=822101894 instance=ExtResource("6_4gbi6")]
 position = Vector2(496, 112)
 rotation = 1.5707964
 
-[node name="BlocSensUnique39" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique39" parent="Level elements" unique_id=1403704563 instance=ExtResource("6_4gbi6")]
 position = Vector2(496, 80)
 rotation = 1.5707964
 
-[node name="BlocSensUnique30" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique30" parent="Level elements" unique_id=1955816577 instance=ExtResource("6_4gbi6")]
 position = Vector2(176, 560)
 rotation = 1.5707964
 
-[node name="BlocSensUnique31" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique31" parent="Level elements" unique_id=1499305934 instance=ExtResource("6_4gbi6")]
 position = Vector2(176, 528)
 rotation = 1.5707964
 
-[node name="BlocSensUnique32" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique32" parent="Level elements" unique_id=84216981 instance=ExtResource("6_4gbi6")]
 position = Vector2(176, 496)
 rotation = 1.5707964
 
-[node name="BlocSensUnique24" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique24" parent="Level elements" unique_id=1649980036 instance=ExtResource("6_4gbi6")]
 position = Vector2(240, 336)
 rotation = -3.1415925
 
-[node name="BlocSensUnique25" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique25" parent="Level elements" unique_id=1732680499 instance=ExtResource("6_4gbi6")]
 position = Vector2(272, 336)
 rotation = -3.1415925
 
-[node name="BlocSensUnique26" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique26" parent="Level elements" unique_id=1383690919 instance=ExtResource("6_4gbi6")]
 position = Vector2(304, 464)
 
-[node name="BlocSensUnique27" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique27" parent="Level elements" unique_id=1113462608 instance=ExtResource("6_4gbi6")]
 position = Vector2(304, 208)
 
-[node name="BlocSensUnique28" parent="Level elements" instance=ExtResource("6_4gbi6")]
+[node name="BlocSensUnique28" parent="Level elements" unique_id=297158004 instance=ExtResource("6_4gbi6")]
 position = Vector2(304, 336)
 rotation = -3.1415925
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=1727315239]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=71767674]
 tile_map_data = PackedByteArray("AAD+/xIAAAABAAEAAAD//xIAAAABAAEAAAAAABIAAAABAAEAAAABABIAAAABAAEAAAACABIAAAABAAEAAAADABIAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPABIAAAABAAEAAAAUABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAgABIAAAABAAEAAAAhABIAAAABAAEAAAAiABIAAAABAAEAAAAjABIAAAABAAEAAAAkABIAAAABAAEAAAAlABIAAAABAAEAAAAFAA4AAAABAAEAAAAFAA0AAAABAAEAAAAFAAwAAAABAAEAAAAFAAsAAAABAAEAAAAFAAoAAAABAAEAAAAFAAkAAAABAAEAAAAFAAgAAAABAAEAAAAFAAcAAAABAAEAAAAFAAYAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAEAAAABAAEAAAAFAAAAAAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAKAAYAAAABAAEAAAAKAAoAAAABAAEAAAAKAA4AAAABAAEAAAAPAP7/AAABAAEAAAAPAP//AAABAAEAAAAPAAAAAAABAAEAAAAPAAEAAAABAAEAAAAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAEAAAAPAAsAAAABAAEAAAAPAAwAAAABAAEAAAAPAA0AAAABAAEAAAAPAA4AAAABAAEAAAAPAA8AAAABAAEAAAAPABAAAAABAAEAAAAPABEAAAABAAEAAAAUABEAAAABAAEAAAAUABAAAAABAAEAAAAUAA8AAAABAAEAAAAUAA4AAAABAAEAAAAUAA0AAAABAAEAAAAUAAwAAAABAAEAAAAUAAsAAAABAAEAAAAUAAoAAAABAAEAAAAUAAkAAAABAAEAAAAUAAgAAAABAAEAAAAUAAcAAAABAAEAAAAUAAYAAAABAAEAAAAPABMAAAABAAEAAAAPABQAAAABAAEAAAAPABUAAAABAAEAAAAUABMAAAABAAEAAAAUABQAAAABAAEAAAAUABUAAAABAAEAAAAZABMAAAABAAEAAAAZABQAAAABAAEAAAAZABUAAAABAAEAAAAZAAYAAAABAAEAAAAeAA4AAAABAAEAAAAeAA0AAAABAAEAAAAeAAwAAAABAAEAAAAeAAsAAAABAAEAAAAeAAoAAAABAAEAAAAeAAkAAAABAAEAAAAeAAgAAAABAAEAAAAeAAcAAAABAAEAAAAeAAYAAAABAAEAAAAeAP7/AAABAAEAAAAeAP//AAABAAEAAAAeAAAAAAABAAEAAAAeAAEAAAABAAEAAAAeAAIAAAABAAEAAAAeAAMAAAABAAEAAAAeAAQAAAABAAEAAAAeAAUAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_ew56i")
