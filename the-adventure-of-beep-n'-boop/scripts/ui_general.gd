@@ -85,10 +85,9 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 			if (machine.BEEP_DOUBLESAUT == true) and (double_saut_beep_sprite_2d.visible == false):
 				status_animation_player.play("DSB_Apparition")
 			if (machine.NIVEAU_LIMITECHANGEMOI > 0) and (limite_change_moi_sprite_2d.visible == false):
-				print("a")
 				status_animation_player.play("LCM_Apparition")
 		else:
 			if double_saut_beep_sprite_2d.visible == true:
-				double_saut_beep_sprite_2d.visible = false
+				status_animation_player.play("DSB_Dispparition")
 			if limite_change_moi_sprite_2d.visible == true:
-				limite_change_moi_sprite_2d.visible = false
+				status_animation_player.play("LCM_Dispparition")
