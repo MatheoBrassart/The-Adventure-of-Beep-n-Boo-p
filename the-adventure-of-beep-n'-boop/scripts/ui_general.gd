@@ -15,6 +15,8 @@ extends Control
 @onready var limite_change_moi_sprite_2d: Sprite2D = $status/LimiteChangeMoiSprite2D
 @onready var status_animation_player: AnimationPlayer = $status/StatusAnimationPlayer
 
+@onready var no_change_animation_player: AnimationPlayer = $noChange/NoChangeAnimationPlayer
+
 var WHAT_TO_DO_AFTER_TRANSITION:String = "a"
 var LEVEL_TO_LEAD_TO:String = "a"
 
@@ -91,3 +93,8 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 				status_animation_player.play("DSB_Dispparition")
 			if limite_change_moi_sprite_2d.visible == true:
 				status_animation_player.play("LCM_Dispparition")
+
+func animation_nochange():
+	
+	no_change_animation_player.stop()
+	no_change_animation_player.play("NoChange")
