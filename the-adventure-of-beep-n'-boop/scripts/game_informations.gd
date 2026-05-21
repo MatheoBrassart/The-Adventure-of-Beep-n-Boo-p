@@ -188,8 +188,7 @@ func finished_dialogue():
 		var player = get_tree().get_first_node_in_group("Player")
 		player.CAN_MOVE = true
 		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
-		ordiTuto.animation_player.play("tutoApparition")
-		ordiTuto.animation.play("move")
+		ordiTuto.apparition_animation()
 	
 	if CURRENT_ACTIVE_DIALOGUE == "BoopReveil":
 		CUTSCENE_BoopReveil = true
@@ -218,8 +217,7 @@ func finished_dialogue():
 		var player = get_tree().get_first_node_in_group("Player")
 		player.CAN_MOVE = true
 		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
-		ordiTuto.animation_player.play("tutoApparition")
-		ordiTuto.animation.play("move")
+		ordiTuto.apparition_animation()
 	
 	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
 		pass

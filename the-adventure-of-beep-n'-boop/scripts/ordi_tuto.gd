@@ -9,7 +9,7 @@ extends Node2D
 # Get the global game informations scene
 @onready var gameInformations = get_tree().get_first_node_in_group("GameInformations")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	
 	animation_player.play("RESET")
@@ -30,6 +30,8 @@ func _ready() -> void:
 		animation.play("nothing")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func apparition_animation():
+	
+	animation.scale.x = 0
+	animation_player.play("tutoApparition")
+	animation.play("move")
