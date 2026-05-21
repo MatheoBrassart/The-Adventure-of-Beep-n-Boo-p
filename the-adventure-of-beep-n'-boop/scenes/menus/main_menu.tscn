@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs1wo0a5jfsjo"]
+[gd_scene format=3 uid="uid://bs1wo0a5jfsjo"]
 
 [ext_resource type="Script" uid="uid://f78tf267xexq" path="res://scripts/main_menu.gd" id="1_xqga4"]
 [ext_resource type="FontFile" uid="uid://cbj8usx8wede3" path="res://assets/fonts/BoldPixels.ttf" id="2_ovrgc"]
 
-[node name="Main Menu" type="Control"]
+[node name="Main Menu" type="Control" unique_id=513561584]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xqga4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=309547034]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,7 +31,7 @@ text = "The Adventure of Beep n' Boop"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="BoxContainer" parent="."]
+[node name="VBoxContainer" type="BoxContainer" parent="." unique_id=1174870062]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,7 +47,7 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 vertical = true
 
-[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer" unique_id=1093430577]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../PlayWalkthroughButton")
@@ -55,7 +55,7 @@ theme_override_fonts/font = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 64
 text = "New Game"
 
-[node name="PlayWalkthroughButton" type="Button" parent="VBoxContainer"]
+[node name="PlayWalkthroughButton" type="Button" parent="VBoxContainer" unique_id=1211901934]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../NewGameButton")
@@ -64,7 +64,7 @@ theme_override_fonts/font = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 64
 text = "Play the Walkthrough!"
 
-[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=15132709]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../NewGameButton")
@@ -74,7 +74,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Continue"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=1392796338]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../PlayWalkthroughButton")
@@ -83,7 +83,7 @@ theme_override_fonts/font = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 64
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1345628576]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../OptionsButton")
