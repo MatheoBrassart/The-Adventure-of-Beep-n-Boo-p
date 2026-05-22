@@ -75,157 +75,215 @@ position = Vector2(288, 544)
 position = Vector2(672, 352)
 
 [node name="BlocChange2" parent="Level elements" unique_id=760069739 instance=ExtResource("6_5vwcs")]
-position = Vector2(224, 416)
+position = Vector2(256, 416)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange3" parent="Level elements" unique_id=53885022 instance=ExtResource("6_5vwcs")]
-position = Vector2(288, 416)
+position = Vector2(320, 416)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange4" parent="Level elements" unique_id=422570366 instance=ExtResource("6_5vwcs")]
-position = Vector2(352, 416)
+position = Vector2(384, 416)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange2" parent="Level elements" unique_id=1596963724 instance=ExtResource("7_neecf")]
-position = Vector2(224, 352)
+position = Vector2(256, 352)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange3" parent="Level elements" unique_id=358140130 instance=ExtResource("7_neecf")]
-position = Vector2(288, 352)
+position = Vector2(320, 352)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange4" parent="Level elements" unique_id=802636603 instance=ExtResource("7_neecf")]
-position = Vector2(352, 352)
+position = Vector2(384, 352)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange7" parent="Level elements" unique_id=56089904 instance=ExtResource("7_neecf")]
-position = Vector2(224, 480)
+position = Vector2(256, 480)
+rotation = -3.1415925
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange10" parent="Level elements" unique_id=1508718650 instance=ExtResource("6_5vwcs")]
+position = Vector2(192, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange15" parent="Level elements" unique_id=1866596800 instance=ExtResource("7_neecf")]
+position = Vector2(192, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange16" parent="Level elements" unique_id=843911986 instance=ExtResource("7_neecf")]
+position = Vector2(192, 480)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange8" parent="Level elements" unique_id=828226053 instance=ExtResource("7_neecf")]
-position = Vector2(288, 480)
+position = Vector2(320, 480)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange9" parent="Level elements" unique_id=1501188270 instance=ExtResource("7_neecf")]
-position = Vector2(352, 480)
+position = Vector2(384, 480)
+rotation = -3.1415925
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange5" parent="Level elements" unique_id=7612453 instance=ExtResource("6_5vwcs")]
+position = Vector2(448, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange6" parent="Level elements" unique_id=486247264 instance=ExtResource("6_5vwcs")]
+position = Vector2(512, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange5" parent="Level elements" unique_id=1879729504 instance=ExtResource("7_neecf")]
+position = Vector2(448, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange6" parent="Level elements" unique_id=566653459 instance=ExtResource("7_neecf")]
+position = Vector2(512, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange10" parent="Level elements" unique_id=754330322 instance=ExtResource("7_neecf")]
+position = Vector2(448, 480)
+rotation = -3.1415925
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange11" parent="Level elements" unique_id=1942555297 instance=ExtResource("7_neecf")]
+position = Vector2(512, 480)
+rotation = -3.1415925
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange11" parent="Level elements" unique_id=707945997 instance=ExtResource("6_5vwcs")]
+position = Vector2(576, 416)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange20" parent="Level elements" unique_id=1509069342 instance=ExtResource("7_neecf")]
+position = Vector2(576, 352)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange21" parent="Level elements" unique_id=1662265900 instance=ExtResource("7_neecf")]
+position = Vector2(576, 480)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange7" parent="Level elements" unique_id=2060091878 instance=ExtResource("6_5vwcs")]
-position = Vector2(608, 224)
+position = Vector2(640, 224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange8" parent="Level elements" unique_id=893302681 instance=ExtResource("6_5vwcs")]
-position = Vector2(672, 224)
+position = Vector2(704, 224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="BlocChange9" parent="Level elements" unique_id=1415510238 instance=ExtResource("6_5vwcs")]
-position = Vector2(736, 224)
+position = Vector2(768, 224)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange12" parent="Level elements" unique_id=114198390 instance=ExtResource("7_neecf")]
-position = Vector2(608, 160)
+position = Vector2(640, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange13" parent="Level elements" unique_id=1658899595 instance=ExtResource("7_neecf")]
-position = Vector2(672, 160)
+position = Vector2(704, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange14" parent="Level elements" unique_id=1205141415 instance=ExtResource("7_neecf")]
-position = Vector2(736, 160)
+position = Vector2(768, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange24" parent="Level elements" unique_id=954836297 instance=ExtResource("7_neecf")]
+position = Vector2(832, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange25" parent="Level elements" unique_id=1354004510 instance=ExtResource("7_neecf")]
+position = Vector2(896, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange17" parent="Level elements" unique_id=389796366 instance=ExtResource("7_neecf")]
-position = Vector2(608, 288)
+position = Vector2(640, 288)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange18" parent="Level elements" unique_id=1387745483 instance=ExtResource("7_neecf")]
-position = Vector2(672, 288)
+position = Vector2(704, 288)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange19" parent="Level elements" unique_id=612579217 instance=ExtResource("7_neecf")]
-position = Vector2(736, 288)
+position = Vector2(768, 288)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change" parent="Level elements" unique_id=1233061590 instance=ExtResource("8_1o3s4")]
-position = Vector2(160, 320)
+position = Vector2(192, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change2" parent="Level elements" unique_id=1680620055 instance=ExtResource("8_1o3s4")]
-position = Vector2(224, 320)
+position = Vector2(256, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change3" parent="Level elements" unique_id=1053003964 instance=ExtResource("8_1o3s4")]
-position = Vector2(288, 320)
+position = Vector2(320, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change4" parent="Level elements" unique_id=981741852 instance=ExtResource("8_1o3s4")]
-position = Vector2(352, 320)
+position = Vector2(384, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change5" parent="Level elements" unique_id=878162785 instance=ExtResource("8_1o3s4")]
-position = Vector2(416, 320)
+position = Vector2(448, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change6" parent="Level elements" unique_id=1640294058 instance=ExtResource("8_1o3s4")]
-position = Vector2(480, 320)
+position = Vector2(512, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change7" parent="Level elements" unique_id=1976556296 instance=ExtResource("8_1o3s4")]
-position = Vector2(544, 320)
+position = Vector2(576, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change8" parent="Level elements" unique_id=1238371928 instance=ExtResource("8_1o3s4")]
-position = Vector2(608, 320)
+position = Vector2(640, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change9" parent="Level elements" unique_id=1967840425 instance=ExtResource("8_1o3s4")]
-position = Vector2(672, 320)
+position = Vector2(704, 320)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change11" parent="Level elements" unique_id=1912428641 instance=ExtResource("8_1o3s4")]
-position = Vector2(608, 160)
+position = Vector2(640, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change12" parent="Level elements" unique_id=610790456 instance=ExtResource("8_1o3s4")]
-position = Vector2(672, 160)
+position = Vector2(704, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change13" parent="Level elements" unique_id=1833121703 instance=ExtResource("8_1o3s4")]
-position = Vector2(736, 160)
+position = Vector2(768, 160)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange12" parent="Level elements" unique_id=1035881726 instance=ExtResource("6_5vwcs")]
+position = Vector2(832, 224)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange13" parent="Level elements" unique_id=662379312 instance=ExtResource("6_5vwcs")]
+position = Vector2(896, 224)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange22" parent="Level elements" unique_id=177628076 instance=ExtResource("7_neecf")]
+position = Vector2(832, 288)
+rotation = -3.1415925
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="PicsChange23" parent="Level elements" unique_id=592033938 instance=ExtResource("7_neecf")]
+position = Vector2(896, 288)
+rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change14" parent="Level elements" unique_id=46039151 instance=ExtResource("8_1o3s4")]
-position = Vector2(800, 160)
+position = Vector2(832, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change15" parent="Level elements" unique_id=1644220862 instance=ExtResource("8_1o3s4")]
-position = Vector2(864, 160)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change19" parent="Level elements" unique_id=321028754 instance=ExtResource("8_1o3s4")]
-position = Vector2(864, 96)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change20" parent="Level elements" unique_id=1996057211 instance=ExtResource("8_1o3s4")]
-position = Vector2(800, 96)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change16" parent="Level elements" unique_id=918551239 instance=ExtResource("8_1o3s4")]
-position = Vector2(928, 96)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change17" parent="Level elements" unique_id=1334418525 instance=ExtResource("8_1o3s4")]
-position = Vector2(992, 96)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change18" parent="Level elements" unique_id=280116799 instance=ExtResource("8_1o3s4")]
-position = Vector2(1056, 96)
+position = Vector2(896, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Background elements" type="Node2D" parent="." unique_id=171102231]

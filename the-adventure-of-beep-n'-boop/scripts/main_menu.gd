@@ -2,7 +2,8 @@ extends Control
 
 @onready var ui_general = get_tree().get_first_node_in_group("UIGeneral")
 
-@onready var title_animation_player: AnimationPlayer = $TitleAnimationPlayer
+@onready var title_apparition_animation_player: AnimationPlayer = $TitleApparitionAnimationPlayer
+@onready var title_idle_animation_player: AnimationPlayer = $TitleIdleAnimationPlayer
 
 @onready var new_game_button: Button = $VBoxContainer/NewGameButton
 @onready var play_walkthrough_button: Button = $VBoxContainer/PlayWalkthroughButton
@@ -14,7 +15,8 @@ extends Control
 func _ready() -> void:
 	
 	new_game_button.grab_focus()
-	title_animation_player.play("title_apparition")
+	title_apparition_animation_player.play("title_apparition")
+	title_idle_animation_player.play("title_idle")
 
 
 func _on_new_game_button_pressed() -> void:

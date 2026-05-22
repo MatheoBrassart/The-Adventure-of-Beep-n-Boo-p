@@ -72,7 +72,7 @@ func _process(_delta: float) -> void:
 							if i.CHANGEMOI_RESTANTS == 0:
 								i.remaining_change.modulate = Color(0.888, 0.301, 0.291, 1.0)
 							activate_changemoi_effects()
-						else:
+						elif HAS_LIMITECHANGEMOI == true:
 							ui_general.animation_nochange()
 							
 					if (HAS_LIMITECHANGEMOI == false):

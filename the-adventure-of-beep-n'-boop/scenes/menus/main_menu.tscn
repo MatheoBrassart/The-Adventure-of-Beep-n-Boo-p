@@ -40,6 +40,44 @@ _data = {
 &"title_apparition": SubResource("Animation_6bivr")
 }
 
+[sub_resource type="Animation" id="Animation_imvie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.034906585]
+}
+
+[sub_resource type="Animation" id="Animation_ng0o5"]
+resource_name = "title_idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.034906585, -0.034906585]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8r73w"]
+_data = {
+&"RESET": SubResource("Animation_imvie"),
+&"title_idle": SubResource("Animation_ng0o5")
+}
+
 [node name="Main Menu" type="Control" unique_id=513561584]
 layout_mode = 3
 anchors_preset = 15
@@ -51,11 +89,15 @@ script = ExtResource("1_xqga4")
 
 [node name="Title" type="Sprite2D" parent="." unique_id=709326979]
 position = Vector2(928, 224)
+rotation = 0.034906585
 scale = Vector2(1e-05, 4)
 texture = ExtResource("2_2o76q")
 
-[node name="TitleAnimationPlayer" type="AnimationPlayer" parent="." unique_id=897565697]
+[node name="TitleApparitionAnimationPlayer" type="AnimationPlayer" parent="." unique_id=897565697]
 libraries/ = SubResource("AnimationLibrary_imvie")
+
+[node name="TitleIdleAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1072845271]
+libraries/ = SubResource("AnimationLibrary_8r73w")
 
 [node name="VBoxContainer" type="BoxContainer" parent="." unique_id=1174870062]
 layout_mode = 1

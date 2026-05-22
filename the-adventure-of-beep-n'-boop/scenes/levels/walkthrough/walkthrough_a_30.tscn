@@ -99,10 +99,10 @@ rotation = -1.5707964
 position = Vector2(224, 432)
 
 [node name="BlocChute2" parent="Level elements" unique_id=1467283557 instance=ExtResource("7_uivg8")]
-position = Vector2(448, 432)
+position = Vector2(424, 432)
 
 [node name="BlocChute3" parent="Level elements" unique_id=1541505732 instance=ExtResource("7_uivg8")]
-position = Vector2(672, 432)
+position = Vector2(664, 432)
 
 [node name="BlocChute4" parent="Level elements" unique_id=1296373083 instance=ExtResource("7_uivg8")]
 position = Vector2(896, 432)
