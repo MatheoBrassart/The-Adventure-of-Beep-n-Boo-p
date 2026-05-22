@@ -5,6 +5,7 @@ extends Node2D
 @onready var walking_gpu_particles_2d: GPUParticles2D = $WalkingGPUParticles2D
 
 @onready var jumpfall_particles = preload("res://particles/player_jump_fall_particles.tscn")
+@onready var particle_jumpfall_cooldown: Timer = $ParticleJumpfallCooldown
 
 func _process(_delta: float) -> void:
 	
@@ -23,5 +24,7 @@ func _process(_delta: float) -> void:
 
 func jumpfall_particles_instantiate():
 	
-	var instance = jumpfall_particles.instantiate()
-	add_child(instance)
+	if particle_jumpfall_cooldown.is_stopped():
+		particle_jumpfall_cooldown.start()
+		var instance = jumpfall_particles.instantiate()
+		add_child(instance)

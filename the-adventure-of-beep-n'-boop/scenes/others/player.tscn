@@ -852,6 +852,10 @@ amount = 2
 lifetime = 0.3
 process_material = SubResource("ParticleProcessMaterial_yaob3")
 
+[node name="ParticleJumpfallCooldown" type="Timer" parent="ParticlesController" unique_id=1199761234]
+wait_time = 0.2
+one_shot = true
+
 [node name="DeathAnimationPlayer" type="AnimationPlayer" parent="." unique_id=641226956]
 libraries/ = SubResource("AnimationLibrary_sp4d4")
 
