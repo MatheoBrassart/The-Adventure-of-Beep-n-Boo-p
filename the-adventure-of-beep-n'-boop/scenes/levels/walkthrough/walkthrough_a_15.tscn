@@ -31,7 +31,7 @@ rotation = -1.5707964
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = -960
-limit_right = 1150
+limit_right = 1149
 limit_bottom = 647
 position_smoothing_enabled = true
 

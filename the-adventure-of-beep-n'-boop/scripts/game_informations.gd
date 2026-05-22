@@ -60,24 +60,25 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("switch_character"):
 		var player = get_tree().get_first_node_in_group("Player")
 		if not player == null:
-			if player.ISIN_ZONEANTICHANGE == 0:
-				
-				listOfChanges = get_tree().get_nodes_in_group("MachineStatut")
-				for i in listOfChanges:
-					if i.CHANGEMOI_RESTANTS > 0:
-						HAS_LIMITECHANGEMOI = true
-						i.CHANGEMOI_RESTANTS -= 1
-						i.remaining_change.text = str(i.CHANGEMOI_RESTANTS)
-						if i.CHANGEMOI_RESTANTS == 0:
-							i.remaining_change.modulate = Color(0.888, 0.301, 0.291, 1.0)
+			if player.CAN_MOVE == true:
+				if player.ISIN_ZONEANTICHANGE == 0:
+					
+					listOfChanges = get_tree().get_nodes_in_group("MachineStatut")
+					for i in listOfChanges:
+						if i.CHANGEMOI_RESTANTS > 0:
+							HAS_LIMITECHANGEMOI = true
+							i.CHANGEMOI_RESTANTS -= 1
+							i.remaining_change.text = str(i.CHANGEMOI_RESTANTS)
+							if i.CHANGEMOI_RESTANTS == 0:
+								i.remaining_change.modulate = Color(0.888, 0.301, 0.291, 1.0)
+							activate_changemoi_effects()
+						else:
+							ui_general.animation_nochange()
+							
+					if (HAS_LIMITECHANGEMOI == false):
 						activate_changemoi_effects()
-					else:
-						ui_general.animation_nochange()
-						
-				if (HAS_LIMITECHANGEMOI == false):
-					activate_changemoi_effects()
-			else:
-				ui_general.animation_nochange()
+				else:
+					ui_general.animation_nochange()
 
 
 func activate_changemoi_effects():

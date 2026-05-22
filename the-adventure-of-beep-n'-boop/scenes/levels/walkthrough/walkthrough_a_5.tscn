@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ch3ujo80foybr"]
+[gd_scene format=4 uid="uid://ch3ujo80foybr"]
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_41ict"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_s28lj"]
@@ -17,35 +17,35 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2cx0l")
 
-[node name="walkthrough_a_5" type="Node2D"]
+[node name="walkthrough_a_5" type="Node2D" unique_id=1863644943]
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=1812321086]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("1_41ict")]
+[node name="Player" parent="Original Player Spawns" unique_id=1144756337 instance=ExtResource("1_41ict")]
 position = Vector2(32, 464)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=1164619656]
 position = Vector2(543, -144)
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
-limit_right = 1150
-limit_bottom = 647
+limit_right = 1149
+limit_bottom = 646
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=126043776 groups=["PlayerSpawn1"]]
 position = Vector2(1120, 272)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=1935364409]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("2_s28lj")]
+[node name="level_switcher" parent="Level switchers" unique_id=1431933633 instance=ExtResource("2_s28lj")]
 position = Vector2(1200, 176)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 6
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("2_s28lj")]
+[node name="level_switcher2" parent="Level switchers" unique_id=417368075 instance=ExtResource("2_s28lj")]
 position = Vector2(-48, 384)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -53,36 +53,36 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 4
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=2069678766]
 
-[node name="BlocChange" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange" parent="Level elements" unique_id=74605670 instance=ExtResource("3_xwsmf")]
 position = Vector2(256, 480)
 
-[node name="BlocChange2" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange2" parent="Level elements" unique_id=1676829452 instance=ExtResource("3_xwsmf")]
 position = Vector2(256, 416)
 
-[node name="BlocChange3" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange3" parent="Level elements" unique_id=1189180510 instance=ExtResource("3_xwsmf")]
 position = Vector2(192, 480)
 
-[node name="BlocChange4" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange4" parent="Level elements" unique_id=1602030075 instance=ExtResource("3_xwsmf")]
 position = Vector2(640, 384)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange5" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange5" parent="Level elements" unique_id=1252855385 instance=ExtResource("3_xwsmf")]
 position = Vector2(832, 384)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="PicsNormal" parent="Level elements" instance=ExtResource("4_0gggk")]
+[node name="PicsNormal" parent="Level elements" unique_id=939202460 instance=ExtResource("4_0gggk")]
 position = Vector2(640, 480)
 
-[node name="BlocChange6" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange6" parent="Level elements" unique_id=1518875801 instance=ExtResource("3_xwsmf")]
 position = Vector2(704, 384)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange7" parent="Level elements" instance=ExtResource("3_xwsmf")]
+[node name="BlocChange7" parent="Level elements" unique_id=1205896055 instance=ExtResource("3_xwsmf")]
 position = Vector2(768, 384)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1570429175]
 tile_map_data = PackedByteArray("AAD+/wcAAAABAAEAAAD//wcAAAABAAEAAAAAAAcAAAABAAEAAAABAAcAAAABAAEAAAABAAYAAAABAAEAAAABAAUAAAABAAEAAAABAAQAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAABAAAAAAABAAEAAAABAP//AAABAAEAAAABAP7/AAABAAEAAAD+/xAAAAABAAEAAAD//xAAAAABAAEAAAAAABAAAAABAAEAAAABABAAAAABAAEAAAACABAAAAABAAEAAAADABAAAAABAAEAAAAEABAAAAABAAEAAAAFABAAAAABAAEAAAAGABAAAAABAAEAAAAHABAAAAABAAEAAAAIABAAAAABAAEAAAAJABAAAAABAAEAAAAKABAAAAABAAEAAAALABAAAAABAAEAAAAMABAAAAABAAEAAAANABAAAAABAAEAAAANAAsAAAABAAEAAAANAAwAAAABAAEAAAAOAAwAAAABAAEAAAAOAAsAAAABAAEAAAAOABAAAAABAAEAAAAPABAAAAABAAEAAAAQABAAAAABAAEAAAARABAAAAABAAEAAAASABAAAAABAAEAAAATABAAAAABAAEAAAAUABAAAAABAAEAAAAWABAAAAABAAEAAAAXABAAAAABAAEAAAAVABAAAAABAAEAAAAYABAAAAABAAEAAAAZABAAAAABAAEAAAAaABAAAAABAAEAAAAbABAAAAABAAEAAAAcABAAAAABAAEAAAAdABAAAAABAAEAAAAeABAAAAABAAEAAAAfABAAAAABAAEAAAAfAA8AAAABAAEAAAAfAA4AAAABAAEAAAAfAA0AAAABAAEAAAAfAAwAAAABAAEAAAAfAAsAAAABAAEAAAAfAAoAAAABAAEAAAAgAAoAAAABAAEAAAAhAAoAAAABAAEAAAAiAAoAAAABAAEAAAAjAAoAAAABAAEAAAAkAAoAAAABAAEAAAAlAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAAPAAsAAAABAAEAAAAPAAwAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_0uifd")

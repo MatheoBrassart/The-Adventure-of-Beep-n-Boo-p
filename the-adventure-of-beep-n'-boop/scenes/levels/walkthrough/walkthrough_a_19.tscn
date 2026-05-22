@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cj83dxu02gqa2"]
+[gd_scene format=4 uid="uid://cj83dxu02gqa2"]
 
 [ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_rnxok"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_kygr6"]
@@ -18,41 +18,41 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_s38fm")
 
-[node name="walkthrough_a_19" type="Node2D"]
+[node name="walkthrough_a_19" type="Node2D" unique_id=2037988817]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=783397470]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_rnxok")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=2112661435]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_kygr6")]
+[node name="Player" parent="Original Player Spawns" unique_id=1159150301 instance=ExtResource("2_kygr6")]
 position = Vector2(48, 464)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=342541133]
 position = Vector2(543, -144)
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
-limit_right = 1150
-limit_bottom = 647
+limit_right = 1149
+limit_bottom = 646
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=477913414 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 464)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=2099563346]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_joir3")]
+[node name="level_switcher" parent="Level switchers" unique_id=1791598289 instance=ExtResource("3_joir3")]
 position = Vector2(1200, 304)
 scale = Vector2(1, 6.76)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 20
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_joir3")]
+[node name="level_switcher2" parent="Level switchers" unique_id=370027569 instance=ExtResource("3_joir3")]
 position = Vector2(-48, 216)
 scale = Vector2(1, 6)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -60,55 +60,55 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 18
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=1868232059]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_7yduq")]
+[node name="Killzone" parent="Level elements" unique_id=1597454725 instance=ExtResource("4_7yduq")]
 position = Vector2(608, 832)
 
-[node name="Vignes_normal" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal" parent="Level elements" unique_id=1486095251 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 480)
 
-[node name="Vignes_normal2" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal2" parent="Level elements" unique_id=3941337 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 480)
 
-[node name="Vignes_normal3" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal3" parent="Level elements" unique_id=496204967 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 416)
 
-[node name="Vignes_normal4" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal4" parent="Level elements" unique_id=748946161 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 416)
 
-[node name="Vignes_normal5" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal5" parent="Level elements" unique_id=21854622 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 352)
 
-[node name="Vignes_normal6" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal6" parent="Level elements" unique_id=990290594 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 352)
 
-[node name="Vignes_normal7" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal7" parent="Level elements" unique_id=1844901234 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 288)
 
-[node name="Vignes_normal8" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal8" parent="Level elements" unique_id=162306437 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 288)
 
-[node name="Vignes_normal9" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal9" parent="Level elements" unique_id=372554534 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 224)
 
-[node name="Vignes_normal10" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal10" parent="Level elements" unique_id=657152513 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 224)
 
-[node name="Vignes_normal11" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal11" parent="Level elements" unique_id=1314667593 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 160)
 
-[node name="Vignes_normal12" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal12" parent="Level elements" unique_id=2142754001 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 160)
 
-[node name="Vignes_normal13" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal13" parent="Level elements" unique_id=1091754114 instance=ExtResource("5_gmabh")]
 position = Vector2(224, 96)
 
-[node name="Vignes_normal14" parent="Level elements" instance=ExtResource("5_gmabh")]
+[node name="Vignes_normal14" parent="Level elements" unique_id=1564230387 instance=ExtResource("5_gmabh")]
 position = Vector2(160, 96)
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=541163881]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1817547643]
 tile_map_data = PackedByteArray("AAD+/xAAAAABAAEAAAD//xAAAAABAAEAAAAAABAAAAABAAEAAAABABAAAAABAAEAAAACABAAAAABAAEAAAADABAAAAABAAEAAAAEABAAAAABAAEAAAAFABAAAAABAAEAAAAlABAAAAABAAEAAAAkABAAAAABAAEAAAAjABAAAAABAAEAAAAiABAAAAABAAEAAAAhABAAAAABAAEAAAAGABAAAAABAAEAAAAHABAAAAABAAEAAAAIABAAAAABAAEAAAAJABAAAAABAAEAAAAKAAYAAAABAAEAAAAKAAcAAAABAAEAAAAKABAAAAABAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAEAAAALABAAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAABAAEAAAANAAYAAAABAAEAAAANAAcAAAABAAEAAAAOAAYAAAABAAEAAAAOAAcAAAABAAEAAAAVAAYAAAABAAEAAAAVAAcAAAABAAEAAAAWAAYAAAABAAEAAAAWAAcAAAABAAEAAAAXAAYAAAABAAEAAAAXAAcAAAABAAEAAAAYAAYAAAABAAEAAAAYAAcAAAABAAEAAAAZAAYAAAABAAEAAAAZAAcAAAABAAEAAAAaAAYAAAABAAEAAAAaAAcAAAABAAEAAAAbAAYAAAABAAEAAAAbAAcAAAABAAEAAAAcAAYAAAABAAEAAAAcAAcAAAABAAEAAAAdAAYAAAABAAEAAAAdAAcAAAABAAEAAAAeABAAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAALABEAAAABAAEAAAALABIAAAABAAEAAAALABMAAAABAAEAAAALABQAAAABAAEAAAALABUAAAABAAEAAAAfABAAAAABAAEAAAAgABAAAAABAAEAAAAeABEAAAABAAEAAAAeABIAAAABAAEAAAAeABMAAAABAAEAAAAeABQAAAABAAEAAAAeABUAAAABAAEAAAAeAAYAAAABAAEAAAAeAAcAAAABAAEAAAAfAAcAAAABAAEAAAAfAAYAAAABAAEAAAAQAA8AAAABAAEAAAARAA8AAAABAAEAAAARAA4AAAABAAEAAAAQAA4AAAABAAEAAAASAA4AAAABAAEAAAASAA8AAAABAAEAAAATAA8AAAABAAEAAAATAA4AAAABAAEAAAA=")
 tile_set = SubResource("TileSet_1s0ay")

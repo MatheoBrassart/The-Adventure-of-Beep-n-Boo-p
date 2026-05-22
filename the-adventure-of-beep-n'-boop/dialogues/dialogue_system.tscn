@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://i20mbmoid2qo"]
+[gd_scene format=3 uid="uid://i20mbmoid2qo"]
 
 [ext_resource type="Script" uid="uid://b261dh5plxltd" path="res://scripts/dialogue_system.gd" id="1_xnnjv"]
 [ext_resource type="Texture2D" uid="uid://c7q4dtpekmlw4" path="res://assets/dialogue textures/DialogueBox.png" id="2_v4n8t"]
@@ -266,14 +266,14 @@ _data = {
 &"dialogueBoxDisparition": SubResource("Animation_qn5j1")
 }
 
-[node name="dialogueSystem" type="Control" groups=["DialogueSystem"]]
+[node name="dialogueSystem" type="Control" unique_id=1686036576 groups=["DialogueSystem"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_xnnjv")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=592900887]
 
-[node name="DialogueBox" type="Control" parent="CanvasLayer"]
+[node name="DialogueBox" type="Control" parent="CanvasLayer" unique_id=552403822]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 8
@@ -287,7 +287,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/DialogueBox"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/DialogueBox" unique_id=2021810952]
 layout_mode = 0
 offset_left = -704.0
 offset_top = -104.0
@@ -300,7 +300,7 @@ patch_margin_top = 6
 patch_margin_right = 30
 patch_margin_bottom = 6
 
-[node name="TopBit" type="NinePatchRect" parent="CanvasLayer/DialogueBox/NinePatchRect"]
+[node name="TopBit" type="NinePatchRect" parent="CanvasLayer/DialogueBox/NinePatchRect" unique_id=404060074]
 layout_mode = 0
 offset_left = 8.0
 offset_top = -64.0
@@ -311,7 +311,7 @@ patch_margin_left = 30
 patch_margin_top = 6
 patch_margin_right = 30
 
-[node name="Character" type="RichTextLabel" parent="CanvasLayer/DialogueBox/NinePatchRect/TopBit"]
+[node name="Character" type="RichTextLabel" parent="CanvasLayer/DialogueBox/NinePatchRect/TopBit" unique_id=934478421]
 layout_mode = 0
 offset_left = 56.0
 offset_right = 376.0
@@ -324,7 +324,7 @@ scroll_active = false
 horizontal_alignment = 1
 visible_characters_behavior = 1
 
-[node name="Message" type="RichTextLabel" parent="CanvasLayer/DialogueBox/NinePatchRect"]
+[node name="Message" type="RichTextLabel" parent="CanvasLayer/DialogueBox/NinePatchRect" unique_id=1518744307]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 32.0
@@ -340,22 +340,20 @@ visible_characters = 0
 visible_characters_behavior = 1
 visible_ratio = 0.0
 
-[node name="Faces" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
+[node name="Faces" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect" unique_id=363425517]
 position = Vector2(120, 96)
 sprite_frames = SubResource("SpriteFrames_x2b6m")
 animation = &"nothing"
 
-[node name="BarreEspace" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect"]
+[node name="BarreEspace" type="AnimatedSprite2D" parent="CanvasLayer/DialogueBox/NinePatchRect" unique_id=153918507]
 position = Vector2(1296, 168)
 sprite_frames = SubResource("SpriteFrames_wwosp")
 animation = &"active"
 
-[node name="AnimationPlayerBoxApparition" type="AnimationPlayer" parent="CanvasLayer/DialogueBox"]
-libraries = {
-&"": SubResource("AnimationLibrary_qn5j1")
-}
+[node name="AnimationPlayerBoxApparition" type="AnimationPlayer" parent="CanvasLayer/DialogueBox" unique_id=1412616299]
+libraries/ = SubResource("AnimationLibrary_qn5j1")
 
-[node name="CharacterVoices" type="AudioStreamPlayer" parent="CanvasLayer/DialogueBox"]
+[node name="CharacterVoices" type="AudioStreamPlayer" parent="CanvasLayer/DialogueBox" unique_id=1059431240]
 stream = ExtResource("6_qn5j1")
 volume_db = -5.0
 pitch_scale = 0.75

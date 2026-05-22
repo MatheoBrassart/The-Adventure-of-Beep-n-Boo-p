@@ -37,6 +37,8 @@ const MAX_FREEFALLING_SPEED = 800
 
 var WAS_AIRBORNE = false
 
+var CAN_CHANGE = true
+
 # Speeds after all modifiers were applied
 var FINAL_MAXSPEED = 0
 var FINAL_ACCELERATION = 0
@@ -141,13 +143,13 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("move_up"):
 				CAN_HANG_AFTER_JUMP = false
 			velocity.y = JUMP_VELOCITY
-			particles_controller.jumpfall_particles()
+			particles_controller.jumpfall_particles_instantiate()
 		else:
 			jump_buffer_timer.start()
 	
 	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
-		particles_controller.jumpfall_particles()
+		particles_controller.jumpfall_particles_instantiate()
 		coyote_timer.stop()
 	
 	# If player is moving up while jumping, can't hang again until release moving up
@@ -246,7 +248,7 @@ func _physics_process(delta: float) -> void:
 		WAS_AIRBORNE = true
 	
 	if is_on_floor() and WAS_AIRBORNE == true:
-		particles_controller.jumpfall_particles()
+		particles_controller.jumpfall_particles_instantiate()
 		WAS_AIRBORNE = false
 	
 	reset_blocchutes()
@@ -264,7 +266,7 @@ func handle_input() -> void:
 		direction_xANDy = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	else:
 		direction_x = 0
-		direction_xANDy = 0
+		direction_xANDy = Vector2(0.0, 0.0)
 	
 	# Set the initial final max speed and acceleration to their current normal ones
 	FINAL_MAXSPEED = MAX_SPEED

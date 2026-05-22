@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://41s75d15302s"]
+[gd_scene format=4 uid="uid://41s75d15302s"]
 
 [ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_xa8lj"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_msdn5"]
@@ -19,41 +19,41 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cjlqx")
 
-[node name="walkthrough_a_17" type="Node2D"]
+[node name="walkthrough_a_17" type="Node2D" unique_id=349202453]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052780722]
 z_index = -100
 position = Vector2(598.62494, 303.99997)
 scale = Vector2(6.816589, 4.953704)
 texture = ExtResource("1_xa8lj")
 
-[node name="Original Player Spawns" type="Node2D" parent="."]
+[node name="Original Player Spawns" type="Node2D" parent="." unique_id=254792456]
 
-[node name="Player" parent="Original Player Spawns" instance=ExtResource("2_msdn5")]
+[node name="Player" parent="Original Player Spawns" unique_id=1864149954 instance=ExtResource("2_msdn5")]
 position = Vector2(48, 464)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player"]
+[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=873874528]
 position = Vector2(543, -144)
 rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
-limit_right = 1150
-limit_bottom = 647
+limit_right = 1149
+limit_bottom = 646
 
-[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" groups=["PlayerSpawn1"]]
+[node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=223432004 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 208)
 
-[node name="Level switchers" type="Node2D" parent="."]
+[node name="Level switchers" type="Node2D" parent="." unique_id=738175418]
 
-[node name="level_switcher" parent="Level switchers" instance=ExtResource("3_esrwt")]
+[node name="level_switcher" parent="Level switchers" unique_id=1215873152 instance=ExtResource("3_esrwt")]
 position = Vector2(1200, 112)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
 TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 18
 
-[node name="level_switcher2" parent="Level switchers" instance=ExtResource("3_esrwt")]
+[node name="level_switcher2" parent="Level switchers" unique_id=1982553777 instance=ExtResource("3_esrwt")]
 position = Vector2(-48, 376)
 scale = Vector2(1, 3)
 TO_WHICH_WORLD_DOES_IT_LEADS = "walkthrough"
@@ -61,31 +61,31 @@ TO_WHICH_SECTION_DOES_IT_LEADS = "a"
 TO_WHICH_LEVEL_DOES_IT_LEADS = 16
 TO_WHICH_ENTRANCE_DOES_IT_LEADS = 1
 
-[node name="Level elements" type="Node2D" parent="."]
+[node name="Level elements" type="Node2D" parent="." unique_id=606438721]
 
-[node name="Killzone" parent="Level elements" instance=ExtResource("4_0jfr0")]
+[node name="Killzone" parent="Level elements" unique_id=644511292 instance=ExtResource("4_0jfr0")]
 position = Vector2(608, 832)
 
-[node name="BlocChange" parent="Level elements" instance=ExtResource("5_g1vmr")]
+[node name="BlocChange" parent="Level elements" unique_id=726203536 instance=ExtResource("5_g1vmr")]
 position = Vector2(288, 480)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange2" parent="Level elements" instance=ExtResource("5_g1vmr")]
+[node name="BlocChange2" parent="Level elements" unique_id=1554736278 instance=ExtResource("5_g1vmr")]
 position = Vector2(352, 480)
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange3" parent="Level elements" instance=ExtResource("5_g1vmr")]
+[node name="BlocChange3" parent="Level elements" unique_id=330552897 instance=ExtResource("5_g1vmr")]
 position = Vector2(800, 352)
 
-[node name="BlocChange4" parent="Level elements" instance=ExtResource("5_g1vmr")]
+[node name="BlocChange4" parent="Level elements" unique_id=800026404 instance=ExtResource("5_g1vmr")]
 position = Vector2(864, 352)
 
-[node name="BlocChute" parent="Level elements" instance=ExtResource("6_em2r3")]
+[node name="BlocChute" parent="Level elements" unique_id=1022943482 instance=ExtResource("6_em2r3")]
 position = Vector2(576, 400)
 BLOC_SIZE = 1
 
-[node name="Background elements" type="Node2D" parent="."]
+[node name="Background elements" type="Node2D" parent="." unique_id=856185761]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1321674778]
 tile_map_data = PackedByteArray("AAD+/xAAAAABAAEAAAD//xAAAAABAAEAAAAAABAAAAABAAEAAAABABAAAAABAAEAAAACABAAAAABAAEAAAADABAAAAABAAEAAAADABEAAAABAAEAAAADABIAAAABAAEAAAADABMAAAABAAEAAAADABQAAAABAAEAAAADABUAAAABAAEAAAAgABUAAAABAAEAAAAgABQAAAABAAEAAAAgABMAAAABAAEAAAAgABIAAAABAAEAAAAgABEAAAABAAEAAAAgABAAAAABAAEAAAAgAA8AAAABAAEAAAAgAA4AAAABAAEAAAAgAA0AAAABAAEAAAAgAAwAAAABAAEAAAAgAAsAAAABAAEAAAAgAAoAAAABAAEAAAAgAAkAAAABAAEAAAAgAAgAAAABAAEAAAAhAAgAAAABAAEAAAAiAAgAAAABAAEAAAAjAAgAAAABAAEAAAAkAAgAAAABAAEAAAAlAAgAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_m26sq")

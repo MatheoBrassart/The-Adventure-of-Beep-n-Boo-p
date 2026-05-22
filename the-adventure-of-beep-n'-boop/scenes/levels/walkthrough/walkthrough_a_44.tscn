@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du6gqgfykobe" path="res://scenes/level design elements/bloc_mouvant.tscn" id="5_ogm5a"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="6_0lwll"]
 [ext_resource type="PackedScene" uid="uid://c5b4lesamqpsx" path="res://scenes/level design elements/zone_anti_change.tscn" id="7_k43r2"]
+[ext_resource type="PackedScene" uid="uid://jdafmtmnfa1x" path="res://scenes/level design elements/bloc_sens_unique.tscn" id="8_by6hq"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="8_g6ypb"]
 [ext_resource type="PackedScene" uid="uid://duumu7t7h8uif" path="res://scenes/others/puce_donnee.tscn" id="9_dqvf5"]
 
@@ -51,8 +52,8 @@ rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
-limit_right = 1150
-limit_bottom = 647
+limit_right = 1149
+limit_bottom = 646
 
 [node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1801823875 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 528)
@@ -160,6 +161,38 @@ curve = SubResource("Curve2D_na82h")
 LOOP = false
 LOOP_SPEED = 0.8
 BLOC_SCALEY = 2
+
+[node name="BlocSensUnique" parent="Level elements" unique_id=1424759965 instance=ExtResource("8_by6hq")]
+position = Vector2(304, 16)
+rotation = 1.5707964
+
+[node name="BlocSensUnique2" parent="Level elements" unique_id=1646636149 instance=ExtResource("8_by6hq")]
+position = Vector2(304, 48)
+rotation = 1.5707964
+
+[node name="BlocSensUnique3" parent="Level elements" unique_id=1338457262 instance=ExtResource("8_by6hq")]
+position = Vector2(304, 80)
+rotation = 1.5707964
+
+[node name="BlocSensUnique4" parent="Level elements" unique_id=749933041 instance=ExtResource("8_by6hq")]
+position = Vector2(304, 112)
+rotation = 1.5707964
+
+[node name="BlocSensUnique5" parent="Level elements" unique_id=1078147404 instance=ExtResource("8_by6hq")]
+position = Vector2(304, -112)
+rotation = 1.5707964
+
+[node name="BlocSensUnique6" parent="Level elements" unique_id=1189412060 instance=ExtResource("8_by6hq")]
+position = Vector2(304, -80)
+rotation = 1.5707964
+
+[node name="BlocSensUnique7" parent="Level elements" unique_id=1848515190 instance=ExtResource("8_by6hq")]
+position = Vector2(304, -48)
+rotation = 1.5707964
+
+[node name="BlocSensUnique8" parent="Level elements" unique_id=1092698576 instance=ExtResource("8_by6hq")]
+position = Vector2(304, -16)
+rotation = 1.5707964
 
 [node name="Background elements" type="Node2D" parent="." unique_id=1765937050]
 

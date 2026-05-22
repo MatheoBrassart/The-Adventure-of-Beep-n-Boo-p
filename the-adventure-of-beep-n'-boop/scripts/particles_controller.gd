@@ -3,8 +3,8 @@ extends Node2D
 @onready var player: Player = $".."
 
 @onready var walking_gpu_particles_2d: GPUParticles2D = $WalkingGPUParticles2D
-@onready var jump_fall_left_gpu_particles_2d: GPUParticles2D = $JumpFallLeftGPUParticles2D
-@onready var jump_fall_right_gpu_particles_2d: GPUParticles2D = $JumpFallRightGPUParticles2D
+
+@onready var jumpfall_particles = preload("res://particles/player_jump_fall_particles.tscn")
 
 func _process(_delta: float) -> void:
 	
@@ -21,10 +21,7 @@ func _process(_delta: float) -> void:
 			pass
 
 
-func jumpfall_particles():
+func jumpfall_particles_instantiate():
 	
-	jump_fall_left_gpu_particles_2d.restart()
-	jump_fall_right_gpu_particles_2d.restart()
-	
-	jump_fall_left_gpu_particles_2d.emitting = true
-	jump_fall_right_gpu_particles_2d.emitting = true
+	var instance = jumpfall_particles.instantiate()
+	add_child(instance)

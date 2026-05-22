@@ -37,8 +37,8 @@ rotation = -1.5708
 zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_top = 0
-limit_right = 1150
-limit_bottom = 647
+limit_right = 1149
+limit_bottom = 646
 
 [node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=1284375287 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 464)
