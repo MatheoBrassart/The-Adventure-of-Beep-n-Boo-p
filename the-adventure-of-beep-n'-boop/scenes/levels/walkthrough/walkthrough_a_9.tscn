@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_ylbpj"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_6n702"]
+[ext_resource type="PackedScene" uid="uid://c0uvx0e8n10gp" path="res://scenes/others/camera_2d.tscn" id="2_k4w4k"]
 [ext_resource type="PackedScene" uid="uid://b0c3ta4epvr3w" path="res://scenes/level design elements/pics_change.tscn" id="3_k4w4k"]
 [ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="4_my42u"]
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="5_0ly20"]
@@ -24,14 +25,7 @@ sources/0 = SubResource("TileSetAtlasSource_fhvvp")
 [node name="Player" parent="Original Player Spawns" unique_id=428156778 instance=ExtResource("1_ylbpj")]
 position = Vector2(32, 464)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=200412523]
-position = Vector2(543, -144)
-rotation = -1.5708
-zoom = Vector2(1.67, 1.67)
-limit_left = 0
-limit_top = 0
-limit_right = 1149
-limit_bottom = 646
+[node name="Camera2D" parent="Original Player Spawns/Player" unique_id=2120309500 instance=ExtResource("2_k4w4k")]
 
 [node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=738181169 groups=["PlayerSpawn1"]]
 position = Vector2(1120, 208)

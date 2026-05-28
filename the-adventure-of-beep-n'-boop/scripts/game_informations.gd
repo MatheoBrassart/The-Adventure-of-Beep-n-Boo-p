@@ -114,6 +114,8 @@ func activate_changemoi_effects():
 	listOfChanges = get_tree().get_nodes_in_group("BlocMouvant")
 	for i in listOfChanges: 
 		i.pause_unpause_movement()
+	
+	get_viewport().get_camera_2d().activate_switch_animation(get_tree().get_first_node_in_group("Player").CURRENT_ACTIVE_CHARACTER)
 
 func check_cutscene_informations(whichCutscene: String):
 	

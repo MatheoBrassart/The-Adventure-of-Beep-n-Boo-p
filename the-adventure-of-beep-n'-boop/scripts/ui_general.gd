@@ -98,3 +98,4 @@ func animation_nochange():
 	
 	no_change_animation_player.stop()
 	no_change_animation_player.play("NoChange")
+	get_viewport().get_camera_2d().apply_camerashake()

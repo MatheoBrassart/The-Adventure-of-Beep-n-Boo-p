@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://c0uvx0e8n10gp"]
+
+[ext_resource type="Script" uid="uid://d1xu2srrplx6r" path="res://scripts/camera_2d.gd" id="1_x3so4"]
+[ext_resource type="Texture2D" uid="uid://br6tah8ync184" path="res://assets/UI/ChangeMoiCameraEffect.png" id="2_mregg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mregg"]
+atlas = ExtResource("2_mregg")
+region = Rect2(0, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyn04"]
+atlas = ExtResource("2_mregg")
+region = Rect2(250, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xk6r"]
+atlas = ExtResource("2_mregg")
+region = Rect2(500, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad1yl"]
+atlas = ExtResource("2_mregg")
+region = Rect2(750, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtokl"]
+atlas = ExtResource("2_mregg")
+region = Rect2(1000, 0, 250, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtokl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mregg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyn04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xk6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad1yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtokl")
+}],
+"loop": false,
+"name": &"activate",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhlrx"]
+atlas = ExtResource("2_mregg")
+region = Rect2(0, 250, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amifx"]
+atlas = ExtResource("2_mregg")
+region = Rect2(250, 250, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46d84"]
+atlas = ExtResource("2_mregg")
+region = Rect2(500, 250, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxah4"]
+atlas = ExtResource("2_mregg")
+region = Rect2(750, 250, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgghr"]
+atlas = ExtResource("2_mregg")
+region = Rect2(1000, 250, 250, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50nva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhlrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amifx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46d84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxah4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgghr")
+}],
+"loop": false,
+"name": &"activate",
+"speed": 12.0
+}]
+
+[node name="Camera2D" type="Camera2D" unique_id=2120309500]
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_top = 0
+limit_right = 1149
+limit_bottom = 646
+script = ExtResource("1_x3so4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1283963295]
+
+[node name="ChangeMoiCameraEffectBeep1" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=632884764]
+visible = false
+position = Vector2(125, 125)
+sprite_frames = SubResource("SpriteFrames_vtokl")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBeep2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=602791394]
+visible = false
+position = Vector2(125, 955)
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_vtokl")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBeep3" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=814009245]
+visible = false
+position = Vector2(1795, 125)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_vtokl")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBeep4" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=286647210]
+visible = false
+position = Vector2(1795, 955)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_vtokl")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBoop1" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=815307969]
+visible = false
+position = Vector2(125, 125)
+sprite_frames = SubResource("SpriteFrames_50nva")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBoop2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=338192749]
+visible = false
+position = Vector2(125, 955)
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_50nva")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBoop3" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=787593305]
+visible = false
+position = Vector2(1795, 125)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_50nva")
+animation = &"activate"
+
+[node name="ChangeMoiCameraEffectBoop4" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=507935051]
+visible = false
+position = Vector2(1795, 955)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_50nva")
+animation = &"activate"

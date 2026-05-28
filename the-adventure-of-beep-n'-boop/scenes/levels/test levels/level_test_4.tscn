@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dypd6mxpdeanb"]
+
+[ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="1_ojdrd"]
+[ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="2_2e2yw"]
+[ext_resource type="PackedScene" uid="uid://c0uvx0e8n10gp" path="res://scenes/others/camera_2d.tscn" id="2_15y85"]
+[ext_resource type="PackedScene" uid="uid://bkfqv7f3qk1lj" path="res://scenes/level design elements/bloc_change.tscn" id="3_ekeex"]
+[ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="5_ro76s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ha63a"]
+distance = -298.0
+
+[node name="Level Test 2" type="Node2D" unique_id=1087338107]
+
+[node name="Player" parent="." unique_id=133387150 instance=ExtResource("1_ojdrd")]
+position = Vector2(272, 224)
+
+[node name="Camera2D" parent="Player" unique_id=2120309500 instance=ExtResource("2_15y85")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=108401073]
+position = Vector2(0, 310)
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1457180664]
+shape = SubResource("WorldBoundaryShape2D_ha63a")
+
+[node name="level_switcher" parent="." unique_id=642374352 instance=ExtResource("2_2e2yw")]
+position = Vector2(-16, 560)
+
+[node name="Level elements" type="Node2D" parent="." unique_id=1171762854]
+
+[node name="RessortChange" parent="Level elements" unique_id=1805394919 instance=ExtResource("5_ro76s")]
+position = Vector2(320, 480)
+
+[node name="BlocChange3" parent="Level elements" unique_id=1855835850 instance=ExtResource("3_ekeex")]
+position = Vector2(576, 544)
+WHICH_CHARACTER_IS_IT = 1
+
+[node name="BlocChange8" parent="Level elements" unique_id=533362891 instance=ExtResource("3_ekeex")]
+position = Vector2(320, 544)
+
+[node name="RessortChange2" parent="Level elements" unique_id=1380773967 instance=ExtResource("5_ro76s")]
+position = Vector2(576, 480)
+WHICH_CHARACTER_IS_IT = 1

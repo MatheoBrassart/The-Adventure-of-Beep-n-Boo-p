@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2m0k4guqlfkj" path="res://assets/colors/Bleu_ciel_(couleur).png" id="1_3uipe"]
 [ext_resource type="PackedScene" uid="uid://bpyurbx843djn" path="res://scenes/others/player.tscn" id="2_8siqc"]
+[ext_resource type="PackedScene" uid="uid://c0uvx0e8n10gp" path="res://scenes/others/camera_2d.tscn" id="3_8siqc"]
 [ext_resource type="PackedScene" uid="uid://dk0vp307e0hmr" path="res://scenes/level design elements/level_switcher.tscn" id="3_t8w5i"]
 [ext_resource type="PackedScene" uid="uid://d0ilnmyux6ayv" path="res://scenes/others/killzone.tscn" id="4_vlm3m"]
 [ext_resource type="PackedScene" uid="uid://dxd3i08icmkgx" path="res://scenes/level design elements/ressort_change.tscn" id="5_2ywgv"]
@@ -34,14 +35,7 @@ texture = ExtResource("1_3uipe")
 [node name="Player" parent="Original Player Spawns" unique_id=1393006166 instance=ExtResource("2_8siqc")]
 position = Vector2(48, 528)
 
-[node name="Camera2D" type="Camera2D" parent="Original Player Spawns/Player" unique_id=392843579]
-position = Vector2(543, -144)
-rotation = -1.5708
-zoom = Vector2(1.67, 1.67)
-limit_left = 0
-limit_top = 0
-limit_right = 1149
-limit_bottom = 646
+[node name="Camera2D" parent="Original Player Spawns/Player" unique_id=2120309500 instance=ExtResource("3_8siqc")]
 
 [node name="PlayerSpawn1" type="Node2D" parent="Original Player Spawns" unique_id=988784234 groups=["PlayerSpawn1"]]
 position = Vector2(1104, 528)
