@@ -17,6 +17,7 @@ const RESSORT_VELOCITY = 900.0
 @onready var collisionShape2D: CollisionShape2D = $CollisionShape2D
 
 @onready var ressortChange2D: Area2D = $"."
+@onready var ressort_audio_stream_player: AudioStreamPlayer = $RessortAudioStreamPlayer
 
 
 var ISACTIVE = 1
@@ -75,6 +76,7 @@ func _on_body_entered(body: Node2D) -> void:
 	# Bounces the player when they touches it. Direction depends on its rotation.
 	if body.is_in_group("Player") == true:
 		rightSprite.play("used")
+		ressort_audio_stream_player.play()
 	
 		match round(self.rotation_degrees):
 			0.0:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://dxd3i08icmkgx"]
+[gd_scene format=3 uid="uid://dxd3i08icmkgx"]
 
 [ext_resource type="Script" uid="uid://c5jbydwicia22" path="res://scripts/ressort_change.gd" id="1_60jv4"]
 [ext_resource type="Texture2D" uid="uid://dhu5nxoq6koll" path="res://assets/textures/RessortChangeSpritesheet.png" id="2_nphtc"]
+[ext_resource type="AudioStream" uid="uid://bcbe872nmg6j8" path="res://assets/sounds/Ressort.mp3" id="3_dpxw5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sogsb"]
 atlas = ExtResource("2_nphtc")
@@ -304,26 +305,26 @@ scale_min = 5.0
 scale_max = 8.0
 scale_curve = SubResource("CurveTexture_yaob3")
 
-[node name="RessortChange" type="Area2D" groups=["RessortChange"]]
+[node name="RessortChange" type="Area2D" unique_id=391044724 groups=["RessortChange"]]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_60jv4")
 
-[node name="AnimatedSprite2DRessortChangeBeep" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DRessortChangeBeep" type="AnimatedSprite2D" parent="." unique_id=363115267]
 sprite_frames = SubResource("SpriteFrames_canlg")
 animation = &"defaultActive"
 
-[node name="AnimatedSprite2DRessortChangeBoop" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DRessortChangeBoop" type="AnimatedSprite2D" parent="." unique_id=1522211803]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_hrs60")
 animation = &"used"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=862225153]
 position = Vector2(4.76837e-07, 20.5)
 scale = Vector2(4, 1.25)
 shape = SubResource("RectangleShape2D_i3sln")
 
-[node name="LeftGPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="LeftGPUParticles2D" type="GPUParticles2D" parent="." unique_id=1776035381]
 z_index = -5
 position = Vector2(0, 30)
 emitting = false
@@ -333,7 +334,7 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_dpxw5")
 
-[node name="RightGPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="RightGPUParticles2D" type="GPUParticles2D" parent="." unique_id=234714900]
 z_index = -5
 position = Vector2(0, 30)
 scale = Vector2(-1, 1)
@@ -343,5 +344,8 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_dpxw5")
+
+[node name="RessortAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=356693178]
+stream = ExtResource("3_dpxw5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
