@@ -793,7 +793,7 @@ animation = &"activate"
 
 [node name="SpriteBeep" type="AnimatedSprite2D" parent="." unique_id=1910018354]
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="SpriteBoop" type="AnimatedSprite2D" parent="." unique_id=2105275287]
