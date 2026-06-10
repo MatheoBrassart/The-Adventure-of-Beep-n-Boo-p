@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://duumu7t7h8uif"]
+[gd_scene format=3 uid="uid://duumu7t7h8uif"]
 
 [ext_resource type="Script" uid="uid://r8ya5viulni3" path="res://scripts/puce_donnee.gd" id="1_omquk"]
 [ext_resource type="Texture2D" uid="uid://f27qjjkwka58" path="res://assets/textures/PuceDeDonnee.png" id="2_omquk"]
@@ -322,21 +322,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Animation" id="Animation_mk6v6"]
-resource_name = "shrinking"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-
 [sub_resource type="Animation" id="Animation_f8t3y"]
 length = 0.001
 tracks/0/type = "value"
@@ -352,37 +337,46 @@ tracks/0/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_mk6v6"]
+resource_name = "shrinking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uo756"]
 _data = {
 &"RESET": SubResource("Animation_f8t3y"),
 &"shrinking": SubResource("Animation_mk6v6")
 }
 
-[node name="puceDonnee" type="Area2D" groups=["PuceDonnee"]]
+[node name="puceDonnee" type="Area2D" unique_id=57563688 groups=["PuceDonnee"]]
 script = ExtResource("1_omquk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=758607926]
 shape = SubResource("RectangleShape2D_omquk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=787393830]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_an4vv")
-frame_progress = 0.53173935
 
-[node name="AnimationPlayerPuce" type="AnimationPlayer" parent="AnimatedSprite2D"]
+[node name="AnimationPlayerPuce" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=1914584233]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_mk6v6")
-}
+libraries/ = SubResource("AnimationLibrary_mk6v6")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=424559491]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_7j1ip")
-frame_progress = 0.80077523
 
-[node name="AnimationHoverEffect" type="AnimationPlayer" parent="AnimatedSprite2D2"]
-libraries = {
-&"": SubResource("AnimationLibrary_uo756")
-}
+[node name="AnimationHoverEffect" type="AnimationPlayer" parent="AnimatedSprite2D2" unique_id=1323930955]
+libraries/ = SubResource("AnimationLibrary_uo756")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
