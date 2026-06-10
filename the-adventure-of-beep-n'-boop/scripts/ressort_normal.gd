@@ -3,6 +3,7 @@ extends Area2D
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 @onready var left_gpu_particles_2d: GPUParticles2D = $LeftGPUParticles2D
 @onready var right_gpu_particles_2d: GPUParticles2D = $RightGPUParticles2D
+@onready var ressort_audio_stream_player: AudioStreamPlayer = $RessortAudioStreamPlayer
 
 # Power of the ressort
 const RESSORT_VELOCITY = 900.0
@@ -18,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	# Bounces the player when they touches it. Direction depends on its rotation.
 	if body.is_in_group("Player") == true:
 		animatedSprite2D.play("used")
+		ressort_audio_stream_player.play()
 	
 		match round(self.rotation_degrees):
 			0.0:

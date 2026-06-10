@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqklsg5jjjxdq"]
+[gd_scene format=3 uid="uid://bqklsg5jjjxdq"]
 
 [ext_resource type="Script" uid="uid://d3ns587kubvpr" path="res://scripts/ressort_normal.gd" id="1_uaena"]
 [ext_resource type="Texture2D" uid="uid://dhu5nxoq6koll" path="res://assets/textures/RessortChangeSpritesheet.png" id="2_d7anx"]
+[ext_resource type="AudioStream" uid="uid://bcbe872nmg6j8" path="res://assets/sounds/Ressort.mp3" id="3_d7anx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fo0ih"]
 atlas = ExtResource("2_d7anx")
@@ -100,21 +101,21 @@ scale_min = 5.0
 scale_max = 8.0
 scale_curve = SubResource("CurveTexture_uaena")
 
-[node name="RessortNormal" type="Area2D"]
+[node name="RessortNormal" type="Area2D" unique_id=1862792521]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_uaena")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1212568997]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_uaena")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832202908]
 position = Vector2(4.76837e-07, 20.5)
 scale = Vector2(4, 1.25)
 shape = SubResource("RectangleShape2D_i3sln")
 
-[node name="LeftGPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="LeftGPUParticles2D" type="GPUParticles2D" parent="." unique_id=1078489571]
 z_index = -5
 position = Vector2(0, 30)
 emitting = false
@@ -124,7 +125,7 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_d7anx")
 
-[node name="RightGPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="RightGPUParticles2D" type="GPUParticles2D" parent="." unique_id=1121088636]
 z_index = -5
 position = Vector2(0, 30)
 scale = Vector2(-1, 1)
@@ -134,5 +135,8 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_d7anx")
+
+[node name="RessortAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1049758810]
+stream = ExtResource("3_d7anx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

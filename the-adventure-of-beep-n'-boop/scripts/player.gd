@@ -94,6 +94,16 @@ var STATUTPERS_DOUBLESAUT: bool = false
 var CAN_DOUBLEJUMP: bool = false
 var COYOTETIME_FAILSAFE = true
 
+# Sounds
+@onready var change_moi_beep_audio_stream_player: AudioStreamPlayer = $Sounds/ChangeMoiBeepAudioStreamPlayer
+@onready var change_moi_boop_audio_stream_player: AudioStreamPlayer = $Sounds/ChangeMoiBoopAudioStreamPlayer
+
+@onready var walk_audio_stream_player: AudioStreamPlayer = $Sounds/WalkAudioStreamPlayer
+var SOUND_WALK = false
+
+@onready var jump_land_audio_stream_player: AudioStreamPlayer = $Sounds/JumpLandAudioStreamPlayer
+
+
 
 func _ready() -> void:
 	
@@ -142,13 +152,13 @@ func _physics_process(delta: float) -> void:
 			# If player is moving up while jumping, can't hang again until release moving up
 			if Input.is_action_pressed("move_up"):
 				CAN_HANG_AFTER_JUMP = false
-			velocity.y = JUMP_VELOCITY
+			jump()
 			particles_controller.jumpfall_particles_instantiate()
 		else:
 			jump_buffer_timer.start()
 	
 	if (is_on_floor() || !coyote_timer.is_stopped()) and !jump_buffer_timer.is_stopped():
-		velocity.y = JUMP_VELOCITY
+		jump()
 		particles_controller.jumpfall_particles_instantiate()
 		coyote_timer.stop()
 	
@@ -249,6 +259,8 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor() and WAS_AIRBORNE == true:
 		particles_controller.jumpfall_particles_instantiate()
+		jump_land_audio_stream_player.pitch_scale = 0.5
+		jump_land_audio_stream_player.play()
 		WAS_AIRBORNE = false
 	
 	reset_blocchutes()
@@ -256,6 +268,15 @@ func _physics_process(delta: float) -> void:
 	double_jump()
 	
 	reset_level()
+	
+	# Play walking sounds
+	if (is_on_floor() == true) and (not direction_x == 0):
+		if SOUND_WALK == false:
+			SOUND_WALK = true
+			walk_audio_stream_player.play()
+	else:
+		SOUND_WALK = false
+		walk_audio_stream_player.stop()
 
 
 func handle_input() -> void:
@@ -317,6 +338,13 @@ func handle_input() -> void:
 	WIND_MOVEMENTMULTIPLIER = 0
 
 
+func jump():
+	
+	velocity.y = JUMP_VELOCITY
+	jump_land_audio_stream_player.pitch_scale = 1.0
+	jump_land_audio_stream_player.play()
+
+
 func switch_character():
 	
 	if CAN_MOVE == false:
@@ -329,6 +357,12 @@ func switch_character():
 		switch_to_boop()
 	else:
 		switch_to_beep()
+	
+	# Plays ChangeMoi sound
+	if CURRENT_ACTIVE_CHARACTER == 0:
+		change_moi_beep_audio_stream_player.play()
+	else:
+		change_moi_boop_audio_stream_player.play()
 
 
 func switch_to_beep():
@@ -417,7 +451,7 @@ func double_jump():
 		var collider = ray_cast_2d_floor_type_checker.get_collider()
 		if not collider is Node:
 			if (Input.is_action_just_pressed("jump")) and (CAN_DOUBLEJUMP == true) and (CAN_MOVE == true) and (CURRENT_ACTIVE_CHARACTER == 0) and (COYOTETIME_FAILSAFE == true):
-				velocity.y = JUMP_VELOCITY
+				jump()
 				CAN_DOUBLEJUMP = false
 		else:
 			CAN_DOUBLEJUMP = true
