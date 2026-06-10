@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw604do7cwlld"]
+[gd_scene format=3 uid="uid://bw604do7cwlld"]
 
 [ext_resource type="Texture2D" uid="uid://desbr1erhdkrq" path="res://icon.svg" id="1_7cm64"]
 [ext_resource type="Script" uid="uid://cg26ddujpl7p" path="res://scripts/courant_air.gd" id="1_tabl1"]
+[ext_resource type="AudioStream" uid="uid://cdrtcj5ikavso" path="res://assets/sounds/CourantAir.wav" id="3_dw1k3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tabl1"]
 size = Vector2(32, 32)
@@ -42,37 +43,37 @@ tangential_accel_curve = SubResource("CurveTexture_rdb4d")
 color_ramp = SubResource("GradientTexture1D_dw1k3")
 color_initial_ramp = SubResource("GradientTexture1D_tabl1")
 
-[node name="CourantAir" type="Area2D"]
+[node name="CourantAir" type="Area2D" unique_id=1387114478]
 collision_layer = 4
 script = ExtResource("1_tabl1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=538488625]
 scale = Vector2(0.24, 0.25)
 texture = ExtResource("1_7cm64")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315462841]
 shape = SubResource("RectangleShape2D_tabl1")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=796763420]
 scale = Vector2(1.5, 1.6)
 shape = SubResource("RectangleShape2D_dw1k3")
 target_position = Vector2(0, -789.99994)
 collision_mask = 15
 
-[node name="ShapeCast2DParticlesSetter" type="ShapeCast2D" parent="."]
+[node name="ShapeCast2DParticlesSetter" type="ShapeCast2D" parent="." unique_id=1167066920]
 scale = Vector2(1.5, 1.6)
 shape = SubResource("RectangleShape2D_dw1k3")
 target_position = Vector2(0, -789.99994)
 collision_mask = 14
 
-[node name="Line2DParticleClipper" type="Line2D" parent="."]
+[node name="Line2DParticleClipper" type="Line2D" parent="." unique_id=462652883]
 clip_children = 1
 position = Vector2(0, 32)
 scale = Vector2(0.99999994, 0.99999994)
 points = PackedVector2Array(0, -32, 0, -1312)
 width = 32.0
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Line2DParticleClipper"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Line2DParticleClipper" unique_id=224984560]
 position = Vector2(0, -32)
 scale = Vector2(0.99999994, 0.99999994)
 amount = 25
@@ -82,3 +83,9 @@ randomness = 1.0
 visibility_rect = Rect2(-250, -250, 500, 500)
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_tabl1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1023433532]
+stream = ExtResource("3_dw1k3")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

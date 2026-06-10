@@ -5,6 +5,8 @@ extends Area2D
 @onready var gpu_particles_2d: GPUParticles2D = $Line2DParticleClipper/GPUParticles2D
 @onready var shape_cast_2d_particles_setter: ShapeCast2D = $ShapeCast2DParticlesSetter
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 @export var WIND_POWER = 0.0
 var MAX_PUSH = null
 
@@ -68,3 +70,8 @@ func set_particle_mask_size():
 			line_2d_particle_clipper.set_point_position(1, Vector2(0, new_point_clip_setter.y))
 	else:
 		line_2d_particle_clipper.set_point_position(1, Vector2(0, -1312))
+
+
+func _on_audio_stream_player_finished() -> void:
+	
+	audio_stream_player.play()

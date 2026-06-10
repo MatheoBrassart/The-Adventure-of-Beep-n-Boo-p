@@ -10,6 +10,9 @@ extends StaticBody2D
 @onready var idle_shake_cooldown_timer: Timer = $IdleShakeCooldownTimer
 @onready var reconstruction_cooldown_timer: Timer = $ReconstructionCooldownTimer
 
+@onready var rumble_audio_stream_player: AudioStreamPlayer = $RumbleAudioStreamPlayer
+@onready var fall_audio_stream_player: AudioStreamPlayer = $FallAudioStreamPlayer
+
 # Shaking animations variables
 var SHOULD_BE_BIG_SHAKING: bool = false
 var SHAKE_POWER = 0.1
@@ -53,6 +56,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if (body.global_position.y + 40) < self.global_position.y:
 			SHOULD_BE_BIG_SHAKING = true
 			IS_GOING_TO_FALL = true
+			rumble_audio_stream_player.play()
 			incoming_fall_timer.start()
 
 
@@ -65,6 +69,8 @@ func _on_incoming_fall_timer_timeout() -> void:
 	collision_shape_2d.disabled = true
 	area_2d.visible = false
 	UNRESPAWNED = true
+	rumble_audio_stream_player.stop()
+	fall_audio_stream_player.play()
 	reconstruction_cooldown_timer.start()
 
 

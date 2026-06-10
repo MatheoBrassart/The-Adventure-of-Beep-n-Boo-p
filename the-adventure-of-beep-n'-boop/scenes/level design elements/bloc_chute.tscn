@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtt4ag4d2qtqs"]
+[gd_scene format=3 uid="uid://dtt4ag4d2qtqs"]
 
 [ext_resource type="Texture2D" uid="uid://c7cvb5ahn4v7n" path="res://assets/textures/Niveaux/TilesetAtelier.png" id="1_hrt4a"]
 [ext_resource type="Script" uid="uid://25s1nlicydx3" path="res://scripts/bloc_chute.gd" id="1_jao08"]
+[ext_resource type="AudioStream" uid="uid://crlb1wubhwibo" path="res://assets/sounds/BlocChuteRumble.wav" id="3_n5s03"]
+[ext_resource type="AudioStream" uid="uid://dsg15raqp6g2i" path="res://assets/sounds/BlocChuteFall.wav" id="4_sxgto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3sln"]
 size = Vector2(64, 32)
@@ -9,37 +11,44 @@ size = Vector2(64, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jao08"]
 size = Vector2(64, 16)
 
-[node name="BlocChute" type="StaticBody2D" groups=["BlocChute"]]
+[node name="BlocChute" type="StaticBody2D" unique_id=1522208764 groups=["BlocChute"]]
 collision_layer = 2
 script = ExtResource("1_jao08")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=846127424]
 scale = Vector2(2, 1)
 texture = ExtResource("1_hrt4a")
 region_enabled = true
 region_rect = Rect2(32, 32, 32, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1472271667]
 visible = false
 shape = SubResource("RectangleShape2D_i3sln")
 one_way_collision = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=576593366]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=282531532]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_jao08")
 
-[node name="IncomingFallTimer" type="Timer" parent="."]
+[node name="IncomingFallTimer" type="Timer" parent="." unique_id=975443464]
 one_shot = true
 
-[node name="IdleShakeCooldownTimer" type="Timer" parent="."]
+[node name="IdleShakeCooldownTimer" type="Timer" parent="." unique_id=1434777513]
 wait_time = 0.1
 autostart = true
 
-[node name="ReconstructionCooldownTimer" type="Timer" parent="."]
+[node name="ReconstructionCooldownTimer" type="Timer" parent="." unique_id=561606879]
 wait_time = 2.0
 one_shot = true
+
+[node name="RumbleAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=676450116]
+stream = ExtResource("3_n5s03")
+
+[node name="FallAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=867005326]
+stream = ExtResource("4_sxgto")
+volume_db = -5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="IncomingFallTimer" to="." method="_on_incoming_fall_timer_timeout"]

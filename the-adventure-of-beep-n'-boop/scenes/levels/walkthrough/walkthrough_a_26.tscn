@@ -159,24 +159,8 @@ position = Vector2(576, 480)
 rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
-[node name="BlocChange7" parent="Level elements" unique_id=2060091878 instance=ExtResource("6_5vwcs")]
-position = Vector2(640, 224)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="BlocChange8" parent="Level elements" unique_id=893302681 instance=ExtResource("6_5vwcs")]
-position = Vector2(704, 224)
-WHICH_CHARACTER_IS_IT = 1
-
 [node name="BlocChange9" parent="Level elements" unique_id=1415510238 instance=ExtResource("6_5vwcs")]
 position = Vector2(768, 224)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="PicsChange12" parent="Level elements" unique_id=114198390 instance=ExtResource("7_neecf")]
-position = Vector2(640, 160)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="PicsChange13" parent="Level elements" unique_id=1658899595 instance=ExtResource("7_neecf")]
-position = Vector2(704, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange14" parent="Level elements" unique_id=1205141415 instance=ExtResource("7_neecf")]
@@ -189,16 +173,6 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange25" parent="Level elements" unique_id=1354004510 instance=ExtResource("7_neecf")]
 position = Vector2(896, 160)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="PicsChange17" parent="Level elements" unique_id=389796366 instance=ExtResource("7_neecf")]
-position = Vector2(640, 288)
-rotation = -3.1415925
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="PicsChange18" parent="Level elements" unique_id=1387745483 instance=ExtResource("7_neecf")]
-position = Vector2(704, 288)
-rotation = -3.1415925
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="PicsChange19" parent="Level elements" unique_id=612579217 instance=ExtResource("7_neecf")]
@@ -240,14 +214,6 @@ WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change9" parent="Level elements" unique_id=1967840425 instance=ExtResource("8_1o3s4")]
 position = Vector2(704, 320)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change11" parent="Level elements" unique_id=1912428641 instance=ExtResource("8_1o3s4")]
-position = Vector2(640, 160)
-WHICH_CHARACTER_IS_IT = 1
-
-[node name="Vignes_change12" parent="Level elements" unique_id=610790456 instance=ExtResource("8_1o3s4")]
-position = Vector2(704, 160)
 WHICH_CHARACTER_IS_IT = 1
 
 [node name="Vignes_change13" parent="Level elements" unique_id=1833121703 instance=ExtResource("8_1o3s4")]

@@ -103,6 +103,8 @@ var SOUND_WALK = false
 
 @onready var jump_land_audio_stream_player: AudioStreamPlayer = $Sounds/JumpLandAudioStreamPlayer
 
+@onready var death_audio_stream_player: AudioStreamPlayer = $Sounds/DeathAudioStreamPlayer
+
 
 
 func _ready() -> void:
@@ -398,6 +400,7 @@ func player_death(killer: Node2D):
 			death_animation_player.play("death_right")
 		sprite_death_effect.visible = true
 		sprite_death_effect.play("activate")
+		death_audio_stream_player.play()
 		#sprite_death_effect.queue("end")
 		
 		await get_tree().create_timer(0.5).timeout

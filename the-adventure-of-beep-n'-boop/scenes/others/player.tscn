@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://byofuw3vunyak" path="res://assets/textures/DeathEffect.png" id="2_yaob3"]
 [ext_resource type="Texture2D" uid="uid://qt7towh3xdcr" path="res://assets/textures/ChangeMoiSpritesheet.png" id="4_dqkch"]
 [ext_resource type="Script" uid="uid://c4w0a4iask4rx" path="res://scripts/particles_controller.gd" id="5_0u0et"]
-[ext_resource type="AudioStream" uid="uid://d2gim8dsjac0a" path="res://assets/sounds/ChangeMoi_Boop.mp3" id="7_sp4d4"]
-[ext_resource type="AudioStream" uid="uid://b0p4rluimer7q" path="res://assets/sounds/ChangeMoi_Beep.mp3" id="7_sp530"]
-[ext_resource type="AudioStream" uid="uid://dqwprfmc477uw" path="res://assets/sounds/Walk.mp3" id="9_gabts"]
-[ext_resource type="AudioStream" uid="uid://c24h41pdawjk3" path="res://assets/sounds/JumpLand.mp3" id="10_a5rxr"]
+[ext_resource type="AudioStream" uid="uid://d2gim8dsjac0a" path="res://assets/sounds/player/ChangeMoi_Boop.mp3" id="7_sp4d4"]
+[ext_resource type="AudioStream" uid="uid://b0p4rluimer7q" path="res://assets/sounds/player/ChangeMoi_Beep.mp3" id="7_sp530"]
+[ext_resource type="AudioStream" uid="uid://dqwprfmc477uw" path="res://assets/sounds/player/Walk.mp3" id="9_gabts"]
+[ext_resource type="AudioStream" uid="uid://c24h41pdawjk3" path="res://assets/sounds/player/JumpLand.mp3" id="10_a5rxr"]
+[ext_resource type="AudioStream" uid="uid://o028hnickjtg" path="res://assets/sounds/player/Death.wav" id="11_khifu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sp530"]
 atlas = ExtResource("2_yaob3")
@@ -881,5 +882,9 @@ parameters/looping = true
 [node name="JumpLandAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=2109143936]
 stream = ExtResource("10_a5rxr")
 volume_db = -5.0
+
+[node name="DeathAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=269922619]
+stream = ExtResource("11_khifu")
+pitch_scale = 1.5
 
 [connection signal="timeout" from="LevelResetTimer" to="." method="_on_level_reset_timer_timeout"]
