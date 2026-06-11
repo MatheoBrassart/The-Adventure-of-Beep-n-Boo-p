@@ -24,6 +24,10 @@ class_name Player
 @onready var ray_cast_2d_hanging_top_checker: RayCast2D = $RayCast2DHangingTopChecker
 @onready var ray_cast_2d_floor_type_checker: RayCast2D = $RayCast2DFloorTypeChecker
 
+# Textures
+@onready var reset_texture_progress_bar: TextureProgressBar = $ResetTextureProgressBar
+
+
 # Base movement variables
 var MAX_SPEED = 300.0
 var OVER_MAX_SPEED = 0
@@ -479,9 +483,14 @@ func reset_level():
 	
 	if Input.is_action_just_pressed("ResetLevel"):
 		level_reset_timer.start()
+		reset_texture_progress_bar.value = 0
+		reset_texture_progress_bar.visible = true
+		var tween = create_tween()
+		tween.tween_property(reset_texture_progress_bar, "value", 100, 1)
 	
 	if Input.is_action_just_released("ResetLevel"):
 		level_reset_timer.stop()
+		reset_texture_progress_bar.visible = false
 
 
 func _on_level_reset_timer_timeout() -> void:
