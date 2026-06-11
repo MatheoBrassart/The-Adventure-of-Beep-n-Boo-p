@@ -28,6 +28,8 @@ func _ready() -> void:
 		animation.play("longressortjump")
 	elif WHICH_TUTORIAL == "nothing":
 		animation.play("nothing")
+	elif WHICH_TUTORIAL == "reset":
+		animation.play("reset")
 
 
 func apparition_animation():
