@@ -412,6 +412,8 @@ func player_death(killer: Node2D):
 		death_audio_stream_player.play()
 		#sprite_death_effect.queue("end")
 		
+		MusicPlayer.CURRENTMUSIC.stream_paused = true
+		
 		await get_tree().create_timer(0.5).timeout
 		ui_general.activate_black_transition_nolevelswitch("SwitchLevel", get_tree().get_current_scene().get_scene_file_path())
 		#get_tree().reload_current_scene()

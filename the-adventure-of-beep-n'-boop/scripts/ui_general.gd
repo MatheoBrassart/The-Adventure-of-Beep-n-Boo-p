@@ -67,6 +67,9 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 		player = get_tree().get_first_node_in_group("Player")
 		player.CAN_MOVE = false
 		black_transition.position = player.position
+		
+		if not MusicPlayer.CURRENTMUSIC == null:
+			MusicPlayer.CURRENTMUSIC.stream_paused = false
 	
 	black_transition_animated_sprite_2d.play("deactivating")
 	await black_transition_animated_sprite_2d.animation_finished
@@ -102,6 +105,7 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 			if limite_change_moi_sprite_2d.visible == true:
 				status_animation_player.play("LCM_Dispparition")
 				status_deactivate_audio_stream_player.play()
+
 
 func animation_nochange():
 	

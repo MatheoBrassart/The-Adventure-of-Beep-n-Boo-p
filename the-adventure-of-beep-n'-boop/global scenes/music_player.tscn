@@ -1,6 +1,31 @@
 [gd_scene format=3 uid="uid://dqmnb4e8i3hy2"]
 
 [ext_resource type="Script" uid="uid://bn740kk8gqs5f" path="res://global scenes/MusicPlayer.gd" id="1_30127"]
+[ext_resource type="AudioStream" uid="uid://co3pruikeoi1e" path="res://assets/musics/AtelierMusic.mp3" id="2_463rx"]
+[ext_resource type="AudioStream" uid="uid://c4gwjllbe4vom" path="res://assets/musics/VilleEnRuineMusic.mp3" id="3_jsoeh"]
+[ext_resource type="AudioStream" uid="uid://cga48vogdvy7d" path="res://assets/musics/PlainesVenteusesMusic.mp3" id="4_uwkb8"]
+[ext_resource type="AudioStream" uid="uid://dr8sw27i2paky" path="res://assets/musics/VilleSecuriseeMusic.mp3" id="5_evkaf"]
 
 [node name="MusicPlayer" type="Node2D" unique_id=1204384246]
 script = ExtResource("1_30127")
+
+[node name="AtelierAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=248072320]
+stream = ExtResource("2_463rx")
+volume_db = -7.0
+
+[node name="VilleEnRuineAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1072509829]
+stream = ExtResource("3_jsoeh")
+volume_db = -7.0
+
+[node name="PlainesVenteusesAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=212985464]
+stream = ExtResource("4_uwkb8")
+volume_db = -7.0
+
+[node name="VilleSecuriseeAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=42697774]
+stream = ExtResource("5_evkaf")
+volume_db = -7.0
+
+[connection signal="finished" from="AtelierAudioStreamPlayer" to="." method="_on_atelier_audio_stream_player_finished"]
+[connection signal="finished" from="VilleEnRuineAudioStreamPlayer" to="." method="_on_ville_en_ruine_audio_stream_player_finished"]
+[connection signal="finished" from="PlainesVenteusesAudioStreamPlayer" to="." method="_on_plaines_venteuses_audio_stream_player_finished"]
+[connection signal="finished" from="VilleSecuriseeAudioStreamPlayer" to="." method="_on_ville_securisee_audio_stream_player_finished"]

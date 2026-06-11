@@ -29,6 +29,7 @@ GameInformations="*res://scenes/others/game_informations.tscn"
 DialogueSystem="*res://dialogues/dialogue_system.tscn"
 UiGeneral="*res://scenes/others/ui_general.tscn"
 SaveLoad="*res://scenes/others/save_load.tscn"
+MusicPlayer="*uid://dqmnb4e8i3hy2"
 
 [dialogue_manager]
 

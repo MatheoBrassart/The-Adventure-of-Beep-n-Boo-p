@@ -221,6 +221,7 @@ func finished_dialogue():
 		player.CAN_MOVE = true
 		var ordiTuto = get_tree().get_first_node_in_group("OrdiTuto")
 		ordiTuto.apparition_animation()
+		MusicPlayer.play_music("atelier")
 	
 	if CURRENT_ACTIVE_DIALOGUE == "FinDemo2":
 		pass

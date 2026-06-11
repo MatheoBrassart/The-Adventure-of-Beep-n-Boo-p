@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cteqxlf3fixsj"]
+
+[ext_resource type="Script" uid="uid://12611leh85pk" path="res://scripts/music_switcher.gd" id="1_d8r1w"]
+
+[node name="MusicSwitcher" type="Node2D" unique_id=990370852]
+script = ExtResource("1_d8r1w")
