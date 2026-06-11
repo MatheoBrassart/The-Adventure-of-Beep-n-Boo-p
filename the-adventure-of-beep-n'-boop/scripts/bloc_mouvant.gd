@@ -23,6 +23,7 @@ extends Node2D
 
 @onready var collision_shape_2d: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
 @onready var sprite_2d_noloop_stopper: Sprite2D = $Sprite2DNoloopStopper
+@onready var noloop_animation_player: AnimationPlayer = $NoloopAnimationPlayer
 
 @onready var moving_audio_stream_player: AudioStreamPlayer = $MovingAudioStreamPlayer
 @onready var stopping_audio_stream_player: AudioStreamPlayer = $StoppingAudioStreamPlayer
@@ -63,7 +64,7 @@ func _ready() -> void:
 	
 	# Get the non-component children of this node, unchild them and child them to the Bloc Mouvant
 	for child in get_children():
-		if (not child == path_follow_2d) and (not child == animatable_body_2d) and (not child == animation_player) and (not child == line_2d) and (not child == sprite_2d_noloop_stopper):
+		if (not child == path_follow_2d) and (not child == animatable_body_2d) and (not child == animation_player) and (not child == line_2d) and (not child == sprite_2d_noloop_stopper) and (not child == noloop_animation_player):
 			remove_child(child)
 			animatable_body_2d.add_child(child)
 			if child.is_in_group("ProjecteurCCA"):
@@ -99,6 +100,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if (path_follow_2d.progress_ratio == 1.0) and (LOOP == false) and (WAS_SOUNDSTOPPINGPLAYED == false):
+		noloop_animation_player.play("stop")
+		print(noloop_animation_player.is_playing())
 		stopping_audio_stream_player.play()
 		moving_audio_stream_player.pitch_scale = 0.5
 		WAS_SOUNDSTOPPINGPLAYED = true

@@ -10,17 +10,31 @@ var CURRENTMUSIC: AudioStreamPlayer
 
 func play_music(which: String):
 	
-	if not CURRENTMUSIC == null:
-		CURRENTMUSIC.stop()
 	
 	match which:
 		"atelier":
+			if CURRENTMUSIC == atelier_audio_stream_player:
+				return
+			if not CURRENTMUSIC == null:
+				CURRENTMUSIC.stop()
 			CURRENTMUSIC = atelier_audio_stream_player
 		"villeenruine":
+			if CURRENTMUSIC == ville_en_ruine_audio_stream_player:
+				return
+			if not CURRENTMUSIC == null:
+				CURRENTMUSIC.stop()
 			CURRENTMUSIC = ville_en_ruine_audio_stream_player
 		"plainesventeuses":
+			if CURRENTMUSIC == plaines_venteuses_audio_stream_player:
+				return
+			if not CURRENTMUSIC == null:
+				CURRENTMUSIC.stop()
 			CURRENTMUSIC = plaines_venteuses_audio_stream_player
 		"villesecurisee":
+			if CURRENTMUSIC == ville_securisee_audio_stream_player:
+				return
+			if not CURRENTMUSIC == null:
+				CURRENTMUSIC.stop()
 			CURRENTMUSIC = ville_securisee_audio_stream_player
 	
 	CURRENTMUSIC.play()
