@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bkdl6hlfro1lg" path="res://scripts/ui_general.gd" id="1_ild4u"]
 [ext_resource type="Texture2D" uid="uid://d0qorpk41siec" path="res://assets/UI/Status.png" id="3_r4axy"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="4_fised"]
+[ext_resource type="AudioStream" uid="uid://baepmfuis2vic" path="res://assets/sounds/StatusActivate.wav" id="5_xj5hr"]
+[ext_resource type="AudioStream" uid="uid://nv7a7mcykgut" path="res://assets/sounds/StatusDeactivate.wav" id="6_06b1m"]
+[ext_resource type="AudioStream" uid="uid://b7rtdbaa5sydk" path="res://assets/sounds/NoChange.wav" id="7_06b1m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ild4u"]
 atlas = ExtResource("1_g1gnd")
@@ -628,10 +631,20 @@ visible = false
 position = Vector2(576, 304)
 texture = ExtResource("4_fised")
 region_enabled = true
-region_rect = Rect2(1730, 136, 289, 289)
+region_rect = Rect2(1605, 17, 288, 289)
 
 [node name="NoChangeAnimationPlayer" type="AnimationPlayer" parent="noChange" unique_id=2122578049]
 libraries/ = SubResource("AnimationLibrary_wnm0x")
+
+[node name="StatusActivateAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1190748977]
+stream = ExtResource("5_xj5hr")
+
+[node name="StatusDeactivateAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1758357318]
+stream = ExtResource("6_06b1m")
+
+[node name="NoChangeAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1310157700]
+stream = ExtResource("7_06b1m")
+volume_db = -5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1394554260]
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bc6ev7p3nrj1p" path="res://scripts/laser.gd" id="1_rvhhc"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_rvhhc"]
+[ext_resource type="AudioStream" uid="uid://cohslfsbhlfg5" path="res://assets/sounds/Laser.wav" id="3_a02uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw1k3"]
 
@@ -189,3 +190,10 @@ position = Vector2(-18, 31)
 lifetime = 2.0
 preprocess = 1.0
 process_material = SubResource("ParticleProcessMaterial_1ofvc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=751369505]
+stream = ExtResource("3_a02uw")
+autoplay = true
+bus = &"Noise Reduced"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -87,5 +87,6 @@ process_material = SubResource("ParticleProcessMaterial_tabl1")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1023433532]
 stream = ExtResource("3_dw1k3")
 autoplay = true
+bus = &"Noise Reduced"
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

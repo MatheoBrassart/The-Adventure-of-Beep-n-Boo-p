@@ -24,11 +24,17 @@ extends Node2D
 @onready var collision_shape_2d: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
 @onready var sprite_2d_noloop_stopper: Sprite2D = $Sprite2DNoloopStopper
 
+@onready var moving_audio_stream_player: AudioStreamPlayer = $MovingAudioStreamPlayer
+@onready var stopping_audio_stream_player: AudioStreamPlayer = $StoppingAudioStreamPlayer
+
+
 # Defines which character this bloc is for. 0 = Beep, 1 = Boop
 @export var WHICH_CHARACTER_IS_IT = 0
 var ISMOVEMENT_PAUSED = 0
 
 var CAN_BESTOPPED = true
+
+var WAS_SOUNDSTOPPINGPLAYED = false
 
 func _ready() -> void:
 	
@@ -79,6 +85,8 @@ func _ready() -> void:
 		pause_unpause_movement()
 	else:
 		rightSprite.play("active")
+		if CAN_BESTOPPED == true:
+			moving_audio_stream_player.play()
 	
 	# If LOOP is false, put the noloopstopper at the end of the line, otherwise hide it
 	if LOOP == false:
@@ -88,6 +96,14 @@ func _ready() -> void:
 		sprite_2d_noloop_stopper.visible = false
 
 
+func _process(delta: float) -> void:
+	
+	if (path_follow_2d.progress_ratio == 1.0) and (LOOP == false) and (WAS_SOUNDSTOPPINGPLAYED == false):
+		stopping_audio_stream_player.play()
+		moving_audio_stream_player.pitch_scale = 0.5
+		WAS_SOUNDSTOPPINGPLAYED = true
+
+
 func pause_unpause_movement():
 	
 	if CAN_BESTOPPED == true:
@@ -95,9 +111,16 @@ func pause_unpause_movement():
 			animation_player.speed_scale = 0
 			body_animated_sprite_2d.play("idle")
 			rightSprite.play("inactive")
+			moving_audio_stream_player.stop()
 			ISMOVEMENT_PAUSED = 1
 		else:
 			animation_player.speed_scale = LOOP_SPEED
 			body_animated_sprite_2d.play("active")
 			rightSprite.play("active")
+			moving_audio_stream_player.play()
 			ISMOVEMENT_PAUSED = 0
+
+
+func _on_moving_audio_stream_player_finished() -> void:
+	
+	moving_audio_stream_player.play()

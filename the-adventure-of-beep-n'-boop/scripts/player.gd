@@ -105,6 +105,8 @@ var SOUND_WALK = false
 
 @onready var death_audio_stream_player: AudioStreamPlayer = $Sounds/DeathAudioStreamPlayer
 
+@onready var vines_audio_stream_player: AudioStreamPlayer = $Sounds/VinesAudioStreamPlayer
+var SOUND_VINES = false
 
 
 func _ready() -> void:
@@ -151,6 +153,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and CAN_MOVE == true:
 		if HANGING == true:
 			HANGING = false
+			SOUND_VINES = false
 			# If player is moving up while jumping, can't hang again until release moving up
 			if Input.is_action_pressed("move_up"):
 				CAN_HANG_AFTER_JUMP = false
@@ -190,20 +193,26 @@ func _physics_process(delta: float) -> void:
 			else:
 				NEAR_VIGNES = false
 				HANGING = false
+				SOUND_VINES = false
 				CAN_HANG_AFTER_JUMP = true
 		else:
 			NEAR_VIGNES = false
 			HANGING = false
+			SOUND_VINES = false
 			CAN_HANG_AFTER_JUMP = true
 	else:
 		NEAR_VIGNES = false
 		HANGING = false
+		SOUND_VINES = false
 		CAN_HANG_AFTER_JUMP = true
 	
 	# If the player is near vignes and moves up, hang onto them
 	if Input.is_action_pressed("move_up") and CAN_MOVE == true:
 		if NEAR_VIGNES == true and CAN_HANG_AFTER_JUMP == true:
 			HANGING = true
+			if SOUND_VINES == false:
+				vines_audio_stream_player.play()
+				SOUND_VINES = true
 	
 	
 	# Checks if the player is currently going over MAX_SPEED. If yes, sets the speed as OVER_MAX_SPEED and slow down

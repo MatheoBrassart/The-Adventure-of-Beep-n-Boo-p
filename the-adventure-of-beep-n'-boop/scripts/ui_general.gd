@@ -17,6 +17,11 @@ extends Control
 
 @onready var no_change_animation_player: AnimationPlayer = $noChange/NoChangeAnimationPlayer
 
+@onready var status_activate_audio_stream_player: AudioStreamPlayer = $StatusActivateAudioStreamPlayer
+@onready var status_deactivate_audio_stream_player: AudioStreamPlayer = $StatusDeactivateAudioStreamPlayer
+@onready var no_change_audio_stream_player: AudioStreamPlayer = $NoChangeAudioStreamPlayer
+
+
 var WHAT_TO_DO_AFTER_TRANSITION:String = "a"
 var LEVEL_TO_LEAD_TO:String = "a"
 
@@ -86,16 +91,21 @@ func _on_black_transition_ongoing_timer_delay_timeout() -> void:
 		if not machine == null:
 			if (machine.BEEP_DOUBLESAUT == true) and (double_saut_beep_sprite_2d.visible == false):
 				status_animation_player.play("DSB_Apparition")
+				status_activate_audio_stream_player.play()
 			if (machine.NIVEAU_LIMITECHANGEMOI > 0) and (limite_change_moi_sprite_2d.visible == false):
 				status_animation_player.play("LCM_Apparition")
+				status_activate_audio_stream_player.play()
 		else:
 			if double_saut_beep_sprite_2d.visible == true:
 				status_animation_player.play("DSB_Dispparition")
+				status_deactivate_audio_stream_player.play()
 			if limite_change_moi_sprite_2d.visible == true:
 				status_animation_player.play("LCM_Dispparition")
+				status_deactivate_audio_stream_player.play()
 
 func animation_nochange():
 	
 	no_change_animation_player.stop()
 	no_change_animation_player.play("NoChange")
 	get_viewport().get_camera_2d().apply_camerashake()
+	no_change_audio_stream_player.play()

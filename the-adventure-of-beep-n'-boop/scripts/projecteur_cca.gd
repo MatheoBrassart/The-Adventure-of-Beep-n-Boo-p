@@ -8,6 +8,9 @@ extends Area2D
 
 @export var DETECTION_TIMER_SETTER = 1.0
 
+@onready var ticking_audio_stream_player: AudioStreamPlayer = $TickingAudioStreamPlayer
+@onready var shoot_audio_stream_player: AudioStreamPlayer = $ShootAudioStreamPlayer
+
 
 func _ready() -> void:
 	
@@ -22,6 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 		animated_sprite_2d.play("active")
 		detection_animation_player.play("detecting", -1, (1 / DETECTION_TIMER_SETTER))
 		detection_timer.start()
+		ticking_audio_stream_player.play()
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -31,8 +35,15 @@ func _on_body_exited(body: Node2D) -> void:
 		animated_sprite_2d.play("inactive")
 		detection_animation_player.play("RESET")
 		detection_timer.stop()
+		ticking_audio_stream_player.stop()
 
 
 func _on_detection_timer_timeout() -> void:
 	
+	shoot_audio_stream_player.play()
 	player.player_death.call_deferred(self)
+
+
+func _on_ticking_audio_stream_player_finished() -> void:
+	
+	ticking_audio_stream_player.play()

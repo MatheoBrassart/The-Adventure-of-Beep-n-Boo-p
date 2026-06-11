@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ub42k5vslpl" path="res://scripts/projecteur_cca.gd" id="1_ir4xj"]
 [ext_resource type="Texture2D" uid="uid://ckvvf1u5nvppb" path="res://assets/textures/BlocPicsRessortChange.png" id="2_h1v86"]
 [ext_resource type="Texture2D" uid="uid://bktrkdllnqjyp" path="res://assets/textures/ProjecteurProgress.png" id="3_t3nsd"]
+[ext_resource type="AudioStream" uid="uid://fv1pbrffbs6q" path="res://assets/sounds/ProjecteurCCATicking.wav" id="4_a477c"]
+[ext_resource type="AudioStream" uid="uid://o1mongpxtmku" path="res://assets/sounds/ProjecteurCCAShoot.wav" id="5_5a1h0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1v86"]
 atlas = ExtResource("2_h1v86")
@@ -99,6 +101,17 @@ tint_progress = Color(0.65882355, 0.19607843, 0.13725491, 1)
 [node name="DetectionAnimationPlayer" type="AnimationPlayer" parent="." unique_id=2100864541]
 libraries/ = SubResource("AnimationLibrary_68q50")
 
+[node name="TickingAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=213372362]
+stream = ExtResource("4_a477c")
+volume_db = 10.0
+pitch_scale = 1.5
+
+[node name="ShootAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1279765497]
+stream = ExtResource("5_5a1h0")
+pitch_scale = 1.5
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="DetectionTimer" to="." method="_on_detection_timer_timeout"]
+[connection signal="finished" from="TickingAudioStreamPlayer" to="." method="_on_ticking_audio_stream_player_finished"]
+[connection signal="finished" from="ShootAudioStreamPlayer" to="." method="_on_ticking_audio_stream_player_finished"]

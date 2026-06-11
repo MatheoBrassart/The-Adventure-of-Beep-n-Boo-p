@@ -8,6 +8,8 @@ extends StaticBody2D
 @onready var animated_sprite_2d_laser_2: AnimatedSprite2D = $Line2D/AnimatedSprite2DLaser2
 @onready var animated_sprite_2d_laser_tip: AnimatedSprite2D = $AnimatedSprite2DLaserTip
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 var new_point_clip_setter = null
 
 
@@ -43,3 +45,8 @@ func set_laser_size():
 	
 	
 	animated_sprite_2d_laser_tip.position = Vector2(0, (line_2d.get_point_position(1).y + 32))
+
+
+func _on_audio_stream_player_finished() -> void:
+	
+	audio_stream_player.play()

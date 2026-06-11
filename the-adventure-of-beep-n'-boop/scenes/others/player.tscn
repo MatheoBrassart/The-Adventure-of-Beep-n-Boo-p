@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dqwprfmc477uw" path="res://assets/sounds/player/Walk.mp3" id="9_gabts"]
 [ext_resource type="AudioStream" uid="uid://c24h41pdawjk3" path="res://assets/sounds/player/JumpLand.mp3" id="10_a5rxr"]
 [ext_resource type="AudioStream" uid="uid://o028hnickjtg" path="res://assets/sounds/player/Death.wav" id="11_khifu"]
+[ext_resource type="AudioStream" uid="uid://b65ebdyube3eo" path="res://assets/sounds/Vines.wav" id="12_8r0qn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sp530"]
 atlas = ExtResource("2_yaob3")
@@ -885,6 +886,11 @@ volume_db = -5.0
 
 [node name="DeathAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=269922619]
 stream = ExtResource("11_khifu")
+volume_db = -5.0
 pitch_scale = 1.5
+
+[node name="VinesAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1172423619]
+stream = ExtResource("12_8r0qn")
+volume_db = -4.0
 
 [connection signal="timeout" from="LevelResetTimer" to="." method="_on_level_reset_timer_timeout"]
